@@ -1,5 +1,5 @@
 import React from "react";
-import { bindLib, sequence, getManager, scopeManager } from "../lib";
+import { bindLib, sequence, scopeManager } from "../lib";
 
 const { useManagedAttrs } = bindLib(React);
 
@@ -15,10 +15,11 @@ const App = () => {
       ]
     }
   );
+
   return (
     <div>
       <EntryList
-        {...useEntryList(attrs, manageState)}
+        {...driveEntryList(manageState, attrs)}
         {...attrs}
         inputProps={{
           placeholder: "Enter new list item..."
@@ -30,10 +31,9 @@ const App = () => {
 
 export default App;
 
-// get relevant state managers by name -- reserve hook usage rights
-const useValueInput = (attrs, manageState) => {
-  const manager = getManager(attrs, manageState);
-  const { runChange = manager } =
+// get relevant state managers by name
+const driveValueInput = (manageState, attrs) => {
+  const { manager = manageState, runChange = manager } =
     typeof attrs === "function" ? attrs(manageState) || {} : attrs || {};
   return { manager, runChange };
 }; // return { manager, runChange };
@@ -42,7 +42,7 @@ const ValueInput = props => {
 
   const { KEY, value, nodeProps } = attrs;
 
-  const controller = useValueInput(attrs, manageState);
+  const controller = driveValueInput(manageState, attrs);
 
   const handleChange = adaptChange(KEY, controller); // useCallback(...);
 
@@ -72,34 +72,36 @@ const ValueInput = props => {
     return { ...lastState, value }; // npm install immer
   }
 
-  const DevValueInput = props => {
-    const [attrs, manageState] = useManagedAttrs(props, { value: "" });
+  function devMode() {
+    const DevValueInput = props => {
+      const [attrs, manageState] = useManagedAttrs(props, { value: "" });
 
-    const { KEY: key, value, nodeProps } = attrs; // KEY aliased
+      const { KEY: key, value, nodeProps } = attrs; // KEY aliased
 
-    const { runChange = manageState } = attrs; // prefer extracted hook...
+      const { runChange = manageState } = attrs; // prefer extracted hook...
 
-    return <input value={value} onChange={handleChange} {...nodeProps} />;
+      return <input value={value} onChange={handleChange} {...nodeProps} />;
 
-    function handleChange({ ...event }) {
-      const { value } = event;
+      function handleChange({ ...event }) {
+        const { value } = event;
 
-      runChange &&
-        runChange(
-          [{ event, value, type: "runChange", spec: "onChange", key }],
-          function produceValueChange(lastState, [payload]) {
-            const { value } = payload;
-            return { ...lastState, value };
-          }
-        );
-    }
+        runChange &&
+          runChange(
+            [{ event, value, type: "runChange", spec: "onChange", key }],
+            function produceValueChange(lastState, [payload]) {
+              const { value } = payload;
+              return { ...lastState, value };
+            }
+          );
+      }
+    };
 
     const DevWidget = properties => {
       const [state, setState] = useManagedAttrs(properties, { value: "..." });
       return (
         <div>
           <DevValueInput
-            {...useValueInput(state, setState)} // ...which makes control "easy"
+            {...driveValueInput(setState, state)} // ...for "easy" control
             {...state}
           >
             controllable
@@ -121,12 +123,9 @@ const ValueInput = props => {
           <DevValueInput {...top} runChange={executeTopChange} />
           <DevValueInput
             {...bottom}
-            {...useValueInput(
-              {
-                runChange: executeBottomChange
-              },
-              scopeManager("bottom", manageView)
-            )}
+            {...driveValueInput(scopeManager("bottom", manageView), {
+              runChange: executeBottomChange
+            })}
           />
         </div>
       );
@@ -163,13 +162,14 @@ const ValueInput = props => {
         });
       }
     };
-  };
+  }
 };
 
-const useLineItem = (attrs, manageState) => {
-  const manager = getManager(attrs, manageState);
+const driveLineItem = (manageState, attrs) => {
   // manager (manageState) can satisfy any and all of the callbacks equally well
   const {
+    manager = manageState,
+
     runSelectionChange = manager,
     runClick = manager,
 
@@ -180,6 +180,7 @@ const useLineItem = (attrs, manageState) => {
 
   return {
     manager,
+
     runSelectionChange,
     runClick,
 
@@ -196,7 +197,7 @@ const LineItem = props => {
 
   const { KEY, selected, highlighted, children, style, nodeProps } = attrs;
 
-  const controller = useLineItem(attrs, manageState);
+  const controller = driveLineItem(manageState, attrs);
 
   const handleClick = adaptClick(KEY, controller);
   const handleMouseEnter = adaptMouseEnter(KEY, controller);
@@ -221,7 +222,7 @@ const LineItem = props => {
   function adaptClick(key, { runSelectionChange, runClick }) {
     return ({ ...event }) => {
       const spec = "onClick";
-      const ok = // run managers in most-specific-to-least order until one "oks"
+      const ok = // do most-specific-to-least until some manager "oks"
         runSelectionChange &&
         runSelectionChange(
           [{ event, type: "runSelectionChange", spec, key }],
@@ -272,9 +273,8 @@ const LineItem = props => {
   }
 };
 
-const useItemList = (attrs, manageState) => {
-  const manager = getManager(attrs, manageState);
-  const { runSelectionChange = manager } =
+const driveItemList = (manageState, attrs) => {
+  const { manager = manageState, runSelectionChange = manager } =
     typeof attrs === "function" ? attrs(manageState) || {} : attrs || {};
   return { manager, runSelectionChange };
 }; // return { manager, runSelectionChange };
@@ -291,7 +291,7 @@ const ItemList = props => {
     nodeProps
   } = attrs;
 
-  const controller = useItemList(attrs, manageState);
+  const controller = driveItemList(manageState, attrs);
 
   const executeSelectionChange = wrapSelectionChange(KEY, controller);
 
@@ -368,9 +368,10 @@ function vectorProps(key, matrix, names = Object.keys(matrix)) {
   return result;
 }
 
-const useEntryList = (attrs, manageState) => {
-  const manager = getManager(attrs, manageState);
+const driveEntryList = (manageState, attrs) => {
   const {
+    manager = manageState,
+
     runHoverChange = manager,
 
     runChange = manager,
@@ -382,8 +383,11 @@ const useEntryList = (attrs, manageState) => {
 
   return {
     manager,
+
     runHoverChange,
+
     runChange,
+
     runItemAdd,
     runKeyDown,
     runSiblingClone
@@ -407,7 +411,7 @@ const EntryList = props => {
     nodeProps
   } = attrs;
 
-  const controller = useEntryList(attrs, manageState);
+  const controller = driveEntryList(manageState, attrs);
 
   const executeHoverChange = wrapHoverChange(KEY, controller);
   const executeChange = wrapChange(KEY, controller);
@@ -416,14 +420,14 @@ const EntryList = props => {
   return (
     <div {...nodeProps}>
       <ValueInput
-        {...useValueInput(attrs, manageState)}
+        {...driveValueInput(manageState, attrs)}
         value={value}
         runChange={executeChange}
         KEY={KEY}
         nodeProps={{ onKeyDown: handleKeyDown, ...inputProps }}
       />
       <ItemList
-        {...useItemList(attrs, manageState)}
+        {...driveItemList(manageState, attrs)}
         items={items}
         itemMatrix={
           itemMatrix && "highlighted" in itemMatrix
@@ -518,6 +522,10 @@ const EntryList = props => {
       let ok;
 
       switch (event.key) {
+        default: {
+          break;
+        }
+
         case "Enter": {
           ok =
             runItemAdd &&

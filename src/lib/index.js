@@ -10,11 +10,6 @@ export function findLib(name = "React", env = this) {
   return env ? env[name] || env : this[name] || this;
 }
 
-export const getManager = (attrs, manageState, field = "manager") => {
-  const { [field]: manager = manageState } = attrs || {};
-  return manager;
-};
-
 export function useManagedAttrs(
   props,
   initialState = {},
@@ -29,7 +24,7 @@ export function useManagedAttrs(
     manageState: conformSetState(setState)
   };
 
-  const manageState = getManager(props, ref.current.manageState, manager);
+  const manageState = props[manager] || ref.current.manageState;
 
   return [effective(props, state), manageState, { state }];
 }
