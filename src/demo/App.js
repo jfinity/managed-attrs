@@ -1,5 +1,5 @@
 import React from "react";
-import { bindLib, sequence } from "../lib";
+import { bindLib, sequence, getManager, scopeManager } from "../lib";
 
 const { useManagedAttrs } = bindLib(React);
 
@@ -18,7 +18,6 @@ const App = () => {
   return (
     <div>
       <EntryList
-        manager={manageState} // TODO: determine if this requirement makes sense
         {...useEntryList(attrs, manageState)}
         {...attrs}
         inputProps={{
@@ -33,9 +32,11 @@ export default App;
 
 // get relevant state managers by name -- reserve hook usage rights
 const useValueInput = (attrs, manageState) => {
-  const { manager = manageState, runChange = manager } = attrs || {};
-  return { runChange }; // useMemo(() => ({ runChange }), [runChange]);
-}; // return { runChange };
+  const manager = getManager(attrs, manageState);
+  const { runChange = manager } =
+    typeof attrs === "function" ? attrs(manageState) || {} : attrs || {};
+  return { manager, runChange };
+}; // return { manager, runChange };
 const ValueInput = props => {
   const [attrs, manageState] = useManagedAttrs(props, { value: "" });
 
@@ -62,6 +63,8 @@ const ValueInput = props => {
           [{ event, value, type: "runChange", spec: "onChange", key }],
           produceValueChange // && (state => produceValueChange(state, details))
         );
+
+      // unmanaged callbacks return undefined (just a convention)
     };
   }
   function produceValueChange(lastState, [payload]) {
@@ -116,7 +119,15 @@ const ValueInput = props => {
       return (
         <div>
           <DevValueInput {...top} runChange={executeTopChange} />
-          <DevValueInput {...bottom} runChange={executeBottomChange} />
+          <DevValueInput
+            {...bottom}
+            {...useValueInput(
+              {
+                runChange: executeBottomChange
+              },
+              scopeManager("bottom", manageView)
+            )}
+          />
         </div>
       );
 
@@ -156,19 +167,19 @@ const ValueInput = props => {
 };
 
 const useLineItem = (attrs, manageState) => {
+  const manager = getManager(attrs, manageState);
+  // manager (manageState) can satisfy any and all of the callbacks equally well
   const {
-    // manageState can satisfy any and all of the callbacks equally well
-    manager = manageState,
-
     runSelectionChange = manager,
     runClick = manager,
 
     runHoverChange = manager,
     runMouseEnter = manager,
     runMouseLeave = manager
-  } = attrs || {};
+  } = typeof attrs === "function" ? attrs(manageState) || {} : attrs || {};
 
   return {
+    manager,
     runSelectionChange,
     runClick,
 
@@ -176,7 +187,7 @@ const useLineItem = (attrs, manageState) => {
     runMouseEnter,
     runMouseLeave
   };
-}; // {runSelectionChange,runClick, runHoverChange,runMouseEnter,runMouseLeave}
+}; // {manager, runSelectionChange/Click, runHoverChange/MouseEnter/MouseLeave}
 const LineItem = props => {
   const [attrs, manageState] = useManagedAttrs(props, {
     selected: false,
@@ -217,9 +228,7 @@ const LineItem = props => {
           produceSelectionChange
         );
 
-      return ok
-        ? undefined // unmanaged callbacks return undefined (just a convention)
-        : void (runClick && runClick([{ event, type: "runClick", spec, key }]));
+      !ok && runClick && runClick([{ event, type: "runClick", spec, key }]);
     };
   }
   function produceSelectionChange(lastState, [payload]) {
@@ -237,10 +246,9 @@ const LineItem = props => {
           produceHoverChange
         );
 
-      return ok
-        ? ok
-        : runMouseEnter &&
-            runMouseEnter([{ event, type: "runMouseEnter", spec, key }]);
+      !ok &&
+        runMouseEnter &&
+        runMouseEnter([{ event, type: "runMouseEnter", spec, key }]);
     };
   }
   function adaptMouseLeave(key, { runHoverChange, runMouseLeave }) {
@@ -253,10 +261,9 @@ const LineItem = props => {
           produceHoverChange
         );
 
-      return ok
-        ? ok
-        : runMouseLeave &&
-            runMouseLeave([{ event, type: "runMouseLeave", spec, key }]);
+      !ok &&
+        runMouseLeave &&
+        runMouseLeave([{ event, type: "runMouseLeave", spec, key }]);
     };
   }
   function produceHoverChange(lastState, [payload]) {
@@ -266,9 +273,11 @@ const LineItem = props => {
 };
 
 const useItemList = (attrs, manageState) => {
-  const { manager = manageState, runSelectionChange = manager } = attrs || {};
-  return { runSelectionChange };
-}; // return { runSelectionChange };
+  const manager = getManager(attrs, manageState);
+  const { runSelectionChange = manager } =
+    typeof attrs === "function" ? attrs(manageState) || {} : attrs || {};
+  return { manager, runSelectionChange };
+}; // return { manager, runSelectionChange };
 const ItemList = props => {
   const [attrs, manageState] = useManagedAttrs(props, () => ({
     itemMatrix: { selected: new Map().set("itemKey", false) } && {} // managed
@@ -360,9 +369,8 @@ function vectorProps(key, matrix, names = Object.keys(matrix)) {
 }
 
 const useEntryList = (attrs, manageState) => {
+  const manager = getManager(attrs, manageState);
   const {
-    manager = manageState,
-
     runHoverChange = manager,
 
     runChange = manager,
@@ -370,9 +378,17 @@ const useEntryList = (attrs, manageState) => {
     runItemAdd = manager,
     runSiblingClone = manager,
     runKeyDown = manager
-  } = attrs || {};
-  return { runHoverChange, runChange, runItemAdd, runKeyDown, runSiblingClone };
-}; // { runHoverChange, runChange, runItemAdd, runKeyDown, runSiblingClone }
+  } = typeof attrs === "function" ? attrs(manageState) || {} : attrs || {};
+
+  return {
+    manager,
+    runHoverChange,
+    runChange,
+    runItemAdd,
+    runKeyDown,
+    runSiblingClone
+  };
+}; // { manager, runHoverChange, runChange, runItemAdd/SiblingClone/KeyDown }
 const EntryList = props => {
   const [attrs, manageState] = useManagedAttrs(props, {
     items: [],
@@ -525,11 +541,9 @@ const EntryList = props => {
         }
       }
 
-      return ok
-        ? undefined
-        : void (
-            runKeyDown && runKeyDown([{ event, type: "runKeyDown", spec, key }])
-          );
+      !ok &&
+        runKeyDown &&
+        runKeyDown([{ event, type: "runKeyDown", spec, key }]);
     };
   }
   function produceItemAdd(lastState) {

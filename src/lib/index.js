@@ -10,6 +10,11 @@ export function findLib(name = "React", env = this) {
   return env ? env[name] || env : this[name] || this;
 }
 
+export const getManager = (attrs, manageState, field = "manager") => {
+  const { [field]: manager = manageState } = attrs || {};
+  return manager;
+};
+
 export function useManagedAttrs(
   props,
   initialState = {},
@@ -24,7 +29,7 @@ export function useManagedAttrs(
     manageState: conformSetState(setState)
   };
 
-  const manageState = props[manager] || ref.current.manageState;
+  const manageState = getManager(props, ref.current.manageState, manager);
 
   return [effective(props, state), manageState, { state }];
 }
@@ -108,3 +113,15 @@ export const sequence = (...recursiveArrayOfProducers) => {
   return (lastState, details) =>
     generateState(lastState, details, recursiveArrayOfProducers);
 };
+
+export const scopeManager = (field, manager) => {
+  const fieldProducer = (state, details) => {
+    const args = details.slice();
+    const producer = args.pop();
+    return { ...state, [field]: producer(state[field], args) };
+  };
+
+  return (details, producer) => {
+    return manager([].concat(details, [producer]), fieldProducer);
+  };
+}
