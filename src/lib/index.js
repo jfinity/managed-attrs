@@ -1,21 +1,6 @@
-
-export const bindLib = (lib, name = "React") => {
-  const env = { [name]: lib };
-  return {
-    useManagedAttrs: useManagedAttrs.bind(env)
-  };
-};
-
-export function findLib(name = "React", env = this) {
-  return env ? env[name] || env : this[name] || this;
-}
-
-export function useManagedAttrs(
-  props,
-  initialState = {},
-  { manager = "manager" } = {}
-) {
-  const { useState, useRef } = findLib("React", this);
+export function useManagedAttrs(initialState = {}) {
+  const env = this || {};
+  const { useState, useRef } = env.React || {};
 
   const [state, setState] = useState(initialState);
   const ref = useRef(null);
@@ -24,16 +9,14 @@ export function useManagedAttrs(
     manageState: conformSetState(setState)
   };
 
-  const manageState = props[manager] || ref.current.manageState;
-
-  return [effective(props, state), manageState, { state }];
+  return [state, ref.current.manageState];
 }
 
 export const conformSetState = setState => {
-  return (details, producer = Array.isArray(details) ? null : produceState) => {
-    if (typeof producer === "function") {
+  return function manageState(action = this, reducer = updateState) {
+    if (arguments.length !== 1 && typeof reducer === "function") {
       setState(lastState => {
-        const nextState = producer(lastState, details);
+        const nextState = reducer(lastState, action);
         return nextState;
       });
       return true;
@@ -42,59 +25,33 @@ export const conformSetState = setState => {
   };
 };
 
-export const produceState = (value, edit) => {
-  const kind = Array.isArray(edit) ? "array" : typeof (edit || undefined);
+export const updateState = (state, updater) => {
+  const kind = Array.isArray(updater) ? "array" : typeof (updater || undefined);
 
   switch (kind) {
     case "function": {
-      return edit(value) || value || {};
+      return updater(state) || state || {};
     }
     case "object": {
-      return Object.assign({}, value, edit);
+      return Object.assign({}, state, updater);
     }
     default: {
-      return value || {};
+      return state || {};
     }
   }
 };
 
-export const effective = (...objs) => {
-  let read = objs.length ? -2 : -1;
-  const value = objs.length ? {} : undefined;
-
-  for (let at = 0; at < objs.length; at += 1) {
-    const keys =
-      typeof (objs[at] || undefined) === "object" && !Array.isArray(objs[at])
-        ? Object.keys(objs[at])
-        : [];
-
-    for (let index = 0; index < keys.length; index += 1) {
-      const name = keys[index];
-
-      if (value[name] === undefined && objs[at][name] !== undefined) {
-        value[name] = objs[at][name];
-        read = read === at || read === -2 ? at : -1;
-      }
-    }
-  }
-
-  read = read === -2 ? 0 : read; // prefer objs[0] over "keyless" value
-  return read < 0 ? value : objs[read]; // prefer original over "duplicate"
-};
-
-export const generateState = (lastState, details, producer) => {
-  const kind = Array.isArray(producer)
-    ? "array"
-    : typeof (producer || undefined);
+export const generateState = (lastState, action, updater) => {
+  const kind = Array.isArray(updater) ? "array" : typeof (updater || undefined);
 
   switch (kind) {
     case "function": {
-      return producer(lastState, details, generateState);
+      return updater(lastState, action);
     }
     case "array": {
       let nextState = lastState;
-      for (let at = 0; at < producer.length; at += 1) {
-        nextState = generateState(nextState, details, producer[at]);
+      for (let at = 0; at < updater.length; at += 1) {
+        nextState = generateState(nextState, action, updater[at]);
       }
       return nextState;
     }
@@ -104,19 +61,7 @@ export const generateState = (lastState, details, producer) => {
   }
 };
 
-export const sequence = (...recursiveArrayOfProducers) => {
-  return (lastState, details) =>
-    generateState(lastState, details, recursiveArrayOfProducers);
+export const sequence = (...recursiveArrayOfReducers) => {
+  return (lastState, action) =>
+    generateState(lastState, action, recursiveArrayOfReducers);
 };
-
-export const scopeManager = (field, manager) => {
-  const fieldProducer = (state, details) => {
-    const args = details.slice();
-    const producer = args.pop();
-    return { ...state, [field]: producer(state[field], args) };
-  };
-
-  return (details, producer) => {
-    return manager([].concat(details, [producer]), fieldProducer);
-  };
-}
