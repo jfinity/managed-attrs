@@ -1,7 +1,8 @@
-import produce from "immer";
 import React from "react";
 import { useManagedAttrs, sequence } from "../lib/react";
 import { ValueInput, EntryList } from "./components";
+
+const produce = fn => fn;
 
 const Example1 = () => {
   const [attrs, manageState] = useManagedAttrs({ value: "optional" });
@@ -23,42 +24,53 @@ const Example2 = () => {
 
 const Example3 = () => {
   const [attrs, manageState] = useManagedAttrs({
-    top: { value: "TOP" },
-    bottom: { value: "bottom" }
+    top: { value: "text" },
+    bottom: { value: "txet" }
   });
 
   return (
     <div>
       <ValueInput KEY="top" {...attrs.top} emitChange={publishChange} />
-      <br />
-      <br />
-      <ValueInput KEY="bottom" {...attrs.bottom} emitChange={publishChange} />
+      <ValueInput
+        KEY="bottom"
+        {...attrs.bottom}
+        emitChange={publishChange}
+        nodeProps={{
+          style: { textAlign: "right" }
+        }}
+      />
     </div>
   );
 
   function publishChange(action, reducer) {
     manageState(
       action,
-      // export const bindChange = (action, reducer) => // testable factory
+      // export const bindChange = (action, reducer) => // test me
       produce(
         sequence(
           state => {
-            switch (action.key) {
-              default:
-                break;
+            const { key } = action;
+            switch (key) {
               case "top":
               case "bottom":
-                state[action.key] = reducer(state[action.key], action);
+                return { ...state, [key]: reducer(state[key], action) };
+              default:
+                return state;
             }
-            return state;
           },
           state => {
-            if (action.key === "top") {
-              state.bottom.value = state.top.value.toUpperCase();
-            } else if (action.key === "bottom") {
-              state.top.value = state.bottom.value.toLowerCase();
-            }
-            return state;
+            const value = [...state.top.value].reverse().join("");
+
+            return action.key === "top" && state.bottom.value !== value
+              ? { ...state, bottom: { ...state.bottom, value } }
+              : state;
+          },
+          state => {
+            const value = [...state.bottom.value].reverse().join("");
+
+            return action.key === "bottom" && state.top.value !== value
+              ? { ...state, top: { ...state.top, value } }
+              : state;
           }
         )
       )
@@ -119,10 +131,11 @@ const App = () => {
   function publishItemAdd(action, reducer) {
     manageState(
       action,
+      // export const bindItemAdd = (action, reducer) => // test me
       produce(
         sequence(reducer, state => {
-          state.listProps.items = state.listProps.items.slice().sort(collate);
-          return state;
+          const items = state.listProps.items.slice().sort(collate);
+          return { ...state, listProps: { ...state.listProps, items } };
         })
       )
     );
@@ -131,26 +144,40 @@ const App = () => {
   function handleClick({ ...event }) {
     manageState(
       { event, type: "emitFilterClick", key: undefined },
+      // export const reduceClick = // test me
       produce(state => {
-        const { items, itemPropTable = {} } = state.listProps;
-        const { selected } = itemPropTable;
-        const columns = Object.keys(itemPropTable);
+        const { listProps } = state;
+        const { selected } = listProps.itemPropTable;
+        const fields = Object.keys(listProps.itemPropTable);
+        const match = listProps.itemPropTable;
+        let table = listProps.itemPropTable;
 
-        state.listProps.items = items.slice().filter(({ key }) => {
+        const items = listProps.items.filter(({ key }) => {
           if (!selected || !selected.get(key)) {
             return true;
           }
 
-          for (let at = 0; at < columns.length; at += 1) {
-            if (itemPropTable[columns[at]]) {
-              itemPropTable[columns[at]].delete(key);
+          for (let at = 0; at < fields.length; at += 1) {
+            const name = fields[at];
+            let columns = table[name];
+
+            if (table[name]) {
+              const update = columns === match[name] && columns.has(key);
+              columns = update ? new Map(columns) : columns;
+              columns.delete(key);
+
+              table = columns === table[name] ? table : { ...table };
+              table[name] = columns;
             }
           }
 
           return false;
         });
 
-        return state;
+        const itemPropTable = table;
+        return table === listProps.itemPropTable
+          ? state
+          : { ...state, listProps: { ...listProps, items, itemPropTable } };
       })
     );
   }

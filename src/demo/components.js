@@ -1,6 +1,7 @@
-import produce from "immer";
 import React from "react";
-import { sequence, useManagedAttrs } from "../lib/react";
+import { sequence } from "../lib/react";
+
+const produce = fn => fn;
 
 export const ValueInput = props => {
   const { KEY, value = "", nodeProps } = props;
@@ -15,9 +16,7 @@ export const ValueInput = props => {
       { value, event, type: "emitChange", key: KEY },
       // opaque means to realize the *anticipated* changes to "stateful" props
       produce((state, action) => {
-        // return { ...state, value: action.value };
-        state.value = action.value; // immerjs
-        return state;
+        return { ...state, value: action.value };
       })
     );
   };
@@ -54,12 +53,13 @@ export const LineItem = props => {
   function handleClick({ ...event }) {
     emitSelectionChange(
       { event, type: "emitSelectionChange", key: KEY },
-      // export const reduceSelectionChange = // closure-free testable unit
+      // export const reduceSelectionChange = // test me
       produce((state, action) => {
         const { ctrlKey } = action.event; // anti-selection (multi-selection)
-        state.selected = ctrlKey ? !state.selected || undefined : true;
+        const last = state.selected;
+        const next = ctrlKey ? !last || undefined : true;
         // undefined is "false" enough
-        return state;
+        return !next !== !last ? { ...state, selected: next } : state;
       })
     );
   }
@@ -68,11 +68,12 @@ export const LineItem = props => {
   function handleMouseEnter({ ...event }) {
     emitHoverChange(
       { hovering: true, event, type: "emitHoverChange", key: KEY },
-      // export const reduceHoverChange = // closure-free testable unit
+      // export const reduceHoverChange = // test me
       produce((state, { hovering }) => {
-        state.highlighted = hovering || undefined;
+        const last = state.highlighted;
+        const next = hovering || undefined;
         // undefined is "false" enough
-        return state;
+        return !next !== !last ? { ...state, highlighted: next } : state;
       })
     );
   }
@@ -83,57 +84,65 @@ export const LineItem = props => {
       { hovering: false, event, type: "emitHoverChange", key: KEY },
       // duplicated code
       produce((state, { hovering }) => {
-        state.highlighted = hovering || undefined;
+        const last = state.highlighted;
+        const next = hovering || undefined;
         // undefined is "false" enough
-        return state;
+        return !next !== !last ? { ...state, highlighted: next } : state;
       })
     );
   }
 };
 
-const readRow = (table, key, columns = Object.keys(table || {})) => {
+const readRow = (table, key, fields = Object.keys(table || {})) => {
   const props = {};
 
-  for (let index = 0; index < columns.length; index += 1) {
-    const field = columns[index];
+  for (let index = 0; index < fields.length; index += 1) {
+    const name = fields[index];
+    const column = table[name] || undefined;
 
-    if (field !== "key") {
-      props[field] = table[field] ? table[field].get(key) : undefined;
+    if (name !== "key") {
+      props[name] = column && column.get(key);
     }
   }
 
   return props;
 };
-const writeRow = (table, key, props, columns = Object.keys(props)) => {
-  const result = table || {};
+const writeRow = (table, key, props, fields = Object.keys(props)) => {
+  const match = table || {};
+  let result = table || {};
 
-  for (let index = 0; index < columns.length; index += 1) {
-    const field = columns[index];
+  for (let index = 0; index < fields.length; index += 1) {
+    const name = fields[index];
+    let column = result[name] || new Map();
 
-    result[field] = result[field] || new Map();
-
-    if (props[field] !== undefined) {
-      result[field].set(key, props[field]);
-    } else if (result[field]) {
-      result[field].delete(key);
+    if (props[name] === undefined) {
+      const update = column === match[name] && column.has(key);
+      column = update ? new Map(column) : column;
+      column.delete(key);
+    } else {
+      const update = column === match[name] && column.get(key) !== props[name];
+      column = update ? new Map(column) : column;
+      column.set(key, props[name]);
     }
+
+    result = column === match[name] ? result : { ...result };
+    result[name] = column;
   }
 
   return result;
 };
-// TODO: investigate why I cannot produce writeRow
 
 export const ItemList = props => {
   const { KEY, items, itemPropTable, itemBaseProps, nodeProps } = props;
   const { emitter, emitSelectionChange = emitter } = props;
 
-  const columns = Object.keys(itemPropTable || {});
+  const fields = Object.keys(itemPropTable || {});
 
   return (
     <div {...nodeProps}>
       {items.map(itemListProps => {
         const { key } = itemListProps;
-        const itemRowProps = readRow(itemPropTable, key, columns);
+        const itemRowProps = readRow(itemPropTable, key, fields);
 
         // const { selected, highlighted } = itemRowProps;
         return (
@@ -153,53 +162,66 @@ export const ItemList = props => {
 
   // useCallback(wrapTableRow(KEY, { emitter }));
   function publisher(action, reducer) {
-    const leaf = state => state;
+    const digState = old => [old, state => state];
     emitter(
       // substitute enriched action
       { ...action, itemKey: action.key, key: KEY },
-      // export const bindTableRow = (action, reducer, leaf) =>
-      produce((trunk, { itemKey }) => {
-        const state = leaf(trunk);
-        const prior = readRow(state.itemPropTable, itemKey);
-        const next = reducer(prior, action);
-        state.itemPropTable = writeRow(state.itemPropTable, itemKey, next);
-        return trunk;
+      // export const bindTableRow = (action, reducer, digState) => // test me
+      produce((old, { itemKey }) => {
+        const [state, buryState] = digState(old);
+        const last = readRow(state.itemPropTable, itemKey);
+        const next = reducer(last, action);
+        const table = writeRow(state.itemPropTable, itemKey, next);
+        return table === state.itemPropTable
+          ? old
+          : buryState({ ...state, itemPropTable: table });
       })
     );
   }
 
   // useCallback(wrapSelectionChange(KEY, { emitSelectionChange }));
   function publishSelectionChange(action, reducer) {
-    const leaf = state => state;
+    const digState = old => [old, state => state];
     emitSelectionChange(
       // substitute enriched action
       { ...action, itemKey: action.key, key: KEY },
-      // export const bindSelectionChange = (action, reducer, leaf) =>
+      // export const bindSelectionChange = (action, reducer, digState) =>
       produce(
         sequence(
-          // bindTableRow(action, reducer, leaf) // duplication opportunity
-          (trunk, { itemKey }) => {
-            const state = leaf(trunk);
-            const prior = readRow(state.itemPropTable, itemKey);
-            const next = reducer(prior, action);
-            state.itemPropTable = writeRow(state.itemPropTable, itemKey, next);
-            return trunk;
+          // bindTableRow(action, reducer, digState), // deduplication possible
+          (old, { itemKey }) => {
+            const [state, buryState] = digState(old);
+            const last = readRow(state.itemPropTable, itemKey);
+            const next = reducer(last, action);
+            const table = writeRow(state.itemPropTable, itemKey, next);
+            return table === state.itemPropTable
+              ? old
+              : buryState({ ...state, itemPropTable: table });
           },
           // conditionally limit to a single selection
-          (trunk, { itemKey, event }) => {
-            const state = leaf(trunk);
+          (old, { itemKey, event }) => {
+            const [state, buryState] = digState(old);
+            const match = state.itemPropTable.selected;
+            let column = state.itemPropTable.selected;
 
-            if (!event.ctrlKey) {
-              const value = state.itemPropTable.selected.get(itemKey);
+            if (!event.ctrlKey && column.size > 1) {
+              const selections = [...column.entries()].filter(
+                ([key, selected]) => selected
+              );
 
-              state.itemPropTable.selected.clear();
-
-              if (value) {
-                state.itemPropTable.selected.set(itemKey, value);
+              if (selections.length > 1) {
+                const pick = selections.findIndex(([key]) => key === itemKey);
+                const entry = selections[pick < 0 ? 0 : pick];
+                column = new Map([entry]);
               }
             }
 
-            return trunk;
+            return column === match
+              ? old
+              : buryState({
+                  ...state,
+                  itemPropTable: { ...state.itemPropTable, selected: column }
+                });
           }
         )
       )
@@ -245,64 +267,101 @@ export const EntryList = props => {
   );
 
   function publishHoverChange(action, reducer) {
-    const leaf = state => state.listProps;
+    const digState = old => [old, state => state];
+    const digListState = tunnelListDigger(digState);
+    // old => [old.listProps, state => ({ ...old, listProps: state })];
     emitHoverChange(
       { ...action, itemKey: action.key, key: KEY },
-      // export const bindHoverChange = (action, reducer, leaf) =>
+      // export const bindHoverChange = (action, reducer, digState) =>
       produce(
         sequence(
-          // bindTableRow(action, reducer, leaf),
-          (trunk, { itemKey }) => {
-            const state = leaf(trunk);
-            const prior = readRow(state.itemPropTable, itemKey);
-            const next = reducer(prior, action);
-            state.itemPropTable = writeRow(state.itemPropTable, itemKey, next);
-            return trunk;
+          // bindTableRow(action, reducer, tunnelListDigger(digState)),
+          (old, { itemKey }) => {
+            const [state, buryState] = digListState(old); // not digState(old);
+            const last = readRow(state.itemPropTable, itemKey);
+            const next = reducer(last, action);
+            const table = writeRow(state.itemPropTable, itemKey, next);
+            return table === state.itemPropTable
+              ? old
+              : buryState({ ...state, itemPropTable: table });
           },
           // enforce a single highlight
-          (trunk, { itemKey }) => {
-            const state = leaf(trunk);
-            const value = state.itemPropTable.highlighted.get(itemKey);
+          (old, { itemKey }) => {
+            const [state, buryState] = digListState(old);
+            const match = state.itemPropTable.highlighted;
+            let column = state.itemPropTable.highlighted;
 
-            state.itemPropTable.highlighted.clear();
+            if (column.size > 1) {
+              const highlights = [...column.entries()].filter(
+                ([key, highlighted]) => highlighted
+              );
 
-            if (value) {
-              state.itemPropTable.highlighted.set(itemKey, value);
+              if (highlights.length > 1) {
+                const pick = highlights.findIndex(([key]) => key === itemKey);
+                const entry = highlights[pick < 0 ? 0 : pick];
+                column = new Map([entry]);
+              }
             }
 
-            return trunk;
-          }
+            const table = state.itemPropTable;
+            return column === match
+              ? old
+              : buryState({
+                  ...state,
+                  itemPropTable: { ...table, highlighted: column }
+                });
+          },
           // bust the cached highlighted index hint
-          // state => void (state.highlightedIndexHint = -1)
+          old => {
+            const [state, buryState] = digState(old);
+            return state.highlightedIndexHint === -1
+              ? old
+              : buryState({ ...state, highlightedIndexHint: -1 });
+          }
         )
       )
     );
+
+    return;
+
+    function tunnelListDigger(digFrom) {
+      return from => {
+        const [old, buryTo] = digFrom(from);
+        const buryFrom = state => buryTo({ ...old, listProps: state });
+        // the tunnel-digger pattern can be further generalized
+        return [old.listProps, buryFrom];
+      };
+    }
   }
 
   function publisher(action, reducer) {
-    const leaf = state => state;
+    const digState = old => [old, state => state];
     emitter(
       action,
-      // export binder = (action, reducer, leaf) =>
-      produce(trunk => {
-        const state = leaf(trunk);
-        state.listProps = reducer(state.listProps, action);
-        return trunk;
+      // export binder = (action, reducer, digState) =>
+      produce(old => {
+        const [state, buryState] = digState(old);
+        const last = state.listProps;
+        const next = reducer(last, action);
+        return next === last ? old : buryState({ ...state, listProps: next });
       })
     );
   }
 
   function publishValueChange(action, reducer) {
-    const leaf = state => state;
+    const digState = old => [old, state => state];
     emitValueChange(
       action,
-      // export bindValueChange = (action, reducer, leaf) =>
-      produce(trunk => {
-        const state = leaf(trunk);
-        state.inputProps = reducer(state.inputProps, action);
+      // export bindValueChange = (action, reducer, digState) =>
+      produce(old => {
+        const [state, buryState] = digState(old);
+        const last = state.inputProps;
+        const next = reducer(last, action);
         // cache the last value resulting from manual "typing"
-        state.manualValue = state.inputProps.value;
-        return trunk;
+        const manualValue = state.inputProps.value;
+        return next === last && manualValue === state.manualValue
+          ? old
+          : buryState({ ...state, manualValue: value, inputProps: next });
       })
     );
   }
@@ -311,22 +370,26 @@ export const EntryList = props => {
     switch (event.key) {
       case "Enter": {
         emitItemAdd(
+          // add an item the the list
           { event, type: "emitItemAdd", key: KEY },
+          // export const reduceItemAdd =
           produce(state => {
-            const { value: text } = state.inputProps;
-            const { items: rows } = state.listProps;
+            const text = state.inputProps.value;
+            const last = state.listProps.items;
 
             // only add unique (non-empty) items to the list
-            if (!text || rows.find(({ key }) => key === text)) {
+            if (!text || last.find(({ key }) => key === text)) {
               return state;
             }
 
-            state.listProps.items = [
-              { key: text, children: text, text }
-            ].concat(rows);
-            state.inputProps.value = "";
-            state.manualValue = "";
-            return state;
+            const next = [{ key: text, children: text, text }].concat(last);
+
+            return {
+              ...state,
+              listProps: { ...state.listProps, items: next },
+              inputProps: { ...state.inputProps, value: "" },
+              manualValue: ""
+            };
           })
         );
         return;
@@ -336,8 +399,9 @@ export const EntryList = props => {
       case "ArrowDown": {
         const older = event.key === "ArrowUp";
         emitSiblingClone(
-          { event, older, type: "emitSiblingClone", key: KEY },
           // copy value from subsequent/younger or previous/older sibling item
+          { older, event, type: "emitSiblingClone", key: KEY },
+          // export const reduceSiblingClone =
           produce((state, action) => {
             if (!state.listProps.items || !state.listProps.items.length) {
               return state;
@@ -356,26 +420,20 @@ export const EntryList = props => {
 
             const { index, item } = next;
 
-            state.highlightedIndexHint = index;
+            const text = index < 0 ? state.manualValue : item && item.text;
 
-            state.inputProps.value =
-              index < 0 ? state.manualValue : item && item.text;
-
-            if (!state.listProps.itemPropTable) {
-              state.listProps.itemPropTable = {};
-            }
-
-            if (!state.listProps.itemPropTable.highlighted) {
-              state.listProps.itemPropTable.highlighted = new Map();
-            } else {
-              state.listProps.itemPropTable.highlighted.clear();
-            }
-
-            if (item) {
-              state.listProps.itemPropTable.highlighted.set(item.key, item);
-            }
-
-            return state;
+            return {
+              ...state,
+              highlightedIndexHint: index,
+              inputProps: { ...state.inputProps, value: text },
+              listProps: {
+                ...state.listProps,
+                itemPropTable: {
+                  ...state.listProps.itemPropTable,
+                  highlighted: item ? new Map([[item.key, item]]) : new Map()
+                }
+              }
+            };
 
             function getFirstHighlightedKey(table) {
               const entries =
