@@ -162,16 +162,19 @@ export const ItemList = props => {
 
   // useCallback(wrapTableRow(KEY, { emitter }));
   function publisher(action, reducer) {
-    const digState = old => [old, state => state];
+    const digger = old => [old, state => state];
     emitter(
       // substitute enriched action
       { ...action, itemKey: action.key, key: KEY },
-      // export const bindTableRow = (action, reducer, digState) => // test me
+      // export const bindTableRow = (action, reducer, digger) => // test me
       produce((old, { itemKey }) => {
+        const digState = digger;
         const [state, buryState] = digState(old);
+
         const last = readRow(state.itemPropTable, itemKey);
         const next = reducer(last, action);
         const table = writeRow(state.itemPropTable, itemKey, next);
+
         return table === state.itemPropTable
           ? old
           : buryState({ ...state, itemPropTable: table });
@@ -181,26 +184,31 @@ export const ItemList = props => {
 
   // useCallback(wrapSelectionChange(KEY, { emitSelectionChange }));
   function publishSelectionChange(action, reducer) {
-    const digState = old => [old, state => state];
+    const digger = old => [old, state => state];
     emitSelectionChange(
       // substitute enriched action
       { ...action, itemKey: action.key, key: KEY },
-      // export const bindSelectionChange = (action, reducer, digState) =>
+      // export const bindSelectionChange = (action, reducer, digger) =>
       produce(
         sequence(
-          // bindTableRow(action, reducer, digState), // deduplication possible
+          // bindTableRow(action, reducer, digger), // deduplication possible
           (old, { itemKey }) => {
+            const digState = digger;
             const [state, buryState] = digState(old);
+
             const last = readRow(state.itemPropTable, itemKey);
             const next = reducer(last, action);
             const table = writeRow(state.itemPropTable, itemKey, next);
+
             return table === state.itemPropTable
               ? old
               : buryState({ ...state, itemPropTable: table });
           },
           // conditionally limit to a single selection
           (old, { itemKey, event }) => {
+            const digState = digger;
             const [state, buryState] = digState(old);
+
             const match = state.itemPropTable.selected;
             let column = state.itemPropTable.selected;
 
@@ -267,27 +275,32 @@ export const EntryList = props => {
   );
 
   function publishHoverChange(action, reducer) {
-    const digState = old => [old, state => state];
-    const digListState = tunnelListDigger(digState);
-    // old => [old.listProps, state => ({ ...old, listProps: state })];
+    const digger = old => [old, state => state];
     emitHoverChange(
       { ...action, itemKey: action.key, key: KEY },
-      // export const bindHoverChange = (action, reducer, digState) =>
+      // export const bindHoverChange = (action, reducer, digger) =>
       produce(
         sequence(
-          // bindTableRow(action, reducer, tunnelListDigger(digState)),
+          // bindTableRow(action, reducer, tunnelListDigger(digger)),
           (old, { itemKey }) => {
-            const [state, buryState] = digListState(old); // not digState(old);
+            // old => [old.listProps, state => ({ ...old, listProps: state })];
+            const digState = tunnelListDigger(digger); // replaces just digger;
+            const [state, buryState] = digState(old);
+
             const last = readRow(state.itemPropTable, itemKey);
             const next = reducer(last, action);
             const table = writeRow(state.itemPropTable, itemKey, next);
+
             return table === state.itemPropTable
               ? old
               : buryState({ ...state, itemPropTable: table });
           },
           // enforce a single highlight
           (old, { itemKey }) => {
-            const [state, buryState] = digListState(old);
+            // old => [old.listProps, state => ({ ...old, listProps: state })];
+            const digState = tunnelListDigger(digger);
+            const [state, buryState] = digState(old);
+
             const match = state.itemPropTable.highlighted;
             let column = state.itemPropTable.highlighted;
 
@@ -313,7 +326,9 @@ export const EntryList = props => {
           },
           // bust the cached highlighted index hint
           old => {
+            const digState = digger;
             const [state, buryState] = digState(old);
+
             return state.highlightedIndexHint === -1
               ? old
               : buryState({ ...state, highlightedIndexHint: -1 });
@@ -325,6 +340,7 @@ export const EntryList = props => {
     return;
 
     function tunnelListDigger(digFrom) {
+      // digTo
       return from => {
         const [old, buryTo] = digFrom(from);
         const buryFrom = state => buryTo({ ...old, listProps: state });
@@ -335,28 +351,34 @@ export const EntryList = props => {
   }
 
   function publisher(action, reducer) {
-    const digState = old => [old, state => state];
+    const digger = old => [old, state => state];
     emitter(
       action,
-      // export binder = (action, reducer, digState) =>
+      // export binder = (action, reducer, digger) =>
       produce(old => {
+        const digState = digger;
         const [state, buryState] = digState(old);
+
         const last = state.listProps;
         const next = reducer(last, action);
+
         return next === last ? old : buryState({ ...state, listProps: next });
       })
     );
   }
 
   function publishValueChange(action, reducer) {
-    const digState = old => [old, state => state];
+    const digger = old => [old, state => state];
     emitValueChange(
       action,
-      // export bindValueChange = (action, reducer, digState) =>
+      // export bindValueChange = (action, reducer, digger) =>
       produce(old => {
+        const digState = digger;
         const [state, buryState] = digState(old);
+
         const last = state.inputProps;
         const next = reducer(last, action);
+
         // cache the last value resulting from manual "typing"
         const manualValue = state.inputProps.value;
         return next === last && manualValue === state.manualValue
