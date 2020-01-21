@@ -13,45 +13,33 @@ export function useManagedAttrs(initialState = {}) {
 }
 
 export const conformSetState = setState => {
-  return function manageState(action = this, reducer = updateState) {
-    if (arguments.length !== 1 && typeof reducer === "function") {
+  // manageState
+  return (action, updater) => {
+    if (updater) {
       setState(lastState => {
-        const nextState = reducer(lastState, action);
+        const nextState = updateState(lastState, updater, action);
         return nextState;
       });
       return true;
     }
     return false;
   };
-};
+}
 
-export const updateState = (state, updater) => {
-  const kind = Array.isArray(updater) ? "array" : typeof (updater || undefined);
-
-  switch (kind) {
-    case "function": {
-      return updater(state) || state || {};
-    }
-    case "object": {
-      return Object.assign({}, state, updater);
-    }
-    default: {
-      return state || {};
-    }
-  }
-};
-
-export const generateState = (lastState, action, updater) => {
+export const updateState = (lastState, updater, action) => {
   const kind = Array.isArray(updater) ? "array" : typeof (updater || undefined);
 
   switch (kind) {
     case "function": {
       return updater(lastState, action);
     }
+    case "object": {
+      return Object.assign({}, lastState, updater);
+    }
     case "array": {
       let nextState = lastState;
       for (let at = 0; at < updater.length; at += 1) {
-        nextState = generateState(nextState, action, updater[at]);
+        nextState = updateState(nextState, updater[at], action);
       }
       return nextState;
     }
@@ -61,7 +49,10 @@ export const generateState = (lastState, action, updater) => {
   }
 };
 
-export const sequence = (...recursiveArrayOfReducers) => {
-  return (lastState, action) =>
-    generateState(lastState, action, recursiveArrayOfReducers);
+export const sequence = (...updaters) => {
+  return (lastState, action) => {
+    return updateState(lastState, updaters, action);
+  }
 };
+
+export const normalize = sequence;

@@ -14,7 +14,7 @@ const Example2 = () => {
 
   return (
     <div>
-      <button onClick={() => manageState.call({ value: "" })}>Clear</button>
+      <button onClick={() => manageState(null, { value: "" })}>Clear</button>
       <ValueInput {...attrs} emitChange={manageState} />
       <span>{attrs.value}</span>
     </div>
