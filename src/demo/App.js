@@ -1,29 +1,44 @@
 import React from "react";
-import { useManagedAttrs, sequence } from "../lib/react";
-import { ValueInput, EntryList } from "./components";
+import { useManagedAttrs, reducerPipeline } from "../lib/react";
+import { ValueInput, EntryList, asTable } from "./components";
 
 const produce = fn => fn;
 
 const Example1 = () => {
-  const [attrs, manageState] = useManagedAttrs({ value: "optional" });
+  const [attrs, manageAttrs] = useManagedAttrs({
+    listAttrs: {
+      items: [
+        { key: "won", text: "won", children: "won" },
+        { key: "too", text: "too", children: "too" },
+        { key: "for", text: "for", children: "for" },
+        { key: "ate", text: "ate", children: "ate" }
+      ]
+    }
+  });
 
-  return <ValueInput {...attrs} emitChange={manageState} />;
+  return <EntryList {...attrs} emitter={manageAttrs} />;
 };
 
 const Example2 = () => {
-  const [attrs, manageState] = useManagedAttrs({ value: "..." });
+  const [attrs, manageAttrs] = useManagedAttrs({ value: "optional" });
+
+  return <ValueInput {...attrs} emitter={manageAttrs} />;
+};
+
+const Example3 = () => {
+  const [attrs, manageAttrs, spreadAttrs] = useManagedAttrs({ value: "..." });
 
   return (
     <div>
-      <button onClick={() => manageState(null, { value: "" })}>Clear</button>
-      <ValueInput {...attrs} emitChange={manageState} />
+      <button onClick={() => spreadAttrs({ value: "" })}>Clear</button>
+      <ValueInput {...attrs} emitter={manageAttrs} />
       <span>{attrs.value}</span>
     </div>
   );
 };
 
-const Example3 = () => {
-  const [attrs, manageState] = useManagedAttrs({
+const Example4 = () => {
+  const [attrs, manageAttrs] = useManagedAttrs({
     top: { value: "text" },
     bottom: { value: "txet" }
   });
@@ -35,6 +50,7 @@ const Example3 = () => {
         KEY="bottom"
         {...attrs.bottom}
         emitChange={publishChange}
+        // emitter={}
         nodeProps={{
           style: { textAlign: "right" }
         }}
@@ -43,11 +59,11 @@ const Example3 = () => {
   );
 
   function publishChange(action, reducer) {
-    manageState(
+    manageAttrs(
       action,
       // export const bindChange = (action, reducer) => // test me
       produce(
-        sequence(
+        reducerPipeline(
           state => {
             const { key } = action;
             switch (key) {
@@ -79,17 +95,7 @@ const Example3 = () => {
 };
 
 const App = () => {
-  const [attrs, manageState] = useManagedAttrs({
-    inputProps: {},
-    listProps: {
-      items: [
-        { key: "won", text: "won", children: "won" },
-        { key: "too", text: "too", children: "too" },
-        { key: "for", text: "for", children: "for" },
-        { key: "ate", text: "ate", children: "ate" }
-      ].sort(collate)
-    }
-  });
+  const [attrs, manageAttrs] = useManagedAttrs({});
 
   return (
     <div>
@@ -103,15 +109,18 @@ const App = () => {
       <Example3 />
 
       <h1>Example 4</h1>
+      <Example4 />
+
+      <h1>Example 5</h1>
       <button onClick={handleClick}>Remove Selected Items</button>
       <br />
       <br />
       <EntryList
         {...attrs}
         emitItemAdd={publishItemAdd}
-        emitter={manageState}
-        inputProps={{
-          ...attrs.inputProps,
+        emitter={manageAttrs}
+        inputAttrs={{
+          ...attrs.inputAttrs,
           nodeProps: {
             placeholder: "Enter new list item...",
             style: { width: "100%" }
@@ -129,55 +138,64 @@ const App = () => {
   }
 
   function publishItemAdd(action, reducer) {
-    manageState(
+    manageAttrs(
       action,
       // export const bindItemAdd = (action, reducer) => // test me
       produce(
-        sequence(reducer, state => {
-          const items = state.listProps.items.slice().sort(collate);
-          return { ...state, listProps: { ...state.listProps, items } };
+        reducerPipeline(reducer, state => {
+          const last = state.listAttrs && state.listAttrs.items;
+          const items = last ? last.slice().sort(collate) : last;
+
+          return items === last
+            ? state
+            : { ...state, listAttrs: { ...state.listAttrs, items } };
         })
       )
     );
   }
 
   function handleClick({ ...event }) {
-    manageState(
+    manageAttrs(
       { event, type: "emitFilterClick", key: undefined },
       // export const reduceClick = // test me
       produce(state => {
-        const { listProps } = state;
-        const { selected } = listProps.itemPropTable;
-        const fields = Object.keys(listProps.itemPropTable);
-        const match = listProps.itemPropTable;
-        let table = listProps.itemPropTable;
+        const { listAttrs = {} } = state;
+        const { selected } = listAttrs.itemPropTable || {};
+        const fields = Object.keys(listAttrs.itemPropTable || {});
 
-        const items = listProps.items.filter(({ key }) => {
-          if (!selected || !selected.get(key)) {
-            return true;
-          }
+        const last = asTable(listAttrs.itemPropTable);
+        let table = last;
 
-          for (let at = 0; at < fields.length; at += 1) {
-            const name = fields[at];
-            let columns = table[name];
-
-            if (table[name]) {
-              const update = columns === match[name] && columns.has(key);
-              columns = update ? new Map(columns) : columns;
-              columns.delete(key);
-
-              table = columns === table[name] ? table : { ...table };
-              table[name] = columns;
+        const items =
+          listAttrs.items &&
+          listAttrs.items.filter(({ key }) => {
+            if (!selected || !selected.get(key)) {
+              return true;
             }
-          }
 
-          return false;
-        });
+            for (let at = 0; at < fields.length; at += 1) {
+              const name = fields[at];
+              let column = table[name];
 
-        const itemPropTable = table;
-        return table === listProps.itemPropTable
+              if (table[name]) {
+                const update = column === last[name] && column.has(key);
+                column = update ? new Map(column) : column;
+                column.delete(key);
+
+                table = column === table[name] ? table : { ...table };
+                table[name] = column;
+              }
+            }
+
+            return false;
+          });
+
+        return table === last
           ? state
-          : { ...state, listProps: { ...listProps, items, itemPropTable } };
+          : {
+              ...state,
+              listAttrs: { ...listAttrs, items, itemPropTable: table }
+            };
       })
     );
   }

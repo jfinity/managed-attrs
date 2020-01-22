@@ -1,58 +1,75 @@
+// attrs are the subset of "props" (passed to children) that are "stateful"
 export function useManagedAttrs(initialState = {}) {
   const env = this || {};
   const { useState, useRef } = env.React || {};
 
-  const [state, setState] = useState(initialState);
+  const [attrs, setState] = useState(initialState);
   const ref = useRef(null);
 
   ref.current = ref.current || {
-    manageState: conformSetState(setState)
+    manageAttrs: manageSetState(setState),
+    spreadAttrs: extendSetState(setState)
   };
 
-  return [state, ref.current.manageState];
+  return [attrs, ref.current.manageAttrs, ref.current.spreadAttrs];
 }
 
-export const conformSetState = setState => {
-  // manageState
-  return (action, updater) => {
-    if (updater) {
+export const manageSetState = setState => {
+  // manageAttrs
+  return (action, reducer) => {
+    if (typeof reducer === "function") {
       setState(lastState => {
-        const nextState = updateState(lastState, updater, action);
+        const nextState = reducer(lastState, action);
         return nextState;
       });
       return true;
     }
     return false;
   };
-}
+};
 
-export const updateState = (lastState, updater, action) => {
-  const kind = Array.isArray(updater) ? "array" : typeof (updater || undefined);
+// prefer action.spread over action to encourage action.type and other metadata
+export const spreadReducer = (lastState, { spread: updater } = {}) => {
+  return maybeExtend(lastState, updater);
+};
 
-  switch (kind) {
-    case "function": {
-      return updater(lastState, action);
+export const maybeExtend = (lastState, updater) => {
+  const spread = typeof updater === "function" ? updater(lastState) : updater;
+  return spread ? Object.assign({}, lastState, spread) : lastState;
+};
+
+export const extendSetState = setState => {
+  // spreadAttrs
+  return updater => {
+    if (updater) {
+      setState(lastState => {
+        const nextState = maybeExtend(lastState, updater);
+        return nextState;
+      });
+      return true;
     }
-    case "object": {
-      return Object.assign({}, lastState, updater);
+    return false;
+  };
+};
+
+export const resolveNext = (lastState, action, reducers) => {
+  if (Array.isArray(reducers)) {
+    let nextState = lastState;
+
+    for (let index = 0; index < reducers.length; index += 1) {
+      nextState = resolveNext(nextState, action, reducers[index]);
     }
-    case "array": {
-      let nextState = lastState;
-      for (let at = 0; at < updater.length; at += 1) {
-        nextState = updateState(nextState, updater[at], action);
-      }
-      return nextState;
-    }
-    default: {
-      return lastState;
-    }
+
+    return nextState;
+  } else if (typeof reducers === "function") {
+    return reducers(lastState, action);
+  } else {
+    return lastState;
   }
 };
 
-export const sequence = (...updaters) => {
+export const reducerPipeline = (...reducersOrNestedArraysThereof) => {
   return (lastState, action) => {
-    return updateState(lastState, updaters, action);
-  }
+    return resolveNext(lastState, action, reducersOrNestedArraysThereof);
+  };
 };
-
-export const normalize = sequence;
