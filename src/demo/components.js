@@ -96,9 +96,14 @@ export const LineItem = props => {
   }
 };
 
+export class EMap extends Map {
+  toJSON() {
+    return [...this.entries()];
+  }
+}
 // prefer instanceof Map for order preservation capabilities
 export const asColumn = value => {
-  return !value || value instanceof Map ? value : new Map(value);
+  return !value || value instanceof EMap ? value : new EMap(value);
 };
 // prefer { [column]: Map } for order preservation on per-field basis
 export const asTable = value => {
@@ -139,12 +144,12 @@ export const writeRow = (table, key, props, fields = Object.keys(props)) => {
 
     if (props[name] !== undefined) {
       if (column === match[name] && column.get(key) !== props[name]) {
-        column = asColumn(column.entries());
+        column = asColumn([...column]);
       }
       column.set(key, props[name]);
     } else if (column) {
       if (column === match[name] && column.has(key)) {
-        column = asColumn(column.entries());
+        column = asColumn([...column]);
         column.delete(key);
       } else {
         column = result[name];
@@ -246,7 +251,7 @@ export const ItemList = props => {
             let column = last;
 
             if (!event.ctrlKey && column.size > 1) {
-              const selections = [...column.entries()].filter(
+              const selections = [...column].filter(
                 ([key, selected]) => selected
               );
 
@@ -341,7 +346,7 @@ export const EntryList = props => {
             let column = last;
 
             if (column.size > 1) {
-              const highlights = [...column.entries()].filter(
+              const highlights = [...column].filter(
                 ([key, highlighted]) => highlighted
               );
 
@@ -496,9 +501,9 @@ export const EntryList = props => {
 
             function getFirstHighlightedKey(table) {
               const column = asColumn(table && table.highlighted);
-              const entries = column ? [...column.entries()] : [];
+              const pairs = column ? [...column] : [];
 
-              const [highlightedKey] = entries.find(
+              const [highlightedKey] = pairs.find(
                 ([itemKey, highlighted]) => highlighted
               ) || [undefined];
 

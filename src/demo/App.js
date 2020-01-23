@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useManagedAttrs, reducerPipeline } from "../lib/react";
 import { ValueInput, EntryList, asTable } from "./components";
 
@@ -95,7 +95,11 @@ const Example4 = () => {
 };
 
 const App = () => {
-  const [attrs, manageAttrs] = useManagedAttrs({});
+  const [{ status }, emitter] = useState({});
+  const [attrs, manageAttrs] = useStorageManagedAttrs(
+    { emitter, writeonly: false },
+    {}
+  );
 
   return (
     <div>
@@ -113,6 +117,7 @@ const App = () => {
 
       <h1>Example 5</h1>
       <button onClick={handleClick}>Remove Selected Items</button>
+      <span style={{ paddingLeft: "8px" }} >status: {status}</span>
       <br />
       <br />
       <EntryList
@@ -202,3 +207,70 @@ const App = () => {
 };
 
 export default App;
+
+export function useStorageManagedAttrs(
+  { key = "useStorageManagedAttrs", delay = 4000, writeonly = false, emitter },
+  initialState = {},
+  storage = localStorage
+) {
+  const env = this || {};
+  const { useRef, useEffect } = env.React || React;
+
+  // could have been useState...
+  const result = useManagedAttrs.call(this, () => {
+    if (!writeonly) {
+      try {
+        const text = storage.getItem(String(key));
+        const value = typeof text === "string" ? JSON.parse(text) : undefined;
+
+        if (value && value.attrs !== undefined) {
+          return value.attrs;
+        }
+
+        // TODO: consider logging
+      } catch (err) {
+        // TODO: consider logging
+      }
+    }
+
+    return typeof initialState === "function" ? initialState() : initialState;
+  });
+
+  const [attrs] = result;
+
+  const name = String(key);
+
+  const { current } = useRef({ storage, name, emitter });
+
+  current.emitter = emitter;
+
+  useEffect(() => {
+    if (typeof current.emitter === "function") {
+      current.emitter({ status: "pending" });
+    }
+
+    current.timeout = setTimeout(() => {
+      const metadata = { attrs }; // TODO: add more metadata
+
+      const value = JSON.stringify(metadata);
+
+      storage.setItem(name, value);
+
+      if (storage !== current.storage || name !== current.name) {
+        current.storage.removeItem(current.name);
+        current.storage = storage;
+        current.name = name;
+
+        storage.setItem(name, value); // guard against storage proxies...
+      }
+
+      if (typeof current.emitter === "function") {
+        current.emitter({ status: "done" });
+      }
+    }, Number(delay) || 4000);
+
+    return () => clearTimeout(current.timeout);
+  }, [current, storage, delay, name, attrs]);
+
+  return result;
+}
