@@ -1,4 +1,4 @@
-export default `../codegen/003-parallels/01-component/01-${count}-${filename}`;
+export default `./${foldername}/01-component/01-${count}-${filename}`;
 
 export const LineItem = () => {
   // render some JSX
@@ -9,7 +9,7 @@ export const LineItem = () => {
 };
 
 export default null;
-export default `../codegen/003-parallels/02-render/02-${count}-${filename}`;
+export default `./${foldername}/02-render/02-${count}-${filename}`;
 
 export const LineItem = () => {
   // render some JSX
@@ -20,7 +20,7 @@ export const LineItem = () => {
 };
 
 export default null;
-export default `../codegen/003-parallels/03-props/03-${count}-${filename}`;
+export default `./${foldername}/03-props/03-${count}-${filename}`;
 
 export const LineItem = props => {
   // render some JSX
@@ -31,7 +31,7 @@ export const LineItem = props => {
 };
 
 export default null;
-export default `../codegen/003-parallels/03-props/03-${count}-${filename}`;
+export default `./${foldername}/03-props/03-${count}-${filename}`;
 
 export const LineItem = props => {
   const {
@@ -49,7 +49,7 @@ export const LineItem = props => {
 };
 
 export default null;
-export default `../codegen/003-parallels/03-props/03-${count}-${filename}`;
+export default `./${foldername}/03-props/03-${count}-${filename}`;
 
 export const LineItem = props => {
   const {
@@ -90,7 +90,7 @@ export const LineItem = props => {
 };
 
 export default null;
-export default `../codegen/003-parallels/03-props/03-${count}-${filename}`;
+export default `./${foldername}/03-props/03-${count}-${filename}`;
 
 export const LineItem = props => {
   const {
@@ -156,7 +156,7 @@ export const App = () => {
 };
 
 export default null;
-export default `../codegen/003-parallels/03-props/03-${count}-${filename}`;
+export default `./${foldername}/03-props/03-${count}-${filename}`;
 
 export const LineItem = props => {
   const {

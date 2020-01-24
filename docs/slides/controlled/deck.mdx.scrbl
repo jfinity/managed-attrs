@@ -1,9 +1,18 @@
+#lang scribble/text
+@(require json)
+@(define (stepper dir file)
+   (map (lambda (pathname)
+          @list{@"\n```js file="@|dir|@|pathname|@"\n```\n"}
+          )
+        (hash-ref
+         (call-with-input-file file read-json)
+         'paths)))
 import {
   CodeSurfer,
   CodeSurferColumns,
   Step,
 } from "code-surfer";
-import { nightOwl, vsDark } from '@code-surfer/themes';
+import { nightOwl, vsDark } from @"'@code-surfer/themes'";
 
 export const theme = vsDark;
 
@@ -13,57 +22,12 @@ export const theme = vsDark;
 ---
 
 <CodeSurfer>
-
-```js file=./codegen/./003-parallels/01-component/a-01-ValueInput/01-01-01-ValueInput.js
-```
-
-```js file=./codegen/./003-parallels/02-render/a-01-ValueInput/02-01-01-ValueInput.js
-```
-
-```js file=./codegen/./003-parallels/03-props/a-01-ValueInput/03-01-01-ValueInput.js
-```
-
-```js file=./codegen/./003-parallels/03-props/a-01-ValueInput/03-02-01-ValueInput.js
-```
-
-```js file=./codegen/./003-parallels/03-props/a-01-ValueInput/03-03-01-ValueInput.js
-```
-
-```js file=./codegen/./003-parallels/03-props/a-01-ValueInput/03-04-01-ValueInput.js
-```
-
-```js file=./codegen/./003-parallels/03-props/a-01-ValueInput/03-05-01-ValueInput.js
-```
-
-```js file=./codegen/./003-parallels/03-props/a-01-ValueInput/03-06-01-ValueInput.js
-```
-
-```js file=./codegen/./003-parallels/03-props/a-01-ValueInput/03-07-01-ValueInput.js
-```
-
-```js file=./codegen/./003-parallels/03-props/a-01-ValueInput/03-08-01-ValueInput.js
-```
-
-```js file=./codegen/./003-parallels/03-props/a-01-ValueInput/03-09-01-ValueInput.js
-```
-
-```js file=./codegen/./003-parallels/03-props/a-01-ValueInput/03-10-01-ValueInput.js
-```
-
-```js file=./codegen/./003-parallels/03-props/a-01-ValueInput/03-11-01-ValueInput.js
-```
-
-```js file=./codegen/./003-parallels/04-consumer/a-01-ValueInput/04-01-01-ValueInput.js
-```
-
-```js file=./codegen/./003-parallels/04-consumer/a-01-ValueInput/04-02-01-ValueInput.js
-```
-
+@stepper["./codegen/"]{./docs/slides/controlled/codegen/003-parallels/01-ValueInput.json}
 </CodeSurfer>
 
 ---
 
-docs:
+docs:  
 [codesurfer.pomb.us](https://codesurfer.pomb.us)
 
 ---
