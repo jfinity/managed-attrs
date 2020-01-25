@@ -1,0 +1,388 @@
+const fs = require("fs");
+const path = require("path");
+const glob = require("glob");
+
+// $ node js-splitter.js destination_dir source_dir globs...
+
+if (process.argv.length < 3) {
+  console.log(
+    "Expected destination dirname argument.",
+    "\n(relative source dirname and glob patterns are optional)."
+  );
+
+  process.exit(1);
+}
+
+const destination = path.resolve(process.argv[2]);
+const source = process.argv.length > 3
+  ? path.join(destination, process.argv[3])
+  : destination;
+  
+const patterns = process.argv.length > 4
+  ? process.argv.slice(4).map(src => path.join(source, src))
+  : [path.join(source, "**/*.js")];
+
+Promise.all(
+  patterns.map(src => run(src, destination))
+).then(() => {
+  console.log("\ndone");
+});
+
+async function run(src, dst) {
+  const [globErr, files] = await new Promise(rv =>
+    glob(src, (...args) => rv(args))
+  );
+
+  await Promise.all(files.map(async pathname => {
+    const dirname = path.dirname(pathname);
+    const filename = path.basename(pathname);
+    const basename = path.basename(pathname, path.extname(pathname));
+
+    const [readFileErr, contents] = await new Promise(rv =>
+      fs.readFile(pathname, "utf8", (...args) => rv(args))
+    );
+
+    let prefs = {
+      digest: {
+        // destination-relative paths
+        all: "",
+        byTemplate: ""
+      }
+    };
+
+    try {
+      const [raw] = contents.match(
+        /export\s+default\s+prefs\s*\.\s*json\s*`[^`]*`/
+      ) || "null";
+
+      const [template] = raw.match(/`[^`]*`/);
+      const json = template.slice(1, -1)
+        .replace(/\$\{\s*foldername\s*\}/g, path.basename(dirname))
+        .replace(/\$\{\s*basename\s*\}/g, basename)
+        .replace(/\$\{\s*filename\s*\}/g, filename);
+
+      prefs = JSON.parse(json) || prefs;
+    } catch (err) {
+      // TODO: log?
+    }
+
+    const meta = {
+      all: null,
+      byPrefix: {},
+      byTemplate: {}
+    };
+
+    const keyframes = contents.match(
+      /export\s+default\s+keyframe\s*\.\s*json\s*`[^`]*`(.|\n(?!\s*export\s+default\s+null($|[^_\$a-zA-Z0-9])))*\n?/g
+    ).map(raw => {
+      const at = raw.search(/`[^`]*`/);
+      const [template] = raw.match(/`[^`]*`/);
+
+      const size = template.length;
+      const idx = 1 + raw.indexOf("\n", at + size);
+      const body = raw.slice(idx).trim();
+
+      try {
+        const config = JSON.parse(template.slice(1, -1));
+        return config.path ? { raw, config, body } : null;
+      } catch (e) {
+        return null;
+      }
+    }).filter(value => value);
+
+    const details = keyframes.reduce((result, { config, body }) => {
+      const selections = {};
+
+      const lines = body.split("\n").map((ln, idx) => {
+        const check = ln.indexOf("//") + "//".length;
+        if (check < "//".length) {
+          return ln;
+        }
+
+        let tags = [];
+
+        try {
+          tags = JSON.parse("[" + ln.slice(check) + "]");
+
+          const chars = ln.replace(/\s*\/\/.*$/, "");
+
+          for (let at = 0; at < tags.length; at += 1) {
+            if (!Array.isArray(tags[at])) {
+              continue;
+            }
+
+            const [label, matcher = null, other = undefined] = tags[at];
+
+            if (!label || typeof label !== "string") {
+              continue;
+            }
+            
+            selections[label] = selections[label] || { label, range: "" };
+
+            const value = selections[label];
+
+            if (
+              value.end &&
+              value.start &&
+              value.start.matcher !== value.end.matcher) {
+              continue;
+            }
+
+            if (value.start) {
+              const { start } = value;
+              const end = {
+                offset: -1, // zero-indexed
+                line: idx + 1, // one-indexed
+                column: 0, // one-indexed
+                matcher: [].concat("", matcher || "", "")
+              };
+
+              end.matcher = end.matcher && end.matcher.length > 3
+                ? end.matcher.slice(1, 4)
+                : end.matcher;
+
+              selections[label].end = end;
+
+              const found = 1 + chars.lastIndexOf(end.matcher.join(""));
+              const column = found
+                ? found + end.matcher[0].length + end.matcher[1].length
+                : 0;
+
+              end.column = column;
+
+              start.column = start.matcher
+                ? start.column
+                : end.column - end.matcher[1].length;
+            } else {
+              const start = {
+                offset: -1, // zero-indexed
+                line: idx + 1, // one-indexed
+                column: 0, // one-indexed
+                matcher:
+                  matcher !== null || other === null || other === undefined
+                    ? [].concat("", matcher || "", "")
+                    : null
+              };
+              const end = {
+                offset: -1, // zero-indexed
+                line: idx + 1, // one-indexed
+                column: 0, // one-indexed
+                matcher:
+                  other === undefined || other === null && matcher !== null
+                    ? null
+                    : [].concat("", other || "", "")
+              };
+
+              start.matcher = start.matcher && start.matcher.length > 3
+                ? start.matcher.slice(1, 4)
+                : start.matcher;
+
+              end.matcher = end.matcher && end.matcher.length > 3
+                ? end.matcher.slice(1, 4)
+                : end.matcher;
+
+              selections[label].start = start;
+              selections[label].end = end;
+
+              if (start.matcher) {
+                const found = 1 + chars.indexOf(start.matcher.join(""));
+                const column = found ? found + start.matcher[0].length : 0;
+
+                start.column = column;
+              }
+
+              if (end.matcher) {
+                const found = 1 + chars.lastIndexOf(end.matcher.join(""));
+                const column = found
+                  ? found + end.matcher[0].length + end.matcher[1].length
+                  : 0;
+  
+                end.column = column;
+              }
+
+              start.column = start.matcher
+                ? start.column
+                : end.column - end.matcher[1].length;
+
+              end.column = end.matcher
+                ? end.column
+                : start.column + start.matcher[1].length;
+              
+              if (start.column > end.column) {
+                start.column = 0;
+                end.column = 0;
+              }
+
+              end.matcher = end.matcher || start.matcher;
+            }
+          }
+
+          return chars;
+        } catch (e) {
+          return ln;
+        }
+      });
+
+      const offsets = lines.reduce((values, ln) => {
+        values.push(ln.length + values[values.length - 1]);
+        return values;
+      }, [0]);
+
+      Object.keys(selections)
+        .map(label => selections[label])
+        .forEach(value => {
+          const { start, end } = value;
+
+          start.offset = start.column
+            ? start.column - 1 + offsets[start.line - 1] // one-indexed
+            : -1;
+
+          end.offset = end.column
+            ? end.column - 1 + offsets[end.line - 1] // one-indexed
+            : -1;
+          
+          value.range = start.line + "[" + start.column + ":";
+          if (start.line === end.line) {
+            value.range += end.column + "]";
+          } else {
+            value.range +=
+              (1 + offsets[start.line] - offsets[start.line - 1]) + "],";
+            if (end.line > start.line + 2) {
+              value.range += (start.line + 1) + ":";
+            }
+            if (end.line > start.line + 1) {
+              value.range += (end.line - 1) + ",";
+            }
+            value.range += end.line + "[1:" + end.column + "]";
+          }
+        });
+
+      result.set(config, { lines, selections });
+
+      return result;
+    }, new Map);
+
+    const reps = new Map();
+
+    const padmin = 1;
+    const padmax = keyframes.reduce((size, { config }) => {
+      const template = config.path;
+
+      reps.set(template, 1 + (0|reps.get(template)));
+
+      const numeral = reps.get(template).toString();
+
+      return numeral.length > size ? numeral.length : size;
+    }, padmin);
+
+    reps.clear();
+
+    await (
+      keyframes.reduce(async (pending, { config }) => {
+        if (pending) await pending;
+
+        const template = config.path;
+
+        reps.set(template, 1 + (0|reps.get(template)));
+
+        const numeral = reps.get(template).toString();
+        const count =
+          new Array(numeral.length < padmax ? padmax - numeral.length : 0)
+            .fill("0").join("") + numeral;
+
+        const prefix = template
+          .replace(/\$\{\s*foldername\s*\}/g, path.basename(dirname))
+          .replace(/\$\{\s*basename\s*\}/g, basename)
+          .replace(/\$\{\s*filename\s*\}/g, filename)
+          .replace(/\$\{\s*count\s*\}[^`]*/, "");
+
+        const relname = template
+          .replace(/\$\{\s*foldername\s*\}/g, path.basename(dirname))
+          .replace(/\$\{\s*basename\s*\}/g, basename)
+          .replace(/\$\{\s*filename\s*\}/g, filename)
+          .replace(/\$\{\s*count\s*\}/g, count);
+
+        const result = path.join(dst, relname);
+
+        await new Promise(rv =>
+          fs.mkdir(
+            path.dirname(result),
+            { recursive: true },
+            (...args) => rv(args)
+          )
+        );
+
+        const { lines, selections } = details.get(config);
+
+        const [writeFileErr] = await new Promise(rv =>
+          fs.writeFile(result, lines.join("\n"), (...args) => rv(args))
+        );
+
+        const output = {
+          path: relname,
+          context: config.context || null,
+          selections
+        };
+
+        meta.byTemplate[template] =
+          meta.byTemplate[template] || { template, prefix, outputs: [] };
+        meta.byTemplate[template].outputs.push(output);
+
+        meta.byPrefix[prefix] =
+          meta.byPrefix[prefix] || { prefix, outputs: [] };
+        meta.byPrefix[prefix].outputs.push(output);
+
+        meta.all =
+          meta.all || { outputs: [] };
+        meta.all.outputs.push(output);
+
+      }, null)
+    );
+
+    if (prefs && prefs.digest) {
+      await Promise.all(
+        [
+          ["all"],
+          ...Object.keys(meta.byPrefix).map(
+            prefix => ["byPrefix", prefix]
+          ),
+          ...Object.keys(meta.byTemplate).map(
+            template => ["byTemplate", template]
+          )
+        ].map(async keys => {
+          const data = keys.reduce(
+            (value, field) => value && value[field],
+            meta
+          );
+
+          const [group] = keys;
+          const template = prefs.digest[group];
+
+          if (template) {
+            const relname = template
+              .replace(/\$\{\s*prefix\s*\}/g, data.prefix || "")
+              .replace(/\$\{\s*template\s*\}/g, data.template || "");
+
+            const result = path.join(dst, relname);
+    
+            const text = JSON.stringify(data, null, 2);
+    
+            await new Promise(rv =>
+              fs.mkdir(
+                path.dirname(result),
+                { recursive: true },
+                (...args) => rv(args)
+              )
+            );
+    
+            const [writeFileErr] = await new Promise(rv =>
+              fs.writeFile(result, text, (...args) => rv(args))
+            );
+          }
+        })
+      );
+    }
+
+    console.log(pathname, keyframes.length);
+  }));
+}

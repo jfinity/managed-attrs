@@ -1,12 +1,38 @@
 #lang scribble/text
 @(require json)
 @(define (stepper dir file)
-   (map (lambda (pathname)
-          @list{@"\n```js file="@|dir|@|pathname|@"\n```\n"}
-          )
+   (map (lambda (output)
+          (let (
+                [pathname (hash-ref output 'path)]
+                [foci (map (lambda (ranges)
+                              (string-join
+                               (map
+                                (lambda (label)
+                                  (hash-ref
+                                   (hash-ref
+                                    (hash-ref output 'selections)
+                                    (string->symbol label)
+                                    )
+                                   'range))
+                                ranges)
+                               ",")
+                             )
+                           (hash-ref
+                            (hash-ref
+                             (hash-ref output 'context)
+                             'digest)
+                            'review))]
+                )
+            (add-newlines
+             (map
+              (lambda (focus)
+                @list{@"\n```js" @|focus| file=@|dir|@|pathname|@"\n```\n"})
+              foci)
+             )
+            ))
         (hash-ref
          (call-with-input-file file read-json)
-         'paths)))
+         'outputs)))
 import {
   CodeSurfer,
   CodeSurferColumns,
@@ -22,7 +48,7 @@ export const theme = vsDark;
 ---
 
 <CodeSurfer>
-@stepper["./codegen/"]{./docs/slides/controlled/codegen/003-parallels/01-ValueInput.json}
+@stepper["./keyframes/"]{./docs/slides/controlled/keyframes/003-parallels/01-ValueInput.json}
 </CodeSurfer>
 
 ---

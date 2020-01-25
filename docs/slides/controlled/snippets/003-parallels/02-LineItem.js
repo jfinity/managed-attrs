@@ -1,4 +1,15 @@
-export default `./${foldername}/01-component/01-${count}-${filename}`;
+
+export default keyframe.json`{
+  "path": "./${foldername}/01-component/a-${basename}/01-${count}-${filename}",
+  "context": {
+    "digest": {
+      "review": [
+        []
+      ]
+    }
+  }
+}
+`;
 
 export const LineItem = () => {
   // render some JSX
@@ -9,7 +20,20 @@ export const LineItem = () => {
 };
 
 export default null;
-export default `./${foldername}/02-render/02-${count}-${filename}`;
+
+
+
+export default keyframe.json`{
+  "path": "./${foldername}/02-render/a-${basename}/02-${count}-${filename}",
+  "context": {
+    "digest": {
+      "review": [
+        []
+      ]
+    }
+  }
+}
+`;
 
 export const LineItem = () => {
   // render some JSX
@@ -20,7 +44,20 @@ export const LineItem = () => {
 };
 
 export default null;
-export default `./${foldername}/03-props/03-${count}-${filename}`;
+
+
+
+export default keyframe.json`{
+  "path": "./${foldername}/03-props/a-${basename}/03-${count}-${filename}",
+  "context": {
+    "digest": {
+      "review": [
+        []
+      ]
+    }
+  }
+}
+`;
 
 export const LineItem = props => {
   // render some JSX
@@ -31,7 +68,20 @@ export const LineItem = props => {
 };
 
 export default null;
-export default `./${foldername}/03-props/03-${count}-${filename}`;
+
+
+
+export default keyframe.json`{
+  "path": "./${foldername}/03-props/a-${basename}/03-${count}-${filename}",
+  "context": {
+    "digest": {
+      "review": [
+        []
+      ]
+    }
+  }
+}
+`;
 
 export const LineItem = props => {
   const {
@@ -49,7 +99,20 @@ export const LineItem = props => {
 };
 
 export default null;
-export default `./${foldername}/03-props/03-${count}-${filename}`;
+
+
+
+export default keyframe.json`{
+  "path": "./${foldername}/03-props/a-${basename}/03-${count}-${filename}",
+  "context": {
+    "digest": {
+      "review": [
+        []
+      ]
+    }
+  }
+}
+`;
 
 export const LineItem = props => {
   const {
@@ -90,7 +153,20 @@ export const LineItem = props => {
 };
 
 export default null;
-export default `./${foldername}/03-props/03-${count}-${filename}`;
+
+
+
+export default keyframe.json`{
+  "path": "./${foldername}/03-props/a-${basename}/03-${count}-${filename}",
+  "context": {
+    "digest": {
+      "review": [
+        []
+      ]
+    }
+  }
+}
+`;
 
 export const LineItem = props => {
   const {
@@ -156,7 +232,20 @@ export const App = () => {
 };
 
 export default null;
-export default `./${foldername}/03-props/03-${count}-${filename}`;
+
+
+
+export default keyframe.json`{
+  "path": "./${foldername}/03-props/a-${basename}/03-${count}-${filename}",
+  "context": {
+    "digest": {
+      "review": [
+        []
+      ]
+    }
+  }
+}
+`;
 
 export const LineItem = props => {
   const {
