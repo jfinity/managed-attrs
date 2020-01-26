@@ -17,7 +17,7 @@ const destination = path.resolve(process.argv[2]);
 const source = process.argv.length > 3
   ? path.join(destination, process.argv[3])
   : destination;
-  
+
 const patterns = process.argv.length > 4
   ? process.argv.slice(4).map(src => path.join(source, src))
   : [path.join(source, "**/*.js")];
@@ -91,35 +91,57 @@ async function run(src, dst) {
     }).filter(value => value);
 
     const details = keyframes.reduce((result, { config, body }) => {
-      const selections = {};
+      const ranges = {};
+      const guides = {};
 
       const lines = body.split("\n").map((ln, idx) => {
-        const check = ln.indexOf("//") + "//".length;
+        const check = ln.lastIndexOf("//") + "//".length;
         if (check < "//".length) {
+          return ln;
+        }
+
+        const raw = ln.slice(check).trim();
+
+        if (!raw) {
           return ln;
         }
 
         let tags = [];
 
         try {
-          tags = JSON.parse("[" + ln.slice(check) + "]");
+          tags = JSON.parse("[" + raw + "]");
 
-          const chars = ln.replace(/\s*\/\/.*$/, "");
+          const chars = ln.slice(0, check - "//".length).replace(/\s*$/, "");
 
           for (let at = 0; at < tags.length; at += 1) {
             if (!Array.isArray(tags[at])) {
               continue;
             }
 
-            const [label, matcher = null, other = undefined] = tags[at];
+            if (tags[at].length && tags[at][0] === null) {
+              for (let each = 1; each < tags[at].length; each += 1) {
+                const name = tags[at][each];
 
-            if (!label || typeof label !== "string") {
+                guides[name] = guides[name] || { name, focus: "", posts: [] };
+
+                guides[name].posts.push({
+                  offset: -1, // zero-indexed
+                  line: idx + 1, // one-indexed
+                  column: chars.length // one-indexed(?)
+                });
+              }
               continue;
             }
-            
-            selections[label] = selections[label] || { label, range: "" };
 
-            const value = selections[label];
+            const [label = "", matcher = null, other = undefined] = tags[at];
+
+            if (typeof label !== "string") {
+              continue;
+            }
+
+            ranges[label] = ranges[label] || { label, focus: "" };
+
+            const value = ranges[label];
 
             if (
               value.end &&
@@ -141,7 +163,7 @@ async function run(src, dst) {
                 ? end.matcher.slice(1, 4)
                 : end.matcher;
 
-              selections[label].end = end;
+              ranges[label].end = end;
 
               const found = 1 + chars.lastIndexOf(end.matcher.join(""));
               const column = found
@@ -181,8 +203,8 @@ async function run(src, dst) {
                 ? end.matcher.slice(1, 4)
                 : end.matcher;
 
-              selections[label].start = start;
-              selections[label].end = end;
+              ranges[label].start = start;
+              ranges[label].end = end;
 
               if (start.matcher) {
                 const found = 1 + chars.indexOf(start.matcher.join(""));
@@ -196,18 +218,20 @@ async function run(src, dst) {
                 const column = found
                   ? found + end.matcher[0].length + end.matcher[1].length
                   : 0;
-  
+
                 end.column = column;
+              } else if (!matcher) {
+                end.column = 1 + chars.length;
               }
 
               start.column = start.matcher
                 ? start.column
                 : end.column - end.matcher[1].length;
 
-              end.column = end.matcher
+              end.column = end.matcher || !matcher
                 ? end.column
                 : start.column + start.matcher[1].length;
-              
+
               if (start.column > end.column) {
                 start.column = 0;
                 end.column = 0;
@@ -228,8 +252,8 @@ async function run(src, dst) {
         return values;
       }, [0]);
 
-      Object.keys(selections)
-        .map(label => selections[label])
+      Object.keys(ranges)
+        .map(label => ranges[label])
         .forEach(value => {
           const { start, end } = value;
 
@@ -240,24 +264,36 @@ async function run(src, dst) {
           end.offset = end.column
             ? end.column - 1 + offsets[end.line - 1] // one-indexed
             : -1;
-          
-          value.range = start.line + "[" + start.column + ":";
+
+          value.focus = start.line + "[" + start.column + ":";
           if (start.line === end.line) {
-            value.range += end.column + "]";
+            value.focus += end.column + "]";
           } else {
-            value.range +=
+            value.focus +=
               (1 + offsets[start.line] - offsets[start.line - 1]) + "],";
             if (end.line > start.line + 2) {
-              value.range += (start.line + 1) + ":";
+              value.focus += (start.line + 1) + ":";
             }
             if (end.line > start.line + 1) {
-              value.range += (end.line - 1) + ",";
+              value.focus += (end.line - 1) + ",";
             }
-            value.range += end.line + "[1:" + end.column + "]";
+            value.focus += end.line + "[1:" + end.column + "]";
           }
         });
 
-      result.set(config, { lines, selections });
+      Object.keys(guides)
+        .map(name => guides[name])
+        .forEach(value => {
+          const { posts } = value;
+
+          for (let at = 0; at < posts.length; at += 1) {
+            posts[at].offset = offsets[posts[at].line - 1]; // one-indexed
+
+            value.focus += value.focus ? "," + posts[at].line : posts[at].line;
+          }
+        });
+
+      result.set(config, { lines, guides, ranges });
 
       return result;
     }, new Map);
@@ -312,7 +348,7 @@ async function run(src, dst) {
           )
         );
 
-        const { lines, selections } = details.get(config);
+        const { lines, guides, ranges } = details.get(config);
 
         const [writeFileErr] = await new Promise(rv =>
           fs.writeFile(result, lines.join("\n"), (...args) => rv(args))
@@ -320,8 +356,10 @@ async function run(src, dst) {
 
         const output = {
           path: relname,
+          focus: lines.length > 1 ? "1:"+lines.length : "1",
           context: config.context || null,
-          selections
+          guides,
+          ranges
         };
 
         meta.byTemplate[template] =
@@ -364,9 +402,9 @@ async function run(src, dst) {
               .replace(/\$\{\s*template\s*\}/g, data.template || "");
 
             const result = path.join(dst, relname);
-    
+
             const text = JSON.stringify(data, null, 2);
-    
+
             await new Promise(rv =>
               fs.mkdir(
                 path.dirname(result),
@@ -374,7 +412,7 @@ async function run(src, dst) {
                 (...args) => rv(args)
               )
             );
-    
+
             const [writeFileErr] = await new Promise(rv =>
               fs.writeFile(result, text, (...args) => rv(args))
             );

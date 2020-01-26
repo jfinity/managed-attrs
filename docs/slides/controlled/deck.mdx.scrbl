@@ -4,23 +4,49 @@
    (map (lambda (output)
           (let (
                 [pathname (hash-ref output 'path)]
-                [foci (map (lambda (ranges)
+                [foci (map (lambda (highlights)
+                            (if
+                             (eq? 'null highlights)
+                             (hash-ref output 'focus)
+                             (if
+                              (= 0 (length highlights))
+                              ""
                               (string-join
-                               (map
-                                (lambda (label)
-                                  (hash-ref
-                                   (hash-ref
-                                    (hash-ref output 'selections)
-                                    (string->symbol label)
-                                    )
-                                   'range))
-                                ranges)
+                               (filter
+                                (lambda (focus) (0 . < . (string-length focus)))
+                                (map
+                                 (lambda (label)
+                                   (string-join
+                                    (append 
+                                     (if (hash-has-key?
+                                           (hash-ref output 'ranges)
+                                           (string->symbol label))
+                                         (list (hash-ref
+                                                 (hash-ref
+                                                   (hash-ref output 'ranges)
+                                                   (string->symbol label)
+                                                   )
+                                                 'focus))
+                                         '())
+                                     (if (hash-has-key?
+                                           (hash-ref output 'guides)
+                                           (string->symbol label))
+                                         (list (hash-ref
+                                                 (hash-ref
+                                                   (hash-ref output 'guides)
+                                                   (string->symbol label)
+                                                   )
+                                                 'focus))
+                                         '()))
+                                    ","))
+                                 highlights))
                                ",")
+                               ))
                              )
                            (hash-ref
                             (hash-ref
                              (hash-ref output 'context)
-                             'digest)
+                             'code)
                             'review))]
                 )
             (add-newlines
