@@ -4,7 +4,7 @@
   "main": "build/index.js",
   "scripts": {
     "keyframe": "node docs/slides/code-keyframer.js docs/slides/controlled/keyframes/ ../snippets/",
-    "expand": "racket docs/slides/controlled/deck.mdx.scrbl > docs/slides/controlled/deck.mdx",
+    "templit": "node docs/slides/templit-filer.js docs/slides/controlled/",
     "deck": "mdx-deck docs/slides/controlled/deck.mdx",
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",

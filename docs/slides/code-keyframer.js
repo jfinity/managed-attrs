@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const glob = require("glob");
 
-// $ node js-splitter.js destination_dir source_dir globs...
+// $ node code-keyframer.js destination_dir source_dir globs...
 
 if (process.argv.length < 3) {
   console.log(
@@ -336,7 +336,16 @@ async function run(src, dst) {
           .replace(/\$\{\s*foldername\s*\}/g, path.basename(dirname))
           .replace(/\$\{\s*basename\s*\}/g, basename)
           .replace(/\$\{\s*filename\s*\}/g, filename)
-          .replace(/\$\{\s*count\s*\}/g, count);
+          .replace(/\$\{\s*count\s*\}/g, count)
+          .split(path.sep)
+          .reduce((next, current, idx) => {
+            next.push(current.replace(/\$\{\s*([1-9]\d*)\s*\}/g, (match, delta) => {
+              return next[idx - Number(delta)];
+            }));
+
+            return next;
+          }, [])
+          .join(path.sep);
 
         const result = path.join(dst, relname);
 
@@ -355,7 +364,7 @@ async function run(src, dst) {
         );
 
         const output = {
-          path: relname,
+          pathname: relname,
           focus: lines.length > 1 ? "1:"+lines.length : "1",
           context: config.context || null,
           guides,

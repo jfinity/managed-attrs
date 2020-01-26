@@ -46,7 +46,7 @@ export default prefs.json`
 // if a label has no pair and no matcher, it self-selects the complete line
 
 json`{
-  "path": "./${foldername}/01-component/a-${basename}/01-${count}-${filename}",
+  "path": "./${foldername}/01-component/a/01-${1}-${count}-${filename}",
   "context": {
     "code": {
       "review": [
@@ -78,7 +78,7 @@ null;
 
 
 export default keyframe.json`{
-  "path": "./${foldername}/01-component/a-${basename}/01-${count}-${filename}",
+  "path": "./${foldername}/01-component/a/01-${1}-${count}-${filename}",
   "context": {
     "code": {
       "review": [
@@ -98,7 +98,7 @@ export default null;
 
 
 export default keyframe.json`{
-  "path": "./${foldername}/01-component/a-${basename}/01-${count}-${filename}",
+  "path": "./${foldername}/01-component/a/01-${1}-${count}-${filename}",
   "context": {
     "code": {
       "review": [
@@ -119,7 +119,7 @@ export default null;
 
 
 export default keyframe.json`{
-  "path": "./${foldername}/02-render/a-${basename}/02-${count}-${filename}",
+  "path": "./${foldername}/02-render/a/02-${1}-${count}-${filename}",
   "context": {
     "code": {
       "review": [
@@ -141,7 +141,7 @@ export default null;
 
 
 export default keyframe.json`{
-  "path": "./${foldername}/02-render/a-${basename}/02-${count}-${filename}",
+  "path": "./${foldername}/02-render/a/02-${1}-${count}-${filename}",
   "context": {
     "code": {
       "review": [
@@ -167,7 +167,7 @@ export default null;
 
 
 export default keyframe.json`{
-  "path": "./${foldername}/03-props/a-${basename}/03-${count}-${filename}",
+  "path": "./${foldername}/03-props/a/03-${1}-${count}-${filename}",
   "context": {
     "code": {
       "review": [
@@ -193,7 +193,7 @@ export default null;
 
 
 export default keyframe.json`{
-  "path": "./${foldername}/03-props/a-${basename}/03-${count}-${filename}",
+  "path": "./${foldername}/03-props/a/03-${1}-${count}-${filename}",
   "context": {
     "code": {
       "review": [
@@ -223,7 +223,7 @@ export default null;
 
 
 export default keyframe.json`{
-  "path": "./${foldername}/03-props/a-${basename}/03-${count}-${filename}",
+  "path": "./${foldername}/03-props/a/03-${1}-${count}-${filename}",
   "context": {
     "code": {
       "review": [
@@ -253,7 +253,7 @@ export default null;
 
 
 export default keyframe.json`{
-  "path": "./${foldername}/03-props/a-${basename}/03-${count}-${filename}",
+  "path": "./${foldername}/03-props/a/03-${1}-${count}-${filename}",
   "context": {
     "code": {
       "review": [
@@ -285,7 +285,7 @@ export default null;
 
 
 export default keyframe.json`{
-  "path": "./${foldername}/03-props/a-${basename}/03-${count}-${filename}",
+  "path": "./${foldername}/03-props/a/03-${1}-${count}-${filename}",
   "context": {
     "code": {
       "review": [
@@ -317,7 +317,7 @@ export default null;
 
 
 export default keyframe.json`{
-  "path": "./${foldername}/03-props/a-${basename}/03-${count}-${filename}",
+  "path": "./${foldername}/03-props/a/03-${1}-${count}-${filename}",
   "context": {
     "code": {
       "review": [
@@ -353,7 +353,7 @@ export default null;
 
 
 export default keyframe.json`{
-  "path": "./${foldername}/03-props/a-${basename}/03-${count}-${filename}",
+  "path": "./${foldername}/03-props/a/03-${1}-${count}-${filename}",
   "context": {
     "code": {
       "review": [
@@ -389,7 +389,7 @@ export default null;
 
 
 export default keyframe.json`{
-  "path": "./${foldername}/03-props/a-${basename}/03-${count}-${filename}",
+  "path": "./${foldername}/03-props/a/03-${1}-${count}-${filename}",
   "context": {
     "code": {
       "review": [
@@ -429,7 +429,7 @@ export default null;
 
 
 export default keyframe.json`{
-  "path": "./${foldername}/03-props/a-${basename}/03-${count}-${filename}",
+  "path": "./${foldername}/03-props/a/03-${1}-${count}-${filename}",
   "context": {
     "code": {
       "review": [
@@ -469,7 +469,7 @@ export default null;
 
 
 export default keyframe.json`{
-  "path": "./${foldername}/04-consumer/a-${basename}/04-${count}-${filename}",
+  "path": "./${foldername}/04-consumer/a/04-${1}-${count}-${filename}",
   "context": {
     "code": {
       "review": [
@@ -513,7 +513,7 @@ export default null;
 
 
 export default keyframe.json`{
-  "path": "./${foldername}/04-consumer/a-${basename}/04-${count}-${filename}",
+  "path": "./${foldername}/04-consumer/a/04-${1}-${count}-${filename}",
   "context": {
     "code": {
       "review": [
@@ -561,7 +561,7 @@ export default null;
 
 
 export default keyframe.json`{
-  "path": "./${foldername}/04-consumer/a-${basename}/04-${count}-${filename}",
+  "path": "./${foldername}/04-consumer/a/04-${1}-${count}-${filename}",
   "context": {
     "code": {
       "review": [
@@ -611,7 +611,7 @@ export default null;
 
 
 export default keyframe.json`{
-  "path": "./${foldername}/04-consumer/a-${basename}/04-${count}-${filename}",
+  "path": "./${foldername}/04-consumer/a/04-${1}-${count}-${filename}",
   "context": {
     "code": {
       "review": [
@@ -663,7 +663,7 @@ export default null;
 
 
 export default keyframe.json`{
-  "path": "./${foldername}/04-consumer/a-${basename}/04-${count}-${filename}",
+  "path": "./${foldername}/04-consumer/a/04-${1}-${count}-${filename}",
   "context": {
     "code": {
       "review": [
@@ -719,7 +719,7 @@ export default null;
 
 
 export default keyframe.json`{
-  "path": "./${foldername}/04-consumer/a-${basename}/04-${count}-${filename}",
+  "path": "./${foldername}/04-consumer/a/04-${1}-${count}-${filename}",
   "context": {
     "code": {
       "review": [
@@ -775,7 +775,7 @@ export default null;
 
 
 export default keyframe.json`{
-  "path": "./${foldername}/04-consumer/a-${basename}/04-${count}-${filename}",
+  "path": "./${foldername}/04-consumer/b/04-${1}-${count}-${filename}",
   "context": {
     "code": {
       "review": [
@@ -831,7 +831,7 @@ export default null;
 
 
 export default keyframe.json`{
-  "path": "./${foldername}/04-consumer/a-${basename}/04-${count}-${filename}",
+  "path": "./${foldername}/04-consumer/b/04-${1}-${count}-${filename}",
   "context": {
     "code": {
       "review": [
@@ -887,7 +887,7 @@ export default null;
 
 
 export default keyframe.json`{
-  "path": "./${foldername}/05-consumer/a-${basename}/05-${count}-${filename}",
+  "path": "./${foldername}/05-consumer/a/05-${1}-${count}-${filename}",
   "context": {
     "code": {
       "review": [
@@ -943,7 +943,7 @@ export default null;
 
 
 export default keyframe.json`{
-  "path": "./${foldername}/05-consumer/a-${basename}/05-${count}-${filename}",
+  "path": "./${foldername}/05-consumer/a/05-${1}-${count}-${filename}",
   "context": {
     "code": {
       "review": [
