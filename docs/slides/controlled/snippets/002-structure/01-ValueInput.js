@@ -46,9 +46,10 @@ export default prefs.json`
 // if a label has no pair and no matcher, it self-selects the complete line
 
 json`{
-  "path": "./${foldername}/01-component/a/01-${1}-${count}-${filename}",
+  "path": "./${foldername}/01-component/a/01-${1}-${count}-01-ValueInput.js",
   "context": {
-    "code": {
+     "column": "ValueInput",
+     "code": {
       "review": [
         [],
         ["turn"],
@@ -78,9 +79,10 @@ null;
 
 
 export default keyframe.json`{
-  "path": "./${foldername}/01-component/a/01-${1}-${count}-${filename}",
+  "path": "./${foldername}/01-component/a/01-${1}-${count}-01-ValueInput.js",
   "context": {
-    "code": {
+     "column": "ValueInput",
+     "code": {
       "review": [
         ["foci", "subtitle", "", "pin"]
       ]
@@ -98,8 +100,9 @@ export default null;
 
 
 export default keyframe.json`{
-  "path": "./${foldername}/01-component/a/01-${1}-${count}-${filename}",
+  "path": "./${foldername}/01-component/a/01-${1}-${count}-01-ValueInput.js",
   "context": {
+    "column": "ValueInput",
     "code": {
       "review": [
         ["foci", "subtitle", "", "pin"]
@@ -119,9 +122,10 @@ export default null;
 
 
 export default keyframe.json`{
-  "path": "./${foldername}/02-render/a/02-${1}-${count}-${filename}",
+  "path": "./${foldername}/02-render/a/02-${1}-${count}-01-ValueInput.js",
   "context": {
-    "code": {
+     "column": "ValueInput",
+     "code": {
       "review": [
         ["foci", "subtitle", "", "pin"]
       ]
@@ -141,9 +145,10 @@ export default null;
 
 
 export default keyframe.json`{
-  "path": "./${foldername}/02-render/a/02-${1}-${count}-${filename}",
+  "path": "./${foldername}/02-render/a/02-${1}-${count}-01-ValueInput.js",
   "context": {
-    "code": {
+     "column": "ValueInput",
+     "code": {
       "review": [
         ["foci", "subtitle", "", "pin"]
       ]
@@ -167,9 +172,10 @@ export default null;
 
 
 export default keyframe.json`{
-  "path": "./${foldername}/03-props/a/03-${1}-${count}-${filename}",
+  "path": "./${foldername}/03-props/a/03-${1}-${count}-01-ValueInput.js",
   "context": {
-    "code": {
+     "column": "ValueInput",
+     "code": {
       "review": [
         ["foci", "subtitle", "", "pin"]
       ]
@@ -193,9 +199,10 @@ export default null;
 
 
 export default keyframe.json`{
-  "path": "./${foldername}/03-props/a/03-${1}-${count}-${filename}",
+  "path": "./${foldername}/03-props/a/03-${1}-${count}-01-ValueInput.js",
   "context": {
-    "code": {
+     "column": "ValueInput",
+     "code": {
       "review": [
         ["foci", "subtitle", "", "pin"]
       ]
@@ -223,9 +230,10 @@ export default null;
 
 
 export default keyframe.json`{
-  "path": "./${foldername}/03-props/a/03-${1}-${count}-${filename}",
+  "path": "./${foldername}/03-props/a/03-${1}-${count}-01-ValueInput.js",
   "context": {
-    "code": {
+     "column": "ValueInput",
+     "code": {
       "review": [
         ["foci", "subtitle", "", "pin"]
       ]
@@ -253,9 +261,10 @@ export default null;
 
 
 export default keyframe.json`{
-  "path": "./${foldername}/03-props/a/03-${1}-${count}-${filename}",
+  "path": "./${foldername}/03-props/a/03-${1}-${count}-01-ValueInput.js",
   "context": {
-    "code": {
+     "column": "ValueInput",
+     "code": {
       "review": [
         ["foci", "subtitle", "", "pin"]
       ]
@@ -285,9 +294,10 @@ export default null;
 
 
 export default keyframe.json`{
-  "path": "./${foldername}/03-props/a/03-${1}-${count}-${filename}",
+  "path": "./${foldername}/03-props/a/03-${1}-${count}-01-ValueInput.js",
   "context": {
-    "code": {
+     "column": "ValueInput",
+     "code": {
       "review": [
         ["foci", "subtitle", "", "pin"]
       ]
@@ -317,9 +327,10 @@ export default null;
 
 
 export default keyframe.json`{
-  "path": "./${foldername}/03-props/a/03-${1}-${count}-${filename}",
+  "path": "./${foldername}/03-props/a/03-${1}-${count}-01-ValueInput.js",
   "context": {
-    "code": {
+     "column": "ValueInput",
+     "code": {
       "review": [
         ["foci", "subtitle", "", "pin"]
       ]
@@ -353,9 +364,10 @@ export default null;
 
 
 export default keyframe.json`{
-  "path": "./${foldername}/03-props/a/03-${1}-${count}-${filename}",
+  "path": "./${foldername}/03-props/a/03-${1}-${count}-01-ValueInput.js",
   "context": {
-    "code": {
+     "column": "ValueInput",
+     "code": {
       "review": [
         ["foci", "subtitle", "", "pin"]
       ]
@@ -389,9 +401,10 @@ export default null;
 
 
 export default keyframe.json`{
-  "path": "./${foldername}/03-props/a/03-${1}-${count}-${filename}",
+  "path": "./${foldername}/03-props/a/03-${1}-${count}-01-ValueInput.js",
   "context": {
-    "code": {
+     "column": "ValueInput",
+     "code": {
       "review": [
         ["foci", "subtitle", "", "pin"]
       ]
@@ -429,9 +442,10 @@ export default null;
 
 
 export default keyframe.json`{
-  "path": "./${foldername}/03-props/a/03-${1}-${count}-${filename}",
+  "path": "./${foldername}/03-props/a/03-${1}-${count}-01-ValueInput.js",
   "context": {
-    "code": {
+     "column": "ValueInput",
+     "code": {
       "review": [
         null
       ]
@@ -469,9 +483,10 @@ export default null;
 
 
 export default keyframe.json`{
-  "path": "./${foldername}/04-consumer/a/04-${1}-${count}-${filename}",
+  "path": "./${foldername}/04-consumer/a/04-${1}-${count}-01-ValueInput.js",
   "context": {
-    "code": {
+     "column": "ValueInput",
+     "code": {
       "review": [
         ["foci", "subtitle", "", "pin"]
       ]
@@ -513,9 +528,10 @@ export default null;
 
 
 export default keyframe.json`{
-  "path": "./${foldername}/04-consumer/a/04-${1}-${count}-${filename}",
+  "path": "./${foldername}/04-consumer/a/04-${1}-${count}-01-ValueInput.js",
   "context": {
-    "code": {
+     "column": "ValueInput",
+     "code": {
       "review": [
         ["foci", "subtitle", "", "pin"]
       ]
@@ -561,9 +577,10 @@ export default null;
 
 
 export default keyframe.json`{
-  "path": "./${foldername}/04-consumer/a/04-${1}-${count}-${filename}",
+  "path": "./${foldername}/04-consumer/a/04-${1}-${count}-01-ValueInput.js",
   "context": {
-    "code": {
+     "column": "ValueInput",
+     "code": {
       "review": [
         ["foci", "subtitle", "", "pin"]
       ]
@@ -611,9 +628,10 @@ export default null;
 
 
 export default keyframe.json`{
-  "path": "./${foldername}/04-consumer/a/04-${1}-${count}-${filename}",
+  "path": "./${foldername}/04-consumer/a/04-${1}-${count}-01-ValueInput.js",
   "context": {
-    "code": {
+     "column": "ValueInput",
+     "code": {
       "review": [
         ["foci", "subtitle", "", "pin"]
       ]
@@ -663,9 +681,10 @@ export default null;
 
 
 export default keyframe.json`{
-  "path": "./${foldername}/04-consumer/a/04-${1}-${count}-${filename}",
+  "path": "./${foldername}/04-consumer/a/04-${1}-${count}-01-ValueInput.js",
   "context": {
-    "code": {
+     "column": "ValueInput",
+     "code": {
       "review": [
         ["foci", "subtitle", "", "pin"]
       ]
@@ -719,9 +738,10 @@ export default null;
 
 
 export default keyframe.json`{
-  "path": "./${foldername}/04-consumer/a/04-${1}-${count}-${filename}",
+  "path": "./${foldername}/04-consumer/a/04-${1}-${count}-01-ValueInput.js",
   "context": {
-    "code": {
+     "column": "ValueInput",
+     "code": {
       "review": [
         ["foci", "subtitle", "", "pin"]
       ]
@@ -775,9 +795,10 @@ export default null;
 
 
 export default keyframe.json`{
-  "path": "./${foldername}/04-consumer/b/04-${1}-${count}-${filename}",
+  "path": "./${foldername}/04-consumer/b/04-${1}-${count}-01-ValueInput.js",
   "context": {
-    "code": {
+     "column": "ValueInput",
+     "code": {
       "review": [
         ["foci", "subtitle", "", "pin"]
       ]
@@ -831,9 +852,10 @@ export default null;
 
 
 export default keyframe.json`{
-  "path": "./${foldername}/04-consumer/b/04-${1}-${count}-${filename}",
+  "path": "./${foldername}/04-consumer/b/04-${1}-${count}-01-ValueInput.js",
   "context": {
-    "code": {
+     "column": "ValueInput",
+     "code": {
       "review": [
         ["foci", "subtitle", "", "pin"]
       ]
@@ -881,136 +903,5 @@ export const App = () => {
 
 };
 //// [null, "foci"], "end", [""]
-
-export default null;
-
-
-
-export default keyframe.json`{
-  "path": "./${foldername}/05-consumer/a/05-${1}-${count}-${filename}",
-  "context": {
-    "code": {
-      "review": [
-        ["foci", "subtitle", "", "pin"]
-      ]
-    }
-  }
-}
-`;
-
-//
-export const ValueInput = props => {
-  const {
-    value = ""
-  } = props;
-
-  const {
-    onChange = event => {}
-  } = props;
-
-  return (
-    <input
-      value={value}
-
-      onChange={
-        onChange
-      }
-    >
-    </input>
-  );
-
-};
-//// [null, "foci"], "start", [""]
-export const App = () => {
-  const [value, setValue] = useState("default text");
-
-  return (
-    <ValueInput
-      value={value}
-
-      onChange={
-        event => setValue(event.target.value)
-      }
-    >
-    </ValueInput>
-  );
-
-};
-//// [null, "foci"], "end", [""]
-
-export default null;
-
-
-
-export default keyframe.json`{
-  "path": "./${foldername}/05-consumer/a/05-${1}-${count}-${filename}",
-  "context": {
-    "code": {
-      "review": [
-        ["foci", "subtitle", "", "pin"],
-        ["duped"],
-        ["f2f"]
-      ]
-    }
-  }
-}
-`;
-
-//
-export const ValueInput = props => {
-  const {
-    value = ""
-  } = props;
-
-  const {
-    onChange = event => {}
-  } = props;
-
-  return (
-    <input
-      value={value}
-
-      onChange={
-        onChange
-      }
-    >
-    </input>
-  );
-
-};
-//// [null, "foci"], "start", ["f2f"]
-export const App = () => {
-  const [value, setValue] = useState("default text");
-
-  return (
-    <ValueInput
-      value={value}
-
-      onChange={
-        event => setValue(event.target.value) // [null, "duped"]
-      }
-    >
-    </ValueInput>
-  );
-
-};
-//
-export const Lib = () => { // [""]
-  const [value, setValue] = useState("placeholder");
-
-  return (
-    <ValueInput
-      value={value}
-
-      onChange={
-        event => setValue(event.target.value) // [null, "duped"]
-        // Code duplication burden // [null, "", "duped"]
-      }
-    >
-    </ValueInput>
-  );
-
-}; // [""]
-//// [null, "foci"], "end", ["f2f"]
 
 export default null;

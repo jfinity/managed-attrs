@@ -182,7 +182,12 @@ const stepper = ({ folder, digest }) => {
 
       max = max > count ? max : count;
 
-      groups.push(groups[groups.length - 1].slice(-1));
+      // TODO: refactor to use "keys" instead of indexes
+      // (the code is pretty unreadable...)
+      groups.push([
+        groups[groups.length - 1][0], // label
+        groups[groups.length - 1][1].slice(-1) // steps
+      ]);
     }
 
     for (let idx = 0; idx < table.length; idx += 1) {
@@ -194,11 +199,6 @@ const stepper = ({ folder, digest }) => {
       for (let offset = 0; offset < max; offset += 1) {
         steps.push(vals.length > offset ? vals[offset] : vals[vals.length - 1]);
       }
-    }
-
-    for (let idx = 0; idx < table.length; idx += 1) {
-      const [name, groups] = table[idx];
-      // groups.pop();
     }
 
     at += 1;
