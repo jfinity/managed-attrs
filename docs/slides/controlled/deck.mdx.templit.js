@@ -264,6 +264,32 @@ ${
 
 ---
 
+<CodeSurferColumns themes={[vsDark, nightOwl]}>
+
+${
+  stepper({
+    folder: "./keyframes/",
+    digest: require(path.join(__dirname, "./keyframes/004-refactor/02-LineItem.json"))
+  })
+}
+
+</CodeSurferColumns>
+
+---
+
+<CodeSurferColumns themes={[vsDark, nightOwl]}>
+
+${
+  stepper({
+    folder: "./keyframes/",
+    digest: require(path.join(__dirname, "./keyframes/005-conform/02-LineItem.json"))
+  })
+}
+
+</CodeSurferColumns>
+
+---
+
 docs:  
 [codesurfer.pomb.us](https://codesurfer.pomb.us)
 

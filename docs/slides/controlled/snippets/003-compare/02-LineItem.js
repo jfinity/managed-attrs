@@ -2273,7 +2273,7 @@ export const App = () => {
   );
 
 };
-// Code duplication burden // [null, "", "duped"]
+// Code duplication and logic proliferation burden // [null, "", "duped"]
 export const Lib = () => { // [""]
   const [value, setValue] = useState("placeholder");
 
@@ -2365,7 +2365,7 @@ export const App = () => {
       onClick={
         event => setSelected( // [null, "duped"]
           event.ctrlKey ? !selected : true // [null, "duped"]
-        )// [null, "duped"]
+        ) // [null, "duped"]
       }
     >
     </LineItem>
