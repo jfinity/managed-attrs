@@ -2273,7 +2273,7 @@ export const App = () => {
   );
 
 };
-// Code duplication and logic proliferation burden // [null, "", "duped"]
+// Code duplication and logic proliferation burden // [null, "duped"]
 export const Lib = () => { // [""]
   const [value, setValue] = useState("placeholder");
 

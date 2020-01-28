@@ -12,7 +12,7 @@ export default prefs.json`
 
 
 export default keyframe.json`{
-  "path": "./${foldername}/07-update/a/07-${1}-${count}-01-ValueInput.js",
+  "path": "./${foldername}/07-conform/a/07-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
      "code": {
@@ -31,7 +31,7 @@ export const ValueInput = props => {
   } = props;
 
   const {
-    onValueChange = event => {}
+    onValueChange = string => {}
   } = props;
 
   const handleChange = event =>
@@ -54,7 +54,7 @@ export const ValueInput = props => {
 export default null;
 
 export default keyframe.json`{
-  "path": "./${foldername}/07-update/a/07-${1}-${count}-02-LineItem.js",
+  "path": "./${foldername}/07-conform/a/07-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
      "code": {
@@ -75,9 +75,9 @@ export const LineItem = props => {
   } = props;
 
   const {
-    onSelectionChange = event => {},
+    onSelectionChange = boolean => {},
 
-    onHoverChange = event => {}
+    onHoverChange = boolean => {}
   } = props;
 
   const handleClick = event =>
@@ -116,7 +116,7 @@ export default null;
 
 
 export default keyframe.json`{
-  "path": "./${foldername}/07-update/a/07-${1}-${count}-01-ValueInput.js",
+  "path": "./${foldername}/07-conform/a/07-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
      "code": {
@@ -135,7 +135,7 @@ export const ValueInput = props => {
   } = props;
 
   const {
-    onValueChange = event => {}
+    onValueChange = string => {}
   } = props;
 
   const handleChange = event =>
@@ -174,7 +174,7 @@ export const App = () => {
 export default null;
 
 export default keyframe.json`{
-  "path": "./${foldername}/07-update/a/07-${1}-${count}-02-LineItem.js",
+  "path": "./${foldername}/07-conform/a/07-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
      "code": {
@@ -195,9 +195,9 @@ export const LineItem = props => {
   } = props;
 
   const {
-    onSelectionChange = event => {},
+    onSelectionChange = boolean => {},
 
-    onHoverChange = event => {}
+    onHoverChange = boolean => {}
   } = props;
 
   const handleClick = event =>
@@ -262,7 +262,7 @@ export default null;
 
 
 export default keyframe.json`{
-  "path": "./${foldername}/07-update/a/07-${1}-${count}-01-ValueInput.js",
+  "path": "./${foldername}/07-conform/a/07-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
      "code": {
@@ -281,7 +281,7 @@ export const ValueInput = props => {
   } = props;
 
   const {
-    onValueChange = event => {}
+    onValueChange = string => {}
   } = props;
 
   const handleChange = event =>
@@ -320,7 +320,7 @@ export const App = () => {
 export default null;
 
 export default keyframe.json`{
-  "path": "./${foldername}/07-update/a/07-${1}-${count}-02-LineItem.js",
+  "path": "./${foldername}/07-conform/a/07-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
      "code": {
@@ -341,9 +341,9 @@ export const LineItem = props => {
   } = props;
 
   const {
-    onSelectionChange = event => {},
+    onSelectionChange = boolean => {},
 
-    onHoverChange = event => {}
+    onHoverChange = boolean => {}
   } = props;
 
   const handleClick = event =>
@@ -408,7 +408,7 @@ export default null;
 
 
 export default keyframe.json`{
-  "path": "./${foldername}/07-update/a/07-${1}-${count}-01-ValueInput.js",
+  "path": "./${foldername}/07-conform/a/07-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
      "code": {
@@ -427,7 +427,7 @@ export const ValueInput = props => {
   } = props;
 
   const {
-    onValueChange = event => {}
+    onValueChange = string => {}
   } = props;
 
   const handleChange = event =>
@@ -466,7 +466,7 @@ export const App = () => {
 export default null;
 
 export default keyframe.json`{
-  "path": "./${foldername}/07-update/a/07-${1}-${count}-02-LineItem.js",
+  "path": "./${foldername}/07-conform/a/07-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
      "code": {
@@ -487,9 +487,9 @@ export const LineItem = props => {
   } = props;
 
   const {
-    onSelectionChange = event => {},
+    onSelectionChange = boolean => {},
 
-    onHoverChange = event => {}
+    onHoverChange = boolean => {}
   } = props;
 
   const handleClick = event =>
@@ -549,7 +549,7 @@ export default null;
 
 
 export default keyframe.json`{
-  "path": "./${foldername}/07-update/a/07-${1}-${count}-01-ValueInput.js",
+  "path": "./${foldername}/07-conform/a/07-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
      "code": {
@@ -568,7 +568,7 @@ export const ValueInput = props => {
   } = props;
 
   const {
-    onValueChange = event => {}
+    onValueChange = string => {}
   } = props;
 
   const handleChange = event =>
@@ -607,7 +607,7 @@ export const App = () => {
 export default null;
 
 export default keyframe.json`{
-  "path": "./${foldername}/07-update/a/07-${1}-${count}-02-LineItem.js",
+  "path": "./${foldername}/07-conform/a/07-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
      "code": {
@@ -628,9 +628,9 @@ export const LineItem = props => {
   } = props;
 
   const {
-    onSelectionChange = event => {},
+    onSelectionChange = boolean => {},
 
-    onHoverChange = event => {}
+    onHoverChange = boolean => {}
   } = props;
 
   const handleClick = event =>
@@ -690,12 +690,13 @@ export default null;
 
 
 export default keyframe.json`{
-  "path": "./${foldername}/07-update/a/07-${1}-${count}-01-ValueInput.js",
+  "path": "./${foldername}/07-conform/a/07-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "subtitle", "", "pin"],
+        ["foci"]
       ]
     }
   }
@@ -709,7 +710,7 @@ export const ValueInput = props => {
   } = props;
 
   const {
-    onValueChange = event => {}
+    onValueChange = string => {}
   } = props;
 
   const handleChange = event =>
@@ -748,7 +749,7 @@ export const App = () => {
 export default null;
 
 export default keyframe.json`{
-  "path": "./${foldername}/07-update/a/07-${1}-${count}-02-LineItem.js",
+  "path": "./${foldername}/07-conform/a/07-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
      "code": {
@@ -769,9 +770,9 @@ export const LineItem = props => {
   } = props;
 
   const {
-    onSelectionChange = event => {},
+    onSelectionChange = boolean => {},
 
-    onHoverChange = event => {}
+    onHoverChange = boolean => {}
   } = props;
 
   const handleClick = event =>
@@ -831,7 +832,7 @@ export default null;
 
 
 export default keyframe.json`{
-  "path": "./${foldername}/07-update/a/07-${1}-${count}-01-ValueInput.js",
+  "path": "./${foldername}/07-conform/a/07-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
      "code": {
@@ -850,7 +851,7 @@ export const ValueInput = props => {
   } = props;
 
   const {
-    onValueChange = event => {}
+    onValueChange = string => {}
   } = props;
 
   const handleChange = event =>
@@ -889,7 +890,7 @@ export const App = () => {
 export default null;
 
 export default keyframe.json`{
-  "path": "./${foldername}/07-update/a/07-${1}-${count}-02-LineItem.js",
+  "path": "./${foldername}/07-conform/a/07-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
      "code": {
@@ -910,9 +911,9 @@ export const LineItem = props => {
   } = props;
 
   const {
-    onSelectionChange = event => {}, // [null, ""]
-    // Alternate prefix to disambiguate call-signature // [null, ""]
-    onHoverChange = event => {}
+    onSelectionChange = boolean => {}, // [null, ""]
+
+    onHoverChange = boolean => {}
   } = props;
 
   const handleClick = event => // [""]
@@ -972,7 +973,90 @@ export default null;
 
 
 export default keyframe.json`{
-  "path": "./${foldername}/07-update/a/07-${1}-${count}-02-LineItem.js",
+  "path": "./${foldername}/07-conform/a/07-${1}-${count}-02-LineItem.js",
+  "context": {
+     "column": "LineItem",
+     "code": {
+      "review": [
+        ["", "pin"]
+      ]
+    }
+  }
+}
+`;
+
+//// [null, "foci"], "start"
+export const LineItem = props => {
+  const {
+    selected = false,
+
+    highlighted = false
+  } = props;
+
+  const {
+    whenSelectionChange = reducer => {}, // [null, ""]
+    // Alternate prefix to disambiguate call-signature // [null, "pin"]
+    onHoverChange = boolean => {}
+  } = props;
+
+  const handleClick = event => // ["pin"]
+    onSelectionChange(event.ctrlKey ? !selected : true); // ["pin"]
+
+  const handleMouseEnter = () => onHoverChange(true);
+  const handleMouseLeave = () => onHoverChange(false);
+
+  return (
+    <div
+      style={{
+        background:
+          highlighted ? "lightgray" :
+          selected ? "darkgray" :
+          "white"
+      }}
+
+      onMouseEnter={
+        handleMouseEnter
+      }
+      onMouseLeave={
+        handleMouseLeave
+      }
+      onClick={
+        handleClick
+      }
+    >
+    </div>
+  );
+
+};
+//// [null, "foci"], "end"
+export const App = () => {
+  const [highlighted, setHighlighted] = useState(false);
+  const [selected, setSelected] = useState(false);
+
+  return (
+    <LineItem
+      highlighted={highlighted}
+      onHoverChange={
+        setHighlighted
+      }
+
+      selected={selected}
+      onSelectionChange={
+        setSelected
+      }
+    >
+    </LineItem>
+  );
+
+};
+//
+
+export default null;
+
+
+
+export default keyframe.json`{
+  "path": "./${foldername}/07-conform/a/07-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
      "code": {
@@ -993,14 +1077,14 @@ export const LineItem = props => {
   } = props;
 
   const {
-    emitSelectionChange = reducer => {}, // [null, ""]
+    whenSelectionChange = reducer => {}, // [null, ""]
     // Alternate prefix to disambiguate call-signature // [null, ""]
-    onHoverChange = event => {}
+    onHoverChange = boolean => {}
   } = props;
 
   const handleClick = event => { // [""]
     const { ctrlKey } = event;
-    emitSelectionChange(
+    whenSelectionChange(
       state => {
         const next = ctrlKey ? !state.selected : true;
         return { ...state, selected: next };
@@ -1062,7 +1146,7 @@ export default null;
 
 
 export default keyframe.json`{
-  "path": "./${foldername}/07-update/b/07-${1}-${count}-01-ValueInput.js",
+  "path": "./${foldername}/07-conform/b/07-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
      "code": {
@@ -1081,16 +1165,16 @@ export const ValueInput = props => {
   } = props;
 
   const {
-    emitValueChange = reducer => {} // [null, ""]
+    whenValueChange = reducer => {} // [null, ""]
   } = props;
 
   const handleChange = event => { // [""]
     const next = event.target.value;
-    emitValueChange(
+    whenValueChange(
       state => {
         return { ...state, value: next }
       }
-    )
+    );
   }; // [""]
 
   return (
@@ -1126,7 +1210,7 @@ export const App = () => {
 export default null;
 
 export default keyframe.json`{
-  "path": "./${foldername}/07-update/b/07-${1}-${count}-02-LineItem.js",
+  "path": "./${foldername}/07-conform/b/07-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
      "code": {
@@ -1147,14 +1231,14 @@ export const LineItem = props => {
   } = props;
 
   const {
-    emitSelectionChange = reducer => {},
+    whenSelectionChange = reducer => {},
     // Alternate prefix to disambiguate call-signature // [null, ""]
-    emitHoverChange = reducer => {} // [null, ""]
+    whenHoverChange = reducer => {} // [null, ""]
   } = props;
 
   const handleClick = event => {
     const { ctrlKey } = event;
-    emitSelectionChange(
+    whenSelectionChange(
       state => {
         const next = ctrlKey ? !state.selected : true;
         return { ...state, selected: next };
@@ -1163,14 +1247,14 @@ export const LineItem = props => {
   };
 
   const handleMouseEnter = () => { // [""]
-    emitHoverChange(
+    whenHoverChange(
       state => {
         return { ...state, highlighted: true };
       }
     );
   };
   const handleMouseLeave = () => {
-    emitHoverChange(
+    whenHoverChange(
       state => {
         return { ...state, highlighted: false };
       }
@@ -1228,7 +1312,7 @@ export default null;
 
 
 export default keyframe.json`{
-  "path": "./${foldername}/07-update/b/07-${1}-${count}-01-ValueInput.js",
+  "path": "./${foldername}/07-conform/b/07-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
      "code": {
@@ -1247,16 +1331,16 @@ export const ValueInput = props => {
   } = props;
 
   const {
-    emitValueChange = reducer => {}
+    whenValueChange = reducer => {}
   } = props;
 
   const handleChange = event => {
     const next = event.target.value;
-    emitValueChange(
+    whenValueChange(
       state => {
         return { ...state, value: next }
       }
-    )
+    );
   };
 
   return (
@@ -1292,7 +1376,7 @@ export const App = () => {
 export default null;
 
 export default keyframe.json`{
-  "path": "./${foldername}/07-update/b/07-${1}-${count}-02-LineItem.js",
+  "path": "./${foldername}/07-conform/b/07-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
      "code": {
@@ -1313,14 +1397,14 @@ export const LineItem = props => {
   } = props;
 
   const {
-    emitSelectionChange = reducer => {},
+    whenSelectionChange = reducer => {},
 
-    emitHoverChange = reducer => {}
+    whenHoverChange = reducer => {}
   } = props;
 
   const handleClick = event => {
     const { ctrlKey } = event;
-    emitSelectionChange(
+    whenSelectionChange(
       state => {
         const next = ctrlKey ? !state.selected : true;
         return { ...state, selected: next };
@@ -1329,14 +1413,14 @@ export const LineItem = props => {
   };
 
   const handleMouseEnter = () => {
-    emitHoverChange(
+    whenHoverChange(
       state => {
         return { ...state, highlighted: true };
       }
     );
   };
   const handleMouseLeave = () => {
-    emitHoverChange(
+    whenHoverChange(
       state => {
         return { ...state, highlighted: false };
       }
@@ -1394,7 +1478,7 @@ export default null;
 
 
 export default keyframe.json`{
-  "path": "./${foldername}/07-update/b/07-${1}-${count}-01-ValueInput.js",
+  "path": "./${foldername}/07-conform/b/07-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
      "code": {
@@ -1413,16 +1497,183 @@ export const ValueInput = props => {
   } = props;
 
   const {
-    emitValueChange = reducer => {}
+    whenValueChange = reducer => {}
   } = props;
 
   const handleChange = event => {
     const next = event.target.value;
-    emitValueChange(
+    whenValueChange(
       state => {
         return { ...state, value: next }
       }
-    )
+    );
+  };
+
+  return (
+    <input
+      value={value}
+
+      onChange={
+        handleChange
+      }
+    >
+    </input>
+  );
+
+};
+//// [null, "foci"], "start"
+export const App = () => {
+  const [state, setState] = useState({ // [""]
+    value: "default text"
+  }); // [""]
+
+  return (
+    <ValueInput
+      value={value} // ["pin"]
+
+      onValueChange={
+        setValue
+      } // ["pin"]
+    >
+    </ValueInput>
+  );
+
+};
+//// [null, "foci"], "end"
+
+export default null;
+
+export default keyframe.json`{
+  "path": "./${foldername}/07-conform/b/07-${1}-${count}-02-LineItem.js",
+  "context": {
+     "column": "LineItem",
+     "code": {
+      "review": [
+        ["foci", "subtitle", "", "pin"]
+      ]
+    }
+  }
+}
+`;
+
+//
+export const LineItem = props => {
+  const {
+    selected = false,
+
+    highlighted = false
+  } = props;
+
+  const {
+    whenSelectionChange = reducer => {},
+
+    whenHoverChange = reducer => {}
+  } = props;
+
+  const handleClick = event => {
+    const { ctrlKey } = event;
+    whenSelectionChange(
+      state => {
+        const next = ctrlKey ? !state.selected : true;
+        return { ...state, selected: next };
+      }
+    );
+  };
+
+  const handleMouseEnter = () => {
+    whenHoverChange(
+      state => {
+        return { ...state, highlighted: true };
+      }
+    );
+  };
+  const handleMouseLeave = () => {
+    whenHoverChange(
+      state => {
+        return { ...state, highlighted: false };
+      }
+    );
+  };
+
+  return (
+    <div
+      style={{
+        background:
+          highlighted ? "lightgray" :
+          selected ? "darkgray" :
+          "white"
+      }}
+
+      onMouseEnter={
+        handleMouseEnter
+      }
+      onMouseLeave={
+        handleMouseLeave
+      }
+      onClick={
+        handleClick
+      }
+    >
+    </div>
+  );
+
+};
+//// [null, "foci"], "start"
+export const App = () => {
+  const [state, setState] = useState({}); // [""]
+
+  return (
+    <LineItem
+      highlighted={highlighted} // ["pin"]
+      onHoverChange={
+        setHighlighted
+      }
+
+      selected={selected}
+      onSelectionChange={
+        setSelected
+      } // ["pin"]
+    >
+    </LineItem>
+  );
+
+};
+//// [null, "foci"], "end"
+
+export default null;
+
+
+
+export default keyframe.json`{
+  "path": "./${foldername}/07-conform/b/07-${1}-${count}-01-ValueInput.js",
+  "context": {
+     "column": "ValueInput",
+     "code": {
+      "review": [
+        ["foci", "subtitle", "", "pin"]
+      ]
+    }
+  }
+}
+`;
+
+//
+export const ValueInput = props => {
+  const {
+    value = ""
+  } = props;
+
+  const {
+    whenValueChange = reducer => {}
+  } = props;
+
+  const handleChange = event => {
+    const next = event.target.value;
+    whenValueChange(
+      state => {
+        return { ...state, value: next }
+      }
+    );
   };
 
   return (
@@ -1446,7 +1697,7 @@ export const App = () => {
   return (
     <ValueInput
       {...state} // [null, ""]
-      emitValueChange={setState} // [null, ""]
+      whenValueChange={setState} // [null, ""]
     >
     </ValueInput>
   );
@@ -1457,7 +1708,7 @@ export const App = () => {
 export default null;
 
 export default keyframe.json`{
-  "path": "./${foldername}/07-update/b/07-${1}-${count}-02-LineItem.js",
+  "path": "./${foldername}/07-conform/b/07-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
      "code": {
@@ -1478,14 +1729,14 @@ export const LineItem = props => {
   } = props;
 
   const {
-    emitSelectionChange = reducer => {},
+    whenSelectionChange = reducer => {},
 
-    emitHoverChange = reducer => {}
+    whenHoverChange = reducer => {}
   } = props;
 
   const handleClick = event => {
     const { ctrlKey } = event;
-    emitSelectionChange(
+    whenSelectionChange(
       state => {
         const next = ctrlKey ? !state.selected : true;
         return { ...state, selected: next };
@@ -1494,14 +1745,14 @@ export const LineItem = props => {
   };
 
   const handleMouseEnter = () => {
-    emitHoverChange(
+    whenHoverChange(
       state => {
         return { ...state, highlighted: true };
       }
     );
   };
   const handleMouseLeave = () => {
-    emitHoverChange(
+    whenHoverChange(
       state => {
         return { ...state, highlighted: false };
       }
@@ -1538,8 +1789,8 @@ export const App = () => {
   return (
     <LineItem
       {...state} // [""]
-      emitHoverChange={setState}
-      emitSelectionChange={setState} // [""]
+      whenHoverChange={setState}
+      whenSelectionChange={setState} // [""]
     >
     </LineItem>
   );
@@ -1552,7 +1803,7 @@ export default null;
 
 
 export default keyframe.json`{
-  "path": "./${foldername}/07-update/b/07-${1}-${count}-01-ValueInput.js",
+  "path": "./${foldername}/07-conform/b/07-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
      "code": {
@@ -1571,16 +1822,16 @@ export const ValueInput = props => {
   } = props;
 
   const {
-    emitValueChange = reducer => {} // ["pin"]
+    whenValueChange = reducer => {} // ["pin"]
   } = props;
 
   const handleChange = event => {
     const next = event.target.value;
-    emitValueChange(
+    whenValueChange(
       state => {
         return { ...state, value: next }
       }
-    )
+    );
   };
 
   return (
@@ -1604,7 +1855,7 @@ export const App = () => {
   return (
     <ValueInput
       {...state}
-      emitValueChange={setState}
+      whenValueChange={setState}
     >
     </ValueInput>
   );
@@ -1615,7 +1866,7 @@ export const App = () => {
 export default null;
 
 export default keyframe.json`{
-  "path": "./${foldername}/07-update/b/07-${1}-${count}-02-LineItem.js",
+  "path": "./${foldername}/07-conform/b/07-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
      "code": {
@@ -1636,14 +1887,14 @@ export const LineItem = props => {
   } = props;
 
   const {
-    emitSelectionChange = reducer => {}, // ["pin"]
+    whenSelectionChange = reducer => {}, // ["pin"]
 
-    emitHoverChange = reducer => {} // ["pin"]
+    whenHoverChange = reducer => {} // ["pin"]
   } = props;
 
   const handleClick = event => {
     const { ctrlKey } = event;
-    emitSelectionChange(
+    whenSelectionChange(
       state => {
         const next = ctrlKey ? !state.selected : true;
         return { ...state, selected: next };
@@ -1652,14 +1903,14 @@ export const LineItem = props => {
   };
 
   const handleMouseEnter = () => {
-    emitHoverChange(
+    whenHoverChange(
       state => {
         return { ...state, highlighted: true };
       }
     );
   };
   const handleMouseLeave = () => {
-    emitHoverChange(
+    whenHoverChange(
       state => {
         return { ...state, highlighted: false };
       }
@@ -1696,8 +1947,8 @@ export const App = () => {
   return (
     <LineItem
       {...state}
-      emitHoverChange={setState}
-      emitSelectionChange={setState}
+      whenHoverChange={setState}
+      whenSelectionChange={setState}
     >
     </LineItem>
   );
@@ -1710,7 +1961,7 @@ export default null;
 
 
 export default keyframe.json`{
-  "path": "./${foldername}/07-update/b/07-${1}-${count}-01-ValueInput.js",
+  "path": "./${foldername}/07-conform/b/07-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
      "code": {
@@ -1729,18 +1980,18 @@ export const ValueInput = props => {
   } = props;
 
   const {
-    emitter, // reducer => {} // [""]
+    driver, // reducer => {} // [""]
 
-    emitValueChange = emitter // [""]
+    whenValueChange = reducer => {}
   } = props;
 
   const handleChange = event => {
     const next = event.target.value;
-    emitValueChange(
+    whenValueChange(
       state => {
         return { ...state, value: next }
       }
-    )
+    );
   };
 
   return (
@@ -1764,7 +2015,7 @@ export const App = () => {
   return (
     <ValueInput
       {...state}
-      emitValueChange={setState}
+      whenValueChange={setState}
     >
     </ValueInput>
   );
@@ -1775,7 +2026,7 @@ export const App = () => {
 export default null;
 
 export default keyframe.json`{
-  "path": "./${foldername}/07-update/b/07-${1}-${count}-02-LineItem.js",
+  "path": "./${foldername}/07-conform/b/07-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
      "code": {
@@ -1796,16 +2047,16 @@ export const LineItem = props => {
   } = props;
 
   const {
-    emitter, // reducer => {} // [""]
+    driver, // reducer => {} // [""]
 
-    emitSelectionChange = emitter,
+    whenSelectionChange = reducer => {},
 
-    emitHoverChange = emitter // [""]
+    whenHoverChange = reducer => {}
   } = props;
 
   const handleClick = event => {
     const { ctrlKey } = event;
-    emitSelectionChange(
+    whenSelectionChange(
       state => {
         const next = ctrlKey ? !state.selected : true;
         return { ...state, selected: next };
@@ -1814,14 +2065,14 @@ export const LineItem = props => {
   };
 
   const handleMouseEnter = () => {
-    emitHoverChange(
+    whenHoverChange(
       state => {
         return { ...state, highlighted: true };
       }
     );
   };
   const handleMouseLeave = () => {
-    emitHoverChange(
+    whenHoverChange(
       state => {
         return { ...state, highlighted: false };
       }
@@ -1858,8 +2109,8 @@ export const App = () => {
   return (
     <LineItem
       {...state}
-      emitHoverChange={setState}
-      emitSelectionChange={setState}
+      whenHoverChange={setState}
+      whenSelectionChange={setState}
     >
     </LineItem>
   );
@@ -1872,7 +2123,169 @@ export default null;
 
 
 export default keyframe.json`{
-  "path": "./${foldername}/07-update/b/07-${1}-${count}-01-ValueInput.js",
+  "path": "./${foldername}/07-conform/b/07-${1}-${count}-01-ValueInput.js",
+  "context": {
+     "column": "ValueInput",
+     "code": {
+      "review": [
+        [""]
+      ]
+    }
+  }
+}
+`;
+
+//
+export const ValueInput = props => {
+  const {
+    value = ""
+  } = props;
+
+  const {
+    driver, // reducer => {}
+
+    whenValueChange = driver // [""]
+  } = props;
+
+  const handleChange = event => {
+    const next = event.target.value;
+    whenValueChange(
+      state => {
+        return { ...state, value: next }
+      }
+    );
+  };
+
+  return (
+    <input
+      value={value}
+
+      onChange={
+        handleChange
+      }
+    >
+    </input>
+  );
+
+};
+//// [null, "foci"], "start"
+export const App = () => {
+  const [state, setState] = useState({
+    value: "default text"
+  });
+
+  return (
+    <ValueInput
+      {...state}
+      whenValueChange={setState}
+    >
+    </ValueInput>
+  );
+
+};
+//// [null, "foci"], "end"
+
+export default null;
+
+export default keyframe.json`{
+  "path": "./${foldername}/07-conform/b/07-${1}-${count}-02-LineItem.js",
+  "context": {
+     "column": "LineItem",
+     "code": {
+      "review": [
+        [""]
+      ]
+    }
+  }
+}
+`;
+
+//
+export const LineItem = props => {
+  const {
+    selected = false,
+
+    highlighted = false
+  } = props;
+
+  const {
+    driver, // reducer => {}
+
+    whenSelectionChange = driver, // [""]
+
+    whenHoverChange = driver // [""]
+  } = props;
+
+  const handleClick = event => {
+    const { ctrlKey } = event;
+    whenSelectionChange(
+      state => {
+        const next = ctrlKey ? !state.selected : true;
+        return { ...state, selected: next };
+      }
+    );
+  };
+
+  const handleMouseEnter = () => {
+    whenHoverChange(
+      state => {
+        return { ...state, highlighted: true };
+      }
+    );
+  };
+  const handleMouseLeave = () => {
+    whenHoverChange(
+      state => {
+        return { ...state, highlighted: false };
+      }
+    );
+  };
+
+  return (
+    <div
+      style={{
+        background:
+          highlighted ? "lightgray" :
+          selected ? "darkgray" :
+          "white"
+      }}
+
+      onMouseEnter={
+        handleMouseEnter
+      }
+      onMouseLeave={
+        handleMouseLeave
+      }
+      onClick={
+        handleClick
+      }
+    >
+    </div>
+  );
+
+};
+//// [null, "foci"], "start"
+export const App = () => {
+  const [state, setState] = useState({});
+
+  return (
+    <LineItem
+      {...state}
+      whenHoverChange={setState}
+      whenSelectionChange={setState}
+    >
+    </LineItem>
+  );
+
+};
+//// [null, "foci"], "end"
+
+export default null;
+
+
+
+export default keyframe.json`{
+  "path": "./${foldername}/07-conform/b/07-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
      "code": {
@@ -1891,18 +2304,18 @@ export const ValueInput = props => {
   } = props;
 
   const {
-    emitter, // reducer => {}
+    driver, // reducer => {}
 
-    emitValueChange = emitter
+    whenValueChange = driver
   } = props;
 
   const handleChange = event => {
     const next = event.target.value;
-    emitValueChange(
+    whenValueChange(
       state => {
         return { ...state, value: next }
       }
-    )
+    );
   };
 
   return (
@@ -1926,7 +2339,7 @@ export const App = () => {
   return (
     <ValueInput
       {...state}
-      emitValueChange={setState}
+      whenValueChange={setState}
     >
     </ValueInput>
   );
@@ -1937,7 +2350,7 @@ export const App = () => {
 export default null;
 
 export default keyframe.json`{
-  "path": "./${foldername}/07-update/b/07-${1}-${count}-02-LineItem.js",
+  "path": "./${foldername}/07-conform/b/07-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
      "code": {
@@ -1958,16 +2371,16 @@ export const LineItem = props => {
   } = props;
 
   const {
-    emitter, // reducer => {}
+    driver, // reducer => {}
 
-    emitSelectionChange = emitter,
+    whenSelectionChange = driver,
 
-    emitHoverChange = emitter
+    whenHoverChange = driver
   } = props;
 
   const handleClick = event => {
     const { ctrlKey } = event;
-    emitSelectionChange(
+    whenSelectionChange(
       state => {
         const next = ctrlKey ? !state.selected : true;
         return { ...state, selected: next };
@@ -1976,14 +2389,14 @@ export const LineItem = props => {
   };
 
   const handleMouseEnter = () => {
-    emitHoverChange(
+    whenHoverChange(
       state => {
         return { ...state, highlighted: true };
       }
     );
   };
   const handleMouseLeave = () => {
-    emitHoverChange(
+    whenHoverChange(
       state => {
         return { ...state, highlighted: false };
       }
@@ -2020,8 +2433,8 @@ export const App = () => {
   return (
     <LineItem
       {...state}
-      emitHoverChange={setState}
-      emitSelectionChange={setState}
+      whenHoverChange={setState}
+      whenSelectionChange={setState}
     >
     </LineItem>
   );
@@ -2034,7 +2447,7 @@ export default null;
 
 
 export default keyframe.json`{
-  "path": "./${foldername}/07-update/b/07-${1}-${count}-01-ValueInput.js",
+  "path": "./${foldername}/07-conform/b/07-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
      "code": {
@@ -2053,18 +2466,18 @@ export const ValueInput = props => {
   } = props;
 
   const {
-    emitter, // reducer => {}
+    driver, // reducer => {}
 
-    emitValueChange = emitter
+    whenValueChange = driver
   } = props;
 
   const handleChange = event => {
     const next = event.target.value;
-    emitValueChange(
+    whenValueChange(
       state => {
         return { ...state, value: next }
       }
-    )
+    );
   };
 
   return (
@@ -2088,7 +2501,7 @@ export const App = () => {
   return (
     <ValueInput
       {...state}
-      emitter={setState} // [null, ""]
+      driver={setState} // [null, ""]
     >
     </ValueInput>
   );
@@ -2099,7 +2512,7 @@ export const App = () => {
 export default null;
 
 export default keyframe.json`{
-  "path": "./${foldername}/07-update/b/07-${1}-${count}-02-LineItem.js",
+  "path": "./${foldername}/07-conform/b/07-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
      "code": {
@@ -2120,16 +2533,16 @@ export const LineItem = props => {
   } = props;
 
   const {
-    emitter, // reducer => {}
+    driver, // reducer => {}
 
-    emitSelectionChange = emitter,
+    whenSelectionChange = driver,
 
-    emitHoverChange = emitter
+    whenHoverChange = driver
   } = props;
 
   const handleClick = event => {
     const { ctrlKey } = event;
-    emitSelectionChange(
+    whenSelectionChange(
       state => {
         const next = ctrlKey ? !state.selected : true;
         return { ...state, selected: next };
@@ -2138,14 +2551,14 @@ export const LineItem = props => {
   };
 
   const handleMouseEnter = () => {
-    emitHoverChange(
+    whenHoverChange(
       state => {
         return { ...state, highlighted: true };
       }
     );
   };
   const handleMouseLeave = () => {
-    emitHoverChange(
+    whenHoverChange(
       state => {
         return { ...state, highlighted: false };
       }
@@ -2182,7 +2595,7 @@ export const App = () => {
   return (
     <LineItem
       {...state}
-      emitter={setState} // [null, ""]
+      driver={setState} // [null, ""]
     >
     </LineItem>
   );
@@ -2195,7 +2608,7 @@ export default null;
 
 
 export default keyframe.json`{
-  "path": "./${foldername}/08-update/a/08-${1}-${count}-01-ValueInput.js",
+  "path": "./${foldername}/08-conform/a/08-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
      "code": {
@@ -2214,19 +2627,18 @@ export const ValueInput = props => {
   } = props;
 
   const {
-    emitter, // (action, reducer) => {} // [null, ""]
+    driver, // reducer => {} // [null, ""]
 
-    emitValueChange = emitter
+    whenValueChange = driver
   } = props;
 
   const handleChange = event => {
     const next = event.target.value;
-    emitValueChange(
-      { type: "emitValueChange", value: next }, // [null, ""]
+    whenValueChange( // [null, ""]
       state => {
         return { ...state, value: next }
       }
-    )
+    ); // [null, ""]
   };
 
   return (
@@ -2250,7 +2662,7 @@ export const App = () => {
   return (
     <ValueInput
       {...state}
-      emitter={setState}
+      driver={setState}
     >
     </ValueInput>
   );
@@ -2261,7 +2673,7 @@ export const App = () => {
 export default null;
 
 export default keyframe.json`{
-  "path": "./${foldername}/08-update/a/08-${1}-${count}-02-LineItem.js",
+  "path": "./${foldername}/08-conform/a/08-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
      "code": {
@@ -2282,17 +2694,340 @@ export const LineItem = props => {
   } = props;
 
   const {
-    emitter, // (action, reducer) => {} // [null, ""]
+    driver, // reducer => {} // [null, ""]
 
-    emitSelectionChange = emitter,
+    whenSelectionChange = driver,
 
-    emitHoverChange = emitter
+    whenHoverChange = driver
   } = props;
 
   const handleClick = event => {
     const { ctrlKey } = event;
-    emitSelectionChange(
-      { type: "emitSelectionChange", ctrlKey }, // [null, ""]
+    whenSelectionChange( // [null, ""]
+      state => {
+        const next = ctrlKey ? !state.selected : true;
+        return { ...state, selected: next };
+      }
+    ); // [null, ""]
+  };
+
+  const handleMouseEnter = () => {
+    whenHoverChange( // [null, ""]
+      state => {
+        return { ...state, highlighted: true };
+      }
+    ); // [null, ""]
+  };
+  const handleMouseLeave = () => {
+    whenHoverChange( // [null, ""]
+      state => {
+        return { ...state, highlighted: false };
+      }
+    ); // [null, ""]
+  };
+
+  return (
+    <div
+      style={{
+        background:
+          highlighted ? "lightgray" :
+          selected ? "darkgray" :
+          "white"
+      }}
+
+      onMouseEnter={
+        handleMouseEnter
+      }
+      onMouseLeave={
+        handleMouseLeave
+      }
+      onClick={
+        handleClick
+      }
+    >
+    </div>
+  );
+
+};
+//// [null, "foci"], "start"
+export const App = () => {
+  const [state, setState] = useState({});
+
+  return (
+    <LineItem
+      {...state}
+      driver={setState}
+    >
+    </LineItem>
+  );
+
+};
+//// [null, "foci"], "end"
+
+export default null;
+
+
+
+export default keyframe.json`{
+  "path": "./${foldername}/08-conform/a/08-${1}-${count}-01-ValueInput.js",
+  "context": {
+     "column": "ValueInput",
+     "code": {
+      "review": [
+        [""]
+      ]
+    }
+  }
+}
+`;
+
+//
+export const ValueInput = props => {
+  const {
+    value = ""
+  } = props;
+
+  const {
+    driver, // (action, reducer) => {} // [null, ""]
+
+    whenValueChange = driver
+  } = props;
+
+  const handleChange = event => {
+    const next = event.target.value;
+    whenValueChange( // [null, ""]
+      state => {
+        return { ...state, value: next }
+      }
+    ); // [null, ""]
+  };
+
+  return (
+    <input
+      value={value}
+
+      onChange={
+        handleChange
+      }
+    >
+    </input>
+  );
+
+};
+//// [null, "foci"], "start"
+export const App = () => {
+  const [state, setState] = useState({
+    value: "default text"
+  });
+
+  return (
+    <ValueInput
+      {...state}
+      driver={setState}
+    >
+    </ValueInput>
+  );
+
+};
+//// [null, "foci"], "end"
+
+export default null;
+
+export default keyframe.json`{
+  "path": "./${foldername}/08-conform/a/08-${1}-${count}-02-LineItem.js",
+  "context": {
+     "column": "LineItem",
+     "code": {
+      "review": [
+        [""]
+      ]
+    }
+  }
+}
+`;
+
+//
+export const LineItem = props => {
+  const {
+    selected = false,
+
+    highlighted = false
+  } = props;
+
+  const {
+    driver, // (action, reducer) => {} // [null, ""]
+
+    whenSelectionChange = driver,
+
+    whenHoverChange = driver
+  } = props;
+
+  const handleClick = event => {
+    const { ctrlKey } = event;
+    whenSelectionChange( // [null, ""]
+      state => {
+        const next = ctrlKey ? !state.selected : true;
+        return { ...state, selected: next };
+      }
+    ); // [null, ""]
+  };
+
+  const handleMouseEnter = () => {
+    whenHoverChange( // [null, ""]
+      state => {
+        return { ...state, highlighted: true };
+      }
+    ); // [null, ""]
+  };
+  const handleMouseLeave = () => {
+    whenHoverChange( // [null, ""]
+      state => {
+        return { ...state, highlighted: false };
+      }
+    ); // [null, ""]
+  };
+
+  return (
+    <div
+      style={{
+        background:
+          highlighted ? "lightgray" :
+          selected ? "darkgray" :
+          "white"
+      }}
+
+      onMouseEnter={
+        handleMouseEnter
+      }
+      onMouseLeave={
+        handleMouseLeave
+      }
+      onClick={
+        handleClick
+      }
+    >
+    </div>
+  );
+
+};
+//// [null, "foci"], "start"
+export const App = () => {
+  const [state, setState] = useState({});
+
+  return (
+    <LineItem
+      {...state}
+      driver={setState}
+    >
+    </LineItem>
+  );
+
+};
+//// [null, "foci"], "end"
+
+export default null;
+
+
+
+export default keyframe.json`{
+  "path": "./${foldername}/08-conform/a/08-${1}-${count}-01-ValueInput.js",
+  "context": {
+     "column": "ValueInput",
+     "code": {
+      "review": [
+        [""]
+      ]
+    }
+  }
+}
+`;
+
+//
+export const ValueInput = props => {
+  const {
+    value = ""
+  } = props;
+
+  const {
+    driver, // (action, reducer) => {} // [null, "pin"]
+
+    whenValueChange = driver
+  } = props;
+
+  const handleChange = event => {
+    const next = event.target.value;
+    whenValueChange(
+      { type: "whenValueChange", value: next }, // [null, ""]
+      state => {
+        return { ...state, value: next }
+      }
+    );
+  };
+
+  return (
+    <input
+      value={value}
+
+      onChange={
+        handleChange
+      }
+    >
+    </input>
+  );
+
+};
+//// [null, "foci"], "start"
+export const App = () => {
+  const [state, setState] = useState({
+    value: "default text"
+  });
+
+  return (
+    <ValueInput
+      {...state}
+      driver={setState}
+    >
+    </ValueInput>
+  );
+
+};
+//// [null, "foci"], "end"
+
+export default null;
+
+export default keyframe.json`{
+  "path": "./${foldername}/08-conform/a/08-${1}-${count}-02-LineItem.js",
+  "context": {
+     "column": "LineItem",
+     "code": {
+      "review": [
+        [""]
+      ]
+    }
+  }
+}
+`;
+
+//
+export const LineItem = props => {
+  const {
+    selected = false,
+
+    highlighted = false
+  } = props;
+
+  const {
+    driver, // (action, reducer) => {} // [null, "pin"]
+
+    whenSelectionChange = driver,
+
+    whenHoverChange = driver
+  } = props;
+
+  const handleClick = event => {
+    const { ctrlKey } = event;
+    whenSelectionChange(
+      { type: "whenSelectionChange", ctrlKey }, // [null, ""]
       state => {
         const next = ctrlKey ? !state.selected : true;
         return { ...state, selected: next };
@@ -2302,8 +3037,8 @@ export const LineItem = props => {
 
   const handleMouseEnter = () => {
     const hovering = true; // [null, ""]
-    emitHoverChange(
-      { type: "emitHoverChange", hovering }, // [null, ""]
+    whenHoverChange(
+      { type: "whenHoverChange", hovering }, // [null, ""]
       state => {
         return { ...state, highlighted: true };
       }
@@ -2311,8 +3046,8 @@ export const LineItem = props => {
   };
   const handleMouseLeave = () => {
     const hovering = false; // [null, ""]
-    emitHoverChange(
-      { type: "emitHoverChange", hovering }, // [null, ""]
+    whenHoverChange(
+      { type: "whenHoverChange", hovering }, // [null, ""]
       state => {
         return { ...state, highlighted: false };
       }
@@ -2349,7 +3084,7 @@ export const App = () => {
   return (
     <LineItem
       {...state}
-      emitter={setState}
+      driver={setState}
     >
     </LineItem>
   );
@@ -2362,7 +3097,7 @@ export default null;
 
 
 export default keyframe.json`{
-  "path": "./${foldername}/08-update/a/08-${1}-${count}-01-ValueInput.js",
+  "path": "./${foldername}/08-conform/a/08-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
      "code": {
@@ -2381,19 +3116,19 @@ export const ValueInput = props => {
   } = props;
 
   const {
-    emitter, // (action, reducer) => {}
+    driver, // (action, reducer) => {}
 
-    emitValueChange = emitter
+    whenValueChange = driver
   } = props;
 
   const handleChange = event => {
     const next = event.target.value;
-    emitValueChange(
-      { type: "emitValueChange", value: next },
+    whenValueChange(
+      { type: "whenValueChange", value: next },
       state => {
         return { ...state, value: next }
       }
-    )
+    );
   };
 
   return (
@@ -2417,7 +3152,7 @@ export const App = () => {
   return (
     <ValueInput
       {...state}
-      emitter={setState}
+      driver={setState}
     >
     </ValueInput>
   );
@@ -2428,7 +3163,7 @@ export const App = () => {
 export default null;
 
 export default keyframe.json`{
-  "path": "./${foldername}/08-update/a/08-${1}-${count}-02-LineItem.js",
+  "path": "./${foldername}/08-conform/a/08-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
      "code": {
@@ -2449,17 +3184,17 @@ export const LineItem = props => {
   } = props;
 
   const {
-    emitter, // (action, reducer) => {}
+    driver, // (action, reducer) => {}
 
-    emitSelectionChange = emitter,
+    whenSelectionChange = driver,
 
-    emitHoverChange = emitter
+    whenHoverChange = driver
   } = props;
 
   const handleClick = event => {
     const { ctrlKey } = event;
-    emitSelectionChange(
-      { type: "emitSelectionChange", ctrlKey },
+    whenSelectionChange(
+      { type: "whenSelectionChange", ctrlKey },
       state => {
         const next = ctrlKey ? !state.selected : true;
         return { ...state, selected: next };
@@ -2469,8 +3204,8 @@ export const LineItem = props => {
 
   const handleMouseEnter = () => {
     const hovering = true;
-    emitHoverChange(
-      { type: "emitHoverChange", hovering },
+    whenHoverChange(
+      { type: "whenHoverChange", hovering },
       state => {
         return { ...state, highlighted: true };
       }
@@ -2478,8 +3213,8 @@ export const LineItem = props => {
   };
   const handleMouseLeave = () => {
     const hovering = false;
-    emitHoverChange(
-      { type: "emitHoverChange", hovering },
+    whenHoverChange(
+      { type: "whenHoverChange", hovering },
       state => {
         return { ...state, highlighted: false };
       }
@@ -2516,7 +3251,7 @@ export const App = () => {
   return (
     <LineItem
       {...state}
-      emitter={setState}
+      driver={setState}
     >
     </LineItem>
   );
@@ -2529,7 +3264,7 @@ export default null;
 
 
 export default keyframe.json`{
-  "path": "./${foldername}/08-update/a/08-${1}-${count}-01-ValueInput.js",
+  "path": "./${foldername}/08-conform/a/08-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
      "code": {
@@ -2548,19 +3283,19 @@ export const ValueInput = props => {
   } = props;
 
   const {
-    emitter, // (action, reducer) => {}
+    driver, // (action, reducer) => {}
 
-    emitValueChange = emitter
+    whenValueChange = driver
   } = props;
 
   const handleChange = event => {
     const next = event.target.value;
-    emitValueChange(
-      { type: "emitValueChange", value: next },
+    whenValueChange(
+      { type: "whenValueChange", value: next },
       state => {
         return { ...state, value: next }
       }
-    )
+    );
   };
 
   return (
@@ -2581,7 +3316,7 @@ export const App = () => {
     value: "default text"
   });
 
-  const manager = (action, reducer) => { // [""]
+  const driveState = (action, reducer) => { // [""]
     if (typeof reducer === "function") {
       setState(lastState => {
         const nextState = reducer(lastState, action);
@@ -2593,7 +3328,7 @@ export const App = () => {
   return (
     <ValueInput
       {...state}
-      emitter={manager} // [null, ""]
+      driver={driveState} // [null, ""]
     >
     </ValueInput>
   );
@@ -2604,7 +3339,7 @@ export const App = () => {
 export default null;
 
 export default keyframe.json`{
-  "path": "./${foldername}/08-update/a/08-${1}-${count}-02-LineItem.js",
+  "path": "./${foldername}/08-conform/a/08-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
      "code": {
@@ -2625,17 +3360,17 @@ export const LineItem = props => {
   } = props;
 
   const {
-    emitter, // (action, reducer) => {}
+    driver, // (action, reducer) => {}
 
-    emitSelectionChange = emitter,
+    whenSelectionChange = driver,
 
-    emitHoverChange = emitter
+    whenHoverChange = driver
   } = props;
 
   const handleClick = event => {
     const { ctrlKey } = event;
-    emitSelectionChange(
-      { type: "emitSelectionChange", ctrlKey },
+    whenSelectionChange(
+      { type: "whenSelectionChange", ctrlKey },
       state => {
         const next = ctrlKey ? !state.selected : true;
         return { ...state, selected: next };
@@ -2645,8 +3380,8 @@ export const LineItem = props => {
 
   const handleMouseEnter = () => {
     const hovering = true;
-    emitHoverChange(
-      { type: "emitHoverChange", hovering },
+    whenHoverChange(
+      { type: "whenHoverChange", hovering },
       state => {
         return { ...state, highlighted: true };
       }
@@ -2654,8 +3389,8 @@ export const LineItem = props => {
   };
   const handleMouseLeave = () => {
     const hovering = false;
-    emitHoverChange(
-      { type: "emitHoverChange", hovering },
+    whenHoverChange(
+      { type: "whenHoverChange", hovering },
       state => {
         return { ...state, highlighted: false };
       }
@@ -2689,7 +3424,7 @@ export const LineItem = props => {
 export const App = () => {
   const [state, setState] = useState({});
 
-  const manager = (action, reducer) => { // [""]
+  const driveState = (action, reducer) => { // [""]
     if (typeof reducer === "function") {
       setState(lastState => {
         const nextState = reducer(lastState, action);
@@ -2701,7 +3436,7 @@ export const App = () => {
   return (
     <LineItem
       {...state}
-      emitter={manager} // [null, ""]
+      driver={driveState} // [null, ""]
     >
     </LineItem>
   );
@@ -2714,7 +3449,7 @@ export default null;
 
 
 export default keyframe.json`{
-  "path": "./${foldername}/08-update/a/08-${1}-${count}-01-ValueInput.js",
+  "path": "./${foldername}/08-conform/a/08-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
      "code": {
@@ -2733,19 +3468,19 @@ export const ValueInput = props => {
   } = props;
 
   const {
-    emitter, // (action, reducer) => {}
+    driver, // (action, reducer) => {}
 
-    emitValueChange = emitter
+    whenValueChange = driver
   } = props;
 
   const handleChange = event => {
     const next = event.target.value;
-    emitValueChange(
-      { type: "emitValueChange", value: next },
+    whenValueChange(
+      { type: "whenValueChange", value: next },
       state => {
         return { ...state, value: next }
       }
-    )
+    );
   };
 
   return (
@@ -2761,10 +3496,10 @@ export const ValueInput = props => {
 
 };
 //// [null, "foci"], "start"
-const useEmissionReducer = initialState => { // [null, ""]
+const useDriveState = initialState => { // [null, ""]
   const [state, setState] = useState(initialState); // [null, ""]
 
-  const manager = (action, reducer) => {
+  const driveState = (action, reducer) => {
     if (typeof reducer === "function") {
       setState(lastState => {
         const nextState = reducer(lastState, action);
@@ -2773,18 +3508,27 @@ const useEmissionReducer = initialState => { // [null, ""]
     }
   };
 
-  return [state, manager]; // [null, ""]
+  return [state, driveState]; // [null, ""]
 }; // [null, ""]
 //
-export const App = () => { // [null, ""]
-  const [state, manager] = useEmissionReducer({ // [null, ""]
+export const App = () => {
+  const [state, setState] = useState({
     value: "default text"
   });
+
+  const driveState = (action, reducer) => {
+    if (typeof reducer === "function") {
+      setState(lastState => {
+        const nextState = reducer(lastState, action);
+        return nextState;
+      });
+    }
+  };
 
   return (
     <ValueInput
       {...state}
-      emitter={manager}
+      driver={driveState}
     >
     </ValueInput>
   );
@@ -2795,7 +3539,7 @@ export const App = () => { // [null, ""]
 export default null;
 
 export default keyframe.json`{
-  "path": "./${foldername}/08-update/a/08-${1}-${count}-02-LineItem.js",
+  "path": "./${foldername}/08-conform/a/08-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
      "code": {
@@ -2816,17 +3560,17 @@ export const LineItem = props => {
   } = props;
 
   const {
-    emitter, // (action, reducer) => {}
+    driver, // (action, reducer) => {}
 
-    emitSelectionChange = emitter,
+    whenSelectionChange = driver,
 
-    emitHoverChange = emitter
+    whenHoverChange = driver
   } = props;
 
   const handleClick = event => {
     const { ctrlKey } = event;
-    emitSelectionChange(
-      { type: "emitSelectionChange", ctrlKey },
+    whenSelectionChange(
+      { type: "whenSelectionChange", ctrlKey },
       state => {
         const next = ctrlKey ? !state.selected : true;
         return { ...state, selected: next };
@@ -2836,8 +3580,8 @@ export const LineItem = props => {
 
   const handleMouseEnter = () => {
     const hovering = true;
-    emitHoverChange(
-      { type: "emitHoverChange", hovering },
+    whenHoverChange(
+      { type: "whenHoverChange", hovering },
       state => {
         return { ...state, highlighted: true };
       }
@@ -2845,8 +3589,8 @@ export const LineItem = props => {
   };
   const handleMouseLeave = () => {
     const hovering = false;
-    emitHoverChange(
-      { type: "emitHoverChange", hovering },
+    whenHoverChange(
+      { type: "whenHoverChange", hovering },
       state => {
         return { ...state, highlighted: false };
       }
@@ -2877,10 +3621,10 @@ export const LineItem = props => {
 
 };
 //// [null, "foci"], "start"
-const useEmissionReducer = initialState => { // [null, ""]
+const useDriveState = initialState => { // [null, ""]
   const [state, setState] = useState(initialState); // [null, ""]
 
-  const manager = (action, reducer) => {
+  const driveState = (action, reducer) => {
     if (typeof reducer === "function") {
       setState(lastState => {
         const nextState = reducer(lastState, action);
@@ -2889,16 +3633,25 @@ const useEmissionReducer = initialState => { // [null, ""]
     }
   };
 
-  return [state, manager]; // [null, ""]
+  return [state, driveState]; // [null, ""]
 }; // [null, ""]
 //
-export const App = () => { // [null, ""]
-  const [state, manager] = useEmissionReducer({}); // [null, ""]
+export const App = () => {
+  const [state, setState] = useState({});
+
+  const driveState = (action, reducer) => {
+    if (typeof reducer === "function") {
+      setState(lastState => {
+        const nextState = reducer(lastState, action);
+        return nextState;
+      });
+    }
+  };
 
   return (
     <LineItem
       {...state}
-      emitter={manager} // [null, ""]
+      driver={driveState}
     >
     </LineItem>
   );
@@ -2911,7 +3664,419 @@ export default null;
 
 
 export default keyframe.json`{
-  "path": "./${foldername}/08-update/a/08-${1}-${count}-01-ValueInput.js",
+  "path": "./${foldername}/08-conform/a/08-${1}-${count}-01-ValueInput.js",
+  "context": {
+     "column": "ValueInput",
+     "code": {
+      "review": [
+        ["foci", "subtitle", "", "pin"]
+      ]
+    }
+  }
+}
+`;
+
+//
+export const ValueInput = props => {
+  const {
+    value = ""
+  } = props;
+
+  const {
+    driver, // (action, reducer) => {}
+
+    whenValueChange = driver
+  } = props;
+
+  const handleChange = event => {
+    const next = event.target.value;
+    whenValueChange(
+      { type: "whenValueChange", value: next },
+      state => {
+        return { ...state, value: next }
+      }
+    );
+  };
+
+  return (
+    <input
+      value={value}
+
+      onChange={
+        handleChange
+      }
+    >
+    </input>
+  );
+
+};
+//// [null, "foci"], "start"
+const useDriveState = initialState => {
+  const [state, setState] = useState(initialState);
+
+  const driveState = (action, reducer) => {
+    if (typeof reducer === "function") {
+      setState(lastState => {
+        const nextState = reducer(lastState, action);
+        return nextState;
+      });
+    }
+  };
+
+  return [state, driveState];
+};
+//
+export const App = () => {
+  const [state, setState] = useState({ // ["pin"]
+    value: "default text"
+  });
+
+  const driveState = (action, reducer) => {
+    if (typeof reducer === "function") {
+      setState(lastState => {
+        const nextState = reducer(lastState, action);
+        return nextState;
+      });
+    }
+  }; // ["pin"]
+
+  return (
+    <ValueInput
+      {...state}
+      driver={driveState}
+    >
+    </ValueInput>
+  );
+
+};
+//// [null, "foci"], "end"
+
+export default null;
+
+export default keyframe.json`{
+  "path": "./${foldername}/08-conform/a/08-${1}-${count}-02-LineItem.js",
+  "context": {
+     "column": "LineItem",
+     "code": {
+      "review": [
+        ["foci", "subtitle", "", "pin"]
+      ]
+    }
+  }
+}
+`;
+
+//
+export const LineItem = props => {
+  const {
+    selected = false,
+
+    highlighted = false
+  } = props;
+
+  const {
+    driver, // (action, reducer) => {}
+
+    whenSelectionChange = driver,
+
+    whenHoverChange = driver
+  } = props;
+
+  const handleClick = event => {
+    const { ctrlKey } = event;
+    whenSelectionChange(
+      { type: "whenSelectionChange", ctrlKey },
+      state => {
+        const next = ctrlKey ? !state.selected : true;
+        return { ...state, selected: next };
+      }
+    );
+  };
+
+  const handleMouseEnter = () => {
+    const hovering = true;
+    whenHoverChange(
+      { type: "whenHoverChange", hovering },
+      state => {
+        return { ...state, highlighted: true };
+      }
+    );
+  };
+  const handleMouseLeave = () => {
+    const hovering = false;
+    whenHoverChange(
+      { type: "whenHoverChange", hovering },
+      state => {
+        return { ...state, highlighted: false };
+      }
+    );
+  };
+
+  return (
+    <div
+      style={{
+        background:
+          highlighted ? "lightgray" :
+          selected ? "darkgray" :
+          "white"
+      }}
+
+      onMouseEnter={
+        handleMouseEnter
+      }
+      onMouseLeave={
+        handleMouseLeave
+      }
+      onClick={
+        handleClick
+      }
+    >
+    </div>
+  );
+
+};
+//// [null, "foci"], "start"
+const useDriveState = initialState => {
+  const [state, setState] = useState(initialState);
+
+  const driveState = (action, reducer) => {
+    if (typeof reducer === "function") {
+      setState(lastState => {
+        const nextState = reducer(lastState, action);
+        return nextState;
+      });
+    }
+  };
+
+  return [state, driveState];
+};
+//
+export const App = () => {
+  const [state, setState] = useState({}); // ["pin"]
+
+  const driveState = (action, reducer) => {
+    if (typeof reducer === "function") {
+      setState(lastState => {
+        const nextState = reducer(lastState, action);
+        return nextState;
+      });
+    }
+  }; // ["pin"]
+
+  return (
+    <LineItem
+      {...state}
+      driver={driveState}
+    >
+    </LineItem>
+  );
+
+};
+//// [null, "foci"], "end"
+
+export default null;
+
+
+
+export default keyframe.json`{
+  "path": "./${foldername}/08-conform/a/08-${1}-${count}-01-ValueInput.js",
+  "context": {
+     "column": "ValueInput",
+     "code": {
+      "review": [
+        ["foci", "subtitle", "", "pin"]
+      ]
+    }
+  }
+}
+`;
+
+//
+export const ValueInput = props => {
+  const {
+    value = ""
+  } = props;
+
+  const {
+    driver, // (action, reducer) => {}
+
+    whenValueChange = driver
+  } = props;
+
+  const handleChange = event => {
+    const next = event.target.value;
+    whenValueChange(
+      { type: "whenValueChange", value: next },
+      state => {
+        return { ...state, value: next }
+      }
+    );
+  };
+
+  return (
+    <input
+      value={value}
+
+      onChange={
+        handleChange
+      }
+    >
+    </input>
+  );
+
+};
+//// [null, "foci"], "start"
+const useDriveState = initialState => {
+  const [state, setState] = useState(initialState);
+
+  const driveState = (action, reducer) => {
+    if (typeof reducer === "function") {
+      setState(lastState => {
+        const nextState = reducer(lastState, action);
+        return nextState;
+      });
+    }
+  };
+
+  return [state, driveState];
+};
+//
+export const App = () => {
+  const [state, driveState] = useDriveState({ // [null, ""]
+    value: "default text"
+  });
+
+  return (
+    <ValueInput
+      {...state}
+      driver={driveState}
+    >
+    </ValueInput>
+  );
+
+};
+//// [null, "foci"], "end"
+
+export default null;
+
+export default keyframe.json`{
+  "path": "./${foldername}/08-conform/a/08-${1}-${count}-02-LineItem.js",
+  "context": {
+     "column": "LineItem",
+     "code": {
+      "review": [
+        ["foci", "subtitle", "", "pin"]
+      ]
+    }
+  }
+}
+`;
+
+//
+export const LineItem = props => {
+  const {
+    selected = false,
+
+    highlighted = false
+  } = props;
+
+  const {
+    driver, // (action, reducer) => {}
+
+    whenSelectionChange = driver,
+
+    whenHoverChange = driver
+  } = props;
+
+  const handleClick = event => {
+    const { ctrlKey } = event;
+    whenSelectionChange(
+      { type: "whenSelectionChange", ctrlKey },
+      state => {
+        const next = ctrlKey ? !state.selected : true;
+        return { ...state, selected: next };
+      }
+    );
+  };
+
+  const handleMouseEnter = () => {
+    const hovering = true;
+    whenHoverChange(
+      { type: "whenHoverChange", hovering },
+      state => {
+        return { ...state, highlighted: true };
+      }
+    );
+  };
+  const handleMouseLeave = () => {
+    const hovering = false;
+    whenHoverChange(
+      { type: "whenHoverChange", hovering },
+      state => {
+        return { ...state, highlighted: false };
+      }
+    );
+  };
+
+  return (
+    <div
+      style={{
+        background:
+          highlighted ? "lightgray" :
+          selected ? "darkgray" :
+          "white"
+      }}
+
+      onMouseEnter={
+        handleMouseEnter
+      }
+      onMouseLeave={
+        handleMouseLeave
+      }
+      onClick={
+        handleClick
+      }
+    >
+    </div>
+  );
+
+};
+//// [null, "foci"], "start"
+const useDriveState = initialState => {
+  const [state, setState] = useState(initialState);
+
+  const driveState = (action, reducer) => {
+    if (typeof reducer === "function") {
+      setState(lastState => {
+        const nextState = reducer(lastState, action);
+        return nextState;
+      });
+    }
+  };
+
+  return [state, driveState];
+};
+//
+export const App = () => {
+  const [state, driveState] = useDriveState({}); // [null, ""]
+
+  return (
+    <LineItem
+      {...state}
+      driver={driveState}
+    >
+    </LineItem>
+  );
+
+};
+//// [null, "foci"], "end"
+
+export default null;
+
+
+
+export default keyframe.json`{
+  "path": "./${foldername}/08-conform/a/08-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
      "code": {
@@ -2930,19 +4095,186 @@ export const ValueInput = props => {
   } = props;
 
   const {
-    emitter, // (action, reducer) => {}
+    driver, // (action, reducer) => {}
 
-    emitValueChange = emitter
+    whenValueChange = driver
   } = props;
 
   const handleChange = event => {
     const next = event.target.value;
-    emitValueChange(
-      { type: "emitValueChange", value: next },
+    whenValueChange(
+      { type: "whenValueChange", value: next },
+      state => { // [""]
+        return { ...state, value: next }
+      } // [""]
+    );
+  };
+
+  return (
+    <input
+      value={value}
+
+      onChange={
+        handleChange
+      }
+    >
+    </input>
+  );
+
+};
+//// [null, "foci"], "end"
+export const App = () => {
+  const [state, driveState] = useDriveState({
+    value: "default text"
+  });
+
+  return (
+    <ValueInput
+      {...state}
+      driver={driveState}
+    >
+    </ValueInput>
+  );
+
+};
+//
+
+export default null;
+
+export default keyframe.json`{
+  "path": "./${foldername}/08-conform/a/08-${1}-${count}-02-LineItem.js",
+  "context": {
+     "column": "LineItem",
+     "code": {
+      "review": [
+        [""]
+      ]
+    }
+  }
+}
+`;
+
+//// [null, "foci"], "start"
+export const LineItem = props => {
+  const {
+    selected = false,
+
+    highlighted = false
+  } = props;
+
+  const {
+    driver, // (action, reducer) => {}
+
+    whenSelectionChange = driver,
+
+    whenHoverChange = driver
+  } = props;
+
+  const handleClick = event => {
+    const { ctrlKey } = event;
+    whenSelectionChange(
+      { type: "whenSelectionChange", ctrlKey },
+      state => { // [null, ""]
+        const next = ctrlKey ? !state.selected : true; // [null, ""]
+        return { ...state, selected: next }; // [null, ""]
+      } // [null, ""]
+    );
+  };
+
+  const handleMouseEnter = () => {
+    const hovering = true;
+    whenHoverChange(
+      { type: "whenHoverChange", hovering },
+      state => { // [null, ""]
+        return { ...state, highlighted: true }; // [null, ""]
+      } // [null, ""]
+    );
+  };
+  const handleMouseLeave = () => {
+    const hovering = false;
+    whenHoverChange(
+      { type: "whenHoverChange", hovering },
+      state => { // [null, ""]
+        return { ...state, highlighted: false }; // [null, ""]
+      } // [null, ""]
+    );
+  };
+
+  return (
+    <div
+      style={{
+        background:
+          highlighted ? "lightgray" :
+          selected ? "darkgray" :
+          "white"
+      }}
+
+      onMouseEnter={
+        handleMouseEnter
+      }
+      onMouseLeave={
+        handleMouseLeave
+      }
+      onClick={
+        handleClick
+      }
+    >
+    </div>
+  );
+
+};
+//// [null, "foci"], "end"
+export const App = () => {
+  const [state, driveState] = useDriveState({});
+
+  return (
+    <LineItem
+      {...state}
+      driver={driveState}
+    >
+    </LineItem>
+  );
+
+};
+//
+
+export default null;
+
+
+
+export default keyframe.json`{
+  "path": "./${foldername}/08-conform/a/08-${1}-${count}-01-ValueInput.js",
+  "context": {
+     "column": "ValueInput",
+     "code": {
+      "review": [
+        [""]
+      ]
+    }
+  }
+}
+`;
+
+//// [null, "foci"], "start"
+export const ValueInput = props => {
+  const {
+    value = ""
+  } = props;
+
+  const {
+    driver, // (action, reducer) => {}
+
+    whenValueChange = driver
+  } = props;
+
+  const handleChange = event => {
+    const next = event.target.value;
+    whenValueChange(
+      { type: "whenValueChange", value: next },
       (state, action) => { // [""]
         return { ...state, value: action.value }
       } // [""]
-    )
+    );
   };
 
   return (
@@ -2959,14 +4291,14 @@ export const ValueInput = props => {
 };
 //
 export const App = () => {
-  const [state, manager] = useEmissionReducer({
+  const [state, driveState] = useDriveState({
     value: "default text"
   });
 
   return (
     <ValueInput
       {...state}
-      emitter={manager}
+      driver={driveState}
     >
     </ValueInput>
   );
@@ -2977,7 +4309,7 @@ export const App = () => {
 export default null;
 
 export default keyframe.json`{
-  "path": "./${foldername}/08-update/a/08-${1}-${count}-02-LineItem.js",
+  "path": "./${foldername}/08-conform/a/08-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
      "code": {
@@ -2998,17 +4330,17 @@ export const LineItem = props => {
   } = props;
 
   const {
-    emitter, // (action, reducer) => {}
+    driver, // (action, reducer) => {}
 
-    emitSelectionChange = emitter,
+    whenSelectionChange = driver,
 
-    emitHoverChange = emitter
+    whenHoverChange = driver
   } = props;
 
   const handleClick = event => {
     const { ctrlKey } = event;
-    emitSelectionChange(
-      { type: "emitSelectionChange", ctrlKey },
+    whenSelectionChange(
+      { type: "whenSelectionChange", ctrlKey },
       (state, action) => { // [null, ""]
         const next = action.ctrlKey ? !state.selected : true; // [null, ""]
         return { ...state, selected: next }; // [null, ""]
@@ -3018,8 +4350,8 @@ export const LineItem = props => {
 
   const handleMouseEnter = () => {
     const hovering = true;
-    emitHoverChange(
-      { type: "emitHoverChange", hovering },
+    whenHoverChange(
+      { type: "whenHoverChange", hovering },
       (state, action) => { // [null, ""]
         return { ...state, highlighted: action.hovering }; // [null, ""]
       } // [null, ""]
@@ -3027,8 +4359,8 @@ export const LineItem = props => {
   };
   const handleMouseLeave = () => {
     const hovering = false;
-    emitHoverChange(
-      { type: "emitHoverChange", hovering },
+    whenHoverChange(
+      { type: "whenHoverChange", hovering },
       (state, action) => { // [null, ""]
         return { ...state, highlighted: action.hovering }; // [null, ""]
       } // [null, ""]
@@ -3060,12 +4392,12 @@ export const LineItem = props => {
 };
 //
 export const App = () => {
-  const [state, manager] = useEmissionReducer({});
+  const [state, driveState] = useDriveState({});
 
   return (
     <LineItem
       {...state}
-      emitter={manager}
+      driver={driveState}
     >
     </LineItem>
   );
@@ -3078,7 +4410,7 @@ export default null;
 
 
 export default keyframe.json`{
-  "path": "./${foldername}/08-update/a/08-${1}-${count}-01-ValueInput.js",
+  "path": "./${foldername}/08-conform/a/08-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
      "code": {
@@ -3097,19 +4429,19 @@ export const ValueInput = props => {
   } = props;
 
   const {
-    emitter, // (action, reducer) => {}
+    driver, // (action, reducer) => {}
 
-    emitValueChange = emitter
+    whenValueChange = driver
   } = props;
 
   const handleChange = event => {
     const next = event.target.value;
-    emitValueChange(
-      { type: "emitValueChange", value: next },
+    whenValueChange(
+      { type: "whenValueChange", value: next },
       (state, action) => {
         return { ...state, value: action.value }
       }
-    )
+    );
   };
 
   return (
@@ -3126,14 +4458,14 @@ export const ValueInput = props => {
 };
 //
 export const App = () => {
-  const [state, manager] = useEmissionReducer({
+  const [state, driveState] = useDriveState({
     value: "default text"
   });
 
   return (
     <ValueInput
       {...state}
-      emitter={manager}
+      driver={driveState}
     >
     </ValueInput>
   );
@@ -3144,7 +4476,7 @@ export const App = () => {
 export default null;
 
 export default keyframe.json`{
-  "path": "./${foldername}/08-update/a/08-${1}-${count}-02-LineItem.js",
+  "path": "./${foldername}/08-conform/a/08-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
      "code": {
@@ -3165,17 +4497,17 @@ export const LineItem = props => {
   } = props;
 
   const {
-    emitter, // (action, reducer) => {}
+    driver, // (action, reducer) => {}
 
-    emitSelectionChange = emitter,
+    whenSelectionChange = driver,
 
-    emitHoverChange = emitter
+    whenHoverChange = driver
   } = props;
 
   const handleClick = event => {
     const { ctrlKey } = event;
-    emitSelectionChange(
-      { type: "emitSelectionChange", ctrlKey },
+    whenSelectionChange(
+      { type: "whenSelectionChange", ctrlKey },
       (state, action) => {
         const next = action.ctrlKey ? !state.selected : true;
         return { ...state, selected: next };
@@ -3185,8 +4517,8 @@ export const LineItem = props => {
 
   const handleMouseEnter = () => {
     const hovering = true;
-    emitHoverChange(
-      { type: "emitHoverChange", hovering },
+    whenHoverChange(
+      { type: "whenHoverChange", hovering },
       (state, action) => {
         return { ...state, highlighted: action.hovering };
       }
@@ -3194,8 +4526,8 @@ export const LineItem = props => {
   };
   const handleMouseLeave = () => {
     const hovering = false;
-    emitHoverChange(
-      { type: "emitHoverChange", hovering },
+    whenHoverChange(
+      { type: "whenHoverChange", hovering },
       (state, action) => {
         return { ...state, highlighted: action.hovering };
       }
@@ -3227,12 +4559,12 @@ export const LineItem = props => {
 };
 //
 export const App = () => {
-  const [state, manager] = useEmissionReducer({});
+  const [state, driveState] = useDriveState({});
 
   return (
     <LineItem
       {...state}
-      emitter={manager}
+      driver={driveState}
     >
     </LineItem>
   );

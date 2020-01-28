@@ -147,11 +147,74 @@ export const LineItem = props => {
   } = props;
 
   const {
-    onClick = event => {},
+    onSelectionChange = boolean => {}, // [null, ""]
 
-    onHoverChange = event => {} // [null, ""]
+    onMouseEnter = event => {},
+    onMouseLeave = event => {}
   } = props;
   // Adapt signature from callback to state manager // [null, "pin"]
+  const handleClick = event => // [null, ""]
+    onSelectionChange(event.ctrlKey ? !selected : true); // [null, ""]
+
+  return (
+    <div
+      style={{
+        background:
+          highlighted ? "lightgray" :
+          selected ? "darkgray" :
+          "white"
+      }}
+
+      onMouseEnter={
+        onMouseEnter
+      }
+      onMouseLeave={
+        onMouseLeave
+      }
+      onClick={
+        onClick
+      }
+    >
+    </div>
+  );
+
+};
+//// [null, "foci"], "end"
+
+export default null;
+
+
+
+export default keyframe.json`{
+  "path": "./${foldername}/06-refactor/a/06-${1}-${count}-02-LineItem.js",
+  "context": {
+     "column": "LineItem",
+     "code": {
+      "review": [
+        ["", "pin"]
+      ]
+    }
+  }
+}
+`;
+
+//// [null, "foci"], "start"
+export const LineItem = props => {
+  const {
+    selected = false,
+
+    highlighted = false
+  } = props;
+
+  const {
+    onSelectionChange = boolean => {},
+
+    onHoverChange = boolean => {} // [null, ""]
+  } = props;
+  // Adapt signature from callback to state manager // [null, "pin"]
+  const handleClick = event =>
+    onSelectionChange(event.ctrlKey ? !selected : true);
+
   const handleMouseEnter = () => onHoverChange(true); // [null, ""]
   const handleMouseLeave = () => onHoverChange(false); // [null, ""]
 
@@ -206,71 +269,9 @@ export const LineItem = props => {
   } = props;
 
   const {
-    onSelectionChange = event => {}, // [null, ""]
+    onSelectionChange = boolean => {},
 
-    onHoverChange = event => {}
-  } = props;
-  // Adapt signature from callback to state manager // [null, "pin"]
-  const handleClick = event => // [null, ""]
-    onSelectionChange(event.ctrlKey ? !selected : true); // [null, ""]
-
-  const handleMouseEnter = () => onHoverChange(true);
-  const handleMouseLeave = () => onHoverChange(false);
-
-  return (
-    <div
-      style={{
-        background:
-          highlighted ? "lightgray" :
-          selected ? "darkgray" :
-          "white"
-      }}
-
-      onMouseEnter={
-        onMouseEnter
-      }
-      onMouseLeave={
-        onMouseLeave
-      }
-      onClick={
-        onClick
-      }
-    >
-    </div>
-  );
-
-};
-//// [null, "foci"], "end"
-
-export default null;
-
-
-
-export default keyframe.json`{
-  "path": "./${foldername}/06-refactor/a/06-${1}-${count}-02-LineItem.js",
-  "context": {
-     "column": "LineItem",
-     "code": {
-      "review": [
-        ["", "pin"]
-      ]
-    }
-  }
-}
-`;
-
-//// [null, "foci"], "start"
-export const LineItem = props => {
-  const {
-    selected = false,
-
-    highlighted = false
-  } = props;
-
-  const {
-    onSelectionChange = event => {},
-
-    onHoverChange = event => {}
+    onHoverChange = boolean => {}
   } = props;
   // Adapt signature from callback to state manager
   const handleClick = event =>
@@ -330,9 +331,9 @@ export const LineItem = props => {
   } = props;
 
   const {
-    onSelectionChange = event => {},
+    onSelectionChange = boolean => {},
 
-    onHoverChange = event => {}
+    onHoverChange = boolean => {}
   } = props;
   // Adapt signature from callback to state manager
   const handleClick = event =>
@@ -414,9 +415,9 @@ export const LineItem = props => {
   } = props;
 
   const {
-    onSelectionChange = event => {},
+    onSelectionChange = boolean => {},
 
-    onHoverChange = event => {}
+    onHoverChange = boolean => {}
   } = props;
 
   const handleClick = event =>
@@ -474,7 +475,7 @@ export const ValueInput = props => {
   } = props;
 
   const {
-    onValueChange = event => {} // [null, ""]
+    onValueChange = string => {} // [null, ""]
   } = props;
 
   const handleChange = event => // [null, ""]
@@ -501,9 +502,9 @@ export const LineItem = props => {
   } = props;
 
   const {
-    onSelectionChange = event => {},
+    onSelectionChange = boolean => {},
 
-    onHoverChange = event => {}
+    onHoverChange = boolean => {}
   } = props;
 
   const handleClick = event =>
