@@ -1,120 +1,3 @@
-// #lang scribble/text
-// @(require json)
-// @(define (mapValues values fn) (map fn values))
-// @(define (process dir file)
-//    (let ([vals (hash-ref
-//                    (call-with-input-file file read-json)
-//                    'outputs)])
-//      (flatten
-//       (mapValues vals
-//                 (lambda (output)
-//                   (let ([pathname (hash-ref output 'path)]
-//                         [column (if (hash-has-key? output 'column)
-//                                     (hash-ref output 'column)
-//                                     0)]
-//                         [review (hash-ref
-//                                  (hash-ref
-//                                   (hash-ref
-//                                    output
-//                                    'context)
-//                                   'code)
-//                                  'review)])
-//                     (mapValues review
-//                                (lambda (highlights)
-//                                  (let ([foci (if (eq? 'null highlights)
-//                                                  (hash-ref output 'focus)
-//                                                  (if (= 0 (length highlights))
-//                                                      ""
-//                                                      (string-join
-//                                                       (filter
-//                                                        (lambda (focus) (0 . < . (string-length focus)))
-//                                                        (mapValues highlights
-//                                                                   (lambda (label)
-//                                                                     (string-join
-//                                                                      (append (if (hash-has-key?
-//                                                                                   (hash-ref output 'ranges)
-//                                                                                   (string->symbol label))
-//                                                                                  (list (hash-ref
-//                                                                                         (hash-ref
-//                                                                                          (hash-ref output 'ranges)
-//                                                                                          (string->symbol label)
-//                                                                                          )
-//                                                                                         'focus))
-//                                                                                  '())
-//                                                                              (if (hash-has-key?
-//                                                                                   (hash-ref output 'guides)
-//                                                                                   (string->symbol label))
-//                                                                                  (list (hash-ref
-//                                                                                         (hash-ref
-//                                                                                          (hash-ref output 'guides)
-//                                                                                          (string->symbol label)
-//                                                                                          )
-//                                                                                         'focus))
-//                                                                                  '()))
-//                                                                      ","))))
-//                                                       ",")
-//                                                      ))])
-//                                    (vector dir pathname foci column))))))
-// @(define (stepper columns dir file)
-//    (map (lambda (output)
-//           (let (
-//                 [pathname (hash-ref output 'path)]
-//                 [foci (map (lambda (highlights)
-//                             (if
-//                              (eq? 'null highlights)
-//                              (hash-ref output 'focus)
-//                              (if
-//                               (= 0 (length highlights))
-//                               ""
-//                               (string-join
-//                                (filter
-//                                 (lambda (focus) (0 . < . (string-length focus)))
-//                                 (map
-//                                  (lambda (label)
-//                                    (string-join
-//                                     (append
-//                                      (if (hash-has-key?
-//                                            (hash-ref output 'ranges)
-//                                            (string->symbol label))
-//                                          (list (hash-ref
-//                                                  (hash-ref
-//                                                    (hash-ref output 'ranges)
-//                                                    (string->symbol label)
-//                                                    )
-//                                                  'focus))
-//                                          '())
-//                                      (if (hash-has-key?
-//                                            (hash-ref output 'guides)
-//                                            (string->symbol label))
-//                                          (list (hash-ref
-//                                                  (hash-ref
-//                                                    (hash-ref output 'guides)
-//                                                    (string->symbol label)
-//                                                    )
-//                                                  'focus))
-//                                          '()))
-//                                     ","))
-//                                  highlights))
-//                                ",")
-//                                ))
-//                              )
-//                            (hash-ref
-//                             (hash-ref
-//                              (hash-ref output 'context)
-//                              'code)
-//                             'review))]
-//                 )
-//             (add-newlines
-//              (map
-//               (lambda (focus)
-//                 @list{@"\n<Step>\n\n```js" @|focus| file=@|dir|@|pathname|@"\n```\n\n</Step>\n"})
-//               foci)
-//              )
-//             ))
-//         (hash-ref
-//          (call-with-input-file file read-json)
-//          'outputs)))
-
 const path = require("path");
 
 const js = String.raw;
@@ -222,6 +105,10 @@ pillars.map(([label, steps]) => {
 `;
   }).join("\n\n");
 };
+
+
+
+
 
 module.exports = () => mdx`
 import {

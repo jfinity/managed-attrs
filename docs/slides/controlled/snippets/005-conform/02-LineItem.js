@@ -3496,7 +3496,7 @@ export const ValueInput = props => {
 
 };
 //// [null, "foci"], "start"
-const useDriveState = initialState => { // [null, ""]
+const useDrivenState = initialState => { // [null, ""]
   const [state, setState] = useState(initialState); // [null, ""]
 
   const driveState = (action, reducer) => {
@@ -3621,7 +3621,7 @@ export const LineItem = props => {
 
 };
 //// [null, "foci"], "start"
-const useDriveState = initialState => { // [null, ""]
+const useDrivenState = initialState => { // [null, ""]
   const [state, setState] = useState(initialState); // [null, ""]
 
   const driveState = (action, reducer) => {
@@ -3711,7 +3711,7 @@ export const ValueInput = props => {
 
 };
 //// [null, "foci"], "start"
-const useDriveState = initialState => {
+const useDrivenState = initialState => {
   const [state, setState] = useState(initialState);
 
   const driveState = (action, reducer) => {
@@ -3836,7 +3836,7 @@ export const LineItem = props => {
 
 };
 //// [null, "foci"], "start"
-const useDriveState = initialState => {
+const useDrivenState = initialState => {
   const [state, setState] = useState(initialState);
 
   const driveState = (action, reducer) => {
@@ -3926,7 +3926,7 @@ export const ValueInput = props => {
 
 };
 //// [null, "foci"], "start"
-const useDriveState = initialState => {
+const useDrivenState = initialState => {
   const [state, setState] = useState(initialState);
 
   const driveState = (action, reducer) => {
@@ -3942,7 +3942,7 @@ const useDriveState = initialState => {
 };
 //
 export const App = () => {
-  const [state, driveState] = useDriveState({ // [null, ""]
+  const [state, driveState] = useDrivenState({ // [null, ""]
     value: "default text"
   });
 
@@ -4042,7 +4042,7 @@ export const LineItem = props => {
 
 };
 //// [null, "foci"], "start"
-const useDriveState = initialState => {
+const useDrivenState = initialState => {
   const [state, setState] = useState(initialState);
 
   const driveState = (action, reducer) => {
@@ -4058,7 +4058,7 @@ const useDriveState = initialState => {
 };
 //
 export const App = () => {
-  const [state, driveState] = useDriveState({}); // [null, ""]
+  const [state, driveState] = useDrivenState({}); // [null, ""]
 
   return (
     <LineItem
@@ -4124,7 +4124,7 @@ export const ValueInput = props => {
 };
 //// [null, "foci"], "end"
 export const App = () => {
-  const [state, driveState] = useDriveState({
+  const [state, driveState] = useDrivenState({
     value: "default text"
   });
 
@@ -4225,7 +4225,7 @@ export const LineItem = props => {
 };
 //// [null, "foci"], "end"
 export const App = () => {
-  const [state, driveState] = useDriveState({});
+  const [state, driveState] = useDrivenState({});
 
   return (
     <LineItem
@@ -4291,7 +4291,7 @@ export const ValueInput = props => {
 };
 //
 export const App = () => {
-  const [state, driveState] = useDriveState({
+  const [state, driveState] = useDrivenState({
     value: "default text"
   });
 
@@ -4392,7 +4392,7 @@ export const LineItem = props => {
 };
 //
 export const App = () => {
-  const [state, driveState] = useDriveState({});
+  const [state, driveState] = useDrivenState({});
 
   return (
     <LineItem
@@ -4458,7 +4458,7 @@ export const ValueInput = props => {
 };
 //
 export const App = () => {
-  const [state, driveState] = useDriveState({
+  const [state, driveState] = useDrivenState({
     value: "default text"
   });
 
@@ -4559,7 +4559,7 @@ export const LineItem = props => {
 };
 //
 export const App = () => {
-  const [state, driveState] = useDriveState({});
+  const [state, driveState] = useDrivenState({});
 
   return (
     <LineItem
