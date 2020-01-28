@@ -138,7 +138,7 @@ ${
 
 ---
 
-<CodeSurferColumns themes={[vsDark, nightOwl]}>
+<CodeSurferColumns themes={[nightOwl, vsDark]}>
 
 ${
   stepper({
@@ -151,7 +151,7 @@ ${
 
 ---
 
-<CodeSurferColumns themes={[vsDark, nightOwl]}>
+<CodeSurferColumns themes={[vsDark]}>
 
 ${
   stepper({
@@ -164,12 +164,25 @@ ${
 
 ---
 
-<CodeSurferColumns themes={[vsDark, nightOwl]}>
+<CodeSurferColumns themes={[nightOwl, vsDark]}>
 
 ${
   stepper({
     folder: "./keyframes/",
     digest: require(path.join(__dirname, "./keyframes/005-conform/02-LineItem.json"))
+  })
+}
+
+</CodeSurferColumns>
+
+---
+
+<CodeSurferColumns themes={[nightOwl, vsDark]}>
+
+${
+  stepper({
+    folder: "./keyframes/",
+    digest: require(path.join(__dirname, "./keyframes/006-compose/03-ItemList.json"))
   })
 }
 

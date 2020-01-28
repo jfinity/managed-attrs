@@ -27,6 +27,8 @@ export default keyframe.json`{
 //// [null, "foci"], "start", [""]
 export const LineItem = props => {
   const {
+    children,
+
     selected = false,
 
     highlighted = false
@@ -58,6 +60,7 @@ export const LineItem = props => {
         onClick
       }
     >
+      {children}
     </div>
   );
 
@@ -84,6 +87,8 @@ export default keyframe.json`{
 //// [null, "foci"], "start"
 export const LineItem = props => {
   const {
+    children,
+
     selected = false,
 
     highlighted = false
@@ -115,6 +120,7 @@ export const LineItem = props => {
         onClick
       }
     >
+      {children}
     </div>
   );
 
@@ -141,6 +147,8 @@ export default keyframe.json`{
 //// [null, "foci"], "start"
 export const LineItem = props => {
   const {
+    children,
+
     selected = false,
 
     highlighted = false
@@ -175,6 +183,7 @@ export const LineItem = props => {
         onClick
       }
     >
+      {children}
     </div>
   );
 
@@ -201,6 +210,8 @@ export default keyframe.json`{
 //// [null, "foci"], "start"
 export const LineItem = props => {
   const {
+    children,
+
     selected = false,
 
     highlighted = false
@@ -237,6 +248,7 @@ export const LineItem = props => {
         onClick
       }
     >
+      {children}
     </div>
   );
 
@@ -263,6 +275,8 @@ export default keyframe.json`{
 //// [null, "foci"], "start"
 export const LineItem = props => {
   const {
+    children,
+
     selected = false,
 
     highlighted = false
@@ -299,6 +313,7 @@ export const LineItem = props => {
         onClick // [null, ""]
       }
     >
+      {children}
     </div>
   );
 
@@ -325,6 +340,8 @@ export default keyframe.json`{
 //// [null, "foci"], "start"
 export const LineItem = props => {
   const {
+    children,
+
     selected = false,
 
     highlighted = false
@@ -361,6 +378,7 @@ export const LineItem = props => {
         handleClick // [null, ""]
       }
     >
+      {children}
     </div>
   );
 
@@ -409,6 +427,8 @@ export const ValueInput = props => {
 //// [null, "foci"], "end"
 export const LineItem = props => {
   const {
+    children,
+
     selected = false,
 
     highlighted = false
@@ -445,6 +465,7 @@ export const LineItem = props => {
         handleClick
       }
     >
+      {children}
     </div>
   );
 
@@ -496,6 +517,8 @@ export const ValueInput = props => {
 //// [null, "foci"], "end"
 export const LineItem = props => {
   const {
+    children,
+
     selected = false,
 
     highlighted = false
@@ -532,6 +555,7 @@ export const LineItem = props => {
         handleClick
       }
     >
+      {children}
     </div>
   );
 

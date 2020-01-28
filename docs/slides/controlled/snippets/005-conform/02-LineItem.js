@@ -69,6 +69,8 @@ export default keyframe.json`{
 //// [null, "foci"], "start", [""]
 export const LineItem = props => {
   const {
+    children,
+
     selected = false,
 
     highlighted = false
@@ -105,6 +107,7 @@ export const LineItem = props => {
         handleClick
       }
     >
+      {children}
     </div>
   );
 
@@ -189,6 +192,8 @@ export default keyframe.json`{
 //
 export const LineItem = props => {
   const {
+    children,
+
     selected = false,
 
     highlighted = false
@@ -225,6 +230,7 @@ export const LineItem = props => {
         handleClick
       }
     >
+      {children}
     </div>
   );
 
@@ -335,6 +341,8 @@ export default keyframe.json`{
 //
 export const LineItem = props => {
   const {
+    children,
+
     selected = false,
 
     highlighted = false
@@ -371,6 +379,7 @@ export const LineItem = props => {
         handleClick
       }
     >
+      {children}
     </div>
   );
 
@@ -481,6 +490,8 @@ export default keyframe.json`{
 //
 export const LineItem = props => {
   const {
+    children,
+
     selected = false,
 
     highlighted = false
@@ -517,6 +528,7 @@ export const LineItem = props => {
         handleClick
       }
     >
+      {children}
     </div>
   );
 
@@ -622,6 +634,8 @@ export default keyframe.json`{
 //
 export const LineItem = props => {
   const {
+    children,
+
     selected = false,
 
     highlighted = false
@@ -658,6 +672,7 @@ export const LineItem = props => {
         handleClick
       }
     >
+      {children}
     </div>
   );
 
@@ -764,6 +779,8 @@ export default keyframe.json`{
 //// [null, "foci"], "start", [""]
 export const LineItem = props => {
   const {
+    children,
+
     selected = false,
 
     highlighted = false
@@ -800,6 +817,7 @@ export const LineItem = props => {
         handleClick
       }
     >
+      {children}
     </div>
   );
 
@@ -905,6 +923,8 @@ export default keyframe.json`{
 //// [null, "foci"], "start"
 export const LineItem = props => {
   const {
+    children,
+
     selected = false,
 
     highlighted = false
@@ -941,6 +961,7 @@ export const LineItem = props => {
         handleClick
       }
     >
+      {children}
     </div>
   );
 
@@ -988,6 +1009,8 @@ export default keyframe.json`{
 //// [null, "foci"], "start"
 export const LineItem = props => {
   const {
+    children,
+
     selected = false,
 
     highlighted = false
@@ -1024,6 +1047,7 @@ export const LineItem = props => {
         handleClick
       }
     >
+      {children}
     </div>
   );
 
@@ -1071,6 +1095,8 @@ export default keyframe.json`{
 //// [null, "foci"], "start"
 export const LineItem = props => {
   const {
+    children,
+
     selected = false,
 
     highlighted = false
@@ -1114,6 +1140,7 @@ export const LineItem = props => {
         handleClick
       }
     >
+      {children}
     </div>
   );
 
@@ -1225,6 +1252,8 @@ export default keyframe.json`{
 //// [null, "foci"], "start"
 export const LineItem = props => {
   const {
+    children,
+
     selected = false,
 
     highlighted = false
@@ -1280,6 +1309,7 @@ export const LineItem = props => {
         handleClick
       }
     >
+      {children}
     </div>
   );
 
@@ -1391,6 +1421,8 @@ export default keyframe.json`{
 //
 export const LineItem = props => {
   const {
+    children,
+
     selected = false,
 
     highlighted = false
@@ -1446,6 +1478,7 @@ export const LineItem = props => {
         handleClick
       }
     >
+      {children}
     </div>
   );
 
@@ -1559,6 +1592,8 @@ export default keyframe.json`{
 //
 export const LineItem = props => {
   const {
+    children,
+
     selected = false,
 
     highlighted = false
@@ -1614,6 +1649,7 @@ export const LineItem = props => {
         handleClick
       }
     >
+      {children}
     </div>
   );
 
@@ -1723,6 +1759,8 @@ export default keyframe.json`{
 //
 export const LineItem = props => {
   const {
+    children,
+
     selected = false,
 
     highlighted = false
@@ -1778,6 +1816,7 @@ export const LineItem = props => {
         handleClick
       }
     >
+      {children}
     </div>
   );
 
@@ -1881,6 +1920,8 @@ export default keyframe.json`{
 //
 export const LineItem = props => {
   const {
+    children,
+
     selected = false,
 
     highlighted = false
@@ -1936,6 +1977,7 @@ export const LineItem = props => {
         handleClick
       }
     >
+      {children}
     </div>
   );
 
@@ -2041,6 +2083,8 @@ export default keyframe.json`{
 //
 export const LineItem = props => {
   const {
+    children,
+
     selected = false,
 
     highlighted = false
@@ -2098,6 +2142,7 @@ export const LineItem = props => {
         handleClick
       }
     >
+      {children}
     </div>
   );
 
@@ -2203,6 +2248,8 @@ export default keyframe.json`{
 //
 export const LineItem = props => {
   const {
+    children,
+
     selected = false,
 
     highlighted = false
@@ -2260,6 +2307,7 @@ export const LineItem = props => {
         handleClick
       }
     >
+      {children}
     </div>
   );
 
@@ -2365,6 +2413,8 @@ export default keyframe.json`{
 //
 export const LineItem = props => {
   const {
+    children,
+
     selected = false,
 
     highlighted = false
@@ -2422,6 +2472,7 @@ export const LineItem = props => {
         handleClick
       }
     >
+      {children}
     </div>
   );
 
@@ -2527,6 +2578,8 @@ export default keyframe.json`{
 //
 export const LineItem = props => {
   const {
+    children,
+
     selected = false,
 
     highlighted = false
@@ -2584,6 +2637,7 @@ export const LineItem = props => {
         handleClick
       }
     >
+      {children}
     </div>
   );
 
@@ -2688,6 +2742,8 @@ export default keyframe.json`{
 //
 export const LineItem = props => {
   const {
+    children,
+
     selected = false,
 
     highlighted = false
@@ -2745,6 +2801,7 @@ export const LineItem = props => {
         handleClick
       }
     >
+      {children}
     </div>
   );
 
@@ -2849,6 +2906,8 @@ export default keyframe.json`{
 //
 export const LineItem = props => {
   const {
+    children,
+
     selected = false,
 
     highlighted = false
@@ -2906,6 +2965,7 @@ export const LineItem = props => {
         handleClick
       }
     >
+      {children}
     </div>
   );
 
@@ -3011,6 +3071,8 @@ export default keyframe.json`{
 //
 export const LineItem = props => {
   const {
+    children,
+
     selected = false,
 
     highlighted = false
@@ -3073,6 +3135,7 @@ export const LineItem = props => {
         handleClick
       }
     >
+      {children}
     </div>
   );
 
@@ -3178,6 +3241,8 @@ export default keyframe.json`{
 //
 export const LineItem = props => {
   const {
+    children,
+
     selected = false,
 
     highlighted = false
@@ -3240,6 +3305,7 @@ export const LineItem = props => {
         handleClick
       }
     >
+      {children}
     </div>
   );
 
@@ -3354,6 +3420,8 @@ export default keyframe.json`{
 //
 export const LineItem = props => {
   const {
+    children,
+
     selected = false,
 
     highlighted = false
@@ -3416,6 +3484,7 @@ export const LineItem = props => {
         handleClick
       }
     >
+      {children}
     </div>
   );
 
@@ -3554,6 +3623,8 @@ export default keyframe.json`{
 //
 export const LineItem = props => {
   const {
+    children,
+
     selected = false,
 
     highlighted = false
@@ -3616,6 +3687,7 @@ export const LineItem = props => {
         handleClick
       }
     >
+      {children}
     </div>
   );
 
@@ -3769,6 +3841,8 @@ export default keyframe.json`{
 //
 export const LineItem = props => {
   const {
+    children,
+
     selected = false,
 
     highlighted = false
@@ -3831,6 +3905,7 @@ export const LineItem = props => {
         handleClick
       }
     >
+      {children}
     </div>
   );
 
@@ -3975,6 +4050,8 @@ export default keyframe.json`{
 //
 export const LineItem = props => {
   const {
+    children,
+
     selected = false,
 
     highlighted = false
@@ -4037,6 +4114,7 @@ export const LineItem = props => {
         handleClick
       }
     >
+      {children}
     </div>
   );
 
@@ -4157,6 +4235,8 @@ export default keyframe.json`{
 //// [null, "foci"], "start"
 export const LineItem = props => {
   const {
+    children,
+
     selected = false,
 
     highlighted = false
@@ -4219,6 +4299,7 @@ export const LineItem = props => {
         handleClick
       }
     >
+      {children}
     </div>
   );
 
@@ -4324,6 +4405,8 @@ export default keyframe.json`{
 //// [null, "foci"], "start"
 export const LineItem = props => {
   const {
+    children,
+
     selected = false,
 
     highlighted = false
@@ -4386,6 +4469,7 @@ export const LineItem = props => {
         handleClick
       }
     >
+      {children}
     </div>
   );
 
@@ -4491,6 +4575,8 @@ export default keyframe.json`{
 //// [null, "foci"], "start", [""]
 export const LineItem = props => {
   const {
+    children,
+
     selected = false,
 
     highlighted = false
@@ -4553,6 +4639,7 @@ export const LineItem = props => {
         handleClick
       }
     >
+      {children}
     </div>
   );
 

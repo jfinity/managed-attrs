@@ -346,7 +346,9 @@ export default keyframe.json`{
 //// [null, "foci"], "start"
 export const LineItem = props => {
   const {
-    selected = false, // [""]
+    children, // [""]
+
+    selected = false,
 
     highlighted = false // [""]
   } = props;
@@ -410,6 +412,8 @@ export default keyframe.json`{
 //// [null, "foci"], "start"
 export const LineItem = props => {
   const {
+    children,
+
     selected = false,
 
     highlighted = false
@@ -476,6 +480,8 @@ export default keyframe.json`{
 //// [null, "foci"], "start"
 export const LineItem = props => {
   const {
+    children,
+
     selected = false,
 
     highlighted = false
@@ -491,6 +497,7 @@ export const LineItem = props => {
           "white"
       }} // [""]
     >
+      {children}
     </div>
   );
   // Consume props // [null, "subtitle"]
@@ -552,6 +559,8 @@ export default keyframe.json`{
 //// [null, "foci"], "start"
 export const LineItem = props => {
   const {
+    children,
+
     selected = false,
 
     highlighted = false
@@ -570,6 +579,7 @@ export const LineItem = props => {
           "white"
       }}
     >
+      {children}
     </div>
   );
   // Consume props // [null, "subtitle"]
@@ -631,6 +641,8 @@ export default keyframe.json`{
 //// [null, "foci"], "start"
 export const LineItem = props => {
   const {
+    children,
+
     selected = false,
 
     highlighted = false
@@ -652,6 +664,7 @@ export const LineItem = props => {
           "white"
       }}
     >
+      {children}
     </div>
   );
   // Consume props // [null, "subtitle"]
@@ -717,6 +730,8 @@ export default keyframe.json`{
 //// [null, "foci"], "start"
 export const LineItem = props => {
   const {
+    children,
+
     selected = false,
 
     highlighted = false
@@ -748,6 +763,7 @@ export const LineItem = props => {
         onClick
       } // [""]
     >
+      {children}
     </div>
   );
   // Consume props // [null, "subtitle"]
@@ -813,6 +829,8 @@ export default keyframe.json`{
 //// [null, "foci"], "start"
 export const LineItem = props => {
   const {
+    children,
+
     selected = false,
 
     highlighted = false
@@ -844,6 +862,7 @@ export const LineItem = props => {
         onClick
       }
     >
+      {children}
     </div>
   );
 
@@ -913,6 +932,8 @@ export default keyframe.json`{
 //
 export const LineItem = props => {
   const {
+    children,
+
     selected = false,
 
     highlighted = false
@@ -944,6 +965,7 @@ export const LineItem = props => {
         onClick
       }
     >
+      {children}
     </div>
   );
 
@@ -1021,6 +1043,8 @@ export default keyframe.json`{
 //
 export const LineItem = props => {
   const {
+    children,
+
     selected = false,
 
     highlighted = false
@@ -1052,6 +1076,7 @@ export const LineItem = props => {
         onClick
       }
     >
+      {children}
     </div>
   );
 
@@ -1135,6 +1160,8 @@ export default keyframe.json`{
 //
 export const LineItem = props => {
   const {
+    children,
+
     selected = false,
 
     highlighted = false
@@ -1166,6 +1193,7 @@ export const LineItem = props => {
         onClick
       }
     >
+      {children}
     </div>
   );
 
@@ -1253,6 +1281,8 @@ export default keyframe.json`{
 //
 export const LineItem = props => {
   const {
+    children,
+
     selected = false,
 
     highlighted = false
@@ -1284,6 +1314,7 @@ export const LineItem = props => {
         onClick
       }
     >
+      {children}
     </div>
   );
 
@@ -1377,6 +1408,8 @@ export default keyframe.json`{
 //
 export const LineItem = props => {
   const {
+    children,
+
     selected = false,
 
     highlighted = false
@@ -1408,6 +1441,7 @@ export const LineItem = props => {
         onClick
       }
     >
+      {children}
     </div>
   );
 
@@ -1506,6 +1540,8 @@ export default keyframe.json`{
 //
 export const LineItem = props => {
   const {
+    children,
+
     selected = false,
 
     highlighted = false
@@ -1537,6 +1573,7 @@ export const LineItem = props => {
         onClick
       }
     >
+      {children}
     </div>
   );
 
@@ -1581,6 +1618,8 @@ export default keyframe.json`{
 //
 export const LineItem = props => {
   const {
+    children,
+
     selected = false,
 
     highlighted = false
@@ -1612,6 +1651,7 @@ export const LineItem = props => {
         onClick
       }
     >
+      {children}
     </div>
   );
 
@@ -1658,6 +1698,8 @@ export default keyframe.json`{
 //
 export const LineItem = props => {
   const {
+    children,
+
     selected = false,
 
     highlighted = false
@@ -1689,6 +1731,7 @@ export const LineItem = props => {
         onClick
       }
     >
+      {children}
     </div>
   );
 
@@ -1739,6 +1782,8 @@ export default keyframe.json`{
 //
 export const LineItem = props => {
   const {
+    children,
+
     selected = false,
 
     highlighted = false
@@ -1770,6 +1815,7 @@ export const LineItem = props => {
         onClick
       }
     >
+      {children}
     </div>
   );
 
@@ -1877,6 +1923,8 @@ export default keyframe.json`{
 //
 export const LineItem = props => {
   const {
+    children,
+
     selected = false,
 
     highlighted = false
@@ -1908,6 +1956,7 @@ export const LineItem = props => {
         onClick
       }
     >
+      {children}
     </div>
   );
 
@@ -2015,6 +2064,8 @@ export default keyframe.json`{
 //// [null, "foci"], "start", [""]
 export const LineItem = props => {
   const {
+    children,
+
     selected = false,
 
     highlighted = false
@@ -2046,6 +2097,7 @@ export const LineItem = props => {
         onClick
       }
     >
+      {children}
     </div>
   );
 
@@ -2153,6 +2205,8 @@ export default keyframe.json`{
 //
 export const LineItem = props => {
   const {
+    children,
+
     selected = false,
 
     highlighted = false
@@ -2184,6 +2238,7 @@ export const LineItem = props => {
         onClick
       }
     >
+      {children}
     </div>
   );
 
@@ -2311,6 +2366,8 @@ export default keyframe.json`{
 //
 export const LineItem = props => {
   const {
+    children,
+
     selected = false,
 
     highlighted = false
@@ -2342,6 +2399,7 @@ export const LineItem = props => {
         onClick
       }
     >
+      {children}
     </div>
   );
 

@@ -45,6 +45,9 @@ export default prefs.json`
 // ["something"]
 // if a label has no pair and no matcher, it self-selects the complete line
 
+// [label, start, end, after]
+// [range || loop]
+
 json`{
   "path": "./${foldername}/01-component/a/01-${1}-${count}-01-ValueInput.js",
   "context": {
