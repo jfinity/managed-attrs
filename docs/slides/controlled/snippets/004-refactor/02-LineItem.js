@@ -1,4 +1,4 @@
-export default prefs.json`
+export default prefs/*json*/`
 {
   "digest": {
     "all": "./${foldername}/${basename}.json",
@@ -11,7 +11,7 @@ export default prefs.json`
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/06-refactor/a/06-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
@@ -31,14 +31,12 @@ export const LineItem = props => {
 
     selected = false,
 
-    highlighted = false
-  } = props;
+    highlighted = false,
 
-  const {
     onClick = event => {},
 
     onMouseEnter = event => {},
-    onMouseLeave = event => {}
+    onMouseLeave = event => {},
   } = props;
 
   return (
@@ -71,7 +69,7 @@ export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/06-refactor/a/06-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
@@ -91,14 +89,12 @@ export const LineItem = props => {
 
     selected = false,
 
-    highlighted = false
-  } = props;
+    highlighted = false,
 
-  const {
     onClick = event => {}, // ["pin"]
 
     onMouseEnter = event => {},
-    onMouseLeave = event => {} // ["pin"]
+    onMouseLeave = event => {}, // ["pin"]
   } = props;
   // Adapt signature from callback to state manager // [null, ""]
   return (
@@ -131,7 +127,7 @@ export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/06-refactor/a/06-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
@@ -151,14 +147,12 @@ export const LineItem = props => {
 
     selected = false,
 
-    highlighted = false
-  } = props;
+    highlighted = false,
 
-  const {
     onSelectionChange = boolean => {}, // [null, ""]
 
     onMouseEnter = event => {},
-    onMouseLeave = event => {}
+    onMouseLeave = event => {},
   } = props;
   // Adapt signature from callback to state manager // [null, "pin"]
   const handleClick = event => // [null, ""]
@@ -194,7 +188,7 @@ export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/06-refactor/a/06-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
@@ -214,13 +208,11 @@ export const LineItem = props => {
 
     selected = false,
 
-    highlighted = false
-  } = props;
+    highlighted = false,
 
-  const {
     onSelectionChange = boolean => {},
 
-    onHoverChange = boolean => {} // [null, ""]
+    onHoverChange = boolean => {}, // [null, ""]
   } = props;
   // Adapt signature from callback to state manager // [null, "pin"]
   const handleClick = event =>
@@ -259,7 +251,7 @@ export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/06-refactor/a/06-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
@@ -279,13 +271,11 @@ export const LineItem = props => {
 
     selected = false,
 
-    highlighted = false
-  } = props;
+    highlighted = false,
 
-  const {
     onSelectionChange = boolean => {},
 
-    onHoverChange = boolean => {}
+    onHoverChange = boolean => {},
   } = props;
   // Adapt signature from callback to state manager
   const handleClick = event =>
@@ -324,7 +314,7 @@ export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/06-refactor/a/06-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
@@ -344,13 +334,11 @@ export const LineItem = props => {
 
     selected = false,
 
-    highlighted = false
-  } = props;
+    highlighted = false,
 
-  const {
     onSelectionChange = boolean => {},
 
-    onHoverChange = boolean => {}
+    onHoverChange = boolean => {},
   } = props;
   // Adapt signature from callback to state manager
   const handleClick = event =>
@@ -389,7 +377,7 @@ export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/06-refactor/a/06-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
@@ -405,11 +393,9 @@ export default keyframe.json`{
 //// [null, "foci"], "start"
 export const ValueInput = props => {
   const {
-    value = ""
-  } = props;
+    value = "",
 
-  const {
-    onChange = event => {}
+    onChange = event => {},
   } = props;
   // Adapt signature from callback to state manager // [null, ""]
   return (
@@ -431,13 +417,11 @@ export const LineItem = props => {
 
     selected = false,
 
-    highlighted = false
-  } = props;
+    highlighted = false,
 
-  const {
     onSelectionChange = boolean => {},
 
-    onHoverChange = boolean => {}
+    onHoverChange = boolean => {},
   } = props;
 
   const handleClick = event =>
@@ -476,7 +460,7 @@ export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/06-refactor/a/06-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
@@ -492,11 +476,9 @@ export default keyframe.json`{
 //// [null, "foci"], "start"
 export const ValueInput = props => {
   const {
-    value = ""
-  } = props;
+    value = "",
 
-  const {
-    onValueChange = string => {} // [null, ""]
+    onValueChange = string => {}, // [null, ""]
   } = props;
 
   const handleChange = event => // [null, ""]
@@ -521,13 +503,11 @@ export const LineItem = props => {
 
     selected = false,
 
-    highlighted = false
-  } = props;
+    highlighted = false,
 
-  const {
     onSelectionChange = boolean => {},
 
-    onHoverChange = boolean => {}
+    onHoverChange = boolean => {},
   } = props;
 
   const handleClick = event =>

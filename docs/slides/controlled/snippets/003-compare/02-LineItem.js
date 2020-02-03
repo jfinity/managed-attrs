@@ -1,4 +1,4 @@
-export default prefs.json`
+export default prefs/*json*/`
 {
   "digest": {
     "all": "./${foldername}/${basename}.json",
@@ -11,7 +11,7 @@ export default prefs.json`
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/01-component/a/01-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
@@ -30,7 +30,7 @@ export default keyframe.json`{
 
 export default null;
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/01-component/a/01-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
@@ -51,7 +51,7 @@ export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/01-component/a/01-${1}-${count}-01-ValueInput.js",
   "context": {
     "column": "ValueInput",
@@ -71,7 +71,7 @@ export const ValueInput = props => {
 
 export default null;
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/01-component/a/01-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
@@ -93,7 +93,7 @@ export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/02-render/a/02-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
@@ -114,7 +114,7 @@ export const ValueInput = props => {
 
 export default null;
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/02-render/a/02-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
@@ -137,7 +137,7 @@ export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/02-render/a/02-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
@@ -162,7 +162,7 @@ export const ValueInput = props => {
 
 export default null;
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/02-render/a/02-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
@@ -189,7 +189,7 @@ export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/03-props/a/03-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
@@ -214,7 +214,7 @@ export const ValueInput = props => {
 
 export default null;
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/03-props/a/03-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
@@ -241,7 +241,7 @@ export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/03-props/a/03-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
@@ -270,7 +270,7 @@ export const ValueInput = props => {
 
 export default null;
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/03-props/a/03-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
@@ -301,7 +301,7 @@ export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/03-props/a/03-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
@@ -317,7 +317,7 @@ export default keyframe.json`{
 //// [null, "foci"], "start"
 export const ValueInput = props => {
   const {
-    value = "" // [""]
+    value = "", // [""]
   } = props;
 
   return (
@@ -330,7 +330,7 @@ export const ValueInput = props => {
 
 export default null;
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/03-props/a/03-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
@@ -350,7 +350,7 @@ export const LineItem = props => {
 
     selected = false,
 
-    highlighted = false // [""]
+    highlighted = false, // [""]
   } = props;
 
   return (
@@ -365,7 +365,7 @@ export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/03-props/a/03-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
@@ -381,7 +381,7 @@ export default keyframe.json`{
 //// [null, "foci"], "start"
 export const ValueInput = props => {
   const {
-    value = ""
+    value = "",
   } = props;
 
   return (
@@ -396,7 +396,7 @@ export const ValueInput = props => {
 
 export default null;
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/03-props/a/03-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
@@ -416,7 +416,7 @@ export const LineItem = props => {
 
     selected = false,
 
-    highlighted = false
+    highlighted = false,
   } = props;
 
   return (
@@ -433,7 +433,7 @@ export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/03-props/a/03-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
@@ -449,7 +449,7 @@ export default keyframe.json`{
 //// [null, "foci"], "start"
 export const ValueInput = props => {
   const {
-    value = ""
+    value = "",
   } = props;
 
   return (
@@ -464,7 +464,7 @@ export const ValueInput = props => {
 
 export default null;
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/03-props/a/03-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
@@ -484,7 +484,7 @@ export const LineItem = props => {
 
     selected = false,
 
-    highlighted = false
+    highlighted = false,
   } = props;
 
   return (
@@ -497,7 +497,7 @@ export const LineItem = props => {
           "white"
       }} // [""]
     >
-      {children}
+      {children} // [null, ""]
     </div>
   );
   // Consume props // [null, "subtitle"]
@@ -508,7 +508,7 @@ export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/03-props/a/03-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
@@ -524,12 +524,9 @@ export default keyframe.json`{
 //// [null, "foci"], "start"
 export const ValueInput = props => {
   const {
-    value = ""
+    value = "",
+    // Retrieve callback props // [""]
   } = props;
-
-  const { // [""]
-    // Retrieve callback props
-  } = props; // [""]
 
   return (
     <input
@@ -543,7 +540,7 @@ export const ValueInput = props => {
 
 export default null;
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/03-props/a/03-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
@@ -563,12 +560,9 @@ export const LineItem = props => {
 
     selected = false,
 
-    highlighted = false
+    highlighted = false,
+    // Retrieve callback props // [""]
   } = props;
-
-  const { // [""]
-    // Retrieve callback props
-  } = props; // [""]
 
   return (
     <div
@@ -590,7 +584,7 @@ export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/03-props/a/03-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
@@ -606,11 +600,9 @@ export default keyframe.json`{
 //// [null, "foci"], "start"
 export const ValueInput = props => {
   const {
-    value = ""
-  } = props;
+    value = "",
 
-  const {
-    onChange = event => {} // [""]
+    onChange = event => {}, // [""]
   } = props;
 
   return (
@@ -625,7 +617,7 @@ export const ValueInput = props => {
 
 export default null;
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/03-props/a/03-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
@@ -645,14 +637,12 @@ export const LineItem = props => {
 
     selected = false,
 
-    highlighted = false
-  } = props;
+    highlighted = false,
 
-  const {
     onClick = event => {}, // [""]
 
     onMouseEnter = event => {},
-    onMouseLeave = event => {} // [""]
+    onMouseLeave = event => {}, // [""]
   } = props;
 
   return (
@@ -675,7 +665,7 @@ export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/03-props/a/03-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
@@ -691,11 +681,9 @@ export default keyframe.json`{
 //// [null, "foci"], "start"
 export const ValueInput = props => {
   const {
-    value = ""
-  } = props;
+    value = "",
 
-  const {
-    onChange = event => {}
+    onChange = event => {},
   } = props;
 
   return (
@@ -714,7 +702,7 @@ export const ValueInput = props => {
 
 export default null;
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/03-props/a/03-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
@@ -734,14 +722,12 @@ export const LineItem = props => {
 
     selected = false,
 
-    highlighted = false
-  } = props;
+    highlighted = false,
 
-  const {
     onClick = event => {},
 
     onMouseEnter = event => {},
-    onMouseLeave = event => {}
+    onMouseLeave = event => {},
   } = props;
 
   return (
@@ -774,7 +760,7 @@ export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/03-props/a/03-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
@@ -790,11 +776,9 @@ export default keyframe.json`{
 //// [null, "foci"], "start"
 export const ValueInput = props => {
   const {
-    value = ""
-  } = props;
+    value = "",
 
-  const {
-    onChange = event => {}
+    onChange = event => {},
   } = props;
 
   return (
@@ -813,7 +797,7 @@ export const ValueInput = props => {
 
 export default null;
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/03-props/a/03-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
@@ -833,14 +817,12 @@ export const LineItem = props => {
 
     selected = false,
 
-    highlighted = false
-  } = props;
+    highlighted = false,
 
-  const {
     onClick = event => {},
 
     onMouseEnter = event => {},
-    onMouseLeave = event => {}
+    onMouseLeave = event => {},
   } = props;
 
   return (
@@ -873,7 +855,7 @@ export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/04-consumer/a/04-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
@@ -889,11 +871,9 @@ export default keyframe.json`{
 //
 export const ValueInput = props => {
   const {
-    value = ""
-  } = props;
+    value = "",
 
-  const {
-    onChange = event => {}
+    onChange = event => {},
   } = props;
 
   return (
@@ -916,7 +896,7 @@ export const App = () => {
 
 export default null;
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/04-consumer/a/04-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
@@ -936,14 +916,12 @@ export const LineItem = props => {
 
     selected = false,
 
-    highlighted = false
-  } = props;
+    highlighted = false,
 
-  const {
     onClick = event => {},
 
     onMouseEnter = event => {},
-    onMouseLeave = event => {}
+    onMouseLeave = event => {},
   } = props;
 
   return (
@@ -980,7 +958,7 @@ export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/04-consumer/a/04-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
@@ -996,11 +974,9 @@ export default keyframe.json`{
 //
 export const ValueInput = props => {
   const {
-    value = ""
-  } = props;
+    value = "",
 
-  const {
-    onChange = event => {}
+    onChange = event => {},
   } = props;
 
   return (
@@ -1027,7 +1003,7 @@ export const App = () => {
 
 export default null;
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/04-consumer/a/04-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
@@ -1047,14 +1023,12 @@ export const LineItem = props => {
 
     selected = false,
 
-    highlighted = false
-  } = props;
+    highlighted = false,
 
-  const {
     onClick = event => {},
 
     onMouseEnter = event => {},
-    onMouseLeave = event => {}
+    onMouseLeave = event => {},
   } = props;
 
   return (
@@ -1095,7 +1069,7 @@ export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/04-consumer/a/04-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
@@ -1111,11 +1085,9 @@ export default keyframe.json`{
 //
 export const ValueInput = props => {
   const {
-    value = ""
-  } = props;
+    value = "",
 
-  const {
-    onChange = event => {}
+    onChange = event => {},
   } = props;
 
   return (
@@ -1144,7 +1116,7 @@ export const App = () => {
 
 export default null;
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/04-consumer/a/04-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
@@ -1164,14 +1136,12 @@ export const LineItem = props => {
 
     selected = false,
 
-    highlighted = false
-  } = props;
+    highlighted = false,
 
-  const {
     onClick = event => {},
 
     onMouseEnter = event => {},
-    onMouseLeave = event => {}
+    onMouseLeave = event => {},
   } = props;
 
   return (
@@ -1214,7 +1184,7 @@ export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/04-consumer/a/04-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
@@ -1230,11 +1200,9 @@ export default keyframe.json`{
 //
 export const ValueInput = props => {
   const {
-    value = ""
-  } = props;
+    value = "",
 
-  const {
-    onChange = event => {}
+    onChange = event => {},
   } = props;
 
   return (
@@ -1265,7 +1233,7 @@ export const App = () => {
 
 export default null;
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/04-consumer/a/04-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
@@ -1285,14 +1253,12 @@ export const LineItem = props => {
 
     selected = false,
 
-    highlighted = false
-  } = props;
+    highlighted = false,
 
-  const {
     onClick = event => {},
 
     onMouseEnter = event => {},
-    onMouseLeave = event => {}
+    onMouseLeave = event => {},
   } = props;
 
   return (
@@ -1337,7 +1303,7 @@ export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/04-consumer/a/04-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
@@ -1353,11 +1319,9 @@ export default keyframe.json`{
 //
 export const ValueInput = props => {
   const {
-    value = ""
-  } = props;
+    value = "",
 
-  const {
-    onChange = event => {}
+    onChange = event => {},
   } = props;
 
   return (
@@ -1392,7 +1356,7 @@ export const App = () => {
 
 export default null;
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/04-consumer/a/04-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
@@ -1412,14 +1376,12 @@ export const LineItem = props => {
 
     selected = false,
 
-    highlighted = false
-  } = props;
+    highlighted = false,
 
-  const {
     onClick = event => {},
 
     onMouseEnter = event => {},
-    onMouseLeave = event => {}
+    onMouseLeave = event => {},
   } = props;
 
   return (
@@ -1469,7 +1431,7 @@ export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/04-consumer/a/04-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
@@ -1485,11 +1447,9 @@ export default keyframe.json`{
 //
 export const ValueInput = props => {
   const {
-    value = ""
-  } = props;
+    value = "",
 
-  const {
-    onChange = event => {}
+    onChange = event => {},
   } = props;
 
   return (
@@ -1524,7 +1484,7 @@ export const App = () => {
 
 export default null;
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/04-consumer/a/04-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
@@ -1544,14 +1504,12 @@ export const LineItem = props => {
 
     selected = false,
 
-    highlighted = false
-  } = props;
+    highlighted = false,
 
-  const {
     onClick = event => {},
 
     onMouseEnter = event => {},
-    onMouseLeave = event => {}
+    onMouseLeave = event => {},
   } = props;
 
   return (
@@ -1602,7 +1560,7 @@ export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/04-consumer/a/04-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
@@ -1622,14 +1580,12 @@ export const LineItem = props => {
 
     selected = false,
 
-    highlighted = false
-  } = props;
+    highlighted = false,
 
-  const {
     onClick = event => {},
 
     onMouseEnter = event => {},
-    onMouseLeave = event => {}
+    onMouseLeave = event => {},
   } = props;
 
   return (
@@ -1682,7 +1638,7 @@ export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/04-consumer/a/04-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
@@ -1702,14 +1658,12 @@ export const LineItem = props => {
 
     selected = false,
 
-    highlighted = false
-  } = props;
+    highlighted = false,
 
-  const {
     onClick = event => {},
 
     onMouseEnter = event => {},
-    onMouseLeave = event => {}
+    onMouseLeave = event => {},
   } = props;
 
   return (
@@ -1766,7 +1720,7 @@ export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/04-consumer/a/04-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
@@ -1786,14 +1740,12 @@ export const LineItem = props => {
 
     selected = false,
 
-    highlighted = false
-  } = props;
+    highlighted = false,
 
-  const {
     onClick = event => {},
 
     onMouseEnter = event => {},
-    onMouseLeave = event => {}
+    onMouseLeave = event => {},
   } = props;
 
   return (
@@ -1852,7 +1804,7 @@ export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/04-consumer/b/04-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
@@ -1868,11 +1820,9 @@ export default keyframe.json`{
 //
 export const ValueInput = props => {
   const {
-    value = ""
-  } = props;
+    value = "",
 
-  const {
-    onChange = event => {}
+    onChange = event => {},
   } = props;
 
   return (
@@ -1907,7 +1857,7 @@ export const App = () => {
 
 export default null;
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/04-consumer/b/04-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
@@ -1927,14 +1877,12 @@ export const LineItem = props => {
 
     selected = false,
 
-    highlighted = false
-  } = props;
+    highlighted = false,
 
-  const {
     onClick = event => {},
 
     onMouseEnter = event => {},
-    onMouseLeave = event => {}
+    onMouseLeave = event => {},
   } = props;
 
   return (
@@ -1993,7 +1941,7 @@ export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/04-consumer/b/04-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
@@ -2009,11 +1957,9 @@ export default keyframe.json`{
 //// [null, "foci"], "start", [""]
 export const ValueInput = props => {
   const {
-    value = ""
-  } = props;
+    value = "",
 
-  const {
-    onChange = event => {}
+    onChange = event => {},
   } = props;
 
   return (
@@ -2048,7 +1994,7 @@ export const App = () => {
 
 export default null;
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/04-consumer/b/04-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
@@ -2068,14 +2014,12 @@ export const LineItem = props => {
 
     selected = false,
 
-    highlighted = false
-  } = props;
+    highlighted = false,
 
-  const {
     onClick = event => {},
 
     onMouseEnter = event => {},
-    onMouseLeave = event => {}
+    onMouseLeave = event => {},
   } = props;
 
   return (
@@ -2134,7 +2078,7 @@ export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/05-consumer/a/05-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
@@ -2150,11 +2094,9 @@ export default keyframe.json`{
 //
 export const ValueInput = props => {
   const {
-    value = ""
-  } = props;
+    value = "",
 
-  const {
-    onChange = event => {}
+    onChange = event => {},
   } = props;
 
   return (
@@ -2189,7 +2131,7 @@ export const App = () => {
 
 export default null;
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/05-consumer/a/05-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
@@ -2209,14 +2151,12 @@ export const LineItem = props => {
 
     selected = false,
 
-    highlighted = false
-  } = props;
+    highlighted = false,
 
-  const {
     onClick = event => {},
 
     onMouseEnter = event => {},
-    onMouseLeave = event => {}
+    onMouseLeave = event => {},
   } = props;
 
   return (
@@ -2275,7 +2215,7 @@ export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/05-consumer/a/05-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
@@ -2293,11 +2233,9 @@ export default keyframe.json`{
 //
 export const ValueInput = props => {
   const {
-    value = ""
-  } = props;
+    value = "",
 
-  const {
-    onChange = event => {}
+    onChange = event => {},
   } = props;
 
   return (
@@ -2348,7 +2286,7 @@ export const Lib = () => { // [""]
 
 export default null;
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/05-consumer/a/05-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
@@ -2370,14 +2308,12 @@ export const LineItem = props => {
 
     selected = false,
 
-    highlighted = false
-  } = props;
+    highlighted = false,
 
-  const {
     onClick = event => {},
 
     onMouseEnter = event => {},
-    onMouseLeave = event => {}
+    onMouseLeave = event => {},
   } = props;
 
   return (

@@ -1,4 +1,4 @@
-export default prefs.json`
+export default prefs/*json*/ `
 {
   "digest": {
     "all": "./${foldername}/${basename}.json",
@@ -7,11 +7,7 @@ export default prefs.json`
 }
 `;
 
-
-
-
-
-export default keyframe.json`{
+export default keyframe/*json*/ `{
   "path": "./${foldername}/09-compose/a/09-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
@@ -40,21 +36,19 @@ export const LineItem = props => {
 
     selected = false,
 
-    highlighted = false
-  } = props; // ["non"]
-//// [null, "foci"], "start"
-  const {
-    driver, // (action, reducer) => {}
+    highlighted = false,
+//// [null, "foci"], "start", ["non"]
+    stateManager, // (action, reducer) => {}
 
-    whenSelectionChange = driver,
+    whenSelectionChanges = stateManager,
 
-    whenHoverChange = driver
+    whenHoverChanges = stateManager,
   } = props;
 
   const handleClick = event => {
     const { ctrlKey } = event;
-    whenSelectionChange(
-      { type: "whenSelectionChange", ctrlKey },
+    whenSelectionChanges(
+      { type: "whenSelectionChanges", ctrlKey },
       (state, action) => {
         const next = action.ctrlKey ? !state.selected : true;
         return { ...state, selected: next };
@@ -64,8 +58,8 @@ export const LineItem = props => {
 //// [null, "foci"], "end"
   const handleMouseEnter = () => {
     const hovering = true;
-    whenHoverChange(
-      { type: "whenHoverChange", hovering },
+    whenHoverChanges(
+      { type: "whenHoverChanges", hovering },
       (state, action) => {
         return { ...state, highlighted: action.hovering };
       }
@@ -73,8 +67,8 @@ export const LineItem = props => {
   };
   const handleMouseLeave = () => {
     const hovering = false;
-    whenHoverChange(
-      { type: "whenHoverChange", hovering },
+    whenHoverChanges(
+      { type: "whenHoverChanges", hovering },
       (state, action) => {
         return { ...state, highlighted: action.hovering };
       }
@@ -84,32 +78,21 @@ export const LineItem = props => {
   return ( // ["render"]
     <div
       style={{
-        background:
-          highlighted ? "lightgray" :
-          selected ? "darkgray" :
-          "white"
+        background: highlighted ? "lightgray" : selected ? "darkgray" : "white"
       }}
-
-      onMouseEnter={
-        handleMouseEnter
-      }
-      onMouseLeave={
-        handleMouseLeave
-      }
-      onClick={
-        handleClick
-      }
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      onClick={handleClick}
     >
       {children}
     </div>
   ); // ["render"]
-
 };
 //// [""], [null, "pin"]
 
 export default null;
 
-export default keyframe.json`{
+export default keyframe/*json*/ `{
   "path": "./${foldername}/09-compose/a/09-${1}-${count}-03-ItemList.js",
   "context": {
      "column": "ItemList",
@@ -128,9 +111,7 @@ export default keyframe.json`{
 
 export default null;
 
-
-
-export default keyframe.json`{
+export default keyframe/*json*/ `{
   "path": "./${foldername}/09-compose/a/09-${1}-${count}-03-ItemList.js",
   "context": {
      "column": "ItemList",
@@ -150,9 +131,7 @@ export const ItemList = props => {
 
 export default null;
 
-
-
-export default keyframe.json`{
+export default keyframe/*json*/ `{
   "path": "./${foldername}/09-compose/a/09-${1}-${count}-03-ItemList.js",
   "context": {
      "column": "ItemList",
@@ -173,9 +152,7 @@ export const ItemList = props => {
 
 export default null;
 
-
-
-export default keyframe.json`{
+export default keyframe/*json*/ `{
   "path": "./${foldername}/09-compose/a/09-${1}-${count}-03-ItemList.js",
   "context": {
      "column": "ItemList",
@@ -200,9 +177,7 @@ export const ItemList = props => {
 
 export default null;
 
-
-
-export default keyframe.json`{
+export default keyframe/*json*/ `{
   "path": "./${foldername}/09-compose/a/09-${1}-${count}-03-ItemList.js",
   "context": {
      "column": "ItemList",
@@ -227,9 +202,7 @@ export const ItemList = props => {
 
 export default null;
 
-
-
-export default keyframe.json`{
+export default keyframe/*json*/ `{
   "path": "./${foldername}/09-compose/a/09-${1}-${count}-03-ItemList.js",
   "context": {
      "column": "ItemList",
@@ -245,7 +218,7 @@ export default keyframe.json`{
 //// [null, "foci"], "start"
 export const ItemList = props => {
   const { // [""]
-    // Retrieve non-driver props
+    // Retrieve non-stateManager props
   } = props; // [""]
 
   return (
@@ -258,9 +231,7 @@ export const ItemList = props => {
 
 export default null;
 
-
-
-export default keyframe.json`{
+export default keyframe/*json*/ `{
   "path": "./${foldername}/09-compose/a/09-${1}-${count}-03-ItemList.js",
   "context": {
      "column": "ItemList",
@@ -278,7 +249,7 @@ export const ItemList = props => {
   const {
     items = [], // [""]
     // Implementation details skipped
-    ...rest // [""]
+    ...rest, // [""]
   } = props;
 
   return (
@@ -291,9 +262,7 @@ export const ItemList = props => {
 
 export default null;
 
-
-
-export default keyframe.json`{
+export default keyframe/*json*/ `{
   "path": "./${foldername}/09-compose/a/09-${1}-${count}-03-ItemList.js",
   "context": {
      "column": "ItemList",
@@ -311,16 +280,14 @@ export const ItemList = props => {
   const {
     items = [],
 
-    ...rest
+    ...rest,
   } = props;
 
   return (
     <div>
-      { // [""]
-        items.map(each => {
-          const { key } = each;
-        })
-      } // [""]
+      {items.map(each => { // [""]
+        const { key } = each;
+      })} // [""]
     </div>
   );
   // Consume props // [null, "subtitle"]
@@ -329,9 +296,7 @@ export const ItemList = props => {
 
 export default null;
 
-
-
-export default keyframe.json`{
+export default keyframe/*json*/ `{
   "path": "./${foldername}/09-compose/a/09-${1}-${count}-03-ItemList.js",
   "context": {
      "column": "ItemList",
@@ -349,18 +314,16 @@ export const ItemList = props => {
   const {
     items = [],
 
-    ...rest
+    ...rest,
   } = props;
 
   return (
     <div>
-      {
-        items.map(each => {
-          const { key } = each;
-          const itemProps = getItemProps(props, key); // [""]
-          const { children, selected, highlighted } = itemProps; // [""]
-        })
-      }
+      {items.map(each => {
+        const { key } = each;
+        const itemProps = getItemProps(props, key); // [""]
+        const { children, selected, highlighted } = itemProps; // [""]
+      })}
     </div>
   );
   // Consume props // [null, "subtitle"]
@@ -372,9 +335,7 @@ export const ItemList = props => {
 
 export default null;
 
-
-
-export default keyframe.json`{
+export default keyframe/*json*/ `{
   "path": "./${foldername}/09-compose/a/09-${1}-${count}-03-ItemList.js",
   "context": {
      "column": "ItemList",
@@ -392,28 +353,26 @@ export const ItemList = props => {
   const {
     items = [],
 
-    ...rest
+    ...rest,
   } = props;
 
   return (
     <div>
-      {
-        items.map(each => {
-          const { key } = each;
-          const itemProps = getItemProps(props, key);
-          const { children, selected, highlighted } = itemProps;
+      {items.map(each => {
+        const { key } = each;
+        const itemProps = getItemProps(props, key);
+        const { children, selected, highlighted } = itemProps;
 
-          return ( // [""]
-            <LineItem
-              key={key}
-              selected={selected}
-              highlighted={highlighted}
-            >
-              {children}
-            </LineItem>
-          ); // [""]
-        })
-      }
+        return ( // [""]
+          <LineItem
+            key={key}
+            selected={selected}
+            highlighted={highlighted}
+          >
+            {children}
+          </LineItem>
+        ); // [""]
+      })}
     </div>
   );
   // Consume props // [null, "subtitle"]
@@ -425,9 +384,7 @@ export const ItemList = props => {
 
 export default null;
 
-
-
-export default keyframe.json`{
+export default keyframe/*json*/ `{
   "path": "./${foldername}/09-compose/a/09-${1}-${count}-03-ItemList.js",
   "context": {
      "column": "ItemList",
@@ -444,33 +401,27 @@ export default keyframe.json`{
 export const ItemList = props => {
   const {
     items = [],
-
-    ...rest
+    // Retrieve stateManager props // [""]
+    ...rest,
   } = props;
-
-  const { // [""]
-    // Retrieve driver props
-  } = props; // [""]
 
   return (
     <div>
-      {
-        items.map(each => {
-          const { key } = each;
-          const itemProps = getItemProps(props, key);
-          const { children, selected, highlighted } = itemProps;
+      {items.map(each => {
+        const { key } = each;
+        const itemProps = getItemProps(props, key);
+        const { children, selected, highlighted } = itemProps;
 
-          return (
-            <LineItem
-              key={key}
-              selected={selected}
-              highlighted={highlighted}
-            >
-              {children}
-            </LineItem>
-          );
-        })
-      }
+        return (
+          <LineItem
+            key={key}
+            selected={selected}
+            highlighted={highlighted}
+          >
+            {children}
+          </LineItem>
+        );
+      })}
     </div>
   );
   // Consume props // [null, "subtitle"]
@@ -482,9 +433,7 @@ export const ItemList = props => {
 
 export default null;
 
-
-
-export default keyframe.json`{
+export default keyframe/*json*/ `{
   "path": "./${foldername}/09-compose/a/09-${1}-${count}-03-ItemList.js",
   "context": {
      "column": "ItemList",
@@ -502,32 +451,28 @@ export const ItemList = props => {
   const {
     items = [],
 
-    ...rest
-  } = props;
+    stateManager, // (action, reducer) => {} // [""]
 
-  const {
-    driver, // (action, reducer) => {} // [""]
+    ...rest,
   } = props;
-  // Adapt driving from child to parent // [null, ""]
+  // Adapt management from child to parent // [null, ""]
   return (
     <div>
-      {
-        items.map(each => {
-          const { key } = each;
-          const itemProps = getItemProps(props, key);
-          const { children, selected, highlighted } = itemProps;
+      {items.map(each => {
+        const { key } = each;
+        const itemProps = getItemProps(props, key);
+        const { children, selected, highlighted } = itemProps;
 
-          return (
-            <LineItem
-              key={key}
-              selected={selected}
-              highlighted={highlighted}
-            >
-              {children}
-            </LineItem>
-          );
-        })
-      }
+        return (
+          <LineItem
+            key={key}
+            selected={selected}
+            highlighted={highlighted}
+          >
+            {children}
+          </LineItem>
+        );
+      })}
     </div>
   );
   // Consume props // [null, "subtitle"]
@@ -539,9 +484,7 @@ export const ItemList = props => {
 
 export default null;
 
-
-
-export default keyframe.json`{
+export default keyframe/*json*/ `{
   "path": "./${foldername}/09-compose/a/09-${1}-${count}-03-ItemList.js",
   "context": {
      "column": "ItemList",
@@ -559,36 +502,32 @@ export const ItemList = props => {
   const {
     items = [],
 
-    ...rest
-  } = props;
+    stateManager, // (action, reducer) => {}
 
-  const {
-    driver, // (action, reducer) => {}
+    ...rest,
   } = props;
-  // Adapt driving from child to parent // [null, "pin"]
+  // Adapt management from child to parent // [null, "pin"]
   const connecter = (action, reducer) => { // [""]
   }; // [""]
 
   return (
     <div>
-      {
-        items.map(each => {
-          const { key } = each;
-          const itemProps = getItemProps(props, key);
-          const { children, selected, highlighted } = itemProps;
+      {items.map(each => {
+        const { key } = each;
+        const itemProps = getItemProps(props, key);
+        const { children, selected, highlighted } = itemProps;
 
-          return (
-            <LineItem
-              key={key}
-              selected={selected}
-              highlighted={highlighted}
-              driver={connecter} // [null, ""]
-            >
-              {children}
-            </LineItem>
-          );
-        })
-      }
+        return (
+          <LineItem
+            key={key}
+            selected={selected}
+            highlighted={highlighted}
+            stateManager={connecter} // [null, ""]
+          >
+            {children}
+          </LineItem>
+        );
+      })}
     </div>
   );
   // Consume props // [null, "subtitle"]
@@ -600,9 +539,7 @@ export const ItemList = props => {
 
 export default null;
 
-
-
-export default keyframe.json`{
+export default keyframe/*json*/ `{
   "path": "./${foldername}/09-compose/a/09-${1}-${count}-03-ItemList.js",
   "context": {
      "column": "ItemList",
@@ -620,15 +557,13 @@ export const ItemList = props => {
   const {
     items = [],
 
-    ...rest
-  } = props;
+    stateManager, // (action, reducer) => {}
 
-  const {
-    driver, // (action, reducer) => {}
+    ...rest,
   } = props;
-  // Adapt driving from child to parent // [null, "pin"]
+  // Adapt management from child to parent // [null, "pin"]
   const connecter = (action, reducer) => {
-    driver( // [""]
+    stateManager( // [""]
       action,
       lastState => {
         const nextState = lastState;
@@ -640,24 +575,22 @@ export const ItemList = props => {
 
   return (
     <div>
-      {
-        items.map(each => {
-          const { key } = each;
-          const itemProps = getItemProps(props, key);
-          const { children, selected, highlighted } = itemProps;
+      {items.map(each => {
+        const { key } = each;
+        const itemProps = getItemProps(props, key);
+        const { children, selected, highlighted } = itemProps;
 
-          return (
-            <LineItem
-              key={key}
-              selected={selected}
-              highlighted={highlighted}
-              driver={connecter}
-            >
-              {children}
-            </LineItem>
-          );
-        })
-      }
+        return (
+          <LineItem
+            key={key}
+            selected={selected}
+            highlighted={highlighted}
+            stateManager={connecter}
+          >
+            {children}
+          </LineItem>
+        );
+      })}
     </div>
   );
   // Consume props // [null, "subtitle"]
@@ -669,9 +602,7 @@ export const ItemList = props => {
 
 export default null;
 
-
-
-export default keyframe.json`{
+export default keyframe/*json*/ `{
   "path": "./${foldername}/09-compose/a/09-${1}-${count}-03-ItemList.js",
   "context": {
      "column": "ItemList",
@@ -689,15 +620,13 @@ export const ItemList = props => {
   const {
     items = [],
 
-    ...rest
-  } = props;
+    stateManager, // (action, reducer) => {}
 
-  const {
-    driver, // (action, reducer) => {}
+    ...rest,
   } = props;
-  // Adapt driving from child to parent // [null, "pin"]
+  // Adapt management from child to parent // [null, "pin"]
   const connecter = (action, reducer) => {
-    driver(
+    stateManager(
       action,
       lastState => {
         const lastItemProps = getItemProps(lastState, key); // [""]
@@ -712,24 +641,22 @@ export const ItemList = props => {
 
   return (
     <div>
-      {
-        items.map(each => {
-          const { key } = each;
-          const itemProps = getItemProps(props, key);
-          const { children, selected, highlighted } = itemProps;
+      {items.map(each => {
+        const { key } = each;
+        const itemProps = getItemProps(props, key);
+        const { children, selected, highlighted } = itemProps;
 
-          return (
-            <LineItem
-              key={key}
-              selected={selected}
-              highlighted={highlighted}
-              driver={connecter}
-            >
-              {children}
-            </LineItem>
-          );
-        })
-      }
+        return (
+          <LineItem
+            key={key}
+            selected={selected}
+            highlighted={highlighted}
+            stateManager={connecter}
+          >
+            {children}
+          </LineItem>
+        );
+      })}
     </div>
   );
   // Consume props // [null, "subtitle"]
@@ -741,9 +668,7 @@ export const ItemList = props => {
 
 export default null;
 
-
-
-export default keyframe.json`{
+export default keyframe/*json*/ `{
   "path": "./${foldername}/09-compose/a/09-${1}-${count}-03-ItemList.js",
   "context": {
      "column": "ItemList",
@@ -761,15 +686,13 @@ export const ItemList = props => {
   const {
     items = [],
 
-    ...rest
-  } = props;
+    stateManager, // (action, reducer) => {}
 
-  const {
-    driver, // (action, reducer) => {}
+    ...rest,
   } = props;
-  // Adapt driving from child to parent // [null, "pin"]
+  // Adapt management from child to parent // [null, "pin"]
   const connecter = (action, reducer) => {
-    driver(
+    stateManager(
       action,
       lastState => {
         const lastItemProps = getItemProps(lastState, key);
@@ -784,24 +707,22 @@ export const ItemList = props => {
 
   return (
     <div>
-      {
-        items.map(each => {
-          const { key } = each;
-          const itemProps = getItemProps(props, key);
-          const { children, selected, highlighted } = itemProps;
+      {items.map(each => {
+        const { key } = each;
+        const itemProps = getItemProps(props, key);
+        const { children, selected, highlighted } = itemProps;
 
-          return (
-            <LineItem
-              key={key}
-              selected={selected}
-              highlighted={highlighted}
-              driver={connecter}
-            >
-              {children}
-            </LineItem>
-          );
-        })
-      }
+        return (
+          <LineItem
+            key={key}
+            selected={selected}
+            highlighted={highlighted}
+            stateManager={connecter}
+          >
+            {children}
+          </LineItem>
+        );
+      })}
     </div>
   );
   // Consume props // [null, "subtitle"]
@@ -813,9 +734,7 @@ export const ItemList = props => {
 
 export default null;
 
-
-
-export default keyframe.json`{
+export default keyframe/*json*/ `{
   "path": "./${foldername}/09-compose/a/09-${1}-${count}-03-ItemList.js",
   "context": {
      "column": "ItemList",
@@ -833,15 +752,13 @@ export const ItemList = props => {
   const {
     items = [],
 
-    ...rest
-  } = props;
+    stateManager, // (action, reducer) => {}
 
-  const {
-    driver, // (action, reducer) => {}
+    ...rest,
   } = props;
-  // Adapt driving from child to parent // [null, "pin"]
+  // Adapt management from child to parent // [null, "pin"]
   const connecter = (action, reducer) => {
-    driver(
+    stateManager(
       action,
       lastState => {
         const lastItemProps = getItemProps(lastState, key);
@@ -862,24 +779,22 @@ export const ItemList = props => {
 
   return (
     <div>
-      {
-        items.map(each => {
-          const { key } = each;
-          const itemProps = getItemProps(props, key);
-          const { children, selected, highlighted } = itemProps;
+      {items.map(each => {
+        const { key } = each;
+        const itemProps = getItemProps(props, key);
+        const { children, selected, highlighted } = itemProps;
 
-          return (
-            <LineItem
-              key={key}
-              selected={selected}
-              highlighted={highlighted}
-              driver={connecter}
-            >
-              {children}
-            </LineItem>
-          );
-        })
-      }
+        return (
+          <LineItem
+            key={key}
+            selected={selected}
+            highlighted={highlighted}
+            stateManager={connecter}
+          >
+            {children}
+          </LineItem>
+        );
+      })}
     </div>
   );
   // Consume props // [null, "subtitle"]
@@ -891,9 +806,7 @@ export const ItemList = props => {
 
 export default null;
 
-
-
-export default keyframe.json`{
+export default keyframe/*json*/ `{
   "path": "./${foldername}/09-compose/a/09-${1}-${count}-03-ItemList.js",
   "context": {
      "column": "ItemList",
@@ -911,15 +824,13 @@ export const ItemList = props => {
   const {
     items = [],
 
-    ...rest
-  } = props;
+    stateManager, // (action, reducer) => {}
 
-  const {
-    driver, // (action, reducer) => {}
+    ...rest,
   } = props;
-  // Adapt driving from child to parent // [null, "pin"]
+  // Adapt management from child to parent // [null, "pin"]
   const connecter = (action, reducer) => {
-    driver(
+    stateManager(
       action,
       lastState => {
         const lastItemProps = getItemProps(lastState, key); // ["pin", "key"]
@@ -940,24 +851,22 @@ export const ItemList = props => {
 
   return (
     <div>
-      {
-        items.map(each => {
-          const { key } = each;
-          const itemProps = getItemProps(props, key);
-          const { children, selected, highlighted } = itemProps;
+      {items.map(each => {
+        const { key } = each;
+        const itemProps = getItemProps(props, key);
+        const { children, selected, highlighted } = itemProps;
 
-          return (
-            <LineItem
-              key={key}
-              selected={selected}
-              highlighted={highlighted}
-              driver={connecter}
-            >
-              {children}
-            </LineItem>
-          );
-        })
-      }
+        return (
+          <LineItem
+            key={key}
+            selected={selected}
+            highlighted={highlighted}
+            stateManager={connecter}
+          >
+            {children}
+          </LineItem>
+        );
+      })}
     </div>
   );
   // Consume props // [null, "subtitle"]
@@ -969,9 +878,7 @@ export const ItemList = props => {
 
 export default null;
 
-
-
-export default keyframe.json`{
+export default keyframe/*json*/ `{
   "path": "./${foldername}/09-compose/a/09-${1}-${count}-03-ItemList.js",
   "context": {
      "column": "ItemList",
@@ -989,15 +896,13 @@ export const ItemList = props => {
   const {
     items = [],
 
-    ...rest
-  } = props;
+    stateManager, // (action, reducer) => {}
 
-  const {
-    driver, // (action, reducer) => {}
+    ...rest,
   } = props;
-  // Adapt driving from child to parent // [null, "pin"]
+  // Adapt management from child to parent // [null, "pin"]
   const connecter = (action, reducer) => {
-    driver(
+    stateManager(
       action,
       lastState => {
         const lastItemProps = getItemProps(lastState, key); // ["pin", "key"]
@@ -1018,24 +923,22 @@ export const ItemList = props => {
 
   return (
     <div>
-      {
-        items.map(each => {
-          const { key } = each;
-          const itemProps = getItemProps(props, key);
-          const { children, selected, highlighted } = itemProps;
+      {items.map(each => {
+        const { key } = each;
+        const itemProps = getItemProps(props, key);
+        const { children, selected, highlighted } = itemProps;
 
-          return (
-            <LineItem
-              key={key} // [null, "pin"]
-              selected={selected}
-              highlighted={highlighted}
-              driver={connecter}
-            >
-              {children}
-            </LineItem>
-          );
-        })
-      }
+        return (
+          <LineItem
+            key={key} // [null, "pin"]
+            selected={selected}
+            highlighted={highlighted}
+            stateManager={connecter}
+          >
+            {children}
+          </LineItem>
+        );
+      })}
     </div>
   );
   // Consume props // [null, "subtitle"]
@@ -1047,9 +950,7 @@ export const ItemList = props => {
 
 export default null;
 
-
-
-export default keyframe.json`{
+export default keyframe/*json*/ `{
   "path": "./${foldername}/09-compose/a/09-${1}-${count}-03-ItemList.js",
   "context": {
      "column": "ItemList",
@@ -1067,15 +968,13 @@ export const ItemList = props => {
   const {
     items = [],
 
-    ...rest
-  } = props;
+    stateManager, // (action, reducer) => {}
 
-  const {
-    driver, // (action, reducer) => {}
+    ...rest,
   } = props;
-  // Adapt driving from child to parent // [null, "pin"]
+  // Adapt management from child to parent // [null, "pin"]
   const connecter = (action, reducer) => {
-    driver(
+    stateManager(
       action,
       lastState => {
         const lastItemProps = getItemProps(lastState, action.key); // ["", "action.key"]
@@ -1096,24 +995,22 @@ export const ItemList = props => {
 
   return (
     <div>
-      {
-        items.map(each => {
-          const { key } = each;
-          const itemProps = getItemProps(props, key);
-          const { children, selected, highlighted } = itemProps;
+      {items.map(each => {
+        const { key } = each;
+        const itemProps = getItemProps(props, key);
+        const { children, selected, highlighted } = itemProps;
 
-          return (
-            <LineItem
-              key={key} // [null, "pin"]
-              selected={selected}
-              highlighted={highlighted}
-              driver={connecter}
-            >
-              {children}
-            </LineItem>
-          );
-        })
-      }
+        return (
+          <LineItem
+            key={key} // [null, "pin"]
+            selected={selected}
+            highlighted={highlighted}
+            stateManager={connecter}
+          >
+            {children}
+          </LineItem>
+        );
+      })}
     </div>
   );
   // Consume props // [null, "subtitle"]
@@ -1125,9 +1022,7 @@ export const ItemList = props => {
 
 export default null;
 
-
-
-export default keyframe.json`{
+export default keyframe/*json*/ `{
   "path": "./${foldername}/09-compose/a/09-${1}-${count}-03-ItemList.js",
   "context": {
      "column": "ItemList",
@@ -1145,15 +1040,13 @@ export const ItemList = props => {
   const {
     items = [],
 
-    ...rest
-  } = props;
+    stateManager, // (action, reducer) => {}
 
-  const {
-    driver, // (action, reducer) => {}
+    ...rest,
   } = props;
-  // Adapt driving from child to parent // [null, "pin"]
+  // Adapt management from child to parent // [null, "pin"]
   const connecter = (action, reducer) => {
-    driver(
+    stateManager(
       action,
       lastState => {
         const lastItemProps = getItemProps(lastState, action.key); // ["pin", "action.key"]
@@ -1174,25 +1067,23 @@ export const ItemList = props => {
 
   return (
     <div>
-      {
-        items.map(each => {
-          const { key } = each;
-          const itemProps = getItemProps(props, key);
-          const { children, selected, highlighted } = itemProps;
+      {items.map(each => {
+        const { key } = each;
+        const itemProps = getItemProps(props, key);
+        const { children, selected, highlighted } = itemProps;
 
-          return (
-            <LineItem
-              KEY={key} // [""]
-              key={key}
-              selected={selected}
-              highlighted={highlighted}
-              driver={connecter}
-            >
-              {children}
-            </LineItem>
-          );
-        })
-      }
+        return (
+          <LineItem
+            KEY={key} // [""]
+            key={key}
+            selected={selected}
+            highlighted={highlighted}
+            stateManager={connecter}
+          >
+            {children}
+          </LineItem>
+        );
+      })}
     </div>
   );
   // Consume props // [null, "subtitle"]
@@ -1204,9 +1095,7 @@ export const ItemList = props => {
 
 export default null;
 
-
-
-export default keyframe.json`{
+export default keyframe/*json*/ `{
   "path": "./${foldername}/09-compose/b/09-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
@@ -1226,21 +1115,19 @@ export const LineItem = props => {
 
     selected = false,
 
-    highlighted = false
-  } = props; // ["non"]
-//// [null, "foci"], "start"
-  const {
-    driver, // (action, reducer) => {}
+    highlighted = false,
+//// [null, "foci"], "start", ["non"]
+    stateManager, // (action, reducer) => {}
 
-    whenSelectionChange = driver,
+    whenSelectionChanges = stateManager,
 
-    whenHoverChange = driver
+    whenHoverChanges = stateManager,
   } = props;
 
   const handleClick = event => {
     const { ctrlKey } = event;
-    whenSelectionChange(
-      { type: "whenSelectionChange", ctrlKey },
+    whenSelectionChanges(
+      { type: "whenSelectionChanges", ctrlKey },
       (state, action) => {
         const next = action.ctrlKey ? !state.selected : true;
         return { ...state, selected: next };
@@ -1250,8 +1137,8 @@ export const LineItem = props => {
 //// [null, "foci"], "end"
   const handleMouseEnter = () => {
     const hovering = true;
-    whenHoverChange(
-      { type: "whenHoverChange", hovering },
+    whenHoverChanges(
+      { type: "whenHoverChanges", hovering },
       (state, action) => {
         return { ...state, highlighted: action.hovering };
       }
@@ -1259,8 +1146,8 @@ export const LineItem = props => {
   };
   const handleMouseLeave = () => {
     const hovering = false;
-    whenHoverChange(
-      { type: "whenHoverChange", hovering },
+    whenHoverChanges(
+      { type: "whenHoverChanges", hovering },
       (state, action) => {
         return { ...state, highlighted: action.hovering };
       }
@@ -1270,32 +1157,21 @@ export const LineItem = props => {
   return ( // ["render"]
     <div
       style={{
-        background:
-          highlighted ? "lightgray" :
-          selected ? "darkgray" :
-          "white"
+        background: highlighted ? "lightgray" : selected ? "darkgray" : "white"
       }}
-
-      onMouseEnter={
-        handleMouseEnter
-      }
-      onMouseLeave={
-        handleMouseLeave
-      }
-      onClick={
-        handleClick
-      }
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      onClick={handleClick}
     >
       {children}
     </div>
   ); // ["render"]
-
 };
 //// [null, "pin"]
 
 export default null;
 
-export default keyframe.json`{
+export default keyframe/*json*/ `{
   "path": "./${foldername}/09-compose/b/09-${1}-${count}-03-ItemList.js",
   "context": {
      "column": "ItemList",
@@ -1313,15 +1189,13 @@ export const ItemList = props => {
   const {
     items = [],
 
-    ...rest
-  } = props;
+    stateManager, // (action, reducer) => {}
 
-  const {
-    driver, // (action, reducer) => {}
+    ...rest,
   } = props;
-  // Adapt driving from child to parent // [null, "pin"]
+  // Adapt management from child to parent // [null, "pin"]
   const connecter = (action, reducer) => {
-    driver(
+    stateManager(
       action,
       lastState => {
         const lastItemProps = getItemProps(lastState, action.key); // ["pin", "action.key"]
@@ -1342,25 +1216,23 @@ export const ItemList = props => {
 
   return (
     <div>
-      {
-        items.map(each => {
-          const { key } = each;
-          const itemProps = getItemProps(props, key);
-          const { children, selected, highlighted } = itemProps;
+      {items.map(each => {
+        const { key } = each;
+        const itemProps = getItemProps(props, key);
+        const { children, selected, highlighted } = itemProps;
 
-          return (
-            <LineItem
-              KEY={key} // [null, "pin"]
-              key={key}
-              selected={selected}
-              highlighted={highlighted}
-              driver={connecter}
-            >
-              {children}
-            </LineItem>
-          );
-        })
-      }
+        return (
+          <LineItem
+            KEY={key} // [null, "pin"]
+            key={key}
+            selected={selected}
+            highlighted={highlighted}
+            stateManager={connecter}
+          >
+            {children}
+          </LineItem>
+        );
+      })}
     </div>
   );
   // Consume props // [null, "subtitle"]
@@ -1372,9 +1244,7 @@ export const ItemList = props => {
 
 export default null;
 
-
-
-export default keyframe.json`{
+export default keyframe/*json*/ `{
   "path": "./${foldername}/09-compose/b/09-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
@@ -1394,22 +1264,20 @@ export const LineItem = props => {
 
     selected = false,
 
-    highlighted = false
-  } = props; // ["non"]
-//// [null, "foci"], "start"
-  const {
+    highlighted = false,
+//// [null, "foci"], "start", ["non"]
     KEY, // [null, ""]
-    driver, // (action, reducer) => {}
+    stateManager, // (action, reducer) => {}
 
-    whenSelectionChange = driver,
+    whenSelectionChanges = stateManager,
 
-    whenHoverChange = driver
+    whenHoverChanges = stateManager,
   } = props;
 
   const handleClick = event => {
     const { ctrlKey } = event;
-    whenSelectionChange(
-      { type: "whenSelectionChange", ctrlKey }, // [""]
+    whenSelectionChanges(
+      { type: "whenSelectionChanges", ctrlKey }, // [""]
       (state, action) => {
         const next = action.ctrlKey ? !state.selected : true;
         return { ...state, selected: next };
@@ -1419,8 +1287,8 @@ export const LineItem = props => {
 //// [null, "foci"], "end"
   const handleMouseEnter = () => {
     const hovering = true;
-    whenHoverChange(
-      { type: "whenHoverChange", hovering },
+    whenHoverChanges(
+      { type: "whenHoverChanges", hovering },
       (state, action) => {
         return { ...state, highlighted: action.hovering };
       }
@@ -1428,8 +1296,8 @@ export const LineItem = props => {
   };
   const handleMouseLeave = () => {
     const hovering = false;
-    whenHoverChange(
-      { type: "whenHoverChange", hovering },
+    whenHoverChanges(
+      { type: "whenHoverChanges", hovering },
       (state, action) => {
         return { ...state, highlighted: action.hovering };
       }
@@ -1439,34 +1307,21 @@ export const LineItem = props => {
   return ( // ["render"]
     <div
       style={{
-        background:
-          highlighted ? "lightgray" :
-          selected ? "darkgray" :
-          "white"
+        background: highlighted ? "lightgray" : selected ? "darkgray" : "white"
       }}
-
-      onMouseEnter={
-        handleMouseEnter
-      }
-      onMouseLeave={
-        handleMouseLeave
-      }
-      onClick={
-        handleClick
-      }
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      onClick={handleClick}
     >
       {children}
     </div>
   ); // ["render"]
-
 };
 //// [null, "pin"]
 
 export default null;
 
-
-
-export default keyframe.json`{
+export default keyframe/*json*/ `{
   "path": "./${foldername}/09-compose/b/09-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
@@ -1487,22 +1342,20 @@ export const LineItem = props => {
 
     selected = false,
 
-    highlighted = false
-  } = props; // ["non"]
-//// [null, "foci"], "start"
-  const {
+    highlighted = false,
+//// [null, "foci"], "start", ["non"]
     KEY,
-    driver, // (action, reducer) => {}
+    stateManager, // (action, reducer) => {}
 
-    whenSelectionChange = driver,
+    whenSelectionChanges = stateManager,
 
-    whenHoverChange = driver
+    whenHoverChanges = stateManager,
   } = props;
 
   const handleClick = event => {
     const { ctrlKey } = event;
-    whenSelectionChange(
-      { type: "whenSelectionChange", ctrlKey, key: KEY }, // ["", "key", "KEY"]
+    whenSelectionChanges(
+      { type: "whenSelectionChanges", ctrlKey, key: KEY }, // ["", "key", "KEY"]
       (state, action) => {
         const next = action.ctrlKey ? !state.selected : true;
         return { ...state, selected: next };
@@ -1512,8 +1365,8 @@ export const LineItem = props => {
 //// [null, "foci"], "end"
   const handleMouseEnter = () => {
     const hovering = true;
-    whenHoverChange(
-      { type: "whenHoverChange", hovering }, // [null, "action"]
+    whenHoverChanges(
+      { type: "whenHoverChanges", hovering }, // [null, "action"]
       (state, action) => {
         return { ...state, highlighted: action.hovering };
       }
@@ -1521,8 +1374,8 @@ export const LineItem = props => {
   };
   const handleMouseLeave = () => {
     const hovering = false;
-    whenHoverChange(
-      { type: "whenHoverChange", hovering }, // [null, "action"]
+    whenHoverChanges(
+      { type: "whenHoverChanges", hovering }, // [null, "action"]
       (state, action) => {
         return { ...state, highlighted: action.hovering };
       }
@@ -1532,34 +1385,21 @@ export const LineItem = props => {
   return ( // ["render"]
     <div
       style={{
-        background:
-          highlighted ? "lightgray" :
-          selected ? "darkgray" :
-          "white"
+        background: highlighted ? "lightgray" : selected ? "darkgray" : "white"
       }}
-
-      onMouseEnter={
-        handleMouseEnter
-      }
-      onMouseLeave={
-        handleMouseLeave
-      }
-      onClick={
-        handleClick
-      }
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      onClick={handleClick}
     >
       {children}
     </div>
   ); // ["render"]
-
 };
 //// [null, "pin"]
 
 export default null;
 
-
-
-export default keyframe.json`{
+export default keyframe/*json*/ `{
   "path": "./${foldername}/09-compose/b/09-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
@@ -1579,22 +1419,20 @@ export const LineItem = props => {
 
     selected = false,
 
-    highlighted = false
-  } = props; // ["non"]
-//// [null, "foci"], "start"
-  const {
+    highlighted = false,
+//// [null, "foci"], "start", ["non"]
     KEY,
-    driver, // (action, reducer) => {}
+    stateManager, // (action, reducer) => {}
 
-    whenSelectionChange = driver,
+    whenSelectionChanges = stateManager,
 
-    whenHoverChange = driver
+    whenHoverChanges = stateManager,
   } = props;
 
   const handleClick = event => {
     const { ctrlKey } = event;
-    whenSelectionChange(
-      { type: "whenSelectionChange", ctrlKey, key: KEY },
+    whenSelectionChanges(
+      { type: "whenSelectionChanges", ctrlKey, key: KEY },
       (state, action) => {
         const next = action.ctrlKey ? !state.selected : true;
         return { ...state, selected: next };
@@ -1604,8 +1442,8 @@ export const LineItem = props => {
 //// [null, "foci"], "end"
   const handleMouseEnter = () => {
     const hovering = true;
-    whenHoverChange(
-      { type: "whenHoverChange", hovering, key: KEY }, // [null, ""], ["action1", "key", "KEY"]
+    whenHoverChanges(
+      { type: "whenHoverChanges", hovering, key: KEY }, // [null, ""], ["action1", "key", "KEY"]
       (state, action) => {
         return { ...state, highlighted: action.hovering };
       }
@@ -1613,8 +1451,8 @@ export const LineItem = props => {
   };
   const handleMouseLeave = () => {
     const hovering = false;
-    whenHoverChange(
-      { type: "whenHoverChange", hovering, key: KEY }, // [null, ""], ["action2", "key", "KEY"]
+    whenHoverChanges(
+      { type: "whenHoverChanges", hovering, key: KEY }, // [null, ""], ["action2", "key", "KEY"]
       (state, action) => {
         return { ...state, highlighted: action.hovering };
       }
@@ -1624,34 +1462,21 @@ export const LineItem = props => {
   return ( // ["render"]
     <div
       style={{
-        background:
-          highlighted ? "lightgray" :
-          selected ? "darkgray" :
-          "white"
+        background: highlighted ? "lightgray" : selected ? "darkgray" : "white"
       }}
-
-      onMouseEnter={
-        handleMouseEnter
-      }
-      onMouseLeave={
-        handleMouseLeave
-      }
-      onClick={
-        handleClick
-      }
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      onClick={handleClick}
     >
       {children}
     </div>
   ); // ["render"]
-
 };
 //// [null, "pin"]
 
 export default null;
 
-
-
-export default keyframe.json`{
+export default keyframe/*json*/ `{
   "path": "./${foldername}/09-compose/b/09-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
@@ -1667,36 +1492,24 @@ export default keyframe.json`{
 //// [null, "pin"]
 export const ValueInput = props => {
   const {
-    value = ""
-  } = props;
-  // KEY any other component actions // ["subtitle"]
-  const {
-    driver, // (action, reducer) => {}
+    value = "",
+    // KEY any other component actions // ["subtitle"]
+    stateManager, // (action, reducer) => {}
 
-    whenValueChange = driver
+    whenValueChanges = stateManager,
   } = props;
 
   const handleChange = event => {
     const next = event.target.value;
-    whenValueChange(
-      { type: "whenValueChange", value: next }, // ["action"]
+    whenValueChanges(
+      { type: "whenValueChanges", value: next }, // ["action"]
       (state, action) => {
-        return { ...state, value: action.value }
+        return { ...state, value: action.value };
       }
     );
   };
 
-  return (
-    <input
-      value={value}
-
-      onChange={
-        handleChange
-      }
-    >
-    </input>
-  );
-
+  return <input value={value} onChange={handleChange}></input>;
 };
 //
 export const LineItem = props => {
@@ -1705,22 +1518,20 @@ export const LineItem = props => {
 
     selected = false,
 
-    highlighted = false
-  } = props; // ["non"]
-//// [null, "foci"], "start"
-  const {
+    highlighted = false,
+//// [null, "foci"], "start", ["non"]
     KEY,
-    driver, // (action, reducer) => {}
+    stateManager, // (action, reducer) => {}
 
-    whenSelectionChange = driver,
+    whenSelectionChanges = stateManager,
 
-    whenHoverChange = driver
+    whenHoverChanges = stateManager,
   } = props;
 
   const handleClick = event => {
     const { ctrlKey } = event;
-    whenSelectionChange(
-      { type: "whenSelectionChange", ctrlKey, key: KEY },
+    whenSelectionChanges(
+      { type: "whenSelectionChanges", ctrlKey, key: KEY },
       (state, action) => {
         const next = action.ctrlKey ? !state.selected : true;
         return { ...state, selected: next };
@@ -1730,8 +1541,8 @@ export const LineItem = props => {
 //// [null, "foci"], "end"
   const handleMouseEnter = () => {
     const hovering = true;
-    whenHoverChange(
-      { type: "whenHoverChange", hovering, key: KEY },
+    whenHoverChanges(
+      { type: "whenHoverChanges", hovering, key: KEY },
       (state, action) => {
         return { ...state, highlighted: action.hovering };
       }
@@ -1739,8 +1550,8 @@ export const LineItem = props => {
   };
   const handleMouseLeave = () => {
     const hovering = false;
-    whenHoverChange(
-      { type: "whenHoverChange", hovering, key: KEY },
+    whenHoverChanges(
+      { type: "whenHoverChanges", hovering, key: KEY },
       (state, action) => {
         return { ...state, highlighted: action.hovering };
       }
@@ -1750,34 +1561,21 @@ export const LineItem = props => {
   return ( // ["render"]
     <div
       style={{
-        background:
-          highlighted ? "lightgray" :
-          selected ? "darkgray" :
-          "white"
+        background: highlighted ? "lightgray" : selected ? "darkgray" : "white"
       }}
-
-      onMouseEnter={
-        handleMouseEnter
-      }
-      onMouseLeave={
-        handleMouseLeave
-      }
-      onClick={
-        handleClick
-      }
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      onClick={handleClick}
     >
       {children}
     </div>
   ); // ["render"]
-
 };
 //// [null, "pin"]
 
 export default null;
 
-
-
-export default keyframe.json`{
+export default keyframe/*json*/ `{
   "path": "./${foldername}/09-compose/b/09-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
@@ -1793,37 +1591,25 @@ export default keyframe.json`{
 //// [null, "pin"]
 export const ValueInput = props => {
   const {
-    value = ""
-  } = props;
+    value = "",
 
-  const {
     KEY, // [null, ""]
-    driver, // (action, reducer) => {}
+    stateManager, // (action, reducer) => {}
 
-    whenValueChange = driver
+    whenValueChanges = stateManager,
   } = props;
 
   const handleChange = event => {
     const next = event.target.value;
-    whenValueChange(
-      { type: "whenValueChange", value: next, key: KEY }, // ["", "key", "KEY"]
+    whenValueChanges(
+      { type: "whenValueChanges", value: next, key: KEY }, // ["", "key", "KEY"]
       (state, action) => {
-        return { ...state, value: action.value }
+        return { ...state, value: action.value };
       }
     );
   };
 
-  return (
-    <input
-      value={value}
-
-      onChange={
-        handleChange
-      }
-    >
-    </input>
-  );
-
+  return <input value={value} onChange={handleChange}></input>;
 };
 //
 export const LineItem = props => {
@@ -1832,22 +1618,20 @@ export const LineItem = props => {
 
     selected = false,
 
-    highlighted = false
-  } = props; // ["non"]
-//// [null, "foci"], "start"
-  const {
+    highlighted = false,
+//// [null, "foci"], "start", ["non"]
     KEY,
-    driver, // (action, reducer) => {}
+    stateManager, // (action, reducer) => {}
 
-    whenSelectionChange = driver,
+    whenSelectionChanges = stateManager,
 
-    whenHoverChange = driver
+    whenHoverChanges = stateManager,
   } = props;
 
   const handleClick = event => {
     const { ctrlKey } = event;
-    whenSelectionChange(
-      { type: "whenSelectionChange", ctrlKey, key: KEY },
+    whenSelectionChanges(
+      { type: "whenSelectionChanges", ctrlKey, key: KEY },
       (state, action) => {
         const next = action.ctrlKey ? !state.selected : true;
         return { ...state, selected: next };
@@ -1857,8 +1641,8 @@ export const LineItem = props => {
 //// [null, "foci"], "end"
   const handleMouseEnter = () => {
     const hovering = true;
-    whenHoverChange(
-      { type: "whenHoverChange", hovering, key: KEY },
+    whenHoverChanges(
+      { type: "whenHoverChanges", hovering, key: KEY },
       (state, action) => {
         return { ...state, highlighted: action.hovering };
       }
@@ -1866,8 +1650,8 @@ export const LineItem = props => {
   };
   const handleMouseLeave = () => {
     const hovering = false;
-    whenHoverChange(
-      { type: "whenHoverChange", hovering, key: KEY },
+    whenHoverChanges(
+      { type: "whenHoverChanges", hovering, key: KEY },
       (state, action) => {
         return { ...state, highlighted: action.hovering };
       }
@@ -1877,34 +1661,21 @@ export const LineItem = props => {
   return ( // ["render"]
     <div
       style={{
-        background:
-          highlighted ? "lightgray" :
-          selected ? "darkgray" :
-          "white"
+        background: highlighted ? "lightgray" : selected ? "darkgray" : "white"
       }}
-
-      onMouseEnter={
-        handleMouseEnter
-      }
-      onMouseLeave={
-        handleMouseLeave
-      }
-      onClick={
-        handleClick
-      }
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      onClick={handleClick}
     >
       {children}
     </div>
   ); // ["render"]
-
 };
 //// [null, "pin"]
 
 export default null;
 
-
-
-export default keyframe.json`{
+export default keyframe/*json*/ `{
   "path": "./${foldername}/09-compose/c/09-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
@@ -1924,22 +1695,20 @@ export const LineItem = props => {
 
     selected = false,
 
-    highlighted = false
-  } = props; // ["non"]
-//// [null, "foci"], "start"
-  const {
+    highlighted = false,
+//// [null, "foci"], "start", ["non"]
     KEY,
-    driver, // (action, reducer) => {}
+    stateManager, // (action, reducer) => {}
 
-    whenSelectionChange = driver,
+    whenSelectionChanges = stateManager,
 
-    whenHoverChange = driver
+    whenHoverChanges = stateManager,
   } = props;
 
   const handleClick = event => {
     const { ctrlKey } = event;
-    whenSelectionChange(
-      { type: "whenSelectionChange", ctrlKey, key: KEY },
+    whenSelectionChanges(
+      { type: "whenSelectionChanges", ctrlKey, key: KEY },
       (state, action) => {
         const next = action.ctrlKey ? !state.selected : true;
         return { ...state, selected: next };
@@ -1949,8 +1718,8 @@ export const LineItem = props => {
 //// [null, "foci"], "end"
   const handleMouseEnter = () => {
     const hovering = true;
-    whenHoverChange(
-      { type: "whenHoverChange", hovering, key: KEY },
+    whenHoverChanges(
+      { type: "whenHoverChanges", hovering, key: KEY },
       (state, action) => {
         return { ...state, highlighted: action.hovering };
       }
@@ -1958,8 +1727,8 @@ export const LineItem = props => {
   };
   const handleMouseLeave = () => {
     const hovering = false;
-    whenHoverChange(
-      { type: "whenHoverChange", hovering, key: KEY },
+    whenHoverChanges(
+      { type: "whenHoverChanges", hovering, key: KEY },
       (state, action) => {
         return { ...state, highlighted: action.hovering };
       }
@@ -1969,32 +1738,21 @@ export const LineItem = props => {
   return ( // ["render"]
     <div
       style={{
-        background:
-          highlighted ? "lightgray" :
-          selected ? "darkgray" :
-          "white"
+        background: highlighted ? "lightgray" : selected ? "darkgray" : "white"
       }}
-
-      onMouseEnter={
-        handleMouseEnter
-      }
-      onMouseLeave={
-        handleMouseLeave
-      }
-      onClick={
-        handleClick
-      }
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      onClick={handleClick}
     >
       {children}
     </div>
   ); // ["render"]
-
 };
 //// [null, "pin"]
 
 export default null;
 
-export default keyframe.json`{
+export default keyframe/*json*/ `{
   "path": "./${foldername}/09-compose/c/09-${1}-${count}-03-ItemList.js",
   "context": {
      "column": "ItemList",
@@ -2012,15 +1770,13 @@ export const ItemList = props => {
   const {
     items = [],
 
-    ...rest
-  } = props;
+    stateManager, // (action, reducer) => {}
 
-  const {
-    driver, // (action, reducer) => {}
+    ...rest,
   } = props;
-  // Adapt driving from child to parent // [null, "pin"]
+  // Adapt management from child to parent // [null, "pin"]
   const connecter = (action, reducer) => {
-    driver(
+    stateManager(
       action, // [null, "pin"]
       lastState => {
         const lastItemProps = getItemProps(lastState, action.key); // ["pin", "action.key"]
@@ -2041,25 +1797,23 @@ export const ItemList = props => {
 
   return (
     <div>
-      {
-        items.map(each => {
-          const { key } = each;
-          const itemProps = getItemProps(props, key);
-          const { children, selected, highlighted } = itemProps;
+      {items.map(each => {
+        const { key } = each;
+        const itemProps = getItemProps(props, key);
+        const { children, selected, highlighted } = itemProps;
 
-          return (
-            <LineItem
-              KEY={key}
-              key={key}
-              selected={selected}
-              highlighted={highlighted}
-              driver={connecter}
-            >
-              {children}
-            </LineItem>
-          );
-        })
-      }
+        return (
+          <LineItem
+            KEY={key}
+            key={key}
+            selected={selected}
+            highlighted={highlighted}
+            stateManager={connecter}
+          >
+            {children}
+          </LineItem>
+        );
+      })}
     </div>
   );
   // Consume props // [null, "subtitle"]
@@ -2071,9 +1825,7 @@ export const ItemList = props => {
 
 export default null;
 
-
-
-export default keyframe.json`{
+export default keyframe/*json*/ `{
   "path": "./${foldername}/09-compose/c/09-${1}-${count}-03-ItemList.js",
   "context": {
      "column": "ItemList",
@@ -2091,16 +1843,14 @@ export const ItemList = props => {
   const {
     items = [],
 
-    ...rest
-  } = props;
-
-  const {
     KEY, // [null, ""]
-    driver, // (action, reducer) => {}
+    stateManager, // (action, reducer) => {}
+
+    ...rest,
   } = props;
-  // Adapt driving from child to parent // [null, "pin"]
+  // Adapt management from child to parent // [null, "pin"]
   const connecter = (action, reducer) => {
-    driver(
+    stateManager(
       { ...action, key: KEY, itemKey: action.key }, // [""]
       lastState => {
         const lastItemProps = getItemProps(lastState, action.key); // ["pin", "action.key"]
@@ -2121,25 +1871,23 @@ export const ItemList = props => {
 
   return (
     <div>
-      {
-        items.map(each => {
-          const { key } = each;
-          const itemProps = getItemProps(props, key);
-          const { children, selected, highlighted } = itemProps;
+      {items.map(each => {
+        const { key } = each;
+        const itemProps = getItemProps(props, key);
+        const { children, selected, highlighted } = itemProps;
 
-          return (
-            <LineItem
-              KEY={key}
-              key={key}
-              selected={selected}
-              highlighted={highlighted}
-              driver={connecter}
-            >
-              {children}
-            </LineItem>
-          );
-        })
-      }
+        return (
+          <LineItem
+            KEY={key}
+            key={key}
+            selected={selected}
+            highlighted={highlighted}
+            stateManager={connecter}
+          >
+            {children}
+          </LineItem>
+        );
+      })}
     </div>
   );
   // Consume props // [null, "subtitle"]
@@ -2151,9 +1899,7 @@ export const ItemList = props => {
 
 export default null;
 
-
-
-export default keyframe.json`{
+export default keyframe/*json*/ `{
   "path": "./${foldername}/09-compose/c/09-${1}-${count}-03-ItemList.js",
   "context": {
      "column": "ItemList",
@@ -2171,20 +1917,18 @@ export const ItemList = props => {
   const {
     items = [],
 
-    ...rest
-  } = props;
-
-  const {
     KEY,
-    driver, // (action, reducer) => {}
+    stateManager, // (action, reducer) => {}
 
-    whenSelectionChange = driver, // [""]
+    whenSelectionChanges = stateManager, // [""]
 
-    whenHoverChange = driver // [""]
+    whenHoverChanges = stateManager, // [""]
+
+    ...rest,
   } = props;
-  // Adapt driving from child to parent // [null, "pin"]
+  // Adapt management from child to parent // [null, "pin"]
   const connecter = (action, reducer) => {
-    driver( // ["pin", "driver"]
+    stateManager( // ["pin", "stateManager"]
       { ...action, key: KEY, itemKey: action.key },
       lastState => {
         const lastItemProps = getItemProps(lastState, action.key);
@@ -2205,25 +1949,23 @@ export const ItemList = props => {
 
   return (
     <div>
-      {
-        items.map(each => {
-          const { key } = each;
-          const itemProps = getItemProps(props, key);
-          const { children, selected, highlighted } = itemProps;
+      {items.map(each => {
+        const { key } = each;
+        const itemProps = getItemProps(props, key);
+        const { children, selected, highlighted } = itemProps;
 
-          return (
-            <LineItem
-              KEY={key}
-              key={key}
-              selected={selected}
-              highlighted={highlighted}
-              driver={connecter}
-            >
-              {children}
-            </LineItem>
-          );
-        })
-      }
+        return (
+          <LineItem
+            KEY={key}
+            key={key}
+            selected={selected}
+            highlighted={highlighted}
+            stateManager={connecter}
+          >
+            {children}
+          </LineItem>
+        );
+      })}
     </div>
   );
   // Consume props // [null, "subtitle"]
@@ -2235,9 +1977,7 @@ export const ItemList = props => {
 
 export default null;
 
-
-
-export default keyframe.json`{
+export default keyframe/*json*/ `{
   "path": "./${foldername}/09-compose/c/09-${1}-${count}-03-ItemList.js",
   "context": {
      "column": "ItemList",
@@ -2255,27 +1995,25 @@ export const ItemList = props => {
   const {
     items = [],
 
-    ...rest
-  } = props;
-
-  const {
     KEY,
-    driver, // (action, reducer) => {}
+    stateManager, // (action, reducer) => {}
 
-    whenSelectionChange = driver,
+    whenSelectionChanges = stateManager,
 
-    whenHoverChange = driver
+    whenHoverChanges = stateManager,
+
+    ...rest,
   } = props;
-  // Adapt driving from child to parent // [null, "pin"]
+  // Adapt management from child to parent // [null, "pin"]
   const connecter = (action, reducer) => {
     const connections = { // [""]
-      whenSelectionChange,
-      whenHoverChange
+      whenSelectionChanges,
+      whenHoverChanges
     };
 
-    const driving = connections[action.type] || driver;
+    const management = connections[action.type] || stateManager;
 
-    driving( // ["", "driving"]
+    management( // ["", "management"]
       { ...action, key: KEY, itemKey: action.key },
       lastState => {
         const lastItemProps = getItemProps(lastState, action.key);
@@ -2296,25 +2034,23 @@ export const ItemList = props => {
 
   return (
     <div>
-      {
-        items.map(each => {
-          const { key } = each;
-          const itemProps = getItemProps(props, key);
-          const { children, selected, highlighted } = itemProps;
+      {items.map(each => {
+        const { key } = each;
+        const itemProps = getItemProps(props, key);
+        const { children, selected, highlighted } = itemProps;
 
-          return (
-            <LineItem
-              KEY={key}
-              key={key}
-              selected={selected}
-              highlighted={highlighted}
-              driver={connecter}
-            >
-              {children}
-            </LineItem>
-          );
-        })
-      }
+        return (
+          <LineItem
+            KEY={key}
+            key={key}
+            selected={selected}
+            highlighted={highlighted}
+            stateManager={connecter}
+          >
+            {children}
+          </LineItem>
+        );
+      })}
     </div>
   );
   // Consume props // [null, "subtitle"]
@@ -2326,9 +2062,7 @@ export const ItemList = props => {
 
 export default null;
 
-
-
-export default keyframe.json`{
+export default keyframe/*json*/ `{
   "path": "./${foldername}/09-compose/c/09-${1}-${count}-03-ItemList.js",
   "context": {
      "column": "ItemList",
@@ -2346,35 +2080,33 @@ export const ItemList = props => {
   const {
     items = [],
 
-    ...rest
-  } = props;
-
-  const {
     KEY,
-    driver, // (action, reducer) => {}
+    stateManager, // (action, reducer) => {}
 
-    whenSelectionChange = driver,
+    whenSelectionChanges = stateManager,
 
-    whenHoverChange = driver
+    whenHoverChanges = stateManager,
+
+    ...rest,
   } = props;
-  // Adapt driving from child to parent // [null, "pin"]
+  // Adapt management from child to parent // [null, "pin"]
   const connecter = (action, reducer) => {
     const connections = {
-      whenSelectionChange,
-      whenHoverChange
+      whenSelectionChanges,
+      whenHoverChanges
     };
 
-    const driving = connections[action.type] || driver;
+    const management = connections[action.type] || stateManager;
 
-    const refinements = { // [""]
-      whenSelectionChange: function singleSelection(state, key) {
+    const overload = { // [""]
+      whenSelectionChanges: function singleSelection(state, key) {
         // Even more implementation details
       }
     };
 
-    const patch = refinements[action.key] || (state => state); // [""]
+    const patch = overload[action.key] || (state => state); // [""]
 
-    driving( // ["", "driving"]
+    management( // ["", "management"]
       { ...action, key: KEY, itemKey: action.key },
       lastState => {
         const lastItemProps = getItemProps(lastState, action.key);
@@ -2395,25 +2127,23 @@ export const ItemList = props => {
 
   return (
     <div>
-      {
-        items.map(each => {
-          const { key } = each;
-          const itemProps = getItemProps(props, key);
-          const { children, selected, highlighted } = itemProps;
+      {items.map(each => {
+        const { key } = each;
+        const itemProps = getItemProps(props, key);
+        const { children, selected, highlighted } = itemProps;
 
-          return (
-            <LineItem
-              KEY={key}
-              key={key}
-              selected={selected}
-              highlighted={highlighted}
-              driver={connecter}
-            >
-              {children}
-            </LineItem>
-          );
-        })
-      }
+        return (
+          <LineItem
+            KEY={key}
+            key={key}
+            selected={selected}
+            highlighted={highlighted}
+            stateManager={connecter}
+          >
+            {children}
+          </LineItem>
+        );
+      })}
     </div>
   );
   // Consume props // [null, "subtitle"]

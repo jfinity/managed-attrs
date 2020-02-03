@@ -1,4 +1,4 @@
-export default prefs.json`
+export default prefs/* json */`
 {
   "digest": {
     "all": "./${foldername}/${basename}.json",
@@ -48,7 +48,7 @@ export default prefs.json`
 // [label, start, end, after]
 // [range || loop]
 
-json`{
+/* json */`{
   "path": "./${foldername}/01-component/a/01-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
@@ -81,7 +81,7 @@ null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/01-component/a/01-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
@@ -102,7 +102,7 @@ export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/01-component/a/01-${1}-${count}-01-ValueInput.js",
   "context": {
     "column": "ValueInput",
@@ -124,7 +124,7 @@ export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/02-render/a/02-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
@@ -147,7 +147,7 @@ export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/02-render/a/02-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
@@ -174,7 +174,7 @@ export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/03-props/a/03-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
@@ -201,7 +201,7 @@ export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/03-props/a/03-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
@@ -232,7 +232,7 @@ export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/03-props/a/03-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
@@ -248,7 +248,7 @@ export default keyframe.json`{
 //// [null, "foci"], "start"
 export const ValueInput = props => {
   const {
-    value = "" // [""]
+    value = "", // [""]
   } = props;
 
   return (
@@ -263,7 +263,7 @@ export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/03-props/a/03-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
@@ -279,7 +279,7 @@ export default keyframe.json`{
 //// [null, "foci"], "start"
 export const ValueInput = props => {
   const {
-    value = ""
+    value = "",
   } = props;
 
   return (
@@ -296,7 +296,7 @@ export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/03-props/a/03-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
@@ -312,7 +312,7 @@ export default keyframe.json`{
 //// [null, "foci"], "start"
 export const ValueInput = props => {
   const {
-    value = ""
+    value = "",
   } = props;
 
   return (
@@ -329,7 +329,7 @@ export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/03-props/a/03-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
@@ -345,48 +345,8 @@ export default keyframe.json`{
 //// [null, "foci"], "start"
 export const ValueInput = props => {
   const {
-    value = ""
-  } = props;
-
-  const { // [""]
-    // Retrieve callback props
-  } = props; // [""]
-
-  return (
-    <input
-      value={value}
-    >
-    </input>
-  );
-  // Consume props // [null, "subtitle"]
-};
-//// [null, "foci"], "end"
-
-export default null;
-
-
-
-export default keyframe.json`{
-  "path": "./${foldername}/03-props/a/03-${1}-${count}-01-ValueInput.js",
-  "context": {
-     "column": "ValueInput",
-     "code": {
-      "review": [
-        ["foci", "subtitle", "", "pin"]
-      ]
-    }
-  }
-}
-`;
-
-//// [null, "foci"], "start"
-export const ValueInput = props => {
-  const {
-    value = ""
-  } = props;
-
-  const {
-    onChange = event => {} // [""]
+    value = "",
+    // Retrieve callback props // [""]
   } = props;
 
   return (
@@ -403,7 +363,7 @@ export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/03-props/a/03-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
@@ -419,11 +379,44 @@ export default keyframe.json`{
 //// [null, "foci"], "start"
 export const ValueInput = props => {
   const {
-    value = ""
+    value = "",
+
+    onChange = event => {}, // [""]
   } = props;
 
+  return (
+    <input
+      value={value}
+    >
+    </input>
+  );
+  // Consume props // [null, "subtitle"]
+};
+//// [null, "foci"], "end"
+
+export default null;
+
+
+
+export default keyframe/*json*/`{
+  "path": "./${foldername}/03-props/a/03-${1}-${count}-01-ValueInput.js",
+  "context": {
+     "column": "ValueInput",
+     "code": {
+      "review": [
+        ["foci", "subtitle", "", "pin"]
+      ]
+    }
+  }
+}
+`;
+
+//// [null, "foci"], "start"
+export const ValueInput = props => {
   const {
-    onChange = event => {}
+    value = "",
+
+    onChange = event => {},
   } = props;
 
   return (
@@ -444,7 +437,7 @@ export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/03-props/a/03-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
@@ -460,11 +453,9 @@ export default keyframe.json`{
 //// [null, "foci"], "start"
 export const ValueInput = props => {
   const {
-    value = ""
-  } = props;
+    value = "",
 
-  const {
-    onChange = event => {}
+    onChange = event => {},
   } = props;
 
   return (
@@ -485,7 +476,7 @@ export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/04-consumer/a/04-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
@@ -501,11 +492,9 @@ export default keyframe.json`{
 //
 export const ValueInput = props => {
   const {
-    value = ""
-  } = props;
+    value = "",
 
-  const {
-    onChange = event => {}
+    onChange = event => {},
   } = props;
 
   return (
@@ -530,7 +519,7 @@ export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/04-consumer/a/04-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
@@ -546,11 +535,9 @@ export default keyframe.json`{
 //
 export const ValueInput = props => {
   const {
-    value = ""
-  } = props;
+    value = "",
 
-  const {
-    onChange = event => {}
+    onChange = event => {},
   } = props;
 
   return (
@@ -579,7 +566,7 @@ export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/04-consumer/a/04-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
@@ -595,11 +582,9 @@ export default keyframe.json`{
 //
 export const ValueInput = props => {
   const {
-    value = ""
-  } = props;
+    value = "",
 
-  const {
-    onChange = event => {}
+    onChange = event => {},
   } = props;
 
   return (
@@ -630,7 +615,7 @@ export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/04-consumer/a/04-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
@@ -646,11 +631,9 @@ export default keyframe.json`{
 //
 export const ValueInput = props => {
   const {
-    value = ""
-  } = props;
+    value = "",
 
-  const {
-    onChange = event => {}
+    onChange = event => {},
   } = props;
 
   return (
@@ -683,7 +666,7 @@ export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/04-consumer/a/04-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
@@ -699,11 +682,9 @@ export default keyframe.json`{
 //
 export const ValueInput = props => {
   const {
-    value = ""
-  } = props;
+    value = "",
 
-  const {
-    onChange = event => {}
+    onChange = event => {},
   } = props;
 
   return (
@@ -740,7 +721,7 @@ export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/04-consumer/a/04-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
@@ -756,11 +737,9 @@ export default keyframe.json`{
 //
 export const ValueInput = props => {
   const {
-    value = ""
-  } = props;
+    value = "",
 
-  const {
-    onChange = event => {}
+    onChange = event => {},
   } = props;
 
   return (
@@ -797,7 +776,7 @@ export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/04-consumer/b/04-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
@@ -813,11 +792,9 @@ export default keyframe.json`{
 //
 export const ValueInput = props => {
   const {
-    value = ""
-  } = props;
+    value = "",
 
-  const {
-    onChange = event => {}
+    onChange = event => {},
   } = props;
 
   return (
@@ -854,7 +831,7 @@ export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/04-consumer/b/04-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
@@ -870,11 +847,9 @@ export default keyframe.json`{
 //// [null, "foci"], "start", [""]
 export const ValueInput = props => {
   const {
-    value = ""
-  } = props;
+    value = "",
 
-  const {
-    onChange = event => {}
+    onChange = event => {},
   } = props;
 
   return (
