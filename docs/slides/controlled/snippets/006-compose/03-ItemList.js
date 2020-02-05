@@ -13,7 +13,7 @@ export default keyframe/*json*/ `{
      "column": "LineItem",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"],
+        ["foci", "note", "", "pin"],
         ["pin"],
         ["render"],
         ["render"],
@@ -22,7 +22,7 @@ export default keyframe/*json*/ `{
         ["non"],
         ["non"],
         ["non"],
-        ["foci", "subtitle"]
+        ["foci", "note"]
       ]
     }
   }
@@ -98,7 +98,7 @@ export default keyframe/*json*/ `{
      "column": "ItemList",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }
@@ -117,7 +117,7 @@ export default keyframe/*json*/ `{
      "column": "ItemList",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }
@@ -137,7 +137,7 @@ export default keyframe/*json*/ `{
      "column": "ItemList",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }
@@ -146,7 +146,7 @@ export default keyframe/*json*/ `{
 
 //// [null, "foci"], "start"
 export const ItemList = props => {
-  // Render some JSX // [null, "subtitle"]
+  // Render some JSX // [null, "note"]
 };
 //// [null, "foci"], "end"
 
@@ -158,7 +158,7 @@ export default keyframe/*json*/ `{
      "column": "ItemList",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }
@@ -171,7 +171,7 @@ export const ItemList = props => {
     <div>
     </div>
   ); // [""]
-  // Render some JSX // [null, "subtitle"]
+  // Render some JSX // [null, "note"]
 };
 //// [null, "foci"], "end"
 
@@ -183,7 +183,7 @@ export default keyframe/*json*/ `{
      "column": "ItemList",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }
@@ -196,7 +196,7 @@ export const ItemList = props => {
     <div>
     </div>
   );
-  // Consume props // [null, "subtitle"]
+  // Consume props // [null, "note"]
 };
 //// [null, "foci"], "end"
 
@@ -208,7 +208,7 @@ export default keyframe/*json*/ `{
      "column": "ItemList",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }
@@ -225,7 +225,7 @@ export const ItemList = props => {
     <div>
     </div>
   );
-  // Consume props // [null, "subtitle"]
+  // Consume props // [null, "note"]
 };
 //// [null, "foci"], "end"
 
@@ -237,7 +237,7 @@ export default keyframe/*json*/ `{
      "column": "ItemList",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }
@@ -256,7 +256,7 @@ export const ItemList = props => {
     <div>
     </div>
   );
-  // Consume props // [null, "subtitle"]
+  // Consume props // [null, "note"]
 };
 //// [null, "foci"], "end"
 
@@ -268,7 +268,7 @@ export default keyframe/*json*/ `{
      "column": "ItemList",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }
@@ -290,7 +290,7 @@ export const ItemList = props => {
       })} // [""]
     </div>
   );
-  // Consume props // [null, "subtitle"]
+  // Consume props // [null, "note"]
 };
 //// [null, "foci"], "end"
 
@@ -302,7 +302,7 @@ export default keyframe/*json*/ `{
      "column": "ItemList",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }
@@ -326,7 +326,7 @@ export const ItemList = props => {
       })}
     </div>
   );
-  // Consume props // [null, "subtitle"]
+  // Consume props // [null, "note"]
   function getItemProps(implementationDetails, key) { // [null, ""]
     // Distracting business logic // [null, ""]
   } // [null, ""]
@@ -341,7 +341,7 @@ export default keyframe/*json*/ `{
      "column": "ItemList",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }
@@ -375,7 +375,7 @@ export const ItemList = props => {
       })}
     </div>
   );
-  // Consume props // [null, "subtitle"]
+  // Consume props // [null, "note"]
   function getItemProps(implementationDetails, key) {
     // Distracting business logic
   }
@@ -390,7 +390,7 @@ export default keyframe/*json*/ `{
      "column": "ItemList",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }
@@ -424,7 +424,7 @@ export const ItemList = props => {
       })}
     </div>
   );
-  // Consume props // [null, "subtitle"]
+  // Consume props // [null, "note"]
   function getItemProps(implementationDetails, key) {
     // Distracting business logic
   }
@@ -439,7 +439,7 @@ export default keyframe/*json*/ `{
      "column": "ItemList",
      "code": {
       "review": [
-        ["subtitle", "", "pin"]
+        ["note", "", "pin"]
       ]
     }
   }
@@ -475,7 +475,7 @@ export const ItemList = props => {
       })}
     </div>
   );
-  // Consume props // [null, "subtitle"]
+  // Consume props // [null, "note"]
   function getItemProps(implementationDetails, key) {
     // Distracting business logic
   }
@@ -530,7 +530,7 @@ export const ItemList = props => {
       })}
     </div>
   );
-  // Consume props // [null, "subtitle"]
+  // Consume props // [null, "note"]
   function getItemProps(implementationDetails, key) {
     // Distracting business logic
   }
@@ -593,7 +593,7 @@ export const ItemList = props => {
       })}
     </div>
   );
-  // Consume props // [null, "subtitle"]
+  // Consume props // [null, "note"]
   function getItemProps(implementationDetails, key) {
     // Distracting business logic
   }
@@ -659,7 +659,7 @@ export const ItemList = props => {
       })}
     </div>
   );
-  // Consume props // [null, "subtitle"]
+  // Consume props // [null, "note"]
   function getItemProps(implementationDetails, key) {
     // Distracting business logic
   }
@@ -725,7 +725,7 @@ export const ItemList = props => {
       })}
     </div>
   );
-  // Consume props // [null, "subtitle"]
+  // Consume props // [null, "note"]
   function getItemProps(implementationDetails, key) {
     // Distracting business logic
   }
@@ -797,7 +797,7 @@ export const ItemList = props => {
       })}
     </div>
   );
-  // Consume props // [null, "subtitle"]
+  // Consume props // [null, "note"]
   function getItemProps(implementationDetails, key) {
     // Distracting business logic
   }
@@ -869,7 +869,7 @@ export const ItemList = props => {
       })}
     </div>
   );
-  // Consume props // [null, "subtitle"]
+  // Consume props // [null, "note"]
   function getItemProps(implementationDetails, key) {
     // Distracting business logic
   }
@@ -941,7 +941,7 @@ export const ItemList = props => {
       })}
     </div>
   );
-  // Consume props // [null, "subtitle"]
+  // Consume props // [null, "note"]
   function getItemProps(implementationDetails, key) {
     // Distracting business logic
   }
@@ -1013,7 +1013,7 @@ export const ItemList = props => {
       })}
     </div>
   );
-  // Consume props // [null, "subtitle"]
+  // Consume props // [null, "note"]
   function getItemProps(implementationDetails, key) {
     // Distracting business logic
   }
@@ -1086,7 +1086,7 @@ export const ItemList = props => {
       })}
     </div>
   );
-  // Consume props // [null, "subtitle"]
+  // Consume props // [null, "note"]
   function getItemProps(implementationDetails, key) {
     // Distracting business logic
   }
@@ -1101,7 +1101,7 @@ export default keyframe/*json*/ `{
      "column": "LineItem",
      "code": {
       "review": [
-        ["foci", "subtitle", ""]
+        ["foci", "note", ""]
       ]
     }
   }
@@ -1235,7 +1235,7 @@ export const ItemList = props => {
       })}
     </div>
   );
-  // Consume props // [null, "subtitle"]
+  // Consume props // [null, "note"]
   function getItemProps(implementationDetails, key) {
     // Distracting business logic
   }
@@ -1250,7 +1250,7 @@ export default keyframe/*json*/ `{
      "column": "LineItem",
      "code": {
       "review": [
-        ["foci", "subtitle", ""]
+        ["foci", "note", ""]
       ]
     }
   }
@@ -1327,8 +1327,8 @@ export default keyframe/*json*/ `{
      "column": "LineItem",
      "code": {
       "review": [
-        ["foci", "subtitle", ""],
-        ["foci", "subtitle", "action"]
+        ["foci", "note", ""],
+        ["foci", "note", "action"]
       ]
     }
   }
@@ -1405,7 +1405,7 @@ export default keyframe/*json*/ `{
      "column": "LineItem",
      "code": {
       "review": [
-        ["foci", "subtitle", "action1", "action2"]
+        ["foci", "note", "action1", "action2"]
       ]
     }
   }
@@ -1482,7 +1482,7 @@ export default keyframe/*json*/ `{
      "column": "LineItem",
      "code": {
       "review": [
-        ["subtitle", "action", ""]
+        ["note", "action", ""]
       ]
     }
   }
@@ -1493,7 +1493,7 @@ export default keyframe/*json*/ `{
 export const ValueInput = props => {
   const {
     value = "",
-    // KEY any other component actions // ["subtitle"]
+    // KEY any other component actions // ["note"]
     stateManager, // (action, reducer) => {}
 
     whenValueChanges = stateManager,
@@ -1581,7 +1581,7 @@ export default keyframe/*json*/ `{
      "column": "LineItem",
      "code": {
       "review": [
-        ["subtitle", "action", ""]
+        ["note", "action", ""]
       ]
     }
   }
@@ -1681,7 +1681,7 @@ export default keyframe/*json*/ `{
      "column": "LineItem",
      "code": {
       "review": [
-        ["foci", "subtitle", ""]
+        ["foci", "note", ""]
       ]
     }
   }
@@ -1816,7 +1816,7 @@ export const ItemList = props => {
       })}
     </div>
   );
-  // Consume props // [null, "subtitle"]
+  // Consume props // [null, "note"]
   function getItemProps(implementationDetails, key) {
     // Distracting business logic
   }
@@ -1890,7 +1890,7 @@ export const ItemList = props => {
       })}
     </div>
   );
-  // Consume props // [null, "subtitle"]
+  // Consume props // [null, "note"]
   function getItemProps(implementationDetails, key) {
     // Distracting business logic
   }
@@ -1968,7 +1968,7 @@ export const ItemList = props => {
       })}
     </div>
   );
-  // Consume props // [null, "subtitle"]
+  // Consume props // [null, "note"]
   function getItemProps(implementationDetails, key) {
     // Distracting business logic
   }
@@ -2053,7 +2053,7 @@ export const ItemList = props => {
       })}
     </div>
   );
-  // Consume props // [null, "subtitle"]
+  // Consume props // [null, "note"]
   function getItemProps(implementationDetails, key) {
     // Distracting business logic
   }
@@ -2146,7 +2146,7 @@ export const ItemList = props => {
       })}
     </div>
   );
-  // Consume props // [null, "subtitle"]
+  // Consume props // [null, "note"]
   function getItemProps(implementationDetails, key) {
     // Distracting business logic
   }

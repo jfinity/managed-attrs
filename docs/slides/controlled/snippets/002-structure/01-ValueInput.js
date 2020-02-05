@@ -87,7 +87,7 @@ export default keyframe/*json*/`{
      "column": "ValueInput",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }
@@ -108,7 +108,7 @@ export default keyframe/*json*/`{
     "column": "ValueInput",
     "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }
@@ -130,7 +130,7 @@ export default keyframe/*json*/`{
      "column": "ValueInput",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }
@@ -139,7 +139,7 @@ export default keyframe/*json*/`{
 
 //// [null, "foci"], "start"
 export const ValueInput = props => {
-  // Render some JSX // [null, "subtitle"]
+  // Render some JSX // [null, "note"]
 };
 //// [null, "foci"], "end"
 
@@ -153,7 +153,7 @@ export default keyframe/*json*/`{
      "column": "ValueInput",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }
@@ -166,7 +166,7 @@ export const ValueInput = props => {
     <input>
     </input>
   ); // [""]
-  // Render some JSX // [null, "subtitle"]
+  // Render some JSX // [null, "note"]
 };
 //// [null, "foci"], "end"
 
@@ -180,7 +180,7 @@ export default keyframe/*json*/`{
      "column": "ValueInput",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }
@@ -193,7 +193,7 @@ export const ValueInput = props => {
     <input>
     </input>
   );
-  // Consume props // [null, "subtitle"]
+  // Consume props // [null, "note"]
 };
 //// [null, "foci"], "end"
 
@@ -207,7 +207,7 @@ export default keyframe/*json*/`{
      "column": "ValueInput",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }
@@ -224,7 +224,7 @@ export const ValueInput = props => {
     <input>
     </input>
   );
-  // Consume props // [null, "subtitle"]
+  // Consume props // [null, "note"]
 };
 //// [null, "foci"], "end"
 
@@ -238,7 +238,7 @@ export default keyframe/*json*/`{
      "column": "ValueInput",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }
@@ -255,7 +255,7 @@ export const ValueInput = props => {
     <input>
     </input>
   );
-  // Consume props // [null, "subtitle"]
+  // Consume props // [null, "note"]
 };
 //// [null, "foci"], "end"
 
@@ -269,7 +269,7 @@ export default keyframe/*json*/`{
      "column": "ValueInput",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }
@@ -288,7 +288,7 @@ export const ValueInput = props => {
     > // [""]
     </input>
   );
-  // Consume props // [null, "subtitle"]
+  // Consume props // [null, "note"]
 };
 //// [null, "foci"], "end"
 
@@ -302,7 +302,7 @@ export default keyframe/*json*/`{
      "column": "ValueInput",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }
@@ -321,7 +321,7 @@ export const ValueInput = props => {
     >
     </input>
   );
-  // Consume props // [null, "subtitle"]
+  // Consume props // [null, "note"]
 };
 //// [null, "foci"], "end"
 
@@ -335,7 +335,7 @@ export default keyframe/*json*/`{
      "column": "ValueInput",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }
@@ -355,7 +355,7 @@ export const ValueInput = props => {
     >
     </input>
   );
-  // Consume props // [null, "subtitle"]
+  // Consume props // [null, "note"]
 };
 //// [null, "foci"], "end"
 
@@ -369,7 +369,7 @@ export default keyframe/*json*/`{
      "column": "ValueInput",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }
@@ -390,7 +390,7 @@ export const ValueInput = props => {
     >
     </input>
   );
-  // Consume props // [null, "subtitle"]
+  // Consume props // [null, "note"]
 };
 //// [null, "foci"], "end"
 
@@ -404,7 +404,7 @@ export default keyframe/*json*/`{
      "column": "ValueInput",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }
@@ -429,7 +429,7 @@ export const ValueInput = props => {
     >
     </input>
   );
-  // Consume props // [null, "subtitle"]
+  // Consume props // [null, "note"]
 };
 //// [null, "foci"], "end"
 
@@ -482,7 +482,7 @@ export default keyframe/*json*/`{
      "column": "ValueInput",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }
@@ -525,7 +525,7 @@ export default keyframe/*json*/`{
      "column": "ValueInput",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }
@@ -558,7 +558,7 @@ export const App = () => {
     <ValueInput>
     </ValueInput>
   ); // [""]
-  // Consume the component // [null, "subtitle"]
+  // Consume the component // [null, "note"]
 };
 //// [null, "foci"], "end"
 
@@ -572,7 +572,7 @@ export default keyframe/*json*/`{
      "column": "ValueInput",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }
@@ -607,7 +607,7 @@ export const App = () => {
     > // [""]
     </ValueInput>
   );
-  // Consume the component // [null, "subtitle"]
+  // Consume the component // [null, "note"]
 };
 //// [null, "foci"], "end"
 
@@ -621,7 +621,7 @@ export default keyframe/*json*/`{
      "column": "ValueInput",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }
@@ -658,7 +658,7 @@ export const App = () => {
     >
     </ValueInput>
   );
-  // Consume the component // [null, "subtitle"]
+  // Consume the component // [null, "note"]
 };
 //// [null, "foci"], "end"
 
@@ -672,7 +672,7 @@ export default keyframe/*json*/`{
      "column": "ValueInput",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }
@@ -713,7 +713,7 @@ export const App = () => {
     >
     </ValueInput>
   );
-  // Consume the component // [null, "subtitle"]
+  // Consume the component // [null, "note"]
 };
 //// [null, "foci"], "end"
 
@@ -724,10 +724,11 @@ export default null;
 export default keyframe/*json*/`{
   "path": "./${foldername}/04-consumer/a/04-${1}-${count}-01-ValueInput.js",
   "context": {
+     "subtitle": "The adapter bridges the gap between one API and another.",
      "column": "ValueInput",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }
@@ -768,7 +769,7 @@ export const App = () => {
     >
     </ValueInput>
   );
-  // Consume the component // [null, "subtitle"]
+  // Consume the component // [null, "note"]
 };
 //// [null, "foci"], "end"
 
@@ -782,7 +783,7 @@ export default keyframe/*json*/`{
      "column": "ValueInput",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }
@@ -837,7 +838,7 @@ export default keyframe/*json*/`{
      "column": "ValueInput",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }

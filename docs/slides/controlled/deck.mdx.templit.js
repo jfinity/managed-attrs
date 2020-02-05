@@ -5,18 +5,21 @@ const mdx = String.raw;
 
 const associateStep = (labels, output) => {
   const { pathname, focus, context } = output;
+  const { title = "", subtitle = "" } = context;
   const column = context.column ? context.column.toString() : "";
   const group = path.dirname(pathname);
 
   if (!Array.isArray(labels)) {
-    return { column, group, pathname, focus };
+    return { column, group, pathname, title, subtitle, focus };
   }
 
   if (!labels.length) {
-    return { column, group, pathname, focus: "" };
+    return { column, group, pathname, title, subtitle, focus: "" };
   }
 
-  return { column, group, pathname, focus: labels.map(foci).join("").slice(1) };
+  const targets = labels.map(foci).join("").slice(1);
+
+  return { column, group, pathname, title, subtitle, focus: targets };
 
   function foci(name) {
     const { guides, ranges } = output;
@@ -90,14 +93,21 @@ const stepper = ({ folder, digest }) => {
   const pillars = [...columns];
 
   return pillars[0][1].map((vals, idx) => {
+    let props = "";
+    const title = pillars.find(([label, steps]) => steps[idx].title);
+    const subtitle = pillars.find(([label, steps]) => steps[idx].subtitle);
+
+    props += title ? ' title="'+title[1][idx].title+'"' : "";
+    props += subtitle ? ' subtitle="'+subtitle[1][idx].subtitle+'"' : "";
+
     return mdx`
-<Step>
+<Step${props}>
 
 ${
 pillars.map(([label, steps]) => {
   const value = steps[idx];
-  const file = path.join(value.folder, value.pathname);
-  return "```js "+value.focus+" file=./"+file+"\n```";
+  const file = " file=./"+path.join(value.folder, value.pathname);
+  return "```js "+value.focus+file+"\n```";
 }).join("\n\n")
 }
 
@@ -134,11 +144,38 @@ ${
   })
 }
 
+${
+  stepper({
+    folder: "./keyframes/",
+    digest: require(path.join(__dirname, "./keyframes/003-compare/01-ValueInput.json"))
+  })
+}
+
 </CodeSurferColumns>
 
 ---
 
-<CodeSurferColumns themes={[nightOwl, vsDark]}>
+<CodeSurferColumns themes={[nightOwl, vsDark]} sizes={[4, 5]}>
+
+${
+  stepper({
+    folder: "./keyframes/",
+    digest: require(path.join(__dirname, "./keyframes/003-compare/02-BasicButton.json"))
+  })
+}
+
+${
+  stepper({
+    folder: "./keyframes/",
+    digest: require(path.join(__dirname, "./keyframes/004-refactor/02-BasicButton.json"))
+  })
+}
+
+</CodeSurferColumns>
+
+---
+
+<CodeSurferColumns themes={[nightOwl, vsDark]} sizes={[4, 5]}>
 
 ${
   stepper({

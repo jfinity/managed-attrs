@@ -17,7 +17,7 @@ export default keyframe/*json*/`{
      "column": "LineItem",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }
@@ -383,7 +383,7 @@ export default keyframe/*json*/`{
      "column": "LineItem",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }
