@@ -14,6 +14,7 @@ export default prefs/*json*/`
 export default keyframe/*json*/`{
   "path": "./${foldername}/01-component/a/01-${1}-${count}-01-ValueInput.js",
   "context": {
+     "title": "Different component with same structure",
      "column": "ValueInput",
      "code": {
       "review": [
@@ -24,15 +25,15 @@ export default keyframe/*json*/`{
 }
 `;
 
-//// [null, "foci"], "start"
-// Component Structure // [""]
-//// [null, "foci"], "end"
+
+
 
 export default null;
 
 export default keyframe/*json*/`{
   "path": "./${foldername}/01-component/a/01-${1}-${count}-02-BasicButton.js",
   "context": {
+     "title": "Different component with same structure",
      "column": "BasicButton",
      "code": {
       "review": [
@@ -43,9 +44,8 @@ export default keyframe/*json*/`{
 }
 `;
 
-//// [null, "foci"], "start"
-// Component Structure // [""]
-//// [null, "foci"], "end"
+
+
 
 export default null;
 
@@ -54,6 +54,7 @@ export default null;
 export default keyframe/*json*/`{
   "path": "./${foldername}/01-component/a/01-${1}-${count}-01-ValueInput.js",
   "context": {
+    "title": "Declare functional component",
     "column": "ValueInput",
     "code": {
       "review": [
@@ -63,17 +64,18 @@ export default keyframe/*json*/`{
   }
 }
 `;
+// [null, "foci"], "start", [""]
 
-//// [null, "foci"], "start", [""]
 export const ValueInput = props => {
 };
-//// [null, "foci"], "end", [""]
 
+// [null, "foci"], "end", [""]
 export default null;
 
 export default keyframe/*json*/`{
   "path": "./${foldername}/01-component/a/01-${1}-${count}-02-BasicButton.js",
   "context": {
+     "title": "Declare functional component",
      "column": "BasicButton",
      "code": {
       "review": [
@@ -83,12 +85,12 @@ export default keyframe/*json*/`{
   }
 }
 `;
+// [null, "foci"], "start", [""]
 
-//// [null, "foci"], "start", [""]
 export const BasicButton = props => {
 };
-//// [null, "foci"], "end", [""]
 
+// [null, "foci"], "end", [""]
 export default null;
 
 
@@ -96,6 +98,7 @@ export default null;
 export default keyframe/*json*/`{
   "path": "./${foldername}/02-render/a/02-${1}-${count}-01-ValueInput.js",
   "context": {
+     "title": "Render some JSX",
      "column": "ValueInput",
      "code": {
       "review": [
@@ -105,66 +108,22 @@ export default keyframe/*json*/`{
   }
 }
 `;
+// [null, "foci"], "start"
 
-//// [null, "foci"], "start"
-export const ValueInput = props => {
-  // Render some JSX // [null, "note"]
-};
-//// [null, "foci"], "end"
-
-export default null;
-
-export default keyframe/*json*/`{
-  "path": "./${foldername}/02-render/a/02-${1}-${count}-02-BasicButton.js",
-  "context": {
-     "column": "BasicButton",
-     "code": {
-      "review": [
-        ["foci", "note", "", "pin"]
-      ]
-    }
-  }
-}
-`;
-
-//// [null, "foci"], "start"
-export const BasicButton = props => {
-  // Render some JSX // [null, "note"]
-};
-//// [null, "foci"], "end"
-
-export default null;
-
-
-
-export default keyframe/*json*/`{
-  "path": "./${foldername}/02-render/a/02-${1}-${count}-01-ValueInput.js",
-  "context": {
-     "column": "ValueInput",
-     "code": {
-      "review": [
-        ["foci", "note", "", "pin"]
-      ]
-    }
-  }
-}
-`;
-
-//// [null, "foci"], "start"
 export const ValueInput = props => {
   return ( // [""]
     <input>
     </input>
   ); // [""]
-  // Render some JSX // [null, "note"]
 };
-//// [null, "foci"], "end"
 
+// [null, "foci"], "end"
 export default null;
 
 export default keyframe/*json*/`{
   "path": "./${foldername}/02-render/a/02-${1}-${count}-02-BasicButton.js",
   "context": {
+     "title": "Render some JSX",
      "column": "BasicButton",
      "code": {
       "review": [
@@ -174,17 +133,16 @@ export default keyframe/*json*/`{
   }
 }
 `;
+// [null, "foci"], "start"
 
-//// [null, "foci"], "start"
 export const BasicButton = props => {
   return ( // [""]
     <button>
     </button>
   ); // [""]
-  // Render some JSX // [null, "note"]
 };
-//// [null, "foci"], "end"
 
+// [null, "foci"], "end"
 export default null;
 
 
@@ -192,6 +150,7 @@ export default null;
 export default keyframe/*json*/`{
   "path": "./${foldername}/03-props/a/03-${1}-${count}-01-ValueInput.js",
   "context": {
+     "title": "Consume props",
      "column": "ValueInput",
      "code": {
       "review": [
@@ -201,78 +160,25 @@ export default keyframe/*json*/`{
   }
 }
 `;
+// [null, "foci"], "start"
 
-//// [null, "foci"], "start"
-export const ValueInput = props => {
-  return (
-    <input>
-    </input>
-  );
-  // Consume props // [null, "note"]
-};
-//// [null, "foci"], "end"
-
-export default null;
-
-export default keyframe/*json*/`{
-  "path": "./${foldername}/03-props/a/03-${1}-${count}-02-BasicButton.js",
-  "context": {
-     "column": "BasicButton",
-     "code": {
-      "review": [
-        ["foci", "note", "", "pin"]
-      ]
-    }
-  }
-}
-`;
-
-//// [null, "foci"], "start"
-export const BasicButton = props => {
-  return (
-    <button>
-    </button>
-  );
-  // Consume props // [null, "note"]
-};
-//// [null, "foci"], "end"
-
-export default null;
-
-
-
-export default keyframe/*json*/`{
-  "path": "./${foldername}/03-props/a/03-${1}-${count}-01-ValueInput.js",
-  "context": {
-     "column": "ValueInput",
-     "code": {
-      "review": [
-        ["foci", "note", "", "pin"]
-      ]
-    }
-  }
-}
-`;
-
-//// [null, "foci"], "start"
 export const ValueInput = props => {
   const { // [""]
-    // Retrieve non-callback props
   } = props; // [""]
 
   return (
     <input>
     </input>
   );
-  // Consume props // [null, "note"]
 };
-//// [null, "foci"], "end"
 
+// [null, "foci"], "end"
 export default null;
 
 export default keyframe/*json*/`{
   "path": "./${foldername}/03-props/a/03-${1}-${count}-02-BasicButton.js",
   "context": {
+     "title": "Consume props",
      "column": "BasicButton",
      "code": {
       "review": [
@@ -282,21 +188,19 @@ export default keyframe/*json*/`{
   }
 }
 `;
+// [null, "foci"], "start"
 
-//// [null, "foci"], "start"
 export const BasicButton = props => {
   const { // [""]
-    // Retrieve non-callback props
   } = props; // [""]
 
   return (
     <button>
     </button>
   );
-  // Consume props // [null, "note"]
 };
-//// [null, "foci"], "end"
 
+// [null, "foci"], "end"
 export default null;
 
 
@@ -304,6 +208,7 @@ export default null;
 export default keyframe/*json*/`{
   "path": "./${foldername}/03-props/a/03-${1}-${count}-01-ValueInput.js",
   "context": {
+     "title": "Retrieve non-callback props",
      "column": "ValueInput",
      "code": {
       "review": [
@@ -313,8 +218,8 @@ export default keyframe/*json*/`{
   }
 }
 `;
+// [null, "foci"], "start"
 
-//// [null, "foci"], "start"
 export const ValueInput = props => {
   const {
     value = "", // [""]
@@ -324,15 +229,15 @@ export const ValueInput = props => {
     <input>
     </input>
   );
-  // Consume props // [null, "note"]
 };
-//// [null, "foci"], "end"
 
+// [null, "foci"], "end"
 export default null;
 
 export default keyframe/*json*/`{
   "path": "./${foldername}/03-props/a/03-${1}-${count}-02-BasicButton.js",
   "context": {
+     "title": "Retrieve non-callback props",
      "column": "BasicButton",
      "code": {
       "review": [
@@ -342,8 +247,8 @@ export default keyframe/*json*/`{
   }
 }
 `;
+// [null, "foci"], "start"
 
-//// [null, "foci"], "start"
 export const BasicButton = props => {
   const {
     children = "\u00A0", // [""]
@@ -355,10 +260,9 @@ export const BasicButton = props => {
     <button>
     </button>
   );
-  // Consume props // [null, "note"]
 };
-//// [null, "foci"], "end"
 
+// [null, "foci"], "end"
 export default null;
 
 
@@ -366,6 +270,7 @@ export default null;
 export default keyframe/*json*/`{
   "path": "./${foldername}/03-props/a/03-${1}-${count}-01-ValueInput.js",
   "context": {
+     "title": "Pass props to children",
      "column": "ValueInput",
      "code": {
       "review": [
@@ -375,74 +280,8 @@ export default keyframe/*json*/`{
   }
 }
 `;
+// [null, "foci"], "start"
 
-//// [null, "foci"], "start"
-export const ValueInput = props => {
-  const {
-    value = "",
-  } = props;
-
-  return (
-    <input // [""]
-      // Pass props to children
-    > // [""]
-    </input>
-  );
-  // Consume props // [null, "note"]
-};
-//// [null, "foci"], "end"
-
-export default null;
-
-export default keyframe/*json*/`{
-  "path": "./${foldername}/03-props/a/03-${1}-${count}-02-BasicButton.js",
-  "context": {
-     "column": "BasicButton",
-     "code": {
-      "review": [
-        ["foci", "note", "", "pin"]
-      ]
-    }
-  }
-}
-`;
-
-//// [null, "foci"], "start"
-export const BasicButton = props => {
-  const {
-    children = "\u00A0",
-
-    highlighted = false,
-  } = props;
-
-  return (
-    <button // [""]
-      // Pass props to children
-    > // [""]
-    </button>
-  );
-  // Consume props // [null, "note"]
-};
-//// [null, "foci"], "end"
-
-export default null;
-
-
-
-export default keyframe/*json*/`{
-  "path": "./${foldername}/03-props/a/03-${1}-${count}-01-ValueInput.js",
-  "context": {
-     "column": "ValueInput",
-     "code": {
-      "review": [
-        ["foci", "note", "", "pin"]
-      ]
-    }
-  }
-}
-`;
-
-//// [null, "foci"], "start"
 export const ValueInput = props => {
   const {
     value = "",
@@ -454,15 +293,15 @@ export const ValueInput = props => {
     >
     </input>
   );
-  // Consume props // [null, "note"]
 };
-//// [null, "foci"], "end"
 
+// [null, "foci"], "end"
 export default null;
 
 export default keyframe/*json*/`{
   "path": "./${foldername}/03-props/a/03-${1}-${count}-02-BasicButton.js",
   "context": {
+     "title": "Pass props to children",
      "column": "BasicButton",
      "code": {
       "review": [
@@ -472,8 +311,8 @@ export default keyframe/*json*/`{
   }
 }
 `;
+// [null, "foci"], "start"
 
-//// [null, "foci"], "start"
 export const BasicButton = props => {
   const {
     children = "\u00A0",
@@ -483,16 +322,14 @@ export const BasicButton = props => {
 
   return (
     <button
-      // Please hold your :hover critiques for now... // [""]
-      style={{ background: highlighted ? "lightgray" : "transparent" }} // [""]
+      style={highlighted && { background: "lightgray" }} // [""]
     >
       {children} // [null, ""]
     </button>
   );
-  // Consume props // [null, "note"]
 };
-//// [null, "foci"], "end"
 
+// [null, "foci"], "end"
 export default null;
 
 
@@ -500,6 +337,7 @@ export default null;
 export default keyframe/*json*/`{
   "path": "./${foldername}/03-props/a/03-${1}-${count}-01-ValueInput.js",
   "context": {
+     "title": "Retrieve callback props",
      "column": "ValueInput",
      "code": {
       "review": [
@@ -509,13 +347,12 @@ export default keyframe/*json*/`{
   }
 }
 `;
+// [null, "foci"], "start"
 
-//// [null, "foci"], "start"
 export const ValueInput = props => {
-  const {
+  const { // ["pin"]
     value = "",
-    // Retrieve callback props // [""]
-  } = props;
+  } = props; // ["pin"]
 
   return (
     <input
@@ -523,15 +360,15 @@ export const ValueInput = props => {
     >
     </input>
   );
-  // Consume props // [null, "note"]
 };
-//// [null, "foci"], "end"
 
+// [null, "foci"], "end"
 export default null;
 
 export default keyframe/*json*/`{
   "path": "./${foldername}/03-props/a/03-${1}-${count}-02-BasicButton.js",
   "context": {
+     "title": "Retrieve callback props",
      "column": "BasicButton",
      "code": {
       "review": [
@@ -541,27 +378,25 @@ export default keyframe/*json*/`{
   }
 }
 `;
+// [null, "foci"], "start"
 
-//// [null, "foci"], "start"
 export const BasicButton = props => {
-  const {
+  const { // ["pin"]
     children = "\u00A0",
 
     highlighted = false,
-    // Retrieve callback props // [""]
-  } = props;
+  } = props; // ["pin"]
 
   return (
     <button
-      style={{ background: highlighted ? "lightgray" : "transparent" }}
+      style={highlighted && { background: "lightgray" }}
     >
       {children}
     </button>
   );
-  // Consume props // [null, "note"]
 };
-//// [null, "foci"], "end"
 
+// [null, "foci"], "end"
 export default null;
 
 
@@ -569,6 +404,7 @@ export default null;
 export default keyframe/*json*/`{
   "path": "./${foldername}/03-props/a/03-${1}-${count}-01-ValueInput.js",
   "context": {
+     "title": "Retrieve callback props",
      "column": "ValueInput",
      "code": {
       "review": [
@@ -578,8 +414,8 @@ export default keyframe/*json*/`{
   }
 }
 `;
+// [null, "foci"], "start"
 
-//// [null, "foci"], "start"
 export const ValueInput = props => {
   const {
     value = "",
@@ -593,15 +429,15 @@ export const ValueInput = props => {
     >
     </input>
   );
-  // Consume props // [null, "note"]
 };
-//// [null, "foci"], "end"
 
+// [null, "foci"], "end"
 export default null;
 
 export default keyframe/*json*/`{
   "path": "./${foldername}/03-props/a/03-${1}-${count}-02-BasicButton.js",
   "context": {
+     "title": "Retrieve callback props",
      "column": "BasicButton",
      "code": {
       "review": [
@@ -611,8 +447,8 @@ export default keyframe/*json*/`{
   }
 }
 `;
+// [null, "foci"], "start"
 
-//// [null, "foci"], "start"
 export const BasicButton = props => {
   const {
     children = "\u00A0",
@@ -627,15 +463,14 @@ export const BasicButton = props => {
 
   return (
     <button
-      style={{ background: highlighted ? "lightgray" : "transparent" }}
+      style={highlighted && { background: "lightgray" }}
     >
       {children}
     </button>
   );
-  // Consume props // [null, "note"]
 };
-//// [null, "foci"], "end"
 
+// [null, "foci"], "end"
 export default null;
 
 
@@ -643,6 +478,7 @@ export default null;
 export default keyframe/*json*/`{
   "path": "./${foldername}/03-props/a/03-${1}-${count}-01-ValueInput.js",
   "context": {
+     "title": "Adapt signature from callback to state manager",
      "column": "ValueInput",
      "code": {
       "review": [
@@ -652,30 +488,30 @@ export default keyframe/*json*/`{
   }
 }
 `;
+// [null, "foci"], "start"
 
-//// [null, "foci"], "start"
 export const ValueInput = props => {
   const {
     value = "",
 
-    onChange = string => {}, // setValue
+    onChange = string => {}, // setValue // ["pin"]
   } = props;
-  // Adapt signature from callback to state manager // [null, ""]
+
   return (
     <input
       value={value}
     >
     </input>
   );
-  // Consume props // [null, "note"]
 };
-//// [null, "foci"], "end"
 
+// [null, "foci"], "end"
 export default null;
 
 export default keyframe/*json*/`{
   "path": "./${foldername}/03-props/a/03-${1}-${count}-02-BasicButton.js",
   "context": {
+     "title": "Adapt signature from callback to state manager",
      "column": "BasicButton",
      "code": {
       "review": [
@@ -685,31 +521,30 @@ export default keyframe/*json*/`{
   }
 }
 `;
+// [null, "foci"], "start"
 
-//// [null, "foci"], "start"
 export const BasicButton = props => {
   const {
     children = "\u00A0",
 
     highlighted = false,
 
-    onMouseEnter = boolean => {}, // setHighlighted
+    onMouseEnter = boolean => {}, // setHighlighted // ["pin"]
     onMouseLeave = boolean => {}, // setHighlighted
 
-    onClick = () => {},
+    onClick = () => {}, // ["pin"]
   } = props;
-  // Adapt signature from callback to state manager // [null, ""]
+
   return (
     <button
-      style={{ background: highlighted ? "lightgray" : "transparent" }}
+      style={highlighted && { background: "lightgray" }}
     >
       {children}
     </button>
   );
-  // Consume props // [null, "note"]
 };
-//// [null, "foci"], "end"
 
+// [null, "foci"], "end"
 export default null;
 
 
@@ -717,7 +552,7 @@ export default null;
 export default keyframe/*json*/`{
   "path": "./${foldername}/03-props/a/03-${1}-${count}-01-ValueInput.js",
   "context": {
-     "subtitle": "The adapter bridges the gap between one API and another.",
+     "title": "Adapters bridge the gaps between dissimilar APIs",
      "column": "ValueInput",
      "code": {
       "review": [
@@ -727,8 +562,8 @@ export default keyframe/*json*/`{
   }
 }
 `;
+// [null, "foci"], "start"
 
-//// [null, "foci"], "start"
 export const ValueInput = props => {
   const {
     value = "",
@@ -746,16 +581,15 @@ export const ValueInput = props => {
     >
     </input>
   );
-  // Consume props // [null, "note"]
 };
-//// [null, "foci"], "end"
 
+// [null, "foci"], "end"
 export default null;
 
 export default keyframe/*json*/`{
   "path": "./${foldername}/03-props/a/03-${1}-${count}-02-BasicButton.js",
   "context": {
-     "subtitle": "The adapter bridges the gap between one API and another.",
+     "title": "Adapters bridge the gaps between dissimilar APIs",
      "column": "BasicButton",
      "code": {
       "review": [
@@ -765,8 +599,10 @@ export default keyframe/*json*/`{
   }
 }
 `;
+// [null, "foci"], "start"
 
-//// [null, "foci"], "start"
+
+
 export const BasicButton = props => {
   const {
     children = "\u00A0",
@@ -779,22 +615,25 @@ export const BasicButton = props => {
     onClick = () => {},
   } = props;
 
-  const handleMouseEnter = () => onMouseEnter(true); // [""]
-  const handleMouseLeave = () => onMouseLeave(false);
+  const handleMouseEnter = () => onMouseEnter( // [""]
+    true
+  );
+  const handleMouseLeave = () => onMouseLeave(
+    false
+  );
 
   const handleClick = () => onClick(); // [""]
 
   return (
     <button
-      style={{ background: highlighted ? "lightgray" : "transparent" }}
+      style={highlighted && { background: "lightgray" }}
     >
       {children}
     </button>
   );
-  // Consume props // [null, "note"]
 };
-//// [null, "foci"], "end"
 
+// [null, "foci"], "end"
 export default null;
 
 
@@ -802,6 +641,7 @@ export default null;
 export default keyframe/*json*/`{
   "path": "./${foldername}/03-props/a/03-${1}-${count}-01-ValueInput.js",
   "context": {
+     "title": "Listen for child events",
      "column": "ValueInput",
      "code": {
       "review": [
@@ -811,8 +651,8 @@ export default keyframe/*json*/`{
   }
 }
 `;
+// [null, "foci"], "start"
 
-//// [null, "foci"], "start"
 export const ValueInput = props => {
   const {
     value = "",
@@ -827,20 +667,20 @@ export const ValueInput = props => {
   return (
     <input
       value={value}
-      // Listen for child events // [""]
+
       onChange={handleChange} // [""]
     >
     </input>
   );
-  // Consume props // [null, "note"]
 };
-//// [null, "foci"], "end"
 
+// [null, "foci"], "end"
 export default null;
 
 export default keyframe/*json*/`{
   "path": "./${foldername}/03-props/a/03-${1}-${count}-02-BasicButton.js",
   "context": {
+     "title": "Listen for child events",
      "column": "BasicButton",
      "code": {
       "review": [
@@ -850,8 +690,10 @@ export default keyframe/*json*/`{
   }
 }
 `;
+// [null, "foci"], "start"
 
-//// [null, "foci"], "start"
+
+
 export const BasicButton = props => {
   const {
     children = "\u00A0",
@@ -864,16 +706,20 @@ export const BasicButton = props => {
     onClick = () => {},
   } = props;
 
-  const handleMouseEnter = () => onMouseEnter(true);
-  const handleMouseLeave = () => onMouseLeave(false);
+  const handleMouseEnter = () => onMouseEnter(
+    true
+  );
+  const handleMouseLeave = () => onMouseLeave(
+    false
+  );
 
   const handleClick = () => onClick();
 
   return (
     <button
-      style={{ background: highlighted ? "lightgray" : "transparent" }}
-      // Listen for child events // [""]
-      onMousEnter={handleMouseEnter}
+      style={highlighted && { background: "lightgray" }}
+      // Please hold your :hover critiques for now... // [""]
+      onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
 
       onClick={handleClick} // [""]
@@ -881,10 +727,9 @@ export const BasicButton = props => {
       {children}
     </button>
   );
-  // Consume props // [null, "note"]
 };
-//// [null, "foci"], "end"
 
+// [null, "foci"], "end"
 export default null;
 
 
@@ -901,8 +746,8 @@ export default keyframe/*json*/`{
   }
 }
 `;
+// [null, "foci"], "start", ["f2f"]
 
-//// [null, "foci"], "start", ["f2f"]
 export const ValueInput = props => {
   const {
     value = "",
@@ -922,10 +767,9 @@ export const ValueInput = props => {
     >
     </input>
   );
-
 };
-//// [null, "foci"], "end", ["f2f"]
 
+// [null, "foci"], "end", ["f2f"]
 export default null;
 
 export default keyframe/*json*/`{
@@ -940,8 +784,10 @@ export default keyframe/*json*/`{
   }
 }
 `;
+// [null, "foci"], "start", ["f2f"]
 
-//// [null, "foci"], "start", ["f2f"]
+
+
 export const BasicButton = props => {
   const {
     children = "\u00A0",
@@ -954,16 +800,20 @@ export const BasicButton = props => {
     onClick = () => {},
   } = props;
 
-  const handleMouseEnter = () => onMouseEnter(true);
-  const handleMouseLeave = () => onMouseLeave(false);
+  const handleMouseEnter = () => onMouseEnter(
+    true
+  );
+  const handleMouseLeave = () => onMouseLeave(
+    false
+  );
 
   const handleClick = () => onClick();
 
   return (
     <button
-      style={{ background: highlighted ? "lightgray" : "transparent" }}
+      style={highlighted && { background: "lightgray" }}
 
-      onMousEnter={handleMouseEnter}
+      onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
 
       onClick={handleClick}
@@ -971,10 +821,9 @@ export const BasicButton = props => {
       {children}
     </button>
   );
-
 };
-//// [null, "foci"], "end", ["f2f"]
 
+// [null, "foci"], "end", ["f2f"]
 export default null;
 
 
@@ -982,6 +831,7 @@ export default null;
 export default keyframe/*json*/`{
   "path": "./${foldername}/04-consumer/a/04-${1}-${count}-01-ValueInput.js",
   "context": {
+     "title": "Consume the component",
      "column": "ValueInput",
      "code": {
       "review": [
@@ -992,7 +842,7 @@ export default keyframe/*json*/`{
 }
 `;
 
-//
+
 export const ValueInput = props => {
   const {
     value = "",
@@ -1012,19 +862,18 @@ export const ValueInput = props => {
     >
     </input>
   );
-
 };
-//// [null, "foci"], "start", [""]
+// [null, "foci"], "start", [""]
 export const App = () => {
-  // Consume the component
 };
-//// [null, "foci"], "end", [""]
 
+// [null, "foci"], "end", [""]
 export default null;
 
 export default keyframe/*json*/`{
   "path": "./${foldername}/04-consumer/a/04-${1}-${count}-02-BasicButton.js",
   "context": {
+     "title": "Consume the component",
      "column": "BasicButton",
      "code": {
       "review": [
@@ -1035,7 +884,9 @@ export default keyframe/*json*/`{
 }
 `;
 
-//
+
+
+
 export const BasicButton = props => {
   const {
     children = "\u00A0",
@@ -1048,16 +899,20 @@ export const BasicButton = props => {
     onClick = () => {},
   } = props;
 
-  const handleMouseEnter = () => onMouseEnter(true);
-  const handleMouseLeave = () => onMouseLeave(false);
+  const handleMouseEnter = () => onMouseEnter(
+    true
+  );
+  const handleMouseLeave = () => onMouseLeave(
+    false
+  );
 
   const handleClick = () => onClick();
 
   return (
     <button
-      style={{ background: highlighted ? "lightgray" : "transparent" }}
+      style={highlighted && { background: "lightgray" }}
 
-      onMousEnter={handleMouseEnter}
+      onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
 
       onClick={handleClick}
@@ -1065,14 +920,12 @@ export const BasicButton = props => {
       {children}
     </button>
   );
-
 };
-//// [null, "foci"], "start", [""]
+// [null, "foci"], "start", [""]
 export const App = () => {
-  // Consume the component
 };
-//// [null, "foci"], "end", [""]
 
+// [null, "foci"], "end", [""]
 export default null;
 
 
@@ -1080,6 +933,7 @@ export default null;
 export default keyframe/*json*/`{
   "path": "./${foldername}/04-consumer/a/04-${1}-${count}-01-ValueInput.js",
   "context": {
+     "title": "Consume the component",
      "column": "ValueInput",
      "code": {
       "review": [
@@ -1090,7 +944,7 @@ export default keyframe/*json*/`{
 }
 `;
 
-//
+
 export const ValueInput = props => {
   const {
     value = "",
@@ -1110,243 +964,23 @@ export const ValueInput = props => {
     >
     </input>
   );
-
 };
-//// [null, "foci"], "start"
+// [null, "foci"], "start"
 export const App = () => {
   return ( // [""]
-    <ValueInput>
-    </ValueInput>
-  ); // [""]
-  // Consume the component // [null, "note"]
-};
-//// [null, "foci"], "end"
-
-export default null;
-
-export default keyframe/*json*/`{
-  "path": "./${foldername}/04-consumer/a/04-${1}-${count}-02-BasicButton.js",
-  "context": {
-     "column": "BasicButton",
-     "code": {
-      "review": [
-        ["foci", "note", "", "pin"]
-      ]
-    }
-  }
-}
-`;
-
-//
-export const BasicButton = props => {
-  const {
-    children = "\u00A0",
-
-    highlighted = false,
-
-    onMouseEnter = boolean => {}, // setHighlighted
-    onMouseLeave = boolean => {}, // setHighlighted
-
-    onClick = () => {},
-  } = props;
-
-  const handleMouseEnter = () => onMouseEnter(true);
-  const handleMouseLeave = () => onMouseLeave(false);
-
-  const handleClick = () => onClick();
-
-  return (
-    <button
-      style={{ background: highlighted ? "lightgray" : "transparent" }}
-
-      onMousEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-
-      onClick={handleClick}
-    >
-      {children}
-    </button>
-  );
-
-};
-//// [null, "foci"], "start"
-export const App = () => {
-  return ( // [""]
-    <BasicButton>
-    </BasicButton>
-  ); // [""]
-  // Consume the component // [null, "note"]
-};
-//// [null, "foci"], "end"
-
-export default null;
-
-
-
-export default keyframe/*json*/`{
-  "path": "./${foldername}/04-consumer/a/04-${1}-${count}-01-ValueInput.js",
-  "context": {
-     "column": "ValueInput",
-     "code": {
-      "review": [
-        ["foci", "note", "", "pin"]
-      ]
-    }
-  }
-}
-`;
-
-//
-export const ValueInput = props => {
-  const {
-    value = "",
-
-    onChange = string => {}, // setValue
-  } = props;
-
-  const handleChange = event => onChange(
-    event.target.value
-  );
-
-  return (
-    <input
-      value={value}
-
-      onChange={handleChange}
-    >
-    </input>
-  );
-
-};
-//// [null, "foci"], "start"
-export const App = () => {
-  return (
-    <ValueInput // [""]
-      // Pass props to the component
-    > // [""]
-    </ValueInput>
-  );
-  // Consume the component // [null, "note"]
-};
-//// [null, "foci"], "end"
-
-export default null;
-
-export default keyframe/*json*/`{
-  "path": "./${foldername}/04-consumer/a/04-${1}-${count}-02-BasicButton.js",
-  "context": {
-     "column": "BasicButton",
-     "code": {
-      "review": [
-        ["foci", "note", "", "pin"]
-      ]
-    }
-  }
-}
-`;
-
-//
-export const BasicButton = props => {
-  const {
-    children = "\u00A0",
-
-    highlighted = false,
-
-    onMouseEnter = boolean => {}, // setHighlighted
-    onMouseLeave = boolean => {}, // setHighlighted
-
-    onClick = () => {},
-  } = props;
-
-  const handleMouseEnter = () => onMouseEnter(true);
-  const handleMouseLeave = () => onMouseLeave(false);
-
-  const handleClick = () => onClick();
-
-  return (
-    <button
-      style={{ background: highlighted ? "lightgray" : "transparent" }}
-
-      onMousEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-
-      onClick={handleClick}
-    >
-      {children}
-    </button>
-  );
-
-};
-//// [null, "foci"], "start"
-export const App = () => {
-  return (
-    <BasicButton // [""]
-      // Pass props to the component
-    > // [""]
-    </BasicButton>
-  );
-  // Consume the component // [null, "note"]
-};
-//// [null, "foci"], "end"
-
-export default null;
-
-
-
-export default keyframe/*json*/`{
-  "path": "./${foldername}/04-consumer/a/04-${1}-${count}-01-ValueInput.js",
-  "context": {
-     "column": "ValueInput",
-     "code": {
-      "review": [
-        ["foci", "note", "", "pin"]
-      ]
-    }
-  }
-}
-`;
-
-//
-export const ValueInput = props => {
-  const {
-    value = "",
-
-    onChange = string => {}, // setValue
-  } = props;
-
-  const handleChange = event => onChange(
-    event.target.value
-  );
-
-  return (
-    <input
-      value={value}
-
-      onChange={handleChange}
-    >
-    </input>
-  );
-
-};
-//// [null, "foci"], "start"
-export const App = () => {
-  const [value, setValue] = useState("default text"); // [""]
-
-  return (
     <ValueInput
-      // Pass props to the component // [null, "pin"]
     >
     </ValueInput>
-  );
-  // Consume the component // [null, "note"]
+  ); // [""]
 };
-//// [null, "foci"], "end"
 
+// [null, "foci"], "end"
 export default null;
 
 export default keyframe/*json*/`{
   "path": "./${foldername}/04-consumer/a/04-${1}-${count}-02-BasicButton.js",
   "context": {
+     "title": "Consume the component",
      "column": "BasicButton",
      "code": {
       "review": [
@@ -1357,7 +991,9 @@ export default keyframe/*json*/`{
 }
 `;
 
-//
+
+
+
 export const BasicButton = props => {
   const {
     children = "\u00A0",
@@ -1370,16 +1006,20 @@ export const BasicButton = props => {
     onClick = () => {},
   } = props;
 
-  const handleMouseEnter = () => onMouseEnter(true);
-  const handleMouseLeave = () => onMouseLeave(false);
+  const handleMouseEnter = () => onMouseEnter(
+    true
+  );
+  const handleMouseLeave = () => onMouseLeave(
+    false
+  );
 
   const handleClick = () => onClick();
 
   return (
     <button
-      style={{ background: highlighted ? "lightgray" : "transparent" }}
+      style={highlighted && { background: "lightgray" }}
 
-      onMousEnter={handleMouseEnter}
+      onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
 
       onClick={handleClick}
@@ -1387,22 +1027,137 @@ export const BasicButton = props => {
       {children}
     </button>
   );
-
 };
-//// [null, "foci"], "start"
+// [null, "foci"], "start"
 export const App = () => {
-  const [highlighted, setHighlighted] = useState(false); // [""]
-
-  return (
+  return ( // [""]
     <BasicButton
-      // Pass props to the component // [null, "pin"]
     >
     </BasicButton>
-  );
-  // Consume the component // [null, "note"]
+  ); // [""]
 };
-//// [null, "foci"], "end"
 
+// [null, "foci"], "end"
+export default null;
+
+
+
+export default keyframe/*json*/`{
+  "path": "./${foldername}/04-consumer/a/04-${1}-${count}-01-ValueInput.js",
+  "context": {
+     "title": "Pass props to the component",
+     "column": "ValueInput",
+     "code": {
+      "review": [
+        ["foci", "note", "", "pin"]
+      ]
+    }
+  }
+}
+`;
+
+
+export const ValueInput = props => {
+  const {
+    value = "",
+
+    onChange = string => {}, // setValue
+  } = props;
+
+  const handleChange = event => onChange(
+    event.target.value
+  );
+
+  return (
+    <input
+      value={value}
+
+      onChange={handleChange}
+    >
+    </input>
+  );
+};
+// [null, "foci"], "start"
+export const App = () => {
+  const [value, setValue] = useState( // [""]
+    "default text"
+  ); // [""]
+
+  return (
+    <ValueInput // ["pin"]
+    > // ["pin"]
+    </ValueInput>
+  );
+};
+
+// [null, "foci"], "end"
+export default null;
+
+export default keyframe/*json*/`{
+  "path": "./${foldername}/04-consumer/a/04-${1}-${count}-02-BasicButton.js",
+  "context": {
+     "title": "Pass props to the component",
+     "column": "BasicButton",
+     "code": {
+      "review": [
+        ["foci", "note", "", "pin"]
+      ]
+    }
+  }
+}
+`;
+
+
+
+
+export const BasicButton = props => {
+  const {
+    children = "\u00A0",
+
+    highlighted = false,
+
+    onMouseEnter = boolean => {}, // setHighlighted
+    onMouseLeave = boolean => {}, // setHighlighted
+
+    onClick = () => {},
+  } = props;
+
+  const handleMouseEnter = () => onMouseEnter(
+    true
+  );
+  const handleMouseLeave = () => onMouseLeave(
+    false
+  );
+
+  const handleClick = () => onClick();
+
+  return (
+    <button
+      style={highlighted && { background: "lightgray" }}
+
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+
+      onClick={handleClick}
+    >
+      {children}
+    </button>
+  );
+};
+// [null, "foci"], "start"
+export const App = () => {
+  const [highlighted, setHighlighted] = useState( // [""]
+    false
+  ); // [""]
+
+  return (
+    <BasicButton // ["pin"]
+    > // ["pin"]
+    </BasicButton>
+  );
+};
+
+// [null, "foci"], "end"
 export default null;
 
 
@@ -1421,7 +1176,7 @@ export default keyframe/*json*/`{
 }
 `;
 
-//
+
 export const ValueInput = props => {
   const {
     value = "",
@@ -1441,11 +1196,12 @@ export const ValueInput = props => {
     >
     </input>
   );
-
 };
-//// [null, "foci"], "start", ["f2f"]
+// [null, "foci"], "start", ["f2f"]
 export const App = () => {
-  const [value, setValue] = useState("default text");
+  const [value, setValue] = useState(
+    "default text"
+  );
 
   return (
     <ValueInput
@@ -1454,10 +1210,9 @@ export const App = () => {
     >
     </ValueInput>
   );
-
 };
-//// [null, "foci"], "end", ["f2f"]
 
+// [null, "foci"], "end", ["f2f"]
 export default null;
 
 export default keyframe/*json*/`{
@@ -1474,7 +1229,9 @@ export default keyframe/*json*/`{
 }
 `;
 
-//
+
+
+
 export const BasicButton = props => {
   const {
     children = "\u00A0",
@@ -1487,16 +1244,20 @@ export const BasicButton = props => {
     onClick = () => {},
   } = props;
 
-  const handleMouseEnter = () => onMouseEnter(true);
-  const handleMouseLeave = () => onMouseLeave(false);
+  const handleMouseEnter = () => onMouseEnter(
+    true
+  );
+  const handleMouseLeave = () => onMouseLeave(
+    false
+  );
 
   const handleClick = () => onClick();
 
   return (
     <button
-      style={{ background: highlighted ? "lightgray" : "transparent" }}
+      style={highlighted && { background: "lightgray" }}
 
-      onMousEnter={handleMouseEnter}
+      onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
 
       onClick={handleClick}
@@ -1504,11 +1265,12 @@ export const BasicButton = props => {
       {children}
     </button>
   );
-
 };
-//// [null, "foci"], "start", ["f2f"]
+// [null, "foci"], "start", ["f2f"]
 export const App = () => {
-  const [highlighted, setHighlighted] = useState(false);
+  const [highlighted, setHighlighted] = useState(
+    false
+  );
 
   return (
     <BasicButton
@@ -1518,10 +1280,9 @@ export const App = () => {
     >
     </BasicButton>
   );
-
 };
-//// [null, "foci"], "end", ["f2f"]
 
+// [null, "foci"], "end", ["f2f"]
 export default null;
 
 
@@ -1529,6 +1290,7 @@ export default null;
 export default keyframe/*json*/`{
   "path": "./${foldername}/04-consumer/a/04-${1}-${count}-01-ValueInput.js",
   "context": {
+     "title": "Reuse component",
      "column": "ValueInput",
      "code": {
       "review": [
@@ -1540,7 +1302,7 @@ export default keyframe/*json*/`{
 }
 `;
 
-//
+
 export const ValueInput = props => {
   const {
     value = "",
@@ -1560,11 +1322,15 @@ export const ValueInput = props => {
     >
     </input>
   );
-
 };
-//// [null, "foci"], "start"
+// [null, "foci"], "start"
+
+
+
 export const App = () => {
-  const [value, setValue] = useState("default text");
+  const [value, setValue] = useState(
+    "default text"
+  );
 
   return (
     <ValueInput
@@ -1573,11 +1339,12 @@ export const App = () => {
     >
     </ValueInput>
   );
-
 };
 
 export const Lib = () => { // [""]
-  const [value, setValue] = useState("placeholder");
+  const [value, setValue] = useState(
+    "placeholder"
+  );
 
   return (
     <ValueInput
@@ -1586,15 +1353,16 @@ export const Lib = () => { // [""]
     >
     </ValueInput>
   );
-
 }; // [""]
-//// [null, "foci"], "end"
 
+
+// [null, "foci"], "end"
 export default null;
 
 export default keyframe/*json*/`{
   "path": "./${foldername}/04-consumer/a/04-${1}-${count}-02-BasicButton.js",
   "context": {
+     "title": "Reuse component",
      "column": "BasicButton",
      "code": {
       "review": [
@@ -1606,7 +1374,9 @@ export default keyframe/*json*/`{
 }
 `;
 
-//
+
+
+
 export const BasicButton = props => {
   const {
     children = "\u00A0",
@@ -1619,16 +1389,20 @@ export const BasicButton = props => {
     onClick = () => {},
   } = props;
 
-  const handleMouseEnter = () => onMouseEnter(true);
-  const handleMouseLeave = () => onMouseLeave(false);
+  const handleMouseEnter = () => onMouseEnter(
+    true
+  );
+  const handleMouseLeave = () => onMouseLeave(
+    false
+  );
 
   const handleClick = () => onClick();
 
   return (
     <button
-      style={{ background: highlighted ? "lightgray" : "transparent" }}
+      style={highlighted && { background: "lightgray" }}
 
-      onMousEnter={handleMouseEnter}
+      onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
 
       onClick={handleClick}
@@ -1636,11 +1410,15 @@ export const BasicButton = props => {
       {children}
     </button>
   );
-
 };
-//// [null, "foci"], "start"
+// [null, "foci"], "start"
+
+
+
 export const App = () => {
-  const [highlighted, setHighlighted] = useState(false);
+  const [highlighted, setHighlighted] = useState(
+    false
+  );
 
   return (
     <BasicButton
@@ -1650,11 +1428,12 @@ export const App = () => {
     >
     </BasicButton>
   );
-
 };
 
 export const Lib = () => { // [""]
-  const [highlighted, setHighlighted] = useState(false);
+  const [highlighted, setHighlighted] = useState(
+    false
+  );
 
   return (
     <BasicButton
@@ -1664,10 +1443,10 @@ export const Lib = () => { // [""]
     >
     </BasicButton>
   );
-
 }; // [""]
-//// [null, "foci"], "end"
 
+
+// [null, "foci"], "end"
 export default null;
 
 
@@ -1675,6 +1454,7 @@ export default null;
 export default keyframe/*json*/`{
   "path": "./${foldername}/04-consumer/a/04-${1}-${count}-01-ValueInput.js",
   "context": {
+     "title": "Lingering property-callback relationship implementation details",
      "column": "ValueInput",
      "code": {
       "review": [
@@ -1685,7 +1465,7 @@ export default keyframe/*json*/`{
 }
 `;
 
-//
+
 export const ValueInput = props => {
   const {
     value = "",
@@ -1705,11 +1485,15 @@ export const ValueInput = props => {
     >
     </input>
   );
-
 };
-//// [null, "foci"], "start"
+// [null, "foci"], "start"
+
+
+
 export const App = () => {
-  const [value, setValue] = useState("default text");
+  const [value, setValue] = useState(
+    "default text"
+  );
 
   return (
     <ValueInput
@@ -1718,11 +1502,12 @@ export const App = () => {
     >
     </ValueInput>
   );
-
 };
-// Lingering property-callback relationship implementation details // [null, "note"]
+
 export const Lib = () => {
-  const [value, setValue] = useState("placeholder");
+  const [value, setValue] = useState(
+    "placeholder"
+  );
 
   return (
     <ValueInput
@@ -1731,15 +1516,16 @@ export const Lib = () => {
     >
     </ValueInput>
   );
-
 };
-//// [null, "foci"], "end"
 
+
+// [null, "foci"], "end"
 export default null;
 
 export default keyframe/*json*/`{
   "path": "./${foldername}/04-consumer/a/04-${1}-${count}-02-BasicButton.js",
   "context": {
+     "title": "Lingering property-callback relationship implementation details",
      "column": "BasicButton",
      "code": {
       "review": [
@@ -1750,7 +1536,9 @@ export default keyframe/*json*/`{
 }
 `;
 
-//
+
+
+
 export const BasicButton = props => {
   const {
     children = "\u00A0",
@@ -1763,16 +1551,20 @@ export const BasicButton = props => {
     onClick = () => {},
   } = props;
 
-  const handleMouseEnter = () => onMouseEnter(true);
-  const handleMouseLeave = () => onMouseLeave(false);
+  const handleMouseEnter = () => onMouseEnter(
+    true
+  );
+  const handleMouseLeave = () => onMouseLeave(
+    false
+  );
 
   const handleClick = () => onClick();
 
   return (
     <button
-      style={{ background: highlighted ? "lightgray" : "transparent" }}
+      style={highlighted && { background: "lightgray" }}
 
-      onMousEnter={handleMouseEnter}
+      onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
 
       onClick={handleClick}
@@ -1780,11 +1572,15 @@ export const BasicButton = props => {
       {children}
     </button>
   );
-
 };
-//// [null, "foci"], "start"
+// [null, "foci"], "start"
+
+
+
 export const App = () => {
-  const [highlighted, setHighlighted] = useState(false);
+  const [highlighted, setHighlighted] = useState(
+    false
+  );
 
   return (
     <BasicButton
@@ -1794,11 +1590,12 @@ export const App = () => {
     >
     </BasicButton>
   );
-
 };
-// Lingering property-callback relationship implementation details // [null, "note"]
+
 export const Lib = () => {
-  const [highlighted, setHighlighted] = useState(false);
+  const [highlighted, setHighlighted] = useState(
+    false
+  );
 
   return (
     <BasicButton
@@ -1808,10 +1605,10 @@ export const Lib = () => {
     >
     </BasicButton>
   );
-
 };
-//// [null, "foci"], "end"
 
+
+// [null, "foci"], "end"
 export default null;
 
 
@@ -1829,7 +1626,7 @@ export default keyframe/*json*/`{
 }
 `;
 
-//
+
 export const ValueInput = props => {
   const {
     value = "",
@@ -1849,36 +1646,41 @@ export const ValueInput = props => {
     >
     </input>
   );
-
 };
-//// [null, "foci"], "start"
+// [null, "foci"], "start"
+
+
+
 export const App = () => {
-  const [value, setValue] = useState("default text");
+  const [value, setValue] = useState(
+    "default text"
+  );
 
   return (
     <ValueInput
       {...state} // [null, ""]
-      onChange={setValue}
+      onChange={setValue} // [null, "pin"]
     >
     </ValueInput>
   );
-
 };
 
 export const Lib = () => {
-  const [value, setValue] = useState("placeholder");
+  const [value, setValue] = useState(
+    "placeholder"
+  );
 
   return (
     <ValueInput
       {...state} // [null, ""]
-      onChange={setValue}
+      onChange={setValue} // [null, "pin"]
     >
     </ValueInput>
   );
-
 };
-//// [null, "foci"], "end"
 
+
+// [null, "foci"], "end"
 export default null;
 
 export default keyframe/*json*/`{
@@ -1894,7 +1696,9 @@ export default keyframe/*json*/`{
 }
 `;
 
-//
+
+
+
 export const BasicButton = props => {
   const {
     children = "\u00A0",
@@ -1907,16 +1711,20 @@ export const BasicButton = props => {
     onClick = () => {},
   } = props;
 
-  const handleMouseEnter = () => onMouseEnter(true);
-  const handleMouseLeave = () => onMouseLeave(false);
+  const handleMouseEnter = () => onMouseEnter(
+    true
+  );
+  const handleMouseLeave = () => onMouseLeave(
+    false
+  );
 
   const handleClick = () => onClick();
 
   return (
     <button
-      style={{ background: highlighted ? "lightgray" : "transparent" }}
+      style={highlighted && { background: "lightgray" }}
 
-      onMousEnter={handleMouseEnter}
+      onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
 
       onClick={handleClick}
@@ -1924,38 +1732,43 @@ export const BasicButton = props => {
       {children}
     </button>
   );
-
 };
-//// [null, "foci"], "start"
+// [null, "foci"], "start"
+
+
+
 export const App = () => {
-  const [highlighted, setHighlighted] = useState(false);
+  const [highlighted, setHighlighted] = useState(
+    false
+  );
 
   return (
     <BasicButton
       {...state} // [null, ""]
-      onMouseEnter={setHighlighted}
-      onMouseLeave={setHighlighted}
+      onMouseEnter={setHighlighted} // [null, "pin"]
+      onMouseLeave={setHighlighted} // [null, "pin"]
     >
     </BasicButton>
   );
-
 };
 
 export const Lib = () => {
-  const [highlighted, setHighlighted] = useState(false);
+  const [highlighted, setHighlighted] = useState(
+    false
+  );
 
   return (
     <BasicButton
       {...state} // [null, ""]
-      onMouseEnter={setHighlighted}
-      onMouseLeave={setHighlighted}
+      onMouseEnter={setHighlighted} // [null, "pin"]
+      onMouseLeave={setHighlighted} // [null, "pin"]
     >
     </BasicButton>
   );
-
 };
-//// [null, "foci"], "end"
 
+
+// [null, "foci"], "end"
 export default null;
 
 
@@ -1966,14 +1779,15 @@ export default keyframe/*json*/`{
      "column": "ValueInput",
      "code": {
       "review": [
-        ["foci", "note", "", "pin"]
+        ["foci", "note", "", "pin"],
+        ["foci", "note", "direct"]
       ]
     }
   }
 }
 `;
 
-//
+
 export const ValueInput = props => {
   const {
     value = "",
@@ -1993,36 +1807,41 @@ export const ValueInput = props => {
     >
     </input>
   );
-
 };
-//// [null, "foci"], "start"
+// [null, "foci"], "start"
+
+
+
 export const App = () => {
-  const [value, setValue] = useState("default text");
+  const [value, setValue] = useState( // [null, "direct"]
+    "default text" // [null, "direct"]
+  ); // [null, "direct"]
 
   return (
     <ValueInput
-      {...state}
+      {...state} // [null, "pin"]
       onChange={setState} // [null, ""]
     >
     </ValueInput>
   );
-
 };
 
 export const Lib = () => {
-  const [value, setValue] = useState("placeholder");
+  const [value, setValue] = useState( // [null, "direct"]
+    "placeholder" // [null, "direct"]
+  ); // [null, "direct"]
 
   return (
     <ValueInput
-      {...state}
+      {...state} // [null, "pin"]
       onChange={setState} // [null, ""]
     >
     </ValueInput>
   );
-
 };
-//// [null, "foci"], "end"
 
+
+// [null, "foci"], "end"
 export default null;
 
 export default keyframe/*json*/`{
@@ -2031,14 +1850,17 @@ export default keyframe/*json*/`{
      "column": "BasicButton",
      "code": {
       "review": [
-        ["foci", "note", "", "pin"]
+        ["foci", "note", "", "pin"],
+        ["foci", "note", "direct"]
       ]
     }
   }
 }
 `;
 
-//
+
+
+
 export const BasicButton = props => {
   const {
     children = "\u00A0",
@@ -2051,16 +1873,20 @@ export const BasicButton = props => {
     onClick = () => {},
   } = props;
 
-  const handleMouseEnter = () => onMouseEnter(true);
-  const handleMouseLeave = () => onMouseLeave(false);
+  const handleMouseEnter = () => onMouseEnter(
+    true
+  );
+  const handleMouseLeave = () => onMouseLeave(
+    false
+  );
 
   const handleClick = () => onClick();
 
   return (
     <button
-      style={{ background: highlighted ? "lightgray" : "transparent" }}
+      style={highlighted && { background: "lightgray" }}
 
-      onMousEnter={handleMouseEnter}
+      onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
 
       onClick={handleClick}
@@ -2068,38 +1894,43 @@ export const BasicButton = props => {
       {children}
     </button>
   );
-
 };
-//// [null, "foci"], "start"
+// [null, "foci"], "start"
+
+
+
 export const App = () => {
-  const [highlighted, setHighlighted] = useState(false);
+  const [highlighted, setHighlighted] = useState( // [null, "direct"]
+    false // [null, "direct"]
+  ); // [null, "direct"]
 
   return (
     <BasicButton
-      {...state}
+      {...state} // [null, "pin"]
       onMouseEnter={setState} // [null, ""]
       onMouseLeave={setState} // [null, ""]
     >
     </BasicButton>
   );
-
 };
 
 export const Lib = () => {
-  const [highlighted, setHighlighted] = useState(false);
+  const [highlighted, setHighlighted] = useState( // [null, "direct"]
+    false // [null, "direct"]
+  ); // [null, "direct"]
 
   return (
     <BasicButton
-      {...state}
+      {...state} // [null, "pin"]
       onMouseEnter={setState} // [null, ""]
       onMouseLeave={setState} // [null, ""]
     >
     </BasicButton>
   );
-
 };
-//// [null, "foci"], "end"
 
+
+// [null, "foci"], "end"
 export default null;
 
 
@@ -2117,7 +1948,7 @@ export default keyframe/*json*/`{
 }
 `;
 
-//
+
 export const ValueInput = props => {
   const {
     value = "",
@@ -2137,13 +1968,15 @@ export const ValueInput = props => {
     >
     </input>
   );
-
 };
-//// [null, "foci"], "start"
+// [null, "foci"], "start"
+
+
+
 export const App = () => {
-  const [state, setState] = useState({ // [null, ""]
-    value: "default text" // [null, ""]
-  }); // [null, ""]
+  const [value, setValue] = useState( // [null, "pin"]
+    { value: "default text" } // [null, ""]
+  ); // [null, "pin"]
 
   return (
     <ValueInput
@@ -2152,13 +1985,12 @@ export const App = () => {
     >
     </ValueInput>
   );
-
 };
 
 export const Lib = () => {
-  const [state, setState] = useState({ // [null, ""]
-    value: "placeholder" // [null, ""]
-  }); // [null, ""]
+  const [value, setValue] = useState( // [null, "pin"]
+    { value: "placeholder" } // [null, ""]
+  ); // [null, "pin"]
 
   return (
     <ValueInput
@@ -2167,10 +1999,10 @@ export const Lib = () => {
     >
     </ValueInput>
   );
-
 };
-//// [null, "foci"], "end"
 
+
+// [null, "foci"], "end"
 export default null;
 
 export default keyframe/*json*/`{
@@ -2186,7 +2018,9 @@ export default keyframe/*json*/`{
 }
 `;
 
-//
+
+
+
 export const BasicButton = props => {
   const {
     children = "\u00A0",
@@ -2199,16 +2033,20 @@ export const BasicButton = props => {
     onClick = () => {},
   } = props;
 
-  const handleMouseEnter = () => onMouseEnter(true);
-  const handleMouseLeave = () => onMouseLeave(false);
+  const handleMouseEnter = () => onMouseEnter(
+    true
+  );
+  const handleMouseLeave = () => onMouseLeave(
+    false
+  );
 
   const handleClick = () => onClick();
 
   return (
     <button
-      style={{ background: highlighted ? "lightgray" : "transparent" }}
+      style={highlighted && { background: "lightgray" }}
 
-      onMousEnter={handleMouseEnter}
+      onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
 
       onClick={handleClick}
@@ -2216,13 +2054,15 @@ export const BasicButton = props => {
       {children}
     </button>
   );
-
 };
-//// [null, "foci"], "start"
+// [null, "foci"], "start"
+
+
+
 export const App = () => {
-  const [state, setState] = useState({ // [null, ""]
-    highlighted: false // [null, ""]
-  }); // [null, ""]
+  const [highlighted, setHighlighted] = useState( // [null, "pin"]
+    { highlighted: false } // [null, ""]
+  ); // [null, "pin"]
 
   return (
     <BasicButton
@@ -2232,13 +2072,12 @@ export const App = () => {
     >
     </BasicButton>
   );
-
 };
 
 export const Lib = () => {
-  const [state, setState] = useState({ // [null, ""]
-    highlighted: false // [null, ""]
-  }); // [null, ""]
+  const [highlighted, setHighlighted] = useState( // [null, "pin"]
+    {} // [null, ""]
+  ); // [null, "pin"]
 
   return (
     <BasicButton
@@ -2248,8 +2087,168 @@ export const Lib = () => {
     >
     </BasicButton>
   );
-
 };
-//// [null, "foci"], "end"
 
+
+// [null, "foci"], "end"
+export default null;
+
+
+
+export default keyframe/*json*/`{
+  "path": "./${foldername}/04-consumer/a/04-${1}-${count}-01-ValueInput.js",
+  "context": {
+     "column": "ValueInput",
+     "code": {
+      "review": [
+        ["foci", "note", "", "pin"]
+      ]
+    }
+  }
+}
+`;
+
+
+export const ValueInput = props => {
+  const {
+    value = "",
+
+    onChange = string => {}, // setValue
+  } = props;
+
+  const handleChange = event => onChange(
+    event.target.value
+  );
+
+  return (
+    <input
+      value={value}
+
+      onChange={handleChange}
+    >
+    </input>
+  );
+};
+// [null, "foci"], "start"
+
+
+
+export const App = () => {
+  const [state, setState] = useState( // [null, ""]
+    { value: "default text" } // [null, "pin"]
+  ); // [null, "pin"]
+
+  return (
+    <ValueInput
+      {...state}
+      onChange={setState}
+    >
+    </ValueInput>
+  );
+};
+
+export const Lib = () => {
+  const [state, setState] = useState( // [null, ""]
+    { value: "placeholder" } // [null, "pin"]
+  ); // [null, "pin"]
+
+  return (
+    <ValueInput
+      {...state}
+      onChange={setState}
+    >
+    </ValueInput>
+  );
+};
+
+
+// [null, "foci"], "end"
+export default null;
+
+export default keyframe/*json*/`{
+  "path": "./${foldername}/04-consumer/a/04-${1}-${count}-02-BasicButton.js",
+  "context": {
+     "column": "BasicButton",
+     "code": {
+      "review": [
+        ["foci", "note", "", "pin"]
+      ]
+    }
+  }
+}
+`;
+
+
+
+
+export const BasicButton = props => {
+  const {
+    children = "\u00A0",
+
+    highlighted = false,
+
+    onMouseEnter = boolean => {}, // setHighlighted
+    onMouseLeave = boolean => {}, // setHighlighted
+
+    onClick = () => {},
+  } = props;
+
+  const handleMouseEnter = () => onMouseEnter(
+    true
+  );
+  const handleMouseLeave = () => onMouseLeave(
+    false
+  );
+
+  const handleClick = () => onClick();
+
+  return (
+    <button
+      style={highlighted && { background: "lightgray" }}
+
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+
+      onClick={handleClick}
+    >
+      {children}
+    </button>
+  );
+};
+// [null, "foci"], "start"
+
+
+
+export const App = () => {
+  const [state, setState] = useState( // [null, ""]
+    { highlighted: false } // [null, "pin"]
+  ); // [null, "pin"]
+
+  return (
+    <BasicButton
+      {...state}
+      onMouseEnter={setState}
+      onMouseLeave={setState}
+    >
+    </BasicButton>
+  );
+};
+
+export const Lib = () => {
+  const [state, setState] = useState( // [null, ""]
+    {} // [null, "pin"]
+  ); // [null, "pin"]
+
+  return (
+    <BasicButton
+      {...state}
+      onMouseEnter={setState}
+      onMouseLeave={setState}
+    >
+    </BasicButton>
+  );
+};
+
+
+// [null, "foci"], "end"
 export default null;

@@ -11,7 +11,7 @@ export default prefs/*json*/`
 
 
 
-export default keyframe/*json*/`{
+export default skip/*json*/`{
   "path": "./${foldername}/05-consumer/a/005-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
@@ -24,7 +24,7 @@ export default keyframe/*json*/`{
 }
 `;
 
-//
+
 export const ValueInput = props => {
   const {
     value = "",
@@ -42,11 +42,14 @@ export const ValueInput = props => {
     >
     </input>
   );
-
 };
-//// [null, "foci"], "start", ["f2f"]
+// [null, "foci"], "start", ["f2f"]
+
+
 export const App = () => {
-  const [value, setValue] = useState("default text");
+  const [value, setValue] = useState(
+    "default text"
+  );
 
   return (
     <ValueInput
@@ -58,10 +61,10 @@ export const App = () => {
     >
     </ValueInput>
   );
-
 };
-//// [null, "foci"], "end", ["f2f"]
 
+
+// [null, "foci"], "end", ["f2f"]
 export default null;
 
 
@@ -69,6 +72,7 @@ export default null;
 export default keyframe/*json*/`{
   "path": "./${foldername}/05-consumer/a/005-${1}-${count}-01-ValueInput.js",
   "context": {
+     "title": "Reuse component",
      "column": "ValueInput",
      "code": {
       "review": [
@@ -79,7 +83,7 @@ export default keyframe/*json*/`{
 }
 `;
 
-//
+
 export const ValueInput = props => {
   const {
     value = "",
@@ -97,11 +101,15 @@ export const ValueInput = props => {
     >
     </input>
   );
-
 };
-//// [null, "foci"], "start", ["f2f"]
+// [null, "foci"], "start", ["f2f"]
+
+
+
 export const App = () => {
-  const [value, setValue] = useState("default text");
+  const [value, setValue] = useState(
+    "default text"
+  );
 
   return (
     <ValueInput
@@ -113,11 +121,12 @@ export const App = () => {
     >
     </ValueInput>
   );
-
 };
 
 export const Lib = () => { // [""]
-  const [value, setValue] = useState("placeholder");
+  const [value, setValue] = useState(
+    "placeholder"
+  );
 
   return (
     <ValueInput
@@ -129,10 +138,10 @@ export const Lib = () => { // [""]
     >
     </ValueInput>
   );
-
 }; // [""]
-//// [null, "foci"], "end", ["f2f"]
 
+
+// [null, "foci"], "end", ["f2f"]
 export default null;
 
 
@@ -140,18 +149,18 @@ export default null;
 export default keyframe/*json*/`{
   "path": "./${foldername}/05-consumer/a/005-${1}-${count}-01-ValueInput.js",
   "context": {
+     "title": "Code duplication and logic proliferation burden",
      "column": "ValueInput",
      "code": {
       "review": [
-        ["foci", "note", "", "pin"],
-        ["duped", ""]
+        ["duped", "direct"]
       ]
     }
   }
 }
 `;
 
-//
+
 export const ValueInput = props => {
   const {
     value = "",
@@ -169,12 +178,16 @@ export const ValueInput = props => {
     >
     </input>
   );
-
 };
-//// [null, "foci"], "start", ["f2f"]
+// [null, "foci"], "start", ["f2f"]
+
+
+
 export const App = () => {
-  const [value, setValue] = useState("default text");
-
+  const [value, setValue] = useState(
+    "default text"
+  );
+// [null, "direct"]
   return (
     <ValueInput
       value={value}
@@ -185,11 +198,12 @@ export const App = () => {
     >
     </ValueInput>
   );
-
 };
-// Code duplication and logic proliferation burden // [null, ""]
+
 export const Lib = () => {
-  const [value, setValue] = useState("placeholder");
+  const [value, setValue] = useState(
+    "placeholder"
+  );
 
   return (
     <ValueInput
@@ -200,11 +214,11 @@ export const Lib = () => {
       }
     >
     </ValueInput>
-  );
-
+  ); // ["direct", " "]
 };
-//// [null, "foci"], "end", ["f2f"]
 
+
+// [null, "foci"], "end", ["f2f"]
 export default null;
 
 
@@ -215,7 +229,7 @@ export default keyframe/*json*/`{
      "column": "ValueInput",
      "code": {
       "review": [
-        ["note", "", "pin"],
+        ["note", "", "pin", "direct"],
         ["f2f"]
       ]
     }
@@ -223,7 +237,7 @@ export default keyframe/*json*/`{
 }
 `;
 
-//
+
 export const ValueInput = props => {
   const {
     value = "",
@@ -241,12 +255,16 @@ export const ValueInput = props => {
     >
     </input>
   );
-
 };
-//// [null, "foci"], "start", ["f2f"]
-export const App = () => {
-  const [value, setValue] = useState("default text");
+// [null, "foci"], "start", ["f2f"]
 
+
+
+export const App = () => {
+  const [value, setValue] = useState(
+    "default text"
+  );
+// [null, "direct"]
   return (
     <ValueInput
       value={value}
@@ -257,11 +275,12 @@ export const App = () => {
     >
     </ValueInput>
   );
-
 };
 
 export const Lib = () => {
-  const [value, setValue] = useState("placeholder");
+  const [value, setValue] = useState(
+    "placeholder"
+  );
 
   return (
     <ValueInput
@@ -272,11 +291,11 @@ export const Lib = () => {
       }
     >
     </ValueInput>
-  );
-
+  ); // ["direct", " "]
 };
-//// [null, "foci"], "end", ["f2f"]
 
+
+// [null, "foci"], "end", ["f2f"]
 export default null;
 
 
@@ -284,6 +303,7 @@ export default null;
 export default keyframe/*json*/`{
   "path": "./${foldername}/05-consumer/a/005-${1}-${count}-01-ValueInput.js",
   "context": {
+     "title": "Refactor component",
      "column": "ValueInput",
      "code": {
       "review": [
@@ -294,8 +314,9 @@ export default keyframe/*json*/`{
   }
 }
 `;
+// [null, "foci"], "start", ["f2f"]
 
-//// [null, "foci"], "start", ["f2f"]
+
 export const ValueInput = props => {
   const {
     value = "",
@@ -313,10 +334,10 @@ export const ValueInput = props => {
     >
     </input>
   );
-
 };
-//// [null, "foci"], "end", ["f2f"]
 
+
+// [null, "foci"], "end", ["f2f"]
 export default null;
 
 
@@ -324,6 +345,7 @@ export default null;
 export default keyframe/*json*/`{
   "path": "./${foldername}/05-consumer/a/005-${1}-${count}-01-ValueInput.js",
   "context": {
+     "title": "Refactor component",
      "column": "ValueInput",
      "code": {
       "review": [
@@ -333,8 +355,9 @@ export default keyframe/*json*/`{
   }
 }
 `;
+// [null, "foci"], "start", ["f2f"]
 
-//// [null, "foci"], "start", ["f2f"]
+
 export const ValueInput = props => {
   const {
     value = "",
@@ -352,10 +375,10 @@ export const ValueInput = props => {
     >
     </input>
   );
-
 };
-//// [null, "foci"], "end", ["f2f"]
 
+
+// [null, "foci"], "end", ["f2f"]
 export default null;
 
 
@@ -363,7 +386,7 @@ export default null;
 export default keyframe/*json*/`{
   "path": "./${foldername}/05-consumer/a/005-${1}-${count}-01-ValueInput.js",
   "context": {
-     "subtitle": "The adapter bridges the gap between one API and another.",
+     "title": "Adapt signature from callback to state manager",
      "column": "ValueInput",
      "code": {
       "review": [
@@ -374,15 +397,16 @@ export default keyframe/*json*/`{
   }
 }
 `;
+// [null, "foci"], "start", ["f2f"]
 
-//// [null, "foci"], "start", ["f2f"]
+
 export const ValueInput = props => {
   const {
     value = "",
 
     onChange = string => {}, // [null, "pin"]
   } = props;
-  // Adapt signature from callback to state manager // [null, "note"]
+
   return (
     <input
       value={value}
@@ -393,10 +417,10 @@ export const ValueInput = props => {
     >
     </input>
   );
-
 };
-//// [null, "foci"], "end", ["f2f"]
 
+
+// [null, "foci"], "end", ["f2f"]
 export default null;
 
 
@@ -404,6 +428,7 @@ export default null;
 export default keyframe/*json*/`{
   "path": "./${foldername}/05-consumer/a/005-${1}-${count}-01-ValueInput.js",
   "context": {
+     "title": "Adapters bridge the gaps between dissimilar APIs",
      "column": "ValueInput",
      "code": {
       "review": [
@@ -413,15 +438,16 @@ export default keyframe/*json*/`{
   }
 }
 `;
+// [null, "foci"], "start", ["f2f"]
 
-//// [null, "foci"], "start", ["f2f"]
+
 export const ValueInput = props => {
   const {
     value = "",
 
     onChange = string => {},
   } = props;
-  // Adapt signature from callback to state manager // [null, "note"]
+
   const handleChange = event => onChange( // [null, "pin"]
     event.target.value // [null, "pin"]
   ); // [null, "pin"]
@@ -436,10 +462,10 @@ export const ValueInput = props => {
     >
     </input>
   );
-
 };
-//// [null, "foci"], "end", ["f2f"]
 
+
+// [null, "foci"], "end", ["f2f"]
 export default null;
 
 
@@ -456,15 +482,16 @@ export default keyframe/*json*/`{
   }
 }
 `;
+// [null, "foci"], "start", ["f2f"]
 
-//// [null, "foci"], "start", ["f2f"]
+
 export const ValueInput = props => {
   const {
     value = "",
 
     onChange = string => {},
   } = props;
-  // Adapt signature from callback to state manager // [null, "note"]
+
   const handleChange = event => onChange( // [null, "pin"]
     event.target.value // [null, "pin"]
   ); // [null, "pin"]
@@ -479,10 +506,10 @@ export const ValueInput = props => {
     >
     </input>
   );
-
 };
-//// [null, "foci"], "end", ["f2f"]
 
+
+// [null, "foci"], "end", ["f2f"]
 export default null;
 
 
@@ -490,6 +517,7 @@ export default null;
 export default keyframe/*json*/`{
   "path": "./${foldername}/05-consumer/a/005-${1}-${count}-01-ValueInput.js",
   "context": {
+     "title": "Different component with same structure",
      "column": "ValueInput",
      "code": {
       "review": [
@@ -500,9 +528,8 @@ export default keyframe/*json*/`{
 }
 `;
 
-//// [null, "foci"], "start", ["f2f"]
-// Component Structure // [null, "pin"]
-//// [null, "foci"], "end", ["f2f"]
+
+
 
 export default null;
 

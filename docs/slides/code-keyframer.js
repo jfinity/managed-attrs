@@ -79,7 +79,7 @@ async function run(src, dst) {
 
       const keyframes = contents
         .match(
-          /export\s+default\s+keyframe\s*\/\*\s*json\s*\*\/\s*`[^`]*`(.|\n(?!\s*export\s+default\s+null($|[^_\$a-zA-Z0-9])))*\n?/g
+          /export\s+default\s+keyframe\s*\/\*\s*json\s*\*\/\s*`[^`]*`(.|\n(?![ \t]*export\s+default\s+null($|[^_\$a-zA-Z0-9])))*/g
         )
         .map(raw => {
           const at = raw.search(/`[^`]*`/);
@@ -87,7 +87,7 @@ async function run(src, dst) {
 
           const size = template.length;
           const idx = 1 + raw.indexOf("\n", at + size);
-          const body = raw.slice(idx).trim();
+          const body = "\0\n" + raw.slice(idx) + "\n\0";
 
           try {
             const config = JSON.parse(template.slice(1, -1));
@@ -281,19 +281,28 @@ async function run(src, dst) {
               ? end.column - 1 + offsets[end.line - 1] // one-indexed
               : -1;
 
-            value.focus = start.line + "[" + start.column + ":";
+            value.focus = "" + (start.line - 0); // file= off-by-one
             if (start.line === end.line) {
-              value.focus += end.column + "]";
+              if (end.column > start.column) {
+                value.focus += "[" + start.column + ":" + end.column + "]";
+              }
             } else {
-              value.focus +=
-                1 + offsets[start.line] - offsets[start.line - 1] + "],";
+              const column = 1 + offsets[start.line] - offsets[start.line - 1];
+
+              if (column < start.column) {
+                value.focus += "[" + start.column + ":" + column + "]";
+              }
+              value.focus += ",";
               if (end.line > start.line + 2) {
-                value.focus += start.line + 1 + ":";
+                value.focus += (start.line + 1 - 0) + ":"; // file= off-by-one
               }
               if (end.line > start.line + 1) {
-                value.focus += end.line - 1 + ",";
+                value.focus += (end.line - 1 - 0) + ","; // file= off-by-one
               }
-              value.focus += end.line + "[1:" + end.column + "]";
+              value.focus += "" + (end.line - 0); // file= off-by-one
+              if (end.column > 1) {
+                value.focus += "[1:" + end.column + "]";
+              }
             }
           });
 

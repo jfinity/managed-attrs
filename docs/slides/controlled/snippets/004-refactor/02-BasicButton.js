@@ -24,8 +24,8 @@ export default keyframe/*json*/`{
   }
 }
 `;
+// [null, "foci"], "start", ["f2f"]
 
-//// [null, "foci"], "start", ["f2f"]
 export const ValueInput = props => {
   const {
     value = "",
@@ -33,7 +33,9 @@ export const ValueInput = props => {
     onChange = string => {}, // setValue // [null, "direct"]
   } = props;
 
-  const handleChange = event => onChange(event.target.value);
+  const handleChange = event => onChange(
+    event.target.value
+  );
 
   return (
     <input
@@ -43,10 +45,9 @@ export const ValueInput = props => {
     >
     </input>
   );
-
 };
-//// [null, "foci"], "end", ["f2f"]
 
+// [null, "foci"], "end", ["f2f"]
 export default null;
 
 export default keyframe/*json*/`{
@@ -62,8 +63,10 @@ export default keyframe/*json*/`{
   }
 }
 `;
+// [null, "foci"], "start", ["f2f"]
 
-//// [null, "foci"], "start", ["f2f"]
+
+
 export const BasicButton = props => {
   const {
     children = "\u00A0",
@@ -76,16 +79,20 @@ export const BasicButton = props => {
     onClick = () => {},
   } = props;
 
-  const handleMouseEnter = () => onMouseEnter(true);
-  const handleMouseLeave = () => onMouseLeave(false);
+  const handleMouseEnter = () => onMouseEnter(
+    true
+  );
+  const handleMouseLeave = () => onMouseLeave(
+    false
+  );
 
   const handleClick = () => onClick();
 
   return (
     <button
-      style={{ background: highlighted ? "lightgray" : "transparent" }}
+      style={highlighted && { background: "lightgray" }}
 
-      onMousEnter={handleMouseEnter}
+      onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
 
       onClick={handleClick}
@@ -93,10 +100,9 @@ export const BasicButton = props => {
       {children}
     </button>
   );
-
 };
-//// [null, "foci"], "end", ["f2f"]
 
+// [null, "foci"], "end", ["f2f"]
 export default null;
 
 
@@ -104,7 +110,7 @@ export default null;
 export default keyframe/*json*/`{
   "path": "./${foldername}/04-consumer/a/04-${1}-${count}-01-ValueInput.js",
   "context": {
-     "subtitle": "An updater is (optionally) a function from prior state to next state.",
+     "title": "Updaters are (optionally) functions from prior state to next state",
      "column": "ValueInput",
      "code": {
       "review": [
@@ -115,8 +121,8 @@ export default keyframe/*json*/`{
   }
 }
 `;
+// [null, "foci"], "start", ["f2f"]
 
-//// [null, "foci"], "start", ["f2f"]
 export const ValueInput = props => {
   const {
     value = "",
@@ -124,7 +130,9 @@ export const ValueInput = props => {
     onChange = updater => {}, // setState // [null, ""]
   } = props;
 
-  const handleChange = event => onChange(event.target.value); // [null, "direct"]
+  const handleChange = event => onChange(
+    event.target.value // [null, "direct"]
+  );
 
   return (
     <input
@@ -134,16 +142,15 @@ export const ValueInput = props => {
     >
     </input>
   );
-
 };
-//// [null, "foci"], "end", ["f2f"]
 
+// [null, "foci"], "end", ["f2f"]
 export default null;
 
 export default keyframe/*json*/`{
   "path": "./${foldername}/04-consumer/a/04-${1}-${count}-02-BasicButton.js",
   "context": {
-     "subtitle": "An updater is (optionally) a function from prior state to next state.",
+     "title": "Updaters are (optionally) functions from prior state to next state",
      "column": "BasicButton",
      "code": {
       "review": [
@@ -154,8 +161,10 @@ export default keyframe/*json*/`{
   }
 }
 `;
+// [null, "foci"], "start", ["f2f"]
 
-//// [null, "foci"], "start", ["f2f"]
+
+
 export const BasicButton = props => {
   const {
     children = "\u00A0",
@@ -168,16 +177,20 @@ export const BasicButton = props => {
     onClick = () => {},
   } = props;
 
-  const handleMouseEnter = () => onMouseEnter(true); // [null, "direct"]
-  const handleMouseLeave = () => onMouseLeave(false); // [null, "direct"]
+  const handleMouseEnter = () => onMouseEnter(
+    true // [null, "direct"]
+  );
+  const handleMouseLeave = () => onMouseLeave(
+    false // [null, "direct"]
+  );
 
   const handleClick = () => onClick();
 
   return (
     <button
-      style={{ background: highlighted ? "lightgray" : "transparent" }}
+      style={highlighted && { background: "lightgray" }}
 
-      onMousEnter={handleMouseEnter}
+      onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
 
       onClick={handleClick}
@@ -185,10 +198,9 @@ export const BasicButton = props => {
       {children}
     </button>
   );
-
 };
-//// [null, "foci"], "end", ["f2f"]
 
+// [null, "foci"], "end", ["f2f"]
 export default null;
 
 // decodeURI/encodeURI

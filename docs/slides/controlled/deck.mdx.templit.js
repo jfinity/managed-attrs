@@ -126,16 +126,16 @@ import {
   CodeSurferColumns,
   Step,
 } from "code-surfer";
-import { nightOwl, vsDark } from "@code-surfer/themes";
+import { theme1, theme2 } from "./custom-theme";
 
-export const theme = vsDark;
+export const theme = theme1;
 
 # The Tricky Brilliance of
 # Uncontrolled ${"`"}<input />${"`"}s
 
 ---
 
-<CodeSurferColumns themes={[vsDark]}>
+<CodeSurferColumns themes={[theme1]}>
 
 ${
   stepper({
@@ -155,7 +155,7 @@ ${
 
 ---
 
-<CodeSurferColumns themes={[nightOwl, vsDark]} sizes={[4, 5]}>
+<CodeSurferColumns themes={[theme2, theme1]} sizes={[4, 5]}>
 
 ${
   stepper({
@@ -175,7 +175,7 @@ ${
 
 ---
 
-<CodeSurferColumns themes={[nightOwl, vsDark]} sizes={[4, 5]}>
+<CodeSurferColumns themes={[theme2, theme1]} sizes={[4, 5]}>
 
 ${
   stepper({
@@ -188,7 +188,7 @@ ${
 
 ---
 
-<CodeSurferColumns themes={[vsDark]}>
+<CodeSurferColumns themes={[theme1]}>
 
 ${
   stepper({
@@ -201,7 +201,7 @@ ${
 
 ---
 
-<CodeSurferColumns themes={[nightOwl, vsDark]}>
+<CodeSurferColumns themes={[theme2, theme1]}>
 
 ${
   stepper({
@@ -214,7 +214,7 @@ ${
 
 ---
 
-<CodeSurferColumns themes={[nightOwl, vsDark]}>
+<CodeSurferColumns themes={[theme2, theme1]}>
 
 ${
   stepper({
@@ -234,7 +234,7 @@ docs:
 
 <CodeSurfer>
 
-${"`"}${"`"}${"`"}js title="This is a title" subtitle="and this a subtitle"${js`
+${"```"}js title="This is a title" subtitle="and this a subtitle"${js`
 function lorem(ipsum, dolor = 1) {
   const sit = ipsum == null ? 0 : ipsum.sit;
   dolor = sit - amet(dolor);
@@ -265,9 +265,9 @@ function incididunt(ipsum, ut = 1) {
 
   return aliqua;
 }
-`}${"`"}${"`"}${"`"}
+`}${"```"}
 
-${"`"}${"`"}${"`"}js${js`
+${"```"}js${js`
 function lorem(ipsum, dolor = 1) {
   const sit = ipsum == null ? 0 : ipsum.sit;
 dolor = sit - amet(dolor);
@@ -308,11 +308,146 @@ while (dolore < sit) {
   return aliqua;
 }
 `}
-${"`"}${"`"}${"`"}
+${"```"}
 
-${"`"}${"`"}${"`"}diff 1[10:14],2[15:19],3[22:27],10:12
+${"```"}diff 1[10:14],2[15:19],3[22:27],10:12
 
-${"`"}${"`"}${"`"}
+${"```"}
 
 </CodeSurfer>
+
+---
+
+<CodeSurfer>
+
+${"```"}js 6,20
+1
+2
+3
+
+
+
+
+8
+9
+01
+1
+2
+3
+4
+5
+6
+7
+8
+
+
+
+
+3
+4
+5
+6
+7
+8
+9
+${"```"}
+
+${"```"}js 5,21
+1
+2
+3
+
+
+
+
+8
+9
+01
+1
+2
+3
+4
+5
+6
+7
+8
+
+
+
+
+3
+4
+5
+6
+7
+8
+9
+${"```"}
+
+${"```"}js 7,19
+1
+2
+3
+
+
+
+
+8
+9
+01
+1
+2
+3
+4
+5
+6
+7
+8
+
+
+
+
+3
+4
+5
+6
+7
+8
+9
+${"```"}
+
+${"```"}js 8,18
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+${"```"}
+
+</CodeSurfer>
+
 `;
