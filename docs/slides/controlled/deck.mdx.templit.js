@@ -184,227 +184,61 @@ ${
 
 ---
 
-docs:  
-[codesurfer.pomb.us](https://codesurfer.pomb.us)
+<FieldDemo />
 
 ---
 
-<CodeSurfer>
+<CodeSurferColumns themes={[theme1]}>
 
-${"```"}js title="This is a title" subtitle="and this a subtitle"${js`
-function lorem(ipsum, dolor = 1) {
-  const sit = ipsum == null ? 0 : ipsum.sit;
-  dolor = sit - amet(dolor);
-  return sit
-  ? consectetur(ipsum, 0, dolor < 0 ? 0 : dolor)
-  : [];
+${
+  stepper({
+    folder: "./keyframes/",
+    digest: require(path.join(__dirname, "./keyframes/004-refactor/03-CodecField.json"))
+  })
 }
 
-function incididunt(ipsum, ut = 1) {
-  ut = labore.et(amet(ut), 0);
-  const sit = ipsum == null ? 0 : ipsum.sit;
-  
-  if (!sit || ut < 1) {
-    return [];
-  }
-  
-  let dolore = 0;
-  let magna = 0;
-  const aliqua = new eiusmod(labore.ut(sit / ut));
-  
-  while (dolore < sit) {
-    aliqua[magna++] = consectetur(
-      ipsum,
-      dolore,
-      (dolore += ut)
-    );
-  }
-
-  return aliqua;
-}
-`}${"```"}
-
-${"```"}js${js`
-function lorem(ipsum, dolor = 1) {
-  const sit = ipsum == null ? 0 : ipsum.sit;
-dolor = sit - amet(dolor);
-return sit
-? consectetur(ipsum, 0, dolor < 0 ? 0 : dolor)
-: [];
-}
-
-function adipiscing(...elit) {
-  if (!elit.sit) {
-return [];
-}
-
-const sed = elit[0];
-return eiusmod.tempor(sed) ? sed : [sed];
-}
-
-function incididunt(ipsum, ut = 1) {
-  ut = labore.et(amet(ut), 0);
-  const sit = ipsum == null ? 0 : ipsum.sit;
-  
-  if (!sit || ut < 1) {
-    return [];
-}
-
-let dolore = 0;
-let magna = 0;
-const aliqua = new eiusmod(labore.ut(sit / ut));
-
-while (dolore < sit) {
-  aliqua[magna++] = consectetur(
-    ipsum,
-    dolore,
-    (dolore += ut)
-    );
-  }
-  
-  return aliqua;
-}
-`}
-${"```"}
-
-${"```"}diff 1[10:14],2[15:19],3[22:27],10:12
-
-${"```"}
-
-</CodeSurfer>
+</CodeSurferColumns>
 
 ---
 
-<CodeSurfer>
 
-${"```"}js 6,20
-1
-2
-3
+<CodeSurferColumns themes={[theme1, theme2]} sizes={[7, 5]}>
 
+<Step>
 
+${"```"}md title="Benefits"
 
-
-8
-9
-01
-1
-2
-3
-4
-5
-6
-7
-8
-
-
-
-
-3
-4
-5
-6
-7
-8
-9
-${"```"}
-
-${"```"}js 5,21
-1
-2
-3
-
-
-
-
-8
-9
-01
-1
-2
-3
-4
-5
-6
-7
-8
-
-
-
-
-3
-4
-5
-6
-7
-8
-9
-${"```"}
-
-${"```"}js 7,19
-1
-2
-3
-
-
-
-
-8
-9
-01
-1
-2
-3
-4
-5
-6
-7
-8
-
-
-
-
-3
-4
-5
-6
-7
-8
-9
-${"```"}
-
-${"```"}js 8,18
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+* Flexible and fully controlled
+* Consistent and uniform API
+* Easy to consume
 
 ${"```"}
 
-</CodeSurfer>
+${"```"}md title="Drawbacks"
+
+- More involved to produce
+- Unfamiliar pattern
+- Lots of room for improvement
+
+${"```"}
+
+</Step>
+
+</CodeSurferColumns>
+
+---
+
+# Future work
+
+* More ergonomic (lazy) composition
+* Async side-effects with saga argument
+* Integration with statecharts
+  * (or some other visualizable state model)
+
+---
+
+# Questions?
+
+---
 
 `;

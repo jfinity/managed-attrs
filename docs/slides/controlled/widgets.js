@@ -100,12 +100,22 @@ export const ButtonDemo = ({ children }) => {
 };
 
 export const CodecField = props => {
-  const { encode, decode, fieldProps, encoderProps, decoderProps, stateManager } = props;
+  const {
+    encode = encodeURI,
+    decode = decodeURI,
+
+    fieldProps = {},
+    encoderProps = {},
+    decoderProps = {},
+
+    stateManager, // (action, reducer) => {}
+  } = props;
 
   const fieldManager = (action, reducer) => {
     stateManager(action, lastState => {
       const nextProps = reducer(lastState.fieldProps, action);
-      return { ...lastState, fieldProps: nextProps };
+      const nextState = { ...lastState, fieldProps: nextProps };
+      return nextState;
     });
   };
 
@@ -121,7 +131,8 @@ export const CodecField = props => {
 
     stateManager(action, lastState => {
       const nextProps = reducer(lastState.encoderProps, action);
-      return { ...lastState, encoderProps: nextProps };
+      const nextState = { ...lastState, encoderProps: nextProps };
+      return nextState;
     });
   };
 
@@ -137,16 +148,22 @@ export const CodecField = props => {
 
     stateManager(action, lastState => {
       const nextProps = reducer(lastState.decoderProps, action);
-      return { ...lastState, decoderProps: nextProps };
+      const nextState = { ...lastState, decoderProps: nextProps };
+      return nextState;
     });
   };
 
   return (
-    <>
-      <BasicButton {...encoderProps} stateManager={encoderManager}>Encode</BasicButton>
-      <ValueInput {...fieldProps} stateManager={fieldManager} />
-      <BasicButton {...decoderProps} stateManager={decoderManager}>Decode</BasicButton>
-    </>
+    <span>
+      <BasicButton {...encoderProps} stateManager={encoderManager}>
+        Encode
+      </BasicButton>
+      <ValueInput {...fieldProps} stateManager={fieldManager}>
+      </ValueInput>
+      <BasicButton {...decoderProps} stateManager={decoderManager}>
+        Decode
+      </BasicButton>
+    </span>
   );
 };
 
