@@ -127,11 +127,16 @@ import {
   Step,
 } from "code-surfer";
 import { theme1, theme2 } from "./custom-theme";
+import { InputDemo, ButtonDemo, FieldDemo } from "./widgets";
 
 export const theme = theme1;
 
 # The Tricky Brilliance of
 # Uncontrolled ${"`"}<input />${"`"}s
+
+---
+
+<InputDemo />
 
 ---
 
@@ -155,6 +160,10 @@ ${
 
 ---
 
+<ButtonDemo>Accept</ButtonDemo>
+
+---
+
 <CodeSurferColumns themes={[theme2, theme1]} sizes={[5, 7]}>
 
 ${
@@ -168,58 +177,6 @@ ${
   stepper({
     folder: "./keyframes/",
     digest: require(path.join(__dirname, "./keyframes/004-refactor/02-BasicButton.json"))
-  })
-}
-
-</CodeSurferColumns>
-
----
-
-<CodeSurferColumns themes={[theme2, theme1]} sizes={[5, 7]}>
-
-${
-  stepper({
-    folder: "./keyframes/",
-    digest: require(path.join(__dirname, "./keyframes/003-compare/02-LineItem.json"))
-  })
-}
-
-</CodeSurferColumns>
-
----
-
-<CodeSurferColumns themes={[theme1]}>
-
-${
-  stepper({
-    folder: "./keyframes/",
-    digest: require(path.join(__dirname, "./keyframes/004-refactor/02-LineItem.json"))
-  })
-}
-
-</CodeSurferColumns>
-
----
-
-<CodeSurferColumns themes={[theme2, theme1]}>
-
-${
-  stepper({
-    folder: "./keyframes/",
-    digest: require(path.join(__dirname, "./keyframes/005-conform/02-LineItem.json"))
-  })
-}
-
-</CodeSurferColumns>
-
----
-
-<CodeSurferColumns themes={[theme2, theme1]}>
-
-${
-  stepper({
-    folder: "./keyframes/",
-    digest: require(path.join(__dirname, "./keyframes/006-compose/03-ItemList.json"))
   })
 }
 

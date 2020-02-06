@@ -90,7 +90,7 @@ export const BasicButton = props => {
 
   return (
     <button
-      style={highlighted ? { background: "lightgray" } : {}}
+      style={highlighted ? { background: "lightblue" } : {}}
 
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -188,7 +188,7 @@ export const BasicButton = props => {
 
   return (
     <button
-      style={highlighted ? { background: "lightgray" } : {}}
+      style={highlighted ? { background: "lightblue" } : {}}
 
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -294,7 +294,7 @@ export const BasicButton = props => {
 
   return (
     <button
-      style={highlighted ? { background: "lightgray" } : {}}
+      style={highlighted ? { background: "lightblue" } : {}}
 
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -401,7 +401,7 @@ export const BasicButton = props => {
 
   return (
     <button
-      style={highlighted ? { background: "lightgray" } : {}}
+      style={highlighted ? { background: "lightblue" } : {}}
 
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -506,7 +506,7 @@ export const BasicButton = props => {
 
   return (
     <button
-      style={highlighted ? { background: "lightgray" } : {}}
+      style={highlighted ? { background: "lightblue" } : {}}
 
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -614,7 +614,7 @@ export const BasicButton = props => {
 
   return (
     <button
-      style={highlighted ? { background: "lightgray" } : {}}
+      style={highlighted ? { background: "lightblue" } : {}}
 
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -720,7 +720,7 @@ export const BasicButton = props => {
 
   return (
     <button
-      style={highlighted ? { background: "lightgray" } : {}}
+      style={highlighted ? { background: "lightblue" } : {}}
 
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -830,7 +830,7 @@ export const BasicButton = props => {
 
   return (
     <button
-      style={highlighted ? { background: "lightgray" } : {}}
+      style={highlighted ? { background: "lightblue" } : {}}
 
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -954,7 +954,7 @@ export const BasicButton = props => {
 
   return (
     <button
-      style={highlighted ? { background: "lightgray" } : {}}
+      style={highlighted ? { background: "lightblue" } : {}}
 
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -1095,7 +1095,7 @@ export const BasicButton = props => {
 
   return (
     <button
-      style={highlighted ? { background: "lightgray" } : {}}
+      style={highlighted ? { background: "lightblue" } : {}}
 
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -1243,7 +1243,7 @@ export const BasicButton = props => {
 
   return (
     <button
-      style={highlighted ? { background: "lightgray" } : {}}
+      style={highlighted ? { background: "lightblue" } : {}}
 
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -1397,7 +1397,7 @@ export const BasicButton = props => {
 
   return (
     <button
-      style={highlighted ? { background: "lightgray" } : {}}
+      style={highlighted ? { background: "lightblue" } : {}}
 
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -1553,7 +1553,7 @@ export const BasicButton = props => {
 
   return (
     <button
-      style={highlighted ? { background: "lightgray" } : {}}
+      style={highlighted ? { background: "lightblue" } : {}}
 
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -1709,7 +1709,7 @@ export const BasicButton = props => {
 
   return (
     <button
-      style={highlighted ? { background: "lightgray" } : {}}
+      style={highlighted ? { background: "lightblue" } : {}}
 
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -1869,7 +1869,7 @@ export const BasicButton = props => {
 
   return (
     <button
-      style={highlighted ? { background: "lightgray" } : {}}
+      style={highlighted ? { background: "lightblue" } : {}}
 
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -1952,7 +1952,7 @@ export const ValueInput = props => {
   );
 };
 // [null, "foci"], "start", ["f2f"]
-export const useManagedState = initialState => { // [""], ["direct", "initialState"]
+export const useManagedState = (initialState = {}) => { // [""], ["direct", "initialState"]
   const [state, setState] = useState(
     { value: "default text" } // [null, "direct"]
   );
@@ -2021,7 +2021,7 @@ export const BasicButton = props => {
 
   return (
     <button
-      style={highlighted ? { background: "lightgray" } : {}}
+      style={highlighted ? { background: "lightblue" } : {}}
 
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -2033,7 +2033,7 @@ export const BasicButton = props => {
   );
 };
 // [null, "foci"], "start", ["f2f"]
-export const useManagedState = initialState => { // [""], ["direct", "initialState"]
+export const useManagedState = (initialState = {}) => { // [""], ["direct", "initialState"]
   const [state, setState] = useState(
     { highlighted: false } // [null, "direct"]
   );
@@ -2093,7 +2093,7 @@ export const ValueInput = props => {
   );
 };
 // [null, "foci"], "start", ["f2f"]
-export const useManagedState = initialState => { // ["pin", "initialState"]
+export const useManagedState = (initialState = {}) => { // ["pin", "initialState"]
   const [state, setState] = useState(
     initialState // [null, ""]
   );
@@ -2161,7 +2161,7 @@ export const BasicButton = props => {
 
   return (
     <button
-      style={highlighted ? { background: "lightgray" } : {}}
+      style={highlighted ? { background: "lightblue" } : {}}
 
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -2173,7 +2173,7 @@ export const BasicButton = props => {
   );
 };
 // [null, "foci"], "start", ["f2f"]
-export const useManagedState = initialState => { // ["pin", "initialState"]
+export const useManagedState = (initialState = {}) => { // ["pin", "initialState"]
   const [state, setState] = useState(
     initialState // [null, ""]
   );
@@ -2233,11 +2233,11 @@ export const ValueInput = props => {
   );
 };
 // [null, "foci"], "start", ["f2f"]
-export const useManagedState = initialState => {
+export const useManagedState = (initialState = {}) => {
   const [state, setState] = useState(
     initialState
   );
-  // useCallback() // [null, ""]
+  // useCallback() or even useRef() // [null, ""]
   const manageState = (action, reducer) => {
     if (typeof reducer !== "function") return;
 
@@ -2301,7 +2301,7 @@ export const BasicButton = props => {
 
   return (
     <button
-      style={highlighted ? { background: "lightgray" } : {}}
+      style={highlighted ? { background: "lightblue" } : {}}
 
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -2313,11 +2313,11 @@ export const BasicButton = props => {
   );
 };
 // [null, "foci"], "start", ["f2f"]
-export const useManagedState = initialState => {
+export const useManagedState = (initialState = {}) => {
   const [state, setState] = useState(
     initialState
   );
-  // useCallback() // [null, ""]
+  // useCallback() or even useRef() // [null, ""]
   const manageState = (action, reducer) => {
     if (typeof reducer !== "function") return;
 
@@ -2373,7 +2373,7 @@ export const ValueInput = props => {
   );
 };
 // [null, "foci"], "start", ["f2f"]
-export const useManagedState = initialState => {
+export const useManagedState = (initialState = {}) => {
   const [state, setState] = useState(
     initialState
   );
@@ -2443,7 +2443,7 @@ export const BasicButton = props => {
 
   return (
     <button
-      style={highlighted ? { background: "lightgray" } : {}}
+      style={highlighted ? { background: "lightblue" } : {}}
 
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -2455,7 +2455,7 @@ export const BasicButton = props => {
   );
 };
 // [null, "foci"], "start", ["f2f"]
-export const useManagedState = initialState => {
+export const useManagedState = (initialState = {}) => {
   const [state, setState] = useState(
     initialState
   );
@@ -2521,7 +2521,7 @@ export const ValueInput = props => {
 
 
 
-export const useManagedState = initialState => {
+export const useManagedState = (initialState = {}) => {
   const [state, setState] = useState(
     initialState
   );
@@ -2614,7 +2614,7 @@ export const BasicButton = props => {
 
   return (
     <button
-      style={highlighted ? { background: "lightgray" } : {}}
+      style={highlighted ? { background: "lightblue" } : {}}
 
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -2629,7 +2629,7 @@ export const BasicButton = props => {
 
 
 
-export const useManagedState = initialState => {
+export const useManagedState = (initialState = {}) => {
   const [state, setState] = useState(
     initialState
   );
@@ -2718,7 +2718,7 @@ export const ValueInput = props => {
 
 
 
-export const useManagedState = initialState => {
+export const useManagedState = (initialState = {}) => {
   const [state, setState] = useState(
     initialState
   );
@@ -2810,7 +2810,7 @@ export const BasicButton = props => {
 
   return (
     <button
-      style={highlighted ? { background: "lightgray" } : {}}
+      style={highlighted ? { background: "lightblue" } : {}}
 
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -2825,7 +2825,7 @@ export const BasicButton = props => {
 
 
 
-export const useManagedState = initialState => {
+export const useManagedState = (initialState = {}) => {
   const [state, setState] = useState(
     initialState
   );
@@ -2914,7 +2914,7 @@ export const ValueInput = props => {
 
 
 
-export const useManagedState = initialState => {
+export const useManagedState = (initialState = {}) => {
   const [state, setState] = useState(
     initialState
   );
@@ -2997,7 +2997,7 @@ export const BasicButton = props => {
 
   return (
     <button
-      style={highlighted ? { background: "lightgray" } : {}}
+      style={highlighted ? { background: "lightblue" } : {}}
 
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -3012,7 +3012,7 @@ export const BasicButton = props => {
 
 
 
-export const useManagedState = initialState => {
+export const useManagedState = (initialState = {}) => {
   const [state, setState] = useState(
     initialState
   );
@@ -3088,7 +3088,7 @@ export const ValueInput = props => {
     </input>
   );
 };
-export const useManagedState = initialState => {
+export const useManagedState = (initialState = {}) => {
   const [state, setState] = useState(
     initialState
   );
@@ -3190,7 +3190,7 @@ export const BasicButton = props => {
 
   return (
     <button
-      style={highlighted ? { background: "lightgray" } : {}}
+      style={highlighted ? { background: "lightblue" } : {}}
 
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -3202,7 +3202,7 @@ export const BasicButton = props => {
   );
 };
 
-export const useManagedState = initialState => {
+export const useManagedState = (initialState = {}) => {
   const [state, setState] = useState(
     initialState
   );
@@ -3299,7 +3299,7 @@ export const ValueInput = props => {
   );
 };
 
-export const useManagedState = initialState => {
+export const useManagedState = (initialState = {}) => {
   const [state, setState] = useState(
     initialState
   );
@@ -3400,7 +3400,7 @@ export const BasicButton = props => {
 
   return (
     <button
-      style={highlighted ? { background: "lightgray" } : {}}
+      style={highlighted ? { background: "lightblue" } : {}}
 
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -3412,7 +3412,7 @@ export const BasicButton = props => {
   );
 };
 
-export const useManagedState = initialState => {
+export const useManagedState = (initialState = {}) => {
   const [state, setState] = useState(
     initialState
   );
@@ -3561,7 +3561,7 @@ export const BasicButton = props => {
 
   return (
     <button
-      style={highlighted ? { background: "lightgray" } : {}}
+      style={highlighted ? { background: "lightblue" } : {}}
 
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -3673,7 +3673,7 @@ export const BasicButton = props => {
 
   return (
     <button
-      style={highlighted ? { background: "lightgray" } : {}}
+      style={highlighted ? { background: "lightblue" } : {}}
 
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -3787,7 +3787,7 @@ export const BasicButton = props => {
 
   return (
     <button
-      style={highlighted ? { background: "lightgray" } : {}}
+      style={highlighted ? { background: "lightblue" } : {}}
 
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -3839,13 +3839,3 @@ export default keyframe/*json*/`{
 
 
 export default null;
-
-
-
-
-
-
-
-
-
-// decodeURI/encodeURI

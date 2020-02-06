@@ -322,7 +322,7 @@ export const BasicButton = props => {
 
   return (
     <button
-      style={highlighted ? { background: "lightgray" } : {}} // [""]
+      style={highlighted ? { background: "lightblue" } : {}} // [""]
     >
       {children} // [null, ""]
     </button>
@@ -389,7 +389,7 @@ export const BasicButton = props => {
 
   return (
     <button
-      style={highlighted ? { background: "lightgray" } : {}}
+      style={highlighted ? { background: "lightblue" } : {}}
     >
       {children}
     </button>
@@ -463,7 +463,7 @@ export const BasicButton = props => {
 
   return (
     <button
-      style={highlighted ? { background: "lightgray" } : {}}
+      style={highlighted ? { background: "lightblue" } : {}}
     >
       {children}
     </button>
@@ -537,7 +537,7 @@ export const BasicButton = props => {
 
   return (
     <button
-      style={highlighted ? { background: "lightgray" } : {}}
+      style={highlighted ? { background: "lightblue" } : {}}
     >
       {children}
     </button>
@@ -626,7 +626,7 @@ export const BasicButton = props => {
 
   return (
     <button
-      style={highlighted ? { background: "lightgray" } : {}}
+      style={highlighted ? { background: "lightblue" } : {}}
     >
       {children}
     </button>
@@ -717,7 +717,7 @@ export const BasicButton = props => {
 
   return (
     <button
-      style={highlighted ? { background: "lightgray" } : {}}
+      style={highlighted ? { background: "lightblue" } : {}}
       // Please hold your :hover critiques for now... // [""]
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -811,7 +811,7 @@ export const BasicButton = props => {
 
   return (
     <button
-      style={highlighted ? { background: "lightgray" } : {}}
+      style={highlighted ? { background: "lightblue" } : {}}
 
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -910,7 +910,7 @@ export const BasicButton = props => {
 
   return (
     <button
-      style={highlighted ? { background: "lightgray" } : {}}
+      style={highlighted ? { background: "lightblue" } : {}}
 
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -1017,7 +1017,7 @@ export const BasicButton = props => {
 
   return (
     <button
-      style={highlighted ? { background: "lightgray" } : {}}
+      style={highlighted ? { background: "lightblue" } : {}}
 
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -1133,7 +1133,7 @@ export const BasicButton = props => {
 
   return (
     <button
-      style={highlighted ? { background: "lightgray" } : {}}
+      style={highlighted ? { background: "lightblue" } : {}}
 
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -1255,7 +1255,7 @@ export const BasicButton = props => {
 
   return (
     <button
-      style={highlighted ? { background: "lightgray" } : {}}
+      style={highlighted ? { background: "lightblue" } : {}}
 
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -1401,7 +1401,7 @@ export const BasicButton = props => {
 
   return (
     <button
-      style={highlighted ? { background: "lightgray" } : {}}
+      style={highlighted ? { background: "lightblue" } : {}}
 
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -1565,7 +1565,7 @@ export const BasicButton = props => {
 
   return (
     <button
-      style={highlighted ? { background: "lightgray" } : {}}
+      style={highlighted ? { background: "lightblue" } : {}}
 
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -1727,7 +1727,7 @@ export const BasicButton = props => {
 
   return (
     <button
-      style={highlighted ? { background: "lightgray" } : {}}
+      style={highlighted ? { background: "lightblue" } : {}}
 
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -1891,7 +1891,7 @@ export const BasicButton = props => {
 
   return (
     <button
-      style={highlighted ? { background: "lightgray" } : {}}
+      style={highlighted ? { background: "lightblue" } : {}}
 
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -2053,7 +2053,7 @@ export const BasicButton = props => {
 
   return (
     <button
-      style={highlighted ? { background: "lightgray" } : {}}
+      style={highlighted ? { background: "lightblue" } : {}}
 
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -2215,7 +2215,7 @@ export const BasicButton = props => {
 
   return (
     <button
-      style={highlighted ? { background: "lightgray" } : {}}
+      style={highlighted ? { background: "lightblue" } : {}}
 
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
