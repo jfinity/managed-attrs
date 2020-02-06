@@ -155,7 +155,7 @@ ${
 
 ---
 
-<CodeSurferColumns themes={[theme2, theme1]} sizes={[4, 5]}>
+<CodeSurferColumns themes={[theme2, theme1]} sizes={[5, 7]}>
 
 ${
   stepper({
@@ -175,7 +175,7 @@ ${
 
 ---
 
-<CodeSurferColumns themes={[theme2, theme1]} sizes={[4, 5]}>
+<CodeSurferColumns themes={[theme2, theme1]} sizes={[5, 7]}>
 
 ${
   stepper({
