@@ -2377,7 +2377,7 @@ export const useManagedState = initialState => {
   const [state, setState] = useState(
     initialState
   );
-  // useCallback()
+
   const manageState = (action, reducer) => {
     if (typeof reducer !== "function") return;
 
@@ -2525,7 +2525,7 @@ export const useManagedState = initialState => {
   const [state, setState] = useState(
     initialState
   );
-  // useCallback()
+
   const manageState = (action, reducer) => {
     if (typeof reducer !== "function") return;
 
@@ -2722,7 +2722,7 @@ export const useManagedState = initialState => {
   const [state, setState] = useState(
     initialState
   );
-  // useCallback()
+
   const manageState = (action, reducer) => {
     if (typeof reducer !== "function") return;
 
@@ -2918,7 +2918,7 @@ export const useManagedState = initialState => {
   const [state, setState] = useState(
     initialState
   );
-  // useCallback()
+
   const manageState = (action, reducer) => {
     if (typeof reducer !== "function") return;
 
@@ -3055,6 +3055,217 @@ export default keyframe/*json*/`{
      "column": "ValueInput",
      "code": {
       "review": [
+        ["foci", "note", "", "pin"],
+        ["foci", "note", "duped"]
+      ]
+    }
+  }
+}
+`;
+
+
+export const ValueInput = props => {
+  const {
+    value = "",
+
+    onChange = (action, updater) => {},
+  } = props;
+
+  const handleChange = event => onChange(
+    { type: "onChange", value: event.target.value },
+    state => {
+      const next = event.target.value;
+      return { ...state, value: next };
+    }
+  );
+
+  return (
+    <input
+      value={value}
+
+      onChange={handleChange}
+    >
+    </input>
+  );
+};
+export const useManagedState = initialState => {
+  const [state, setState] = useState(
+    initialState
+  );
+
+  const manageState = (action, reducer) => {
+    if (typeof reducer !== "function") return;
+
+    setState(lastState => {
+      const nextState = reducer(lastState, action);
+      return nextState;
+    });
+  };
+
+  return [state, manageState];
+};
+// [null, "foci"], "start", ["f2f"]
+
+
+
+export const App = () => {
+  const [state, manageState] = useManagedState(
+    { value: "default text" }
+  );
+
+  return (
+    <ValueInput
+      {...state}
+      onChange={manageState} // [null, "duped"]
+    >
+    </ValueInput>
+  );
+};
+
+export const Lib = () => { // [""]
+  const [state, manageState] = useManagedState(
+    { value: "placeholder" }
+  );
+
+  return (
+    <ValueInput
+      {...state}
+      onChange={manageState} // [null, "duped"]
+    >
+    </ValueInput>
+  );
+}; // [""]
+
+
+// [null, "foci"], "end", ["f2f"]
+export default null;
+
+export default keyframe/*json*/`{
+  "path": "./${foldername}/04-consumer/a/04-${1}-${count}-02-BasicButton.js",
+  "context": {
+     "column": "BasicButton",
+     "code": {
+      "review": [
+        ["foci", "note", "", "pin"],
+        ["foci", "note", "duped"]
+      ]
+    }
+  }
+}
+`;
+
+
+
+
+export const BasicButton = props => {
+  const {
+    children = "\u00A0",
+
+    highlighted = false,
+
+    onMouseEnter = (action, updater) => {},
+    onMouseLeave = (action, updater) => {},
+
+    onClick = action => {},
+  } = props;
+
+  const handleMouseEnter = () => onMouseEnter(
+    { type: "onMouseEnter", hovering: true },
+    state => {
+      const next = true;
+      return { ...state, highlighted: next };
+    }
+  );
+  const handleMouseLeave = () => onMouseLeave(
+    { type: "onMouseLeave", hovering: false },
+    state => {
+      const next = false;
+      return { ...state, highlighted: next };
+    }
+  );
+
+  const handleClick = () => onClick(
+    { type: "onClick" }
+  );
+
+  return (
+    <button
+      style={highlighted ? { background: "lightgray" } : {}}
+
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+
+      onClick={handleClick}
+    >
+      {children}
+    </button>
+  );
+};
+
+export const useManagedState = initialState => {
+  const [state, setState] = useState(
+    initialState
+  );
+
+  const manageState = (action, reducer) => {
+    if (typeof reducer !== "function") return;
+
+    setState(lastState => {
+      const nextState = reducer(lastState, action);
+      return nextState;
+    });
+  };
+
+  return [state, manageState];
+};
+// [null, "foci"], "start", ["f2f"]
+
+
+
+export const App = () => {
+  const [state, manageState] = useManagedState(
+    { highlighted: false }
+  );
+
+  return (
+    <BasicButton
+      {...state}
+      onMouseEnter={manageState} // [null, "duped"]
+      onMouseLeave={manageState} // [null, "duped"]
+    >
+      Accept
+    </BasicButton>
+  );
+};
+
+export const Lib = () => { // [""]
+  const [state, manageState] = useManagedState(
+    {}
+  );
+
+  return (
+    <BasicButton
+      {...state}
+      onMouseEnter={manageState} // [null, "duped"]
+      onMouseLeave={manageState} // [null, "duped"]
+    >
+      Clickbait
+    </BasicButton>
+  );
+}; // [""]
+
+
+// [null, "foci"], "end", ["f2f"]
+export default null;
+
+
+
+export default keyframe/*json*/`{
+  "path": "./${foldername}/04-consumer/a/04-${1}-${count}-01-ValueInput.js",
+  "context": {
+     "column": "ValueInput",
+     "code": {
+      "review": [
         ["foci", "note", "", "pin"]
       ]
     }
@@ -3092,7 +3303,7 @@ export const useManagedState = initialState => {
   const [state, setState] = useState(
     initialState
   );
-  // useCallback()
+
   const manageState = (action, reducer) => {
     if (typeof reducer !== "function") return;
 
@@ -3116,13 +3327,13 @@ export const App = () => {
   return (
     <ValueInput
       {...state}
-      onChange={manageState}
+      stateManager={manageState} // [null, ""]
     >
     </ValueInput>
   );
 };
 
-export const Lib = () => { // [""]
+export const Lib = () => {
   const [state, manageState] = useManagedState(
     { value: "placeholder" }
   );
@@ -3130,11 +3341,11 @@ export const Lib = () => { // [""]
   return (
     <ValueInput
       {...state}
-      onChange={manageState}
+      stateManager={manageState} // [null, ""]
     >
     </ValueInput>
   );
-}; // [""]
+};
 
 
 // [null, "foci"], "end", ["f2f"]
@@ -3229,15 +3440,14 @@ export const App = () => {
   return (
     <BasicButton
       {...state}
-      onMouseEnter={manageState}
-      onMouseLeave={manageState}
+      stateManager={manageState} // [null, ""]
     >
       Accept
     </BasicButton>
   );
 };
 
-export const Lib = () => { // [""]
+export const Lib = () => {
   const [state, manageState] = useManagedState(
     {}
   );
@@ -3245,16 +3455,389 @@ export const Lib = () => { // [""]
   return (
     <BasicButton
       {...state}
-      onMouseEnter={manageState}
-      onMouseLeave={manageState}
+      stateManager={manageState} // [null, ""]
     >
       Clickbait
     </BasicButton>
   );
-}; // [""]
+};
 
 
 // [null, "foci"], "end", ["f2f"]
+export default null;
+
+
+
+export default keyframe/*json*/`{
+  "path": "./${foldername}/04-consumer/a/04-${1}-${count}-01-ValueInput.js",
+  "context": {
+     "column": "ValueInput",
+     "code": {
+      "review": [
+        ["f2f"],
+        ["foci", "note", "", "pin"]
+      ]
+    }
+  }
+}
+`;
+// [null, "foci"], "start", ["f2f"]
+
+export const ValueInput = props => {
+  const {
+    value = "",
+
+    onChange = (action, updater) => {}, // [null, "pin"]
+  } = props;
+
+  const handleChange = event => onChange(
+    { type: "onChange", value: event.target.value },
+    state => {
+      const next = event.target.value;
+      return { ...state, value: next };
+    }
+  );
+
+  return (
+    <input
+      value={value}
+
+      onChange={handleChange}
+    >
+    </input>
+  );
+};
+
+// [null, "foci"], "end", ["f2f"]
+export default null;
+
+export default keyframe/*json*/`{
+  "path": "./${foldername}/04-consumer/a/04-${1}-${count}-02-BasicButton.js",
+  "context": {
+     "column": "BasicButton",
+     "code": {
+      "review": [
+        ["f2f"],
+        ["foci", "note", "", "pin"]
+      ]
+    }
+  }
+}
+`;
+// [null, "foci"], "start", ["f2f"]
+
+
+
+export const BasicButton = props => {
+  const {
+    children = "\u00A0",
+
+    highlighted = false,
+
+    onMouseEnter = (action, updater) => {}, // ["pin"]
+    onMouseLeave = (action, updater) => {},
+
+    onClick = action => {}, // ["pin"]
+  } = props;
+
+  const handleMouseEnter = () => onMouseEnter(
+    { type: "onMouseEnter", hovering: true },
+    state => {
+      const next = true;
+      return { ...state, highlighted: next };
+    }
+  );
+  const handleMouseLeave = () => onMouseLeave(
+    { type: "onMouseLeave", hovering: false },
+    state => {
+      const next = false;
+      return { ...state, highlighted: next };
+    }
+  );
+
+  const handleClick = () => onClick(
+    { type: "onClick" }
+  );
+
+  return (
+    <button
+      style={highlighted ? { background: "lightgray" } : {}}
+
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+
+      onClick={handleClick}
+    >
+      {children}
+    </button>
+  );
+};
+
+// [null, "foci"], "end", ["f2f"]
+export default null;
+
+
+
+export default keyframe/*json*/`{
+  "path": "./${foldername}/04-consumer/a/04-${1}-${count}-01-ValueInput.js",
+  "context": {
+     "column": "ValueInput",
+     "code": {
+      "review": [
+        ["foci", "note", "", "pin"]
+      ]
+    }
+  }
+}
+`;
+// [null, "foci"], "start", ["f2f"]
+
+export const ValueInput = props => {
+  const {
+    value = "",
+
+    stateManager, // (action, reducer) => {} // [null, ""]
+
+    onChange = (action, updater) => {}, // [null, "pin"]
+  } = props;
+
+  const handleChange = event => onChange(
+    { type: "onChange", value: event.target.value },
+    state => {
+      const next = event.target.value;
+      return { ...state, value: next };
+    }
+  );
+
+  return (
+    <input
+      value={value}
+
+      onChange={handleChange}
+    >
+    </input>
+  );
+};
+
+// [null, "foci"], "end", ["f2f"]
+export default null;
+
+export default keyframe/*json*/`{
+  "path": "./${foldername}/04-consumer/a/04-${1}-${count}-02-BasicButton.js",
+  "context": {
+     "column": "BasicButton",
+     "code": {
+      "review": [
+        ["foci", "note", "", "pin"]
+      ]
+    }
+  }
+}
+`;
+// [null, "foci"], "start", ["f2f"]
+
+
+
+export const BasicButton = props => {
+  const {
+    children = "\u00A0",
+
+    highlighted = false,
+
+    stateManager, // (action, reducer) => {} // [null, ""]
+
+    onMouseEnter = (action, updater) => {}, // ["pin"]
+    onMouseLeave = (action, updater) => {},
+
+    onClick = action => {}, // ["pin"]
+  } = props;
+
+  const handleMouseEnter = () => onMouseEnter(
+    { type: "onMouseEnter", hovering: true },
+    state => {
+      const next = true;
+      return { ...state, highlighted: next };
+    }
+  );
+  const handleMouseLeave = () => onMouseLeave(
+    { type: "onMouseLeave", hovering: false },
+    state => {
+      const next = false;
+      return { ...state, highlighted: next };
+    }
+  );
+
+  const handleClick = () => onClick(
+    { type: "onClick" }
+  );
+
+  return (
+    <button
+      style={highlighted ? { background: "lightgray" } : {}}
+
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+
+      onClick={handleClick}
+    >
+      {children}
+    </button>
+  );
+};
+
+// [null, "foci"], "end", ["f2f"]
+export default null;
+
+
+
+export default keyframe/*json*/`{
+  "path": "./${foldername}/04-consumer/a/04-${1}-${count}-01-ValueInput.js",
+  "context": {
+     "title": "stateManager() is sufficient to fulfill any component callback",
+     "column": "ValueInput",
+     "code": {
+      "review": [
+        ["foci", "note", "", "pin"]
+      ]
+    }
+  }
+}
+`;
+// [null, "foci"], "start", ["f2f"]
+
+export const ValueInput = props => {
+  const {
+    value = "",
+
+    stateManager, // (action, reducer) => {}
+
+    onChange = stateManager, // [null, ""]
+  } = props;
+
+  const handleChange = event => onChange(
+    { type: "onChange", value: event.target.value },
+    state => {
+      const next = event.target.value;
+      return { ...state, value: next };
+    }
+  );
+
+  return (
+    <input
+      value={value}
+
+      onChange={handleChange}
+    >
+    </input>
+  );
+};
+
+// [null, "foci"], "end", ["f2f"]
+export default null;
+
+export default keyframe/*json*/`{
+  "path": "./${foldername}/04-consumer/a/04-${1}-${count}-02-BasicButton.js",
+  "context": {
+     "title": "stateManager() is sufficient to fulfill any component callback",
+     "column": "BasicButton",
+     "code": {
+      "review": [
+        ["foci", "note", "", "pin"]
+      ]
+    }
+  }
+}
+`;
+// [null, "foci"], "start", ["f2f"]
+
+
+
+export const BasicButton = props => {
+  const {
+    children = "\u00A0",
+
+    highlighted = false,
+
+    stateManager, // (action, reducer) => {}
+
+    onMouseEnter = stateManager, // [""]
+    onMouseLeave = stateManager,
+
+    onClick = stateManager, // [""]
+  } = props;
+
+  const handleMouseEnter = () => onMouseEnter(
+    { type: "onMouseEnter", hovering: true },
+    state => {
+      const next = true;
+      return { ...state, highlighted: next };
+    }
+  );
+  const handleMouseLeave = () => onMouseLeave(
+    { type: "onMouseLeave", hovering: false },
+    state => {
+      const next = false;
+      return { ...state, highlighted: next };
+    }
+  );
+
+  const handleClick = () => onClick(
+    { type: "onClick" }
+  );
+
+  return (
+    <button
+      style={highlighted ? { background: "lightgray" } : {}}
+
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+
+      onClick={handleClick}
+    >
+      {children}
+    </button>
+  );
+};
+
+// [null, "foci"], "end", ["f2f"]
+export default null;
+
+
+
+export default keyframe/*json*/`{
+  "path": "./${foldername}/04-consumer/a/04-${1}-${count}-01-ValueInput.js",
+  "context": {
+     "column": "ValueInput",
+     "code": {
+      "review": [
+        ["foci", "note", "", "pin"]
+      ]
+    }
+  }
+}
+`;
+
+
+
+
+export default null;
+
+export default keyframe/*json*/`{
+  "path": "./${foldername}/04-consumer/a/04-${1}-${count}-02-BasicButton.js",
+  "context": {
+     "column": "BasicButton",
+     "code": {
+      "review": [
+        ["foci", "note", "", "pin"]
+      ]
+    }
+  }
+}
+`;
+
+
+
+
 export default null;
 
 
