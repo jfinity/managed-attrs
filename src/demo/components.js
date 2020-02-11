@@ -9,7 +9,7 @@ export const ValueInput = props => {
   const { emitter, emitChange = emitter } = props;
 
   // useCallback(adaptChange(KEY, { emitChange }), [KEY, emitChange]);
-  const handleChange = ({ ...event }) => {
+  const handleChange = ({ ...event }) => { // event.persist()
     const { value } = event.target;
 
     emitChange(
