@@ -1,39 +1,25 @@
+// attrs are the subset of "props" (passed to children) that are "stateful"
+export function useManagedAttrs(initialState = {}) {
+  const env = this || {};
+  const { useState, useRef } = env.React || {};
 
-export const bindLib = (lib, name = "React") => {
-  const env = { [name]: lib };
-  return {
-    useManagedAttrs: useManagedAttrs.bind(env)
-  };
-};
-
-export function findLib(name = "React", env = this) {
-  return env ? env[name] || env : this[name] || this;
-}
-
-export function useManagedAttrs(
-  props,
-  initialState = {},
-  { manager = "manager" } = {}
-) {
-  const { useState, useRef } = findLib("React", this);
-
-  const [state, setState] = useState(initialState);
+  const [attrs, setState] = useState(initialState);
   const ref = useRef(null);
 
   ref.current = ref.current || {
-    manageState: conformSetState(setState)
+    manageAttrs: manageSetState(setState),
+    spreadAttrs: extendSetState(setState)
   };
 
-  const manageState = props[manager] || ref.current.manageState;
-
-  return [effective(props, state), manageState, { state }];
+  return [attrs, ref.current.manageAttrs, ref.current.spreadAttrs];
 }
 
-export const conformSetState = setState => {
-  return (details, producer = Array.isArray(details) ? null : produceState) => {
-    if (typeof producer === "function") {
+export const manageSetState = setState => {
+  // manageAttrs
+  return (action, reducer) => {
+    if (typeof reducer === "function") {
       setState(lastState => {
-        const nextState = producer(lastState, details);
+        const nextState = reducer(lastState, action);
         return nextState;
       });
       return true;
@@ -42,81 +28,48 @@ export const conformSetState = setState => {
   };
 };
 
-export const produceState = (value, edit) => {
-  const kind = Array.isArray(edit) ? "array" : typeof (edit || undefined);
-
-  switch (kind) {
-    case "function": {
-      return edit(value) || value || {};
-    }
-    case "object": {
-      return Object.assign({}, value, edit);
-    }
-    default: {
-      return value || {};
-    }
-  }
+// prefer action.spread over action to encourage action.type and other metadata
+export const spreadReducer = (lastState, { spread: updater } = {}) => {
+  return maybeExtend(lastState, updater);
 };
 
-export const effective = (...objs) => {
-  let read = objs.length ? -2 : -1;
-  const value = objs.length ? {} : undefined;
-
-  for (let at = 0; at < objs.length; at += 1) {
-    const keys =
-      typeof (objs[at] || undefined) === "object" && !Array.isArray(objs[at])
-        ? Object.keys(objs[at])
-        : [];
-
-    for (let index = 0; index < keys.length; index += 1) {
-      const name = keys[index];
-
-      if (value[name] === undefined && objs[at][name] !== undefined) {
-        value[name] = objs[at][name];
-        read = read === at || read === -2 ? at : -1;
-      }
-    }
-  }
-
-  read = read === -2 ? 0 : read; // prefer objs[0] over "keyless" value
-  return read < 0 ? value : objs[read]; // prefer original over "duplicate"
+export const maybeExtend = (lastState, updater) => {
+  const spread = typeof updater === "function" ? updater(lastState) : updater;
+  return spread ? Object.assign({}, lastState, spread) : lastState;
 };
 
-export const generateState = (lastState, details, producer) => {
-  const kind = Array.isArray(producer)
-    ? "array"
-    : typeof (producer || undefined);
-
-  switch (kind) {
-    case "function": {
-      return producer(lastState, details, generateState);
+export const extendSetState = setState => {
+  // spreadAttrs
+  return updater => {
+    if (updater) {
+      setState(lastState => {
+        const nextState = maybeExtend(lastState, updater);
+        return nextState;
+      });
+      return true;
     }
-    case "array": {
-      let nextState = lastState;
-      for (let at = 0; at < producer.length; at += 1) {
-        nextState = generateState(nextState, details, producer[at]);
-      }
-      return nextState;
-    }
-    default: {
-      return lastState;
-    }
-  }
-};
-
-export const sequence = (...recursiveArrayOfProducers) => {
-  return (lastState, details) =>
-    generateState(lastState, details, recursiveArrayOfProducers);
-};
-
-export const scopeManager = (field, manager) => {
-  const fieldProducer = (state, details) => {
-    const args = details.slice();
-    const producer = args.pop();
-    return { ...state, [field]: producer(state[field], args) };
+    return false;
   };
+};
 
-  return (details, producer) => {
-    return manager([].concat(details, [producer]), fieldProducer);
+export const resolveNext = (lastState, action, reducers) => {
+  if (Array.isArray(reducers)) {
+    let nextState = lastState;
+
+    for (let index = 0; index < reducers.length; index += 1) {
+      nextState = resolveNext(nextState, action, reducers[index]);
+    }
+
+    return nextState;
+  } else if (typeof reducers === "function") {
+    return reducers(lastState, action);
+  } else {
+    return lastState;
+  }
+};
+
+export const reducerPipeline = (...reducersOrNestedArraysThereof) => {
+  return (lastState, action) => {
+    return resolveNext(lastState, action, reducersOrNestedArraysThereof);
   };
-}
+};
