@@ -5,18 +5,21 @@ const mdx = String.raw;
 
 const associateStep = (labels, output) => {
   const { pathname, focus, context } = output;
+  const { title = "", subtitle = "" } = context;
   const column = context.column ? context.column.toString() : "";
   const group = path.dirname(pathname);
 
   if (!Array.isArray(labels)) {
-    return { column, group, pathname, focus };
+    return { column, group, pathname, title, subtitle, focus };
   }
 
   if (!labels.length) {
-    return { column, group, pathname, focus: "" };
+    return { column, group, pathname, title, subtitle, focus: "" };
   }
 
-  return { column, group, pathname, focus: labels.map(foci).join("").slice(1) };
+  const targets = labels.map(foci).join("").slice(1);
+
+  return { column, group, pathname, title, subtitle, focus: targets };
 
   function foci(name) {
     const { guides, ranges } = output;
@@ -90,14 +93,21 @@ const stepper = ({ folder, digest }) => {
   const pillars = [...columns];
 
   return pillars[0][1].map((vals, idx) => {
+    let props = "";
+    const title = pillars.find(([label, steps]) => steps[idx].title);
+    const subtitle = pillars.find(([label, steps]) => steps[idx].subtitle);
+
+    props += title ? ' title="'+title[1][idx].title+'"' : "";
+    props += subtitle ? ' subtitle="'+subtitle[1][idx].subtitle+'"' : "";
+
     return mdx`
-<Step>
+<Step${props}>
 
 ${
 pillars.map(([label, steps]) => {
   const value = steps[idx];
-  const file = path.join(value.folder, value.pathname);
-  return "```js "+value.focus+" file=./"+file+"\n```";
+  const file = " file=./"+path.join(value.folder, value.pathname);
+  return "```js "+value.focus+file+"\n```";
 }).join("\n\n")
 }
 
@@ -116,16 +126,21 @@ import {
   CodeSurferColumns,
   Step,
 } from "code-surfer";
-import { nightOwl, vsDark } from "@code-surfer/themes";
+import { theme1, theme2 } from "./custom-theme";
+import { InputDemo, ButtonDemo, FieldDemo } from "./widgets";
 
-export const theme = vsDark;
+export const theme = theme1;
 
 # The Tricky Brilliance of
 # Uncontrolled ${"`"}<input />${"`"}s
 
 ---
 
-<CodeSurferColumns themes={[vsDark]}>
+<InputDemo />
+
+---
+
+<CodeSurferColumns themes={[theme1]}>
 
 ${
   stepper({
@@ -134,16 +149,10 @@ ${
   })
 }
 
-</CodeSurferColumns>
-
----
-
-<CodeSurferColumns themes={[nightOwl, vsDark]}>
-
 ${
   stepper({
     folder: "./keyframes/",
-    digest: require(path.join(__dirname, "./keyframes/003-compare/02-LineItem.json"))
+    digest: require(path.join(__dirname, "./keyframes/003-compare/01-ValueInput.json"))
   })
 }
 
@@ -151,12 +160,23 @@ ${
 
 ---
 
-<CodeSurferColumns themes={[vsDark]}>
+<ButtonDemo>Accept</ButtonDemo>
+
+---
+
+<CodeSurferColumns themes={[theme2, theme1]} sizes={[5, 7]}>
 
 ${
   stepper({
     folder: "./keyframes/",
-    digest: require(path.join(__dirname, "./keyframes/004-refactor/02-LineItem.json"))
+    digest: require(path.join(__dirname, "./keyframes/003-compare/02-BasicButton.json"))
+  })
+}
+
+${
+  stepper({
+    folder: "./keyframes/",
+    digest: require(path.join(__dirname, "./keyframes/004-refactor/02-BasicButton.json"))
   })
 }
 
@@ -164,12 +184,16 @@ ${
 
 ---
 
-<CodeSurferColumns themes={[nightOwl, vsDark]}>
+<FieldDemo />
+
+---
+
+<CodeSurferColumns themes={[theme1]}>
 
 ${
   stepper({
     folder: "./keyframes/",
-    digest: require(path.join(__dirname, "./keyframes/005-conform/02-LineItem.json"))
+    digest: require(path.join(__dirname, "./keyframes/004-refactor/03-CodecField.json"))
   })
 }
 
@@ -177,105 +201,44 @@ ${
 
 ---
 
-<CodeSurferColumns themes={[nightOwl, vsDark]}>
 
-${
-  stepper({
-    folder: "./keyframes/",
-    digest: require(path.join(__dirname, "./keyframes/006-compose/03-ItemList.json"))
-  })
-}
+<CodeSurferColumns themes={[theme1, theme2]} sizes={[7, 5]}>
+
+<Step>
+
+${"```"}md title="Benefits"
+
+* Flexible and fully controlled
+* Consistent and uniform API
+* Easy to consume
+
+${"```"}
+
+${"```"}md title="Drawbacks"
+
+- More involved to produce
+- Unfamiliar pattern
+- Lots of room for improvement
+
+${"```"}
+
+</Step>
 
 </CodeSurferColumns>
 
 ---
 
-docs:  
-[codesurfer.pomb.us](https://codesurfer.pomb.us)
+# Future work
+
+* More ergonomic (lazy) composition
+* Async side-effects with saga argument
+* Integration with statecharts
+  * (or some other visualizable state model)
 
 ---
 
-<CodeSurfer>
+# Questions?
 
-${"`"}${"`"}${"`"}js title="This is a title" subtitle="and this a subtitle"${js`
-function lorem(ipsum, dolor = 1) {
-  const sit = ipsum == null ? 0 : ipsum.sit;
-  dolor = sit - amet(dolor);
-  return sit
-  ? consectetur(ipsum, 0, dolor < 0 ? 0 : dolor)
-  : [];
-}
+---
 
-function incididunt(ipsum, ut = 1) {
-  ut = labore.et(amet(ut), 0);
-  const sit = ipsum == null ? 0 : ipsum.sit;
-  
-  if (!sit || ut < 1) {
-    return [];
-  }
-  
-  let dolore = 0;
-  let magna = 0;
-  const aliqua = new eiusmod(labore.ut(sit / ut));
-  
-  while (dolore < sit) {
-    aliqua[magna++] = consectetur(
-      ipsum,
-      dolore,
-      (dolore += ut)
-    );
-  }
-
-  return aliqua;
-}
-`}${"`"}${"`"}${"`"}
-
-${"`"}${"`"}${"`"}js${js`
-function lorem(ipsum, dolor = 1) {
-  const sit = ipsum == null ? 0 : ipsum.sit;
-dolor = sit - amet(dolor);
-return sit
-? consectetur(ipsum, 0, dolor < 0 ? 0 : dolor)
-: [];
-}
-
-function adipiscing(...elit) {
-  if (!elit.sit) {
-return [];
-}
-
-const sed = elit[0];
-return eiusmod.tempor(sed) ? sed : [sed];
-}
-
-function incididunt(ipsum, ut = 1) {
-  ut = labore.et(amet(ut), 0);
-  const sit = ipsum == null ? 0 : ipsum.sit;
-  
-  if (!sit || ut < 1) {
-    return [];
-}
-
-let dolore = 0;
-let magna = 0;
-const aliqua = new eiusmod(labore.ut(sit / ut));
-
-while (dolore < sit) {
-  aliqua[magna++] = consectetur(
-    ipsum,
-    dolore,
-    (dolore += ut)
-    );
-  }
-  
-  return aliqua;
-}
-`}
-${"`"}${"`"}${"`"}
-
-${"`"}${"`"}${"`"}diff 1[10:14],2[15:19],3[22:27],10:12
-
-${"`"}${"`"}${"`"}
-
-</CodeSurfer>
 `;

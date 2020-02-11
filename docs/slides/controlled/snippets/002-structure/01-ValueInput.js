@@ -1,4 +1,4 @@
-export default prefs.json`
+export default prefs/* json */`
 {
   "digest": {
     "all": "./${foldername}/${basename}.json",
@@ -48,7 +48,7 @@ export default prefs.json`
 // [label, start, end, after]
 // [range || loop]
 
-json`{
+/* json */`{
   "path": "./${foldername}/01-component/a/01-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
@@ -66,14 +66,14 @@ json`{
 }
 `;
 
-//// [null, "", "decl"]
+// [null, "", "decl"]
 export const ValueInput = () => { // ["decl", "const", "=>"], ["curly", "{"]
   return ( // ["turn", "turn"], ["expr", "("]
     <></>
   ); // ["expr", ")"]
   // render some JSX
 }; // ["curly", "}"]
-//// [null, "", "expr"]
+// [null, "", "expr"]
 
 null;
 
@@ -81,238 +81,158 @@ null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/01-component/a/01-${1}-${count}-01-ValueInput.js",
   "context": {
+     "title": "Component bootstrapping",
      "column": "ValueInput",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }
 }
 `;
 
-//// [null, "foci"], "start"
-// Component Structure // [""]
-//// [null, "foci"], "end"
+
+
 
 export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/01-component/a/01-${1}-${count}-01-ValueInput.js",
   "context": {
+    "title": "Declare functional component",
     "column": "ValueInput",
     "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }
 }
 `;
+// [null, "foci"], "start", [""]
 
-//// [null, "foci"], "start", [""]
 export const ValueInput = props => {
 };
-//// [null, "foci"], "end", [""]
 
+// [null, "foci"], "end", [""]
 export default null;
 
 
 
-export default keyframe.json`{
+
+
+export default keyframe/*json*/`{
   "path": "./${foldername}/02-render/a/02-${1}-${count}-01-ValueInput.js",
   "context": {
+     "title": "Render some JSX",
      "column": "ValueInput",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }
 }
 `;
+// [null, "foci"], "start"
 
-//// [null, "foci"], "start"
-export const ValueInput = props => {
-  // Render some JSX // [null, "subtitle"]
-};
-//// [null, "foci"], "end"
-
-export default null;
-
-
-
-export default keyframe.json`{
-  "path": "./${foldername}/02-render/a/02-${1}-${count}-01-ValueInput.js",
-  "context": {
-     "column": "ValueInput",
-     "code": {
-      "review": [
-        ["foci", "subtitle", "", "pin"]
-      ]
-    }
-  }
-}
-`;
-
-//// [null, "foci"], "start"
 export const ValueInput = props => {
   return ( // [""]
     <input>
     </input>
   ); // [""]
-  // Render some JSX // [null, "subtitle"]
 };
-//// [null, "foci"], "end"
 
+// [null, "foci"], "end"
 export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/03-props/a/03-${1}-${count}-01-ValueInput.js",
   "context": {
+     "title": "Consume props",
      "column": "ValueInput",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }
 }
 `;
+// [null, "foci"], "start"
 
-//// [null, "foci"], "start"
-export const ValueInput = props => {
-  return (
-    <input>
-    </input>
-  );
-  // Consume props // [null, "subtitle"]
-};
-//// [null, "foci"], "end"
-
-export default null;
-
-
-
-export default keyframe.json`{
-  "path": "./${foldername}/03-props/a/03-${1}-${count}-01-ValueInput.js",
-  "context": {
-     "column": "ValueInput",
-     "code": {
-      "review": [
-        ["foci", "subtitle", "", "pin"]
-      ]
-    }
-  }
-}
-`;
-
-//// [null, "foci"], "start"
 export const ValueInput = props => {
   const { // [""]
-    // Retrieve non-callback props
   } = props; // [""]
 
   return (
     <input>
     </input>
   );
-  // Consume props // [null, "subtitle"]
 };
-//// [null, "foci"], "end"
 
+// [null, "foci"], "end"
 export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/03-props/a/03-${1}-${count}-01-ValueInput.js",
   "context": {
+     "title": "Retrieve non-callback props",
      "column": "ValueInput",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }
 }
 `;
+// [null, "foci"], "start"
 
-//// [null, "foci"], "start"
 export const ValueInput = props => {
   const {
-    value = "" // [""]
+    value = "", // [""]
   } = props;
 
   return (
     <input>
     </input>
   );
-  // Consume props // [null, "subtitle"]
 };
-//// [null, "foci"], "end"
 
+// [null, "foci"], "end"
 export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/03-props/a/03-${1}-${count}-01-ValueInput.js",
   "context": {
+     "title": "Pass props to children",
      "column": "ValueInput",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }
 }
 `;
+// [null, "foci"], "start"
 
-//// [null, "foci"], "start"
 export const ValueInput = props => {
   const {
-    value = ""
-  } = props;
-
-  return (
-    <input // [""]
-      // Pass props to children
-    > // [""]
-    </input>
-  );
-  // Consume props // [null, "subtitle"]
-};
-//// [null, "foci"], "end"
-
-export default null;
-
-
-
-export default keyframe.json`{
-  "path": "./${foldername}/03-props/a/03-${1}-${count}-01-ValueInput.js",
-  "context": {
-     "column": "ValueInput",
-     "code": {
-      "review": [
-        ["foci", "subtitle", "", "pin"]
-      ]
-    }
-  }
-}
-`;
-
-//// [null, "foci"], "start"
-export const ValueInput = props => {
-  const {
-    value = ""
+    value = "",
   } = props;
 
   return (
@@ -321,36 +241,32 @@ export const ValueInput = props => {
     >
     </input>
   );
-  // Consume props // [null, "subtitle"]
 };
-//// [null, "foci"], "end"
 
+// [null, "foci"], "end"
 export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/03-props/a/03-${1}-${count}-01-ValueInput.js",
   "context": {
+     "title": "Retrieve callback props",
      "column": "ValueInput",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }
 }
 `;
+// [null, "foci"], "start"
 
-//// [null, "foci"], "start"
 export const ValueInput = props => {
-  const {
-    value = ""
-  } = props;
-
-  const { // [""]
-    // Retrieve callback props
-  } = props; // [""]
+  const { // ["pin"]
+    value = "",
+  } = props; // ["pin"]
 
   return (
     <input
@@ -358,35 +274,33 @@ export const ValueInput = props => {
     >
     </input>
   );
-  // Consume props // [null, "subtitle"]
 };
-//// [null, "foci"], "end"
 
+// [null, "foci"], "end"
 export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/03-props/a/03-${1}-${count}-01-ValueInput.js",
   "context": {
+     "title": "Retrieve callback props",
      "column": "ValueInput",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }
 }
 `;
+// [null, "foci"], "start"
 
-//// [null, "foci"], "start"
 export const ValueInput = props => {
   const {
-    value = ""
-  } = props;
+    value = "",
 
-  const {
-    onChange = event => {} // [""]
+    onChange = event => {}, // [""]
   } = props;
 
   return (
@@ -395,56 +309,53 @@ export const ValueInput = props => {
     >
     </input>
   );
-  // Consume props // [null, "subtitle"]
 };
-//// [null, "foci"], "end"
 
+// [null, "foci"], "end"
 export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/03-props/a/03-${1}-${count}-01-ValueInput.js",
   "context": {
+     "title": "Listen for child events",
      "column": "ValueInput",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }
 }
 `;
+// [null, "foci"], "start"
 
-//// [null, "foci"], "start"
 export const ValueInput = props => {
   const {
-    value = ""
-  } = props;
+    value = "",
 
-  const {
-    onChange = event => {}
+    onChange = event => {},
   } = props;
 
   return (
     <input
       value={value}
-      // Listen for child events // [""]
-      onChange={
+
+      onChange={ // [""]
         onChange
       } // [""]
     >
     </input>
   );
-  // Consume props // [null, "subtitle"]
 };
-//// [null, "foci"], "end"
 
+// [null, "foci"], "end"
 export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/03-props/a/03-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
@@ -456,15 +367,13 @@ export default keyframe.json`{
   }
 }
 `;
+// [null, "foci"], "start"
 
-//// [null, "foci"], "start"
 export const ValueInput = props => {
   const {
-    value = ""
-  } = props;
+    value = "",
 
-  const {
-    onChange = event => {}
+    onChange = event => {},
   } = props;
 
   return (
@@ -477,35 +386,33 @@ export const ValueInput = props => {
     >
     </input>
   );
-
 };
-//// [null, "foci"], "end"
 
+// [null, "foci"], "end"
 export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/04-consumer/a/04-${1}-${count}-01-ValueInput.js",
   "context": {
+     "title": "Consume the component",
      "column": "ValueInput",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }
 }
 `;
 
-//
+
 export const ValueInput = props => {
   const {
-    value = ""
-  } = props;
+    value = "",
 
-  const {
-    onChange = event => {}
+    onChange = event => {},
   } = props;
 
   return (
@@ -518,39 +425,36 @@ export const ValueInput = props => {
     >
     </input>
   );
-
 };
-//// [null, "foci"], "start", [""]
+// [null, "foci"], "start", [""]
 export const App = () => {
-  // Consume the component
 };
-//// [null, "foci"], "end", [""]
 
+// [null, "foci"], "end", [""]
 export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/04-consumer/a/04-${1}-${count}-01-ValueInput.js",
   "context": {
+     "title": "Render the component",
      "column": "ValueInput",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }
 }
 `;
 
-//
+
 export const ValueInput = props => {
   const {
-    value = ""
-  } = props;
+    value = "",
 
-  const {
-    onChange = event => {}
+    onChange = event => {},
   } = props;
 
   return (
@@ -563,43 +467,41 @@ export const ValueInput = props => {
     >
     </input>
   );
-
 };
-//// [null, "foci"], "start"
+// [null, "foci"], "start"
 export const App = () => {
   return ( // [""]
-    <ValueInput>
+    <ValueInput
+    >
     </ValueInput>
   ); // [""]
-  // Consume the component // [null, "subtitle"]
 };
-//// [null, "foci"], "end"
 
+// [null, "foci"], "end"
 export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/04-consumer/a/04-${1}-${count}-01-ValueInput.js",
   "context": {
+     "title": "Pass props to the component",
      "column": "ValueInput",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }
 }
 `;
 
-//
+
 export const ValueInput = props => {
   const {
-    value = ""
-  } = props;
+    value = "",
 
-  const {
-    onChange = event => {}
+    onChange = event => {},
   } = props;
 
   return (
@@ -612,45 +514,41 @@ export const ValueInput = props => {
     >
     </input>
   );
-
 };
-//// [null, "foci"], "start"
+// [null, "foci"], "start"
 export const App = () => {
   return (
     <ValueInput // [""]
-      // Pass props to the component
     > // [""]
     </ValueInput>
   );
-  // Consume the component // [null, "subtitle"]
 };
-//// [null, "foci"], "end"
 
+// [null, "foci"], "end"
 export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/04-consumer/a/04-${1}-${count}-01-ValueInput.js",
   "context": {
+     "title": "Pass props to the component",
      "column": "ValueInput",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }
 }
 `;
 
-//
+
 export const ValueInput = props => {
   const {
-    value = ""
-  } = props;
+    value = "",
 
-  const {
-    onChange = event => {}
+    onChange = event => {},
   } = props;
 
   return (
@@ -663,47 +561,45 @@ export const ValueInput = props => {
     >
     </input>
   );
-
 };
-//// [null, "foci"], "start"
+// [null, "foci"], "start"
 export const App = () => {
-  const [value, setValue] = useState("default text"); // [""]
+  const [value, setValue] = useState( // [""]
+    "default text"
+  ); // [""]
 
   return (
-    <ValueInput
-      // Pass props to the component // [null, "pin"]
-    >
+    <ValueInput // ["pin"]
+    > // ["pin"]
     </ValueInput>
   );
-  // Consume the component // [null, "subtitle"]
 };
-//// [null, "foci"], "end"
 
+// [null, "foci"], "end"
 export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/04-consumer/a/04-${1}-${count}-01-ValueInput.js",
   "context": {
+     "title": "Pass props to the component",
      "column": "ValueInput",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }
 }
 `;
 
-//
+
 export const ValueInput = props => {
   const {
-    value = ""
-  } = props;
+    value = "",
 
-  const {
-    onChange = event => {}
+    onChange = event => {},
   } = props;
 
   return (
@@ -716,51 +612,49 @@ export const ValueInput = props => {
     >
     </input>
   );
-
 };
-//// [null, "foci"], "start"
+// [null, "foci"], "start"
 export const App = () => {
-  const [value, setValue] = useState("default text");
+  const [value, setValue] = useState(
+    "default text"
+  );
 
   return (
     <ValueInput
       value={value} // [""]
 
       onChange={
-        // Adapt signature from callback to state manager
       } // [""]
     >
     </ValueInput>
   );
-  // Consume the component // [null, "subtitle"]
 };
-//// [null, "foci"], "end"
 
+// [null, "foci"], "end"
 export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/04-consumer/a/04-${1}-${count}-01-ValueInput.js",
   "context": {
+     "title": "Adapt signature from callback to state manager",
      "column": "ValueInput",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }
 }
 `;
 
-//
+
 export const ValueInput = props => {
   const {
-    value = ""
-  } = props;
+    value = "",
 
-  const {
-    onChange = event => {}
+    onChange = event => {},
   } = props;
 
   return (
@@ -773,11 +667,67 @@ export const ValueInput = props => {
     >
     </input>
   );
-
 };
-//// [null, "foci"], "start"
+// [null, "foci"], "start"
 export const App = () => {
-  const [value, setValue] = useState("default text");
+  const [value, setValue] = useState(
+    "default text"
+  );
+
+  return (
+    <ValueInput
+      value={value}
+
+      onChange={ // ["pin"]
+      } // ["pin"]
+    >
+    </ValueInput>
+  );
+};
+
+// [null, "foci"], "end"
+export default null;
+
+
+
+export default keyframe/*json*/`{
+  "path": "./${foldername}/04-consumer/a/04-${1}-${count}-01-ValueInput.js",
+  "context": {
+     "title": "Adapters bridge the gaps between dissimilar APIs",
+     "column": "ValueInput",
+     "code": {
+      "review": [
+        ["foci", "note", "", "pin"]
+      ]
+    }
+  }
+}
+`;
+
+
+export const ValueInput = props => {
+  const {
+    value = "",
+
+    onChange = event => {},
+  } = props;
+
+  return (
+    <input
+      value={value}
+
+      onChange={
+        onChange
+      }
+    >
+    </input>
+  );
+};
+// [null, "foci"], "start"
+export const App = () => {
+  const [value, setValue] = useState(
+    "default text"
+  );
 
   return (
     <ValueInput
@@ -789,35 +739,32 @@ export const App = () => {
     >
     </ValueInput>
   );
-  // Consume the component // [null, "subtitle"]
 };
-//// [null, "foci"], "end"
 
+// [null, "foci"], "end"
 export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/04-consumer/b/04-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }
 }
 `;
 
-//
+
 export const ValueInput = props => {
   const {
-    value = ""
-  } = props;
+    value = "",
 
-  const {
-    onChange = event => {}
+    onChange = event => {},
   } = props;
 
   return (
@@ -830,11 +777,12 @@ export const ValueInput = props => {
     >
     </input>
   );
-
 };
-//// [null, "foci"], "start", [""]
+// [null, "foci"], "start", [""]
 export const App = () => {
-  const [value, setValue] = useState("default text");
+  const [value, setValue] = useState(
+    "default text"
+  );
 
   return (
     <ValueInput
@@ -846,35 +794,32 @@ export const App = () => {
     >
     </ValueInput>
   );
-
 };
-//// [null, "foci"], "end", [""]
 
+// [null, "foci"], "end", [""]
 export default null;
 
 
 
-export default keyframe.json`{
+export default skip/*json*/`{
   "path": "./${foldername}/04-consumer/b/04-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }
 }
 `;
+// [null, "foci"], "start", [""]
 
-//// [null, "foci"], "start", [""]
 export const ValueInput = props => {
   const {
-    value = ""
-  } = props;
+    value = "",
 
-  const {
-    onChange = event => {}
+    onChange = event => {},
   } = props;
 
   return (
@@ -887,11 +832,12 @@ export const ValueInput = props => {
     >
     </input>
   );
-
 };
-//
+
 export const App = () => {
-  const [value, setValue] = useState("default text");
+  const [value, setValue] = useState(
+    "default text"
+  );
 
   return (
     <ValueInput
@@ -903,8 +849,7 @@ export const App = () => {
     >
     </ValueInput>
   );
-
 };
-//// [null, "foci"], "end", [""]
 
+// [null, "foci"], "end", [""]
 export default null;

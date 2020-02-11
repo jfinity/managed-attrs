@@ -1,4 +1,4 @@
-export default prefs.json`
+export default prefs/*json*/`
 {
   "digest": {
     "all": "./${foldername}/${basename}.json",
@@ -11,13 +11,13 @@ export default prefs.json`
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/07-conform/a/07-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }
@@ -27,11 +27,9 @@ export default keyframe.json`{
 //// [null, "foci"], "start", [""]
 export const ValueInput = props => {
   const {
-    value = ""
-  } = props;
+    value = "",
 
-  const {
-    onValueChange = string => {}
+    onValueChange = string => {},
   } = props;
 
   const handleChange = event =>
@@ -53,13 +51,13 @@ export const ValueInput = props => {
 
 export default null;
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/07-conform/a/07-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }
@@ -73,13 +71,11 @@ export const LineItem = props => {
 
     selected = false,
 
-    highlighted = false
-  } = props;
+    highlighted = false,
 
-  const {
     onSelectionChange = boolean => {},
 
-    onHoverChange = boolean => {}
+    onHoverChange = boolean => {},
   } = props;
 
   const handleClick = event =>
@@ -118,13 +114,13 @@ export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/07-conform/a/07-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }
@@ -134,11 +130,9 @@ export default keyframe.json`{
 //
 export const ValueInput = props => {
   const {
-    value = ""
-  } = props;
+    value = "",
 
-  const {
-    onValueChange = string => {}
+    onValueChange = string => {},
   } = props;
 
   const handleChange = event =>
@@ -176,13 +170,13 @@ export const App = () => {
 
 export default null;
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/07-conform/a/07-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }
@@ -196,13 +190,11 @@ export const LineItem = props => {
 
     selected = false,
 
-    highlighted = false
-  } = props;
+    highlighted = false,
 
-  const {
     onSelectionChange = boolean => {},
 
-    onHoverChange = boolean => {}
+    onHoverChange = boolean => {},
   } = props;
 
   const handleClick = event =>
@@ -267,7 +259,7 @@ export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/07-conform/a/07-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
@@ -283,11 +275,9 @@ export default keyframe.json`{
 //
 export const ValueInput = props => {
   const {
-    value = ""
-  } = props;
+    value = "",
 
-  const {
-    onValueChange = string => {}
+    onValueChange = string => {},
   } = props;
 
   const handleChange = event =>
@@ -325,7 +315,7 @@ export const App = () => {
 
 export default null;
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/07-conform/a/07-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
@@ -345,13 +335,11 @@ export const LineItem = props => {
 
     selected = false,
 
-    highlighted = false
-  } = props;
+    highlighted = false,
 
-  const {
     onSelectionChange = boolean => {},
 
-    onHoverChange = boolean => {}
+    onHoverChange = boolean => {},
   } = props;
 
   const handleClick = event =>
@@ -416,13 +404,13 @@ export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/07-conform/a/07-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }
@@ -432,11 +420,9 @@ export default keyframe.json`{
 //
 export const ValueInput = props => {
   const {
-    value = ""
-  } = props;
+    value = "",
 
-  const {
-    onValueChange = string => {}
+    onValueChange = string => {},
   } = props;
 
   const handleChange = event =>
@@ -474,13 +460,13 @@ export const App = () => {
 
 export default null;
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/07-conform/a/07-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }
@@ -494,13 +480,11 @@ export const LineItem = props => {
 
     selected = false,
 
-    highlighted = false
-  } = props;
+    highlighted = false,
 
-  const {
     onSelectionChange = boolean => {},
 
-    onHoverChange = boolean => {}
+    onHoverChange = boolean => {},
   } = props;
 
   const handleClick = event =>
@@ -560,13 +544,13 @@ export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/07-conform/a/07-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }
@@ -576,11 +560,9 @@ export default keyframe.json`{
 //
 export const ValueInput = props => {
   const {
-    value = ""
-  } = props;
+    value = "",
 
-  const {
-    onValueChange = string => {}
+    onValueChange = string => {},
   } = props;
 
   const handleChange = event =>
@@ -618,13 +600,13 @@ export const App = () => {
 
 export default null;
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/07-conform/a/07-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }
@@ -638,13 +620,11 @@ export const LineItem = props => {
 
     selected = false,
 
-    highlighted = false
-  } = props;
+    highlighted = false,
 
-  const {
     onSelectionChange = boolean => {},
 
-    onHoverChange = boolean => {}
+    onHoverChange = boolean => {},
   } = props;
 
   const handleClick = event =>
@@ -704,13 +684,13 @@ export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/07-conform/a/07-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"],
+        ["foci", "note", "", "pin"],
         ["foci"]
       ]
     }
@@ -721,11 +701,9 @@ export default keyframe.json`{
 //// [null, "foci"], "start", [""]
 export const ValueInput = props => {
   const {
-    value = ""
-  } = props;
+    value = "",
 
-  const {
-    onValueChange = string => {}
+    onValueChange = string => {},
   } = props;
 
   const handleChange = event =>
@@ -763,13 +741,13 @@ export const App = () => {
 
 export default null;
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/07-conform/a/07-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }
@@ -783,13 +761,11 @@ export const LineItem = props => {
 
     selected = false,
 
-    highlighted = false
-  } = props;
+    highlighted = false,
 
-  const {
     onSelectionChange = boolean => {},
 
-    onHoverChange = boolean => {}
+    onHoverChange = boolean => {},
   } = props;
 
   const handleClick = event =>
@@ -849,13 +825,13 @@ export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/07-conform/a/07-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }
@@ -865,11 +841,9 @@ export default keyframe.json`{
 //// [null, "foci"], "start"
 export const ValueInput = props => {
   const {
-    value = ""
-  } = props;
+    value = "",
 
-  const {
-    onValueChange = string => {}
+    onValueChange = string => {},
   } = props;
 
   const handleChange = event =>
@@ -907,7 +881,7 @@ export const App = () => {
 
 export default null;
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/07-conform/a/07-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
@@ -927,13 +901,11 @@ export const LineItem = props => {
 
     selected = false,
 
-    highlighted = false
-  } = props;
+    highlighted = false,
 
-  const {
     onSelectionChange = boolean => {}, // [null, ""]
 
-    onHoverChange = boolean => {}
+    onHoverChange = boolean => {},
   } = props;
 
   const handleClick = event => // [""]
@@ -993,7 +965,7 @@ export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/07-conform/a/07-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
@@ -1013,13 +985,11 @@ export const LineItem = props => {
 
     selected = false,
 
-    highlighted = false
-  } = props;
+    highlighted = false,
 
-  const {
-    whenSelectionChange = reducer => {}, // [null, ""]
+    whenSelectionChanges = reducer => {}, // [null, ""]
     // Alternate prefix to disambiguate call-signature // [null, "pin"]
-    onHoverChange = boolean => {}
+    onHoverChange = boolean => {},
   } = props;
 
   const handleClick = event => // ["pin"]
@@ -1079,7 +1049,7 @@ export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/07-conform/a/07-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
@@ -1099,18 +1069,16 @@ export const LineItem = props => {
 
     selected = false,
 
-    highlighted = false
-  } = props;
+    highlighted = false,
 
-  const {
-    whenSelectionChange = reducer => {}, // [null, ""]
+    whenSelectionChanges = reducer => {}, // [null, ""]
     // Alternate prefix to disambiguate call-signature // [null, ""]
-    onHoverChange = boolean => {}
+    onHoverChange = boolean => {},
   } = props;
 
   const handleClick = event => { // [""]
     const { ctrlKey } = event;
-    whenSelectionChange(
+    whenSelectionChanges(
       state => {
         const next = ctrlKey ? !state.selected : true;
         return { ...state, selected: next };
@@ -1172,13 +1140,13 @@ export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/07-conform/b/07-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }
@@ -1188,16 +1156,14 @@ export default keyframe.json`{
 //// [null, "foci"], "start"
 export const ValueInput = props => {
   const {
-    value = ""
-  } = props;
+    value = "",
 
-  const {
-    whenValueChange = reducer => {} // [null, ""]
+    whenValueChanges = reducer => {}, // [null, ""]
   } = props;
 
   const handleChange = event => { // [""]
     const next = event.target.value;
-    whenValueChange(
+    whenValueChanges(
       state => {
         return { ...state, value: next }
       }
@@ -1236,7 +1202,7 @@ export const App = () => {
 
 export default null;
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/07-conform/b/07-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
@@ -1256,18 +1222,16 @@ export const LineItem = props => {
 
     selected = false,
 
-    highlighted = false
-  } = props;
+    highlighted = false,
 
-  const {
-    whenSelectionChange = reducer => {},
+    whenSelectionChanges = reducer => {},
     // Alternate prefix to disambiguate call-signature // [null, ""]
-    whenHoverChange = reducer => {} // [null, ""]
+    whenHoverChanges = reducer => {}, // [null, ""]
   } = props;
 
   const handleClick = event => {
     const { ctrlKey } = event;
-    whenSelectionChange(
+    whenSelectionChanges(
       state => {
         const next = ctrlKey ? !state.selected : true;
         return { ...state, selected: next };
@@ -1276,14 +1240,14 @@ export const LineItem = props => {
   };
 
   const handleMouseEnter = () => { // [""]
-    whenHoverChange(
+    whenHoverChanges(
       state => {
         return { ...state, highlighted: true };
       }
     );
   };
   const handleMouseLeave = () => {
-    whenHoverChange(
+    whenHoverChanges(
       state => {
         return { ...state, highlighted: false };
       }
@@ -1341,13 +1305,13 @@ export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/07-conform/b/07-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }
@@ -1357,16 +1321,14 @@ export default keyframe.json`{
 //
 export const ValueInput = props => {
   const {
-    value = ""
-  } = props;
+    value = "",
 
-  const {
-    whenValueChange = reducer => {}
+    whenValueChanges = reducer => {},
   } = props;
 
   const handleChange = event => {
     const next = event.target.value;
-    whenValueChange(
+    whenValueChanges(
       state => {
         return { ...state, value: next }
       }
@@ -1405,13 +1367,13 @@ export const App = () => {
 
 export default null;
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/07-conform/b/07-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }
@@ -1425,18 +1387,16 @@ export const LineItem = props => {
 
     selected = false,
 
-    highlighted = false
-  } = props;
+    highlighted = false,
 
-  const {
-    whenSelectionChange = reducer => {},
+    whenSelectionChanges = reducer => {},
 
-    whenHoverChange = reducer => {}
+    whenHoverChanges = reducer => {},
   } = props;
 
   const handleClick = event => {
     const { ctrlKey } = event;
-    whenSelectionChange(
+    whenSelectionChanges(
       state => {
         const next = ctrlKey ? !state.selected : true;
         return { ...state, selected: next };
@@ -1445,14 +1405,14 @@ export const LineItem = props => {
   };
 
   const handleMouseEnter = () => {
-    whenHoverChange(
+    whenHoverChanges(
       state => {
         return { ...state, highlighted: true };
       }
     );
   };
   const handleMouseLeave = () => {
-    whenHoverChange(
+    whenHoverChanges(
       state => {
         return { ...state, highlighted: false };
       }
@@ -1510,13 +1470,13 @@ export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/07-conform/b/07-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }
@@ -1526,16 +1486,14 @@ export default keyframe.json`{
 //
 export const ValueInput = props => {
   const {
-    value = ""
-  } = props;
+    value = "",
 
-  const {
-    whenValueChange = reducer => {}
+    whenValueChanges = reducer => {},
   } = props;
 
   const handleChange = event => {
     const next = event.target.value;
-    whenValueChange(
+    whenValueChanges(
       state => {
         return { ...state, value: next }
       }
@@ -1576,13 +1534,13 @@ export const App = () => {
 
 export default null;
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/07-conform/b/07-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }
@@ -1596,18 +1554,16 @@ export const LineItem = props => {
 
     selected = false,
 
-    highlighted = false
-  } = props;
+    highlighted = false,
 
-  const {
-    whenSelectionChange = reducer => {},
+    whenSelectionChanges = reducer => {},
 
-    whenHoverChange = reducer => {}
+    whenHoverChanges = reducer => {},
   } = props;
 
   const handleClick = event => {
     const { ctrlKey } = event;
-    whenSelectionChange(
+    whenSelectionChanges(
       state => {
         const next = ctrlKey ? !state.selected : true;
         return { ...state, selected: next };
@@ -1616,14 +1572,14 @@ export const LineItem = props => {
   };
 
   const handleMouseEnter = () => {
-    whenHoverChange(
+    whenHoverChanges(
       state => {
         return { ...state, highlighted: true };
       }
     );
   };
   const handleMouseLeave = () => {
-    whenHoverChange(
+    whenHoverChanges(
       state => {
         return { ...state, highlighted: false };
       }
@@ -1680,13 +1636,13 @@ export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/07-conform/b/07-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }
@@ -1696,16 +1652,14 @@ export default keyframe.json`{
 //
 export const ValueInput = props => {
   const {
-    value = ""
-  } = props;
+    value = "",
 
-  const {
-    whenValueChange = reducer => {}
+    whenValueChanges = reducer => {},
   } = props;
 
   const handleChange = event => {
     const next = event.target.value;
-    whenValueChange(
+    whenValueChanges(
       state => {
         return { ...state, value: next }
       }
@@ -1733,7 +1687,7 @@ export const App = () => {
   return (
     <ValueInput
       {...state} // [null, ""]
-      whenValueChange={setState} // [null, ""]
+      whenValueChanges={setState} // [null, ""]
     >
     </ValueInput>
   );
@@ -1743,13 +1697,13 @@ export const App = () => {
 
 export default null;
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/07-conform/b/07-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }
@@ -1763,18 +1717,16 @@ export const LineItem = props => {
 
     selected = false,
 
-    highlighted = false
-  } = props;
+    highlighted = false,
 
-  const {
-    whenSelectionChange = reducer => {},
+    whenSelectionChanges = reducer => {},
 
-    whenHoverChange = reducer => {}
+    whenHoverChanges = reducer => {},
   } = props;
 
   const handleClick = event => {
     const { ctrlKey } = event;
-    whenSelectionChange(
+    whenSelectionChanges(
       state => {
         const next = ctrlKey ? !state.selected : true;
         return { ...state, selected: next };
@@ -1783,14 +1735,14 @@ export const LineItem = props => {
   };
 
   const handleMouseEnter = () => {
-    whenHoverChange(
+    whenHoverChanges(
       state => {
         return { ...state, highlighted: true };
       }
     );
   };
   const handleMouseLeave = () => {
-    whenHoverChange(
+    whenHoverChanges(
       state => {
         return { ...state, highlighted: false };
       }
@@ -1828,8 +1780,8 @@ export const App = () => {
   return (
     <LineItem
       {...state} // [""]
-      whenHoverChange={setState}
-      whenSelectionChange={setState} // [""]
+      whenHoverChanges={setState}
+      whenSelectionChanges={setState} // [""]
     >
     </LineItem>
   );
@@ -1841,7 +1793,7 @@ export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/07-conform/b/07-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
@@ -1857,16 +1809,14 @@ export default keyframe.json`{
 //
 export const ValueInput = props => {
   const {
-    value = ""
-  } = props;
+    value = "",
 
-  const {
-    whenValueChange = reducer => {} // ["pin"]
+    whenValueChanges = reducer => {}, // ["pin"]
   } = props;
 
   const handleChange = event => {
     const next = event.target.value;
-    whenValueChange(
+    whenValueChanges(
       state => {
         return { ...state, value: next }
       }
@@ -1894,7 +1844,7 @@ export const App = () => {
   return (
     <ValueInput
       {...state}
-      whenValueChange={setState}
+      whenValueChanges={setState}
     >
     </ValueInput>
   );
@@ -1904,7 +1854,7 @@ export const App = () => {
 
 export default null;
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/07-conform/b/07-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
@@ -1924,18 +1874,16 @@ export const LineItem = props => {
 
     selected = false,
 
-    highlighted = false
-  } = props;
+    highlighted = false,
 
-  const {
-    whenSelectionChange = reducer => {}, // ["pin"]
+    whenSelectionChanges = reducer => {}, // ["pin"]
 
-    whenHoverChange = reducer => {} // ["pin"]
+    whenHoverChanges = reducer => {}, // ["pin"]
   } = props;
 
   const handleClick = event => {
     const { ctrlKey } = event;
-    whenSelectionChange(
+    whenSelectionChanges(
       state => {
         const next = ctrlKey ? !state.selected : true;
         return { ...state, selected: next };
@@ -1944,14 +1892,14 @@ export const LineItem = props => {
   };
 
   const handleMouseEnter = () => {
-    whenHoverChange(
+    whenHoverChanges(
       state => {
         return { ...state, highlighted: true };
       }
     );
   };
   const handleMouseLeave = () => {
-    whenHoverChange(
+    whenHoverChanges(
       state => {
         return { ...state, highlighted: false };
       }
@@ -1989,8 +1937,8 @@ export const App = () => {
   return (
     <LineItem
       {...state}
-      whenHoverChange={setState}
-      whenSelectionChange={setState}
+      whenHoverChanges={setState}
+      whenSelectionChanges={setState}
     >
     </LineItem>
   );
@@ -2002,7 +1950,7 @@ export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/07-conform/b/07-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
@@ -2018,18 +1966,16 @@ export default keyframe.json`{
 //
 export const ValueInput = props => {
   const {
-    value = ""
-  } = props;
+    value = "",
 
-  const {
-    driver, // reducer => {} // [""]
+    stateManager, // reducer => {} // [""]
 
-    whenValueChange = reducer => {}
+    whenValueChanges = reducer => {},
   } = props;
 
   const handleChange = event => {
     const next = event.target.value;
-    whenValueChange(
+    whenValueChanges(
       state => {
         return { ...state, value: next }
       }
@@ -2057,7 +2003,7 @@ export const App = () => {
   return (
     <ValueInput
       {...state}
-      whenValueChange={setState}
+      whenValueChanges={setState}
     >
     </ValueInput>
   );
@@ -2067,7 +2013,7 @@ export const App = () => {
 
 export default null;
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/07-conform/b/07-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
@@ -2087,20 +2033,18 @@ export const LineItem = props => {
 
     selected = false,
 
-    highlighted = false
-  } = props;
+    highlighted = false,
 
-  const {
-    driver, // reducer => {} // [""]
+    stateManager, // reducer => {} // [""]
 
-    whenSelectionChange = reducer => {},
+    whenSelectionChanges = reducer => {},
 
-    whenHoverChange = reducer => {}
+    whenHoverChanges = reducer => {},
   } = props;
 
   const handleClick = event => {
     const { ctrlKey } = event;
-    whenSelectionChange(
+    whenSelectionChanges(
       state => {
         const next = ctrlKey ? !state.selected : true;
         return { ...state, selected: next };
@@ -2109,14 +2053,14 @@ export const LineItem = props => {
   };
 
   const handleMouseEnter = () => {
-    whenHoverChange(
+    whenHoverChanges(
       state => {
         return { ...state, highlighted: true };
       }
     );
   };
   const handleMouseLeave = () => {
-    whenHoverChange(
+    whenHoverChanges(
       state => {
         return { ...state, highlighted: false };
       }
@@ -2154,8 +2098,8 @@ export const App = () => {
   return (
     <LineItem
       {...state}
-      whenHoverChange={setState}
-      whenSelectionChange={setState}
+      whenHoverChanges={setState}
+      whenSelectionChanges={setState}
     >
     </LineItem>
   );
@@ -2167,7 +2111,7 @@ export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/07-conform/b/07-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
@@ -2183,18 +2127,16 @@ export default keyframe.json`{
 //
 export const ValueInput = props => {
   const {
-    value = ""
-  } = props;
+    value = "",
 
-  const {
-    driver, // reducer => {}
+    stateManager, // reducer => {}
 
-    whenValueChange = driver // [""]
+    whenValueChanges = stateManager, // [""]
   } = props;
 
   const handleChange = event => {
     const next = event.target.value;
-    whenValueChange(
+    whenValueChanges(
       state => {
         return { ...state, value: next }
       }
@@ -2222,7 +2164,7 @@ export const App = () => {
   return (
     <ValueInput
       {...state}
-      whenValueChange={setState}
+      whenValueChanges={setState}
     >
     </ValueInput>
   );
@@ -2232,7 +2174,7 @@ export const App = () => {
 
 export default null;
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/07-conform/b/07-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
@@ -2252,20 +2194,18 @@ export const LineItem = props => {
 
     selected = false,
 
-    highlighted = false
-  } = props;
+    highlighted = false,
 
-  const {
-    driver, // reducer => {}
+    stateManager, // reducer => {}
 
-    whenSelectionChange = driver, // [""]
+    whenSelectionChanges = stateManager, // [""]
 
-    whenHoverChange = driver // [""]
+    whenHoverChanges = stateManager, // [""]
   } = props;
 
   const handleClick = event => {
     const { ctrlKey } = event;
-    whenSelectionChange(
+    whenSelectionChanges(
       state => {
         const next = ctrlKey ? !state.selected : true;
         return { ...state, selected: next };
@@ -2274,14 +2214,14 @@ export const LineItem = props => {
   };
 
   const handleMouseEnter = () => {
-    whenHoverChange(
+    whenHoverChanges(
       state => {
         return { ...state, highlighted: true };
       }
     );
   };
   const handleMouseLeave = () => {
-    whenHoverChange(
+    whenHoverChanges(
       state => {
         return { ...state, highlighted: false };
       }
@@ -2319,8 +2259,8 @@ export const App = () => {
   return (
     <LineItem
       {...state}
-      whenHoverChange={setState}
-      whenSelectionChange={setState}
+      whenHoverChanges={setState}
+      whenSelectionChanges={setState}
     >
     </LineItem>
   );
@@ -2332,13 +2272,13 @@ export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/07-conform/b/07-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }
@@ -2348,18 +2288,16 @@ export default keyframe.json`{
 //
 export const ValueInput = props => {
   const {
-    value = ""
-  } = props;
+    value = "",
 
-  const {
-    driver, // reducer => {}
+    stateManager, // reducer => {}
 
-    whenValueChange = driver
+    whenValueChanges = stateManager,
   } = props;
 
   const handleChange = event => {
     const next = event.target.value;
-    whenValueChange(
+    whenValueChanges(
       state => {
         return { ...state, value: next }
       }
@@ -2387,7 +2325,7 @@ export const App = () => {
   return (
     <ValueInput
       {...state}
-      whenValueChange={setState}
+      whenValueChanges={setState}
     >
     </ValueInput>
   );
@@ -2397,13 +2335,13 @@ export const App = () => {
 
 export default null;
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/07-conform/b/07-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }
@@ -2417,20 +2355,18 @@ export const LineItem = props => {
 
     selected = false,
 
-    highlighted = false
-  } = props;
+    highlighted = false,
 
-  const {
-    driver, // reducer => {}
+    stateManager, // reducer => {}
 
-    whenSelectionChange = driver,
+    whenSelectionChanges = stateManager,
 
-    whenHoverChange = driver
+    whenHoverChanges = stateManager,
   } = props;
 
   const handleClick = event => {
     const { ctrlKey } = event;
-    whenSelectionChange(
+    whenSelectionChanges(
       state => {
         const next = ctrlKey ? !state.selected : true;
         return { ...state, selected: next };
@@ -2439,14 +2375,14 @@ export const LineItem = props => {
   };
 
   const handleMouseEnter = () => {
-    whenHoverChange(
+    whenHoverChanges(
       state => {
         return { ...state, highlighted: true };
       }
     );
   };
   const handleMouseLeave = () => {
-    whenHoverChange(
+    whenHoverChanges(
       state => {
         return { ...state, highlighted: false };
       }
@@ -2484,8 +2420,8 @@ export const App = () => {
   return (
     <LineItem
       {...state}
-      whenHoverChange={setState}
-      whenSelectionChange={setState}
+      whenHoverChanges={setState}
+      whenSelectionChanges={setState}
     >
     </LineItem>
   );
@@ -2497,13 +2433,13 @@ export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/07-conform/b/07-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }
@@ -2513,18 +2449,16 @@ export default keyframe.json`{
 //
 export const ValueInput = props => {
   const {
-    value = ""
-  } = props;
+    value = "",
 
-  const {
-    driver, // reducer => {}
+    stateManager, // reducer => {}
 
-    whenValueChange = driver
+    whenValueChanges = stateManager,
   } = props;
 
   const handleChange = event => {
     const next = event.target.value;
-    whenValueChange(
+    whenValueChanges(
       state => {
         return { ...state, value: next }
       }
@@ -2552,7 +2486,7 @@ export const App = () => {
   return (
     <ValueInput
       {...state}
-      driver={setState} // [null, ""]
+      stateManager={setState} // [null, ""]
     >
     </ValueInput>
   );
@@ -2562,13 +2496,13 @@ export const App = () => {
 
 export default null;
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/07-conform/b/07-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }
@@ -2582,20 +2516,18 @@ export const LineItem = props => {
 
     selected = false,
 
-    highlighted = false
-  } = props;
+    highlighted = false,
 
-  const {
-    driver, // reducer => {}
+    stateManager, // reducer => {}
 
-    whenSelectionChange = driver,
+    whenSelectionChanges = stateManager,
 
-    whenHoverChange = driver
+    whenHoverChanges = stateManager,
   } = props;
 
   const handleClick = event => {
     const { ctrlKey } = event;
-    whenSelectionChange(
+    whenSelectionChanges(
       state => {
         const next = ctrlKey ? !state.selected : true;
         return { ...state, selected: next };
@@ -2604,14 +2536,14 @@ export const LineItem = props => {
   };
 
   const handleMouseEnter = () => {
-    whenHoverChange(
+    whenHoverChanges(
       state => {
         return { ...state, highlighted: true };
       }
     );
   };
   const handleMouseLeave = () => {
-    whenHoverChange(
+    whenHoverChanges(
       state => {
         return { ...state, highlighted: false };
       }
@@ -2649,7 +2581,7 @@ export const App = () => {
   return (
     <LineItem
       {...state}
-      driver={setState} // [null, ""]
+      stateManager={setState} // [null, ""]
     >
     </LineItem>
   );
@@ -2661,7 +2593,7 @@ export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/08-conform/a/08-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
@@ -2677,18 +2609,16 @@ export default keyframe.json`{
 //
 export const ValueInput = props => {
   const {
-    value = ""
-  } = props;
+    value = "",
 
-  const {
-    driver, // reducer => {} // [null, ""]
+    stateManager, // reducer => {} // [null, ""]
 
-    whenValueChange = driver
+    whenValueChanges = stateManager,
   } = props;
 
   const handleChange = event => {
     const next = event.target.value;
-    whenValueChange( // [null, ""]
+    whenValueChanges( // [null, ""]
       state => {
         return { ...state, value: next }
       }
@@ -2716,7 +2646,7 @@ export const App = () => {
   return (
     <ValueInput
       {...state}
-      driver={setState}
+      stateManager={setState}
     >
     </ValueInput>
   );
@@ -2726,7 +2656,7 @@ export const App = () => {
 
 export default null;
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/08-conform/a/08-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
@@ -2746,20 +2676,18 @@ export const LineItem = props => {
 
     selected = false,
 
-    highlighted = false
-  } = props;
+    highlighted = false,
 
-  const {
-    driver, // reducer => {} // [null, ""]
+    stateManager, // reducer => {} // [null, ""]
 
-    whenSelectionChange = driver,
+    whenSelectionChanges = stateManager,
 
-    whenHoverChange = driver
+    whenHoverChanges = stateManager,
   } = props;
 
   const handleClick = event => {
     const { ctrlKey } = event;
-    whenSelectionChange( // [null, ""]
+    whenSelectionChanges( // [null, ""]
       state => {
         const next = ctrlKey ? !state.selected : true;
         return { ...state, selected: next };
@@ -2768,14 +2696,14 @@ export const LineItem = props => {
   };
 
   const handleMouseEnter = () => {
-    whenHoverChange( // [null, ""]
+    whenHoverChanges( // [null, ""]
       state => {
         return { ...state, highlighted: true };
       }
     ); // [null, ""]
   };
   const handleMouseLeave = () => {
-    whenHoverChange( // [null, ""]
+    whenHoverChanges( // [null, ""]
       state => {
         return { ...state, highlighted: false };
       }
@@ -2813,7 +2741,7 @@ export const App = () => {
   return (
     <LineItem
       {...state}
-      driver={setState}
+      stateManager={setState}
     >
     </LineItem>
   );
@@ -2825,7 +2753,7 @@ export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/08-conform/a/08-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
@@ -2841,18 +2769,16 @@ export default keyframe.json`{
 //
 export const ValueInput = props => {
   const {
-    value = ""
-  } = props;
+    value = "",
 
-  const {
-    driver, // (action, reducer) => {} // [null, ""]
+    stateManager, // (action, reducer) => {} // [null, ""]
 
-    whenValueChange = driver
+    whenValueChanges = stateManager,
   } = props;
 
   const handleChange = event => {
     const next = event.target.value;
-    whenValueChange( // [null, ""]
+    whenValueChanges( // [null, ""]
       state => {
         return { ...state, value: next }
       }
@@ -2880,7 +2806,7 @@ export const App = () => {
   return (
     <ValueInput
       {...state}
-      driver={setState}
+      stateManager={setState}
     >
     </ValueInput>
   );
@@ -2890,7 +2816,7 @@ export const App = () => {
 
 export default null;
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/08-conform/a/08-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
@@ -2910,20 +2836,18 @@ export const LineItem = props => {
 
     selected = false,
 
-    highlighted = false
-  } = props;
+    highlighted = false,
 
-  const {
-    driver, // (action, reducer) => {} // [null, ""]
+    stateManager, // (action, reducer) => {} // [null, ""]
 
-    whenSelectionChange = driver,
+    whenSelectionChanges = stateManager,
 
-    whenHoverChange = driver
+    whenHoverChanges = stateManager,
   } = props;
 
   const handleClick = event => {
     const { ctrlKey } = event;
-    whenSelectionChange( // [null, ""]
+    whenSelectionChanges( // [null, ""]
       state => {
         const next = ctrlKey ? !state.selected : true;
         return { ...state, selected: next };
@@ -2932,14 +2856,14 @@ export const LineItem = props => {
   };
 
   const handleMouseEnter = () => {
-    whenHoverChange( // [null, ""]
+    whenHoverChanges( // [null, ""]
       state => {
         return { ...state, highlighted: true };
       }
     ); // [null, ""]
   };
   const handleMouseLeave = () => {
-    whenHoverChange( // [null, ""]
+    whenHoverChanges( // [null, ""]
       state => {
         return { ...state, highlighted: false };
       }
@@ -2977,7 +2901,7 @@ export const App = () => {
   return (
     <LineItem
       {...state}
-      driver={setState}
+      stateManager={setState}
     >
     </LineItem>
   );
@@ -2989,7 +2913,7 @@ export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/08-conform/a/08-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
@@ -3005,19 +2929,17 @@ export default keyframe.json`{
 //
 export const ValueInput = props => {
   const {
-    value = ""
-  } = props;
+    value = "",
 
-  const {
-    driver, // (action, reducer) => {} // [null, "pin"]
+    stateManager, // (action, reducer) => {} // [null, "pin"]
 
-    whenValueChange = driver
+    whenValueChanges = stateManager,
   } = props;
 
   const handleChange = event => {
     const next = event.target.value;
-    whenValueChange(
-      { type: "whenValueChange", value: next }, // [null, ""]
+    whenValueChanges(
+      { type: "whenValueChanges", value: next }, // [null, ""]
       state => {
         return { ...state, value: next }
       }
@@ -3045,7 +2967,7 @@ export const App = () => {
   return (
     <ValueInput
       {...state}
-      driver={setState}
+      stateManager={setState}
     >
     </ValueInput>
   );
@@ -3055,7 +2977,7 @@ export const App = () => {
 
 export default null;
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/08-conform/a/08-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
@@ -3075,21 +2997,19 @@ export const LineItem = props => {
 
     selected = false,
 
-    highlighted = false
-  } = props;
+    highlighted = false,
 
-  const {
-    driver, // (action, reducer) => {} // [null, "pin"]
+    stateManager, // (action, reducer) => {} // [null, "pin"]
 
-    whenSelectionChange = driver,
+    whenSelectionChanges = stateManager,
 
-    whenHoverChange = driver
+    whenHoverChanges = stateManager,
   } = props;
 
   const handleClick = event => {
     const { ctrlKey } = event;
-    whenSelectionChange(
-      { type: "whenSelectionChange", ctrlKey }, // [null, ""]
+    whenSelectionChanges(
+      { type: "whenSelectionChanges", ctrlKey }, // [null, ""]
       state => {
         const next = ctrlKey ? !state.selected : true;
         return { ...state, selected: next };
@@ -3099,8 +3019,8 @@ export const LineItem = props => {
 
   const handleMouseEnter = () => {
     const hovering = true; // [null, ""]
-    whenHoverChange(
-      { type: "whenHoverChange", hovering }, // [null, ""]
+    whenHoverChanges(
+      { type: "whenHoverChanges", hovering }, // [null, ""]
       state => {
         return { ...state, highlighted: true };
       }
@@ -3108,8 +3028,8 @@ export const LineItem = props => {
   };
   const handleMouseLeave = () => {
     const hovering = false; // [null, ""]
-    whenHoverChange(
-      { type: "whenHoverChange", hovering }, // [null, ""]
+    whenHoverChanges(
+      { type: "whenHoverChanges", hovering }, // [null, ""]
       state => {
         return { ...state, highlighted: false };
       }
@@ -3147,7 +3067,7 @@ export const App = () => {
   return (
     <LineItem
       {...state}
-      driver={setState}
+      stateManager={setState}
     >
     </LineItem>
   );
@@ -3159,13 +3079,13 @@ export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/08-conform/a/08-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }
@@ -3175,19 +3095,17 @@ export default keyframe.json`{
 //
 export const ValueInput = props => {
   const {
-    value = ""
-  } = props;
+    value = "",
 
-  const {
-    driver, // (action, reducer) => {}
+    stateManager, // (action, reducer) => {}
 
-    whenValueChange = driver
+    whenValueChanges = stateManager,
   } = props;
 
   const handleChange = event => {
     const next = event.target.value;
-    whenValueChange(
-      { type: "whenValueChange", value: next },
+    whenValueChanges(
+      { type: "whenValueChanges", value: next },
       state => {
         return { ...state, value: next }
       }
@@ -3215,7 +3133,7 @@ export const App = () => {
   return (
     <ValueInput
       {...state}
-      driver={setState}
+      stateManager={setState}
     >
     </ValueInput>
   );
@@ -3225,13 +3143,13 @@ export const App = () => {
 
 export default null;
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/08-conform/a/08-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }
@@ -3245,21 +3163,19 @@ export const LineItem = props => {
 
     selected = false,
 
-    highlighted = false
-  } = props;
+    highlighted = false,
 
-  const {
-    driver, // (action, reducer) => {}
+    stateManager, // (action, reducer) => {}
 
-    whenSelectionChange = driver,
+    whenSelectionChanges = stateManager,
 
-    whenHoverChange = driver
+    whenHoverChanges = stateManager,
   } = props;
 
   const handleClick = event => {
     const { ctrlKey } = event;
-    whenSelectionChange(
-      { type: "whenSelectionChange", ctrlKey },
+    whenSelectionChanges(
+      { type: "whenSelectionChanges", ctrlKey },
       state => {
         const next = ctrlKey ? !state.selected : true;
         return { ...state, selected: next };
@@ -3269,8 +3185,8 @@ export const LineItem = props => {
 
   const handleMouseEnter = () => {
     const hovering = true;
-    whenHoverChange(
-      { type: "whenHoverChange", hovering },
+    whenHoverChanges(
+      { type: "whenHoverChanges", hovering },
       state => {
         return { ...state, highlighted: true };
       }
@@ -3278,8 +3194,8 @@ export const LineItem = props => {
   };
   const handleMouseLeave = () => {
     const hovering = false;
-    whenHoverChange(
-      { type: "whenHoverChange", hovering },
+    whenHoverChanges(
+      { type: "whenHoverChanges", hovering },
       state => {
         return { ...state, highlighted: false };
       }
@@ -3317,7 +3233,7 @@ export const App = () => {
   return (
     <LineItem
       {...state}
-      driver={setState}
+      stateManager={setState}
     >
     </LineItem>
   );
@@ -3329,13 +3245,13 @@ export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/08-conform/a/08-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }
@@ -3345,19 +3261,17 @@ export default keyframe.json`{
 //
 export const ValueInput = props => {
   const {
-    value = ""
-  } = props;
+    value = "",
 
-  const {
-    driver, // (action, reducer) => {}
+    stateManager, // (action, reducer) => {}
 
-    whenValueChange = driver
+    whenValueChanges = stateManager,
   } = props;
 
   const handleChange = event => {
     const next = event.target.value;
-    whenValueChange(
-      { type: "whenValueChange", value: next },
+    whenValueChanges(
+      { type: "whenValueChanges", value: next },
       state => {
         return { ...state, value: next }
       }
@@ -3382,7 +3296,7 @@ export const App = () => {
     value: "default text"
   });
 
-  const driveState = (action, reducer) => { // [""]
+  const manageState = (action, reducer) => { // [""]
     if (typeof reducer === "function") {
       setState(lastState => {
         const nextState = reducer(lastState, action);
@@ -3394,7 +3308,7 @@ export const App = () => {
   return (
     <ValueInput
       {...state}
-      driver={driveState} // [null, ""]
+      stateManager={manageState} // [null, ""]
     >
     </ValueInput>
   );
@@ -3404,13 +3318,13 @@ export const App = () => {
 
 export default null;
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/08-conform/a/08-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }
@@ -3424,21 +3338,19 @@ export const LineItem = props => {
 
     selected = false,
 
-    highlighted = false
-  } = props;
+    highlighted = false,
 
-  const {
-    driver, // (action, reducer) => {}
+    stateManager, // (action, reducer) => {}
 
-    whenSelectionChange = driver,
+    whenSelectionChanges = stateManager,
 
-    whenHoverChange = driver
+    whenHoverChanges = stateManager,
   } = props;
 
   const handleClick = event => {
     const { ctrlKey } = event;
-    whenSelectionChange(
-      { type: "whenSelectionChange", ctrlKey },
+    whenSelectionChanges(
+      { type: "whenSelectionChanges", ctrlKey },
       state => {
         const next = ctrlKey ? !state.selected : true;
         return { ...state, selected: next };
@@ -3448,8 +3360,8 @@ export const LineItem = props => {
 
   const handleMouseEnter = () => {
     const hovering = true;
-    whenHoverChange(
-      { type: "whenHoverChange", hovering },
+    whenHoverChanges(
+      { type: "whenHoverChanges", hovering },
       state => {
         return { ...state, highlighted: true };
       }
@@ -3457,8 +3369,8 @@ export const LineItem = props => {
   };
   const handleMouseLeave = () => {
     const hovering = false;
-    whenHoverChange(
-      { type: "whenHoverChange", hovering },
+    whenHoverChanges(
+      { type: "whenHoverChanges", hovering },
       state => {
         return { ...state, highlighted: false };
       }
@@ -3493,7 +3405,7 @@ export const LineItem = props => {
 export const App = () => {
   const [state, setState] = useState({});
 
-  const driveState = (action, reducer) => { // [""]
+  const manageState = (action, reducer) => { // [""]
     if (typeof reducer === "function") {
       setState(lastState => {
         const nextState = reducer(lastState, action);
@@ -3505,7 +3417,7 @@ export const App = () => {
   return (
     <LineItem
       {...state}
-      driver={driveState} // [null, ""]
+      stateManager={manageState} // [null, ""]
     >
     </LineItem>
   );
@@ -3517,13 +3429,13 @@ export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/08-conform/a/08-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }
@@ -3533,19 +3445,17 @@ export default keyframe.json`{
 //
 export const ValueInput = props => {
   const {
-    value = ""
-  } = props;
+    value = "",
 
-  const {
-    driver, // (action, reducer) => {}
+    stateManager, // (action, reducer) => {}
 
-    whenValueChange = driver
+    whenValueChanges = stateManager,
   } = props;
 
   const handleChange = event => {
     const next = event.target.value;
-    whenValueChange(
-      { type: "whenValueChange", value: next },
+    whenValueChanges(
+      { type: "whenValueChanges", value: next },
       state => {
         return { ...state, value: next }
       }
@@ -3565,10 +3475,10 @@ export const ValueInput = props => {
 
 };
 //// [null, "foci"], "start"
-const useDrivenState = initialState => { // [null, ""]
+const useManagedState = initialState => { // [null, ""]
   const [state, setState] = useState(initialState); // [null, ""]
 
-  const driveState = (action, reducer) => {
+  const manageState = (action, reducer) => {
     if (typeof reducer === "function") {
       setState(lastState => {
         const nextState = reducer(lastState, action);
@@ -3577,7 +3487,7 @@ const useDrivenState = initialState => { // [null, ""]
     }
   };
 
-  return [state, driveState]; // [null, ""]
+  return [state, manageState]; // [null, ""]
 }; // [null, ""]
 //
 export const App = () => {
@@ -3585,7 +3495,7 @@ export const App = () => {
     value: "default text"
   });
 
-  const driveState = (action, reducer) => {
+  const manageState = (action, reducer) => {
     if (typeof reducer === "function") {
       setState(lastState => {
         const nextState = reducer(lastState, action);
@@ -3597,7 +3507,7 @@ export const App = () => {
   return (
     <ValueInput
       {...state}
-      driver={driveState}
+      stateManager={manageState}
     >
     </ValueInput>
   );
@@ -3607,13 +3517,13 @@ export const App = () => {
 
 export default null;
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/08-conform/a/08-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }
@@ -3627,21 +3537,19 @@ export const LineItem = props => {
 
     selected = false,
 
-    highlighted = false
-  } = props;
+    highlighted = false,
 
-  const {
-    driver, // (action, reducer) => {}
+    stateManager, // (action, reducer) => {}
 
-    whenSelectionChange = driver,
+    whenSelectionChanges = stateManager,
 
-    whenHoverChange = driver
+    whenHoverChanges = stateManager,
   } = props;
 
   const handleClick = event => {
     const { ctrlKey } = event;
-    whenSelectionChange(
-      { type: "whenSelectionChange", ctrlKey },
+    whenSelectionChanges(
+      { type: "whenSelectionChanges", ctrlKey },
       state => {
         const next = ctrlKey ? !state.selected : true;
         return { ...state, selected: next };
@@ -3651,8 +3559,8 @@ export const LineItem = props => {
 
   const handleMouseEnter = () => {
     const hovering = true;
-    whenHoverChange(
-      { type: "whenHoverChange", hovering },
+    whenHoverChanges(
+      { type: "whenHoverChanges", hovering },
       state => {
         return { ...state, highlighted: true };
       }
@@ -3660,8 +3568,8 @@ export const LineItem = props => {
   };
   const handleMouseLeave = () => {
     const hovering = false;
-    whenHoverChange(
-      { type: "whenHoverChange", hovering },
+    whenHoverChanges(
+      { type: "whenHoverChanges", hovering },
       state => {
         return { ...state, highlighted: false };
       }
@@ -3693,10 +3601,10 @@ export const LineItem = props => {
 
 };
 //// [null, "foci"], "start"
-const useDrivenState = initialState => { // [null, ""]
+const useManagedState = initialState => { // [null, ""]
   const [state, setState] = useState(initialState); // [null, ""]
 
-  const driveState = (action, reducer) => {
+  const manageState = (action, reducer) => {
     if (typeof reducer === "function") {
       setState(lastState => {
         const nextState = reducer(lastState, action);
@@ -3705,13 +3613,13 @@ const useDrivenState = initialState => { // [null, ""]
     }
   };
 
-  return [state, driveState]; // [null, ""]
+  return [state, manageState]; // [null, ""]
 }; // [null, ""]
 //
 export const App = () => {
   const [state, setState] = useState({});
 
-  const driveState = (action, reducer) => {
+  const manageState = (action, reducer) => {
     if (typeof reducer === "function") {
       setState(lastState => {
         const nextState = reducer(lastState, action);
@@ -3723,7 +3631,7 @@ export const App = () => {
   return (
     <LineItem
       {...state}
-      driver={driveState}
+      stateManager={manageState}
     >
     </LineItem>
   );
@@ -3735,13 +3643,13 @@ export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/08-conform/a/08-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }
@@ -3751,19 +3659,17 @@ export default keyframe.json`{
 //
 export const ValueInput = props => {
   const {
-    value = ""
-  } = props;
+    value = "",
 
-  const {
-    driver, // (action, reducer) => {}
+    stateManager, // (action, reducer) => {}
 
-    whenValueChange = driver
+    whenValueChanges = stateManager,
   } = props;
 
   const handleChange = event => {
     const next = event.target.value;
-    whenValueChange(
-      { type: "whenValueChange", value: next },
+    whenValueChanges(
+      { type: "whenValueChanges", value: next },
       state => {
         return { ...state, value: next }
       }
@@ -3783,10 +3689,10 @@ export const ValueInput = props => {
 
 };
 //// [null, "foci"], "start"
-const useDrivenState = initialState => {
+const useManagedState = initialState => {
   const [state, setState] = useState(initialState);
 
-  const driveState = (action, reducer) => {
+  const manageState = (action, reducer) => {
     if (typeof reducer === "function") {
       setState(lastState => {
         const nextState = reducer(lastState, action);
@@ -3795,7 +3701,7 @@ const useDrivenState = initialState => {
     }
   };
 
-  return [state, driveState];
+  return [state, manageState];
 };
 //
 export const App = () => {
@@ -3803,7 +3709,7 @@ export const App = () => {
     value: "default text"
   });
 
-  const driveState = (action, reducer) => {
+  const manageState = (action, reducer) => {
     if (typeof reducer === "function") {
       setState(lastState => {
         const nextState = reducer(lastState, action);
@@ -3815,7 +3721,7 @@ export const App = () => {
   return (
     <ValueInput
       {...state}
-      driver={driveState}
+      stateManager={manageState}
     >
     </ValueInput>
   );
@@ -3825,13 +3731,13 @@ export const App = () => {
 
 export default null;
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/08-conform/a/08-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }
@@ -3845,21 +3751,19 @@ export const LineItem = props => {
 
     selected = false,
 
-    highlighted = false
-  } = props;
+    highlighted = false,
 
-  const {
-    driver, // (action, reducer) => {}
+    stateManager, // (action, reducer) => {}
 
-    whenSelectionChange = driver,
+    whenSelectionChanges = stateManager,
 
-    whenHoverChange = driver
+    whenHoverChanges = stateManager,
   } = props;
 
   const handleClick = event => {
     const { ctrlKey } = event;
-    whenSelectionChange(
-      { type: "whenSelectionChange", ctrlKey },
+    whenSelectionChanges(
+      { type: "whenSelectionChanges", ctrlKey },
       state => {
         const next = ctrlKey ? !state.selected : true;
         return { ...state, selected: next };
@@ -3869,8 +3773,8 @@ export const LineItem = props => {
 
   const handleMouseEnter = () => {
     const hovering = true;
-    whenHoverChange(
-      { type: "whenHoverChange", hovering },
+    whenHoverChanges(
+      { type: "whenHoverChanges", hovering },
       state => {
         return { ...state, highlighted: true };
       }
@@ -3878,8 +3782,8 @@ export const LineItem = props => {
   };
   const handleMouseLeave = () => {
     const hovering = false;
-    whenHoverChange(
-      { type: "whenHoverChange", hovering },
+    whenHoverChanges(
+      { type: "whenHoverChanges", hovering },
       state => {
         return { ...state, highlighted: false };
       }
@@ -3911,10 +3815,10 @@ export const LineItem = props => {
 
 };
 //// [null, "foci"], "start"
-const useDrivenState = initialState => {
+const useManagedState = initialState => {
   const [state, setState] = useState(initialState);
 
-  const driveState = (action, reducer) => {
+  const manageState = (action, reducer) => {
     if (typeof reducer === "function") {
       setState(lastState => {
         const nextState = reducer(lastState, action);
@@ -3923,13 +3827,13 @@ const useDrivenState = initialState => {
     }
   };
 
-  return [state, driveState];
+  return [state, manageState];
 };
 //
 export const App = () => {
   const [state, setState] = useState({}); // ["pin"]
 
-  const driveState = (action, reducer) => {
+  const manageState = (action, reducer) => {
     if (typeof reducer === "function") {
       setState(lastState => {
         const nextState = reducer(lastState, action);
@@ -3941,7 +3845,7 @@ export const App = () => {
   return (
     <LineItem
       {...state}
-      driver={driveState}
+      stateManager={manageState}
     >
     </LineItem>
   );
@@ -3953,13 +3857,13 @@ export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/08-conform/a/08-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }
@@ -3969,19 +3873,17 @@ export default keyframe.json`{
 //
 export const ValueInput = props => {
   const {
-    value = ""
-  } = props;
+    value = "",
 
-  const {
-    driver, // (action, reducer) => {}
+    stateManager, // (action, reducer) => {}
 
-    whenValueChange = driver
+    whenValueChanges = stateManager,
   } = props;
 
   const handleChange = event => {
     const next = event.target.value;
-    whenValueChange(
-      { type: "whenValueChange", value: next },
+    whenValueChanges(
+      { type: "whenValueChanges", value: next },
       state => {
         return { ...state, value: next }
       }
@@ -4001,10 +3903,10 @@ export const ValueInput = props => {
 
 };
 //// [null, "foci"], "start"
-const useDrivenState = initialState => {
+const useManagedState = initialState => {
   const [state, setState] = useState(initialState);
 
-  const driveState = (action, reducer) => {
+  const manageState = (action, reducer) => {
     if (typeof reducer === "function") {
       setState(lastState => {
         const nextState = reducer(lastState, action);
@@ -4013,18 +3915,18 @@ const useDrivenState = initialState => {
     }
   };
 
-  return [state, driveState];
+  return [state, manageState];
 };
 //
 export const App = () => {
-  const [state, driveState] = useDrivenState({ // [null, ""]
+  const [state, manageState] = useManagedState({ // [null, ""]
     value: "default text"
   });
 
   return (
     <ValueInput
       {...state}
-      driver={driveState}
+      stateManager={manageState}
     >
     </ValueInput>
   );
@@ -4034,13 +3936,13 @@ export const App = () => {
 
 export default null;
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/08-conform/a/08-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }
@@ -4054,21 +3956,19 @@ export const LineItem = props => {
 
     selected = false,
 
-    highlighted = false
-  } = props;
+    highlighted = false,
 
-  const {
-    driver, // (action, reducer) => {}
+    stateManager, // (action, reducer) => {}
 
-    whenSelectionChange = driver,
+    whenSelectionChanges = stateManager,
 
-    whenHoverChange = driver
+    whenHoverChanges = stateManager,
   } = props;
 
   const handleClick = event => {
     const { ctrlKey } = event;
-    whenSelectionChange(
-      { type: "whenSelectionChange", ctrlKey },
+    whenSelectionChanges(
+      { type: "whenSelectionChanges", ctrlKey },
       state => {
         const next = ctrlKey ? !state.selected : true;
         return { ...state, selected: next };
@@ -4078,8 +3978,8 @@ export const LineItem = props => {
 
   const handleMouseEnter = () => {
     const hovering = true;
-    whenHoverChange(
-      { type: "whenHoverChange", hovering },
+    whenHoverChanges(
+      { type: "whenHoverChanges", hovering },
       state => {
         return { ...state, highlighted: true };
       }
@@ -4087,8 +3987,8 @@ export const LineItem = props => {
   };
   const handleMouseLeave = () => {
     const hovering = false;
-    whenHoverChange(
-      { type: "whenHoverChange", hovering },
+    whenHoverChanges(
+      { type: "whenHoverChanges", hovering },
       state => {
         return { ...state, highlighted: false };
       }
@@ -4120,10 +4020,10 @@ export const LineItem = props => {
 
 };
 //// [null, "foci"], "start"
-const useDrivenState = initialState => {
+const useManagedState = initialState => {
   const [state, setState] = useState(initialState);
 
-  const driveState = (action, reducer) => {
+  const manageState = (action, reducer) => {
     if (typeof reducer === "function") {
       setState(lastState => {
         const nextState = reducer(lastState, action);
@@ -4132,16 +4032,16 @@ const useDrivenState = initialState => {
     }
   };
 
-  return [state, driveState];
+  return [state, manageState];
 };
 //
 export const App = () => {
-  const [state, driveState] = useDrivenState({}); // [null, ""]
+  const [state, manageState] = useManagedState({}); // [null, ""]
 
   return (
     <LineItem
       {...state}
-      driver={driveState}
+      stateManager={manageState}
     >
     </LineItem>
   );
@@ -4153,7 +4053,7 @@ export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/08-conform/a/08-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
@@ -4169,19 +4069,17 @@ export default keyframe.json`{
 //// [null, "foci"], "start"
 export const ValueInput = props => {
   const {
-    value = ""
-  } = props;
+    value = "",
 
-  const {
-    driver, // (action, reducer) => {}
+    stateManager, // (action, reducer) => {}
 
-    whenValueChange = driver
+    whenValueChanges = stateManager,
   } = props;
 
   const handleChange = event => {
     const next = event.target.value;
-    whenValueChange(
-      { type: "whenValueChange", value: next },
+    whenValueChanges(
+      { type: "whenValueChanges", value: next },
       state => { // [""]
         return { ...state, value: next }
       } // [""]
@@ -4202,14 +4100,14 @@ export const ValueInput = props => {
 };
 //// [null, "foci"], "end"
 export const App = () => {
-  const [state, driveState] = useDrivenState({
+  const [state, manageState] = useManagedState({
     value: "default text"
   });
 
   return (
     <ValueInput
       {...state}
-      driver={driveState}
+      stateManager={manageState}
     >
     </ValueInput>
   );
@@ -4219,7 +4117,7 @@ export const App = () => {
 
 export default null;
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/08-conform/a/08-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
@@ -4239,21 +4137,19 @@ export const LineItem = props => {
 
     selected = false,
 
-    highlighted = false
-  } = props;
+    highlighted = false,
 
-  const {
-    driver, // (action, reducer) => {}
+    stateManager, // (action, reducer) => {}
 
-    whenSelectionChange = driver,
+    whenSelectionChanges = stateManager,
 
-    whenHoverChange = driver
+    whenHoverChanges = stateManager,
   } = props;
 
   const handleClick = event => {
     const { ctrlKey } = event;
-    whenSelectionChange(
-      { type: "whenSelectionChange", ctrlKey },
+    whenSelectionChanges(
+      { type: "whenSelectionChanges", ctrlKey },
       state => { // [null, ""]
         const next = ctrlKey ? !state.selected : true; // [null, ""]
         return { ...state, selected: next }; // [null, ""]
@@ -4263,8 +4159,8 @@ export const LineItem = props => {
 
   const handleMouseEnter = () => {
     const hovering = true;
-    whenHoverChange(
-      { type: "whenHoverChange", hovering },
+    whenHoverChanges(
+      { type: "whenHoverChanges", hovering },
       state => { // [null, ""]
         return { ...state, highlighted: true }; // [null, ""]
       } // [null, ""]
@@ -4272,8 +4168,8 @@ export const LineItem = props => {
   };
   const handleMouseLeave = () => {
     const hovering = false;
-    whenHoverChange(
-      { type: "whenHoverChange", hovering },
+    whenHoverChanges(
+      { type: "whenHoverChanges", hovering },
       state => { // [null, ""]
         return { ...state, highlighted: false }; // [null, ""]
       } // [null, ""]
@@ -4306,12 +4202,12 @@ export const LineItem = props => {
 };
 //// [null, "foci"], "end"
 export const App = () => {
-  const [state, driveState] = useDrivenState({});
+  const [state, manageState] = useManagedState({});
 
   return (
     <LineItem
       {...state}
-      driver={driveState}
+      stateManager={manageState}
     >
     </LineItem>
   );
@@ -4323,7 +4219,7 @@ export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/08-conform/a/08-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
@@ -4339,19 +4235,17 @@ export default keyframe.json`{
 //// [null, "foci"], "start"
 export const ValueInput = props => {
   const {
-    value = ""
-  } = props;
+    value = "",
 
-  const {
-    driver, // (action, reducer) => {}
+    stateManager, // (action, reducer) => {}
 
-    whenValueChange = driver
+    whenValueChanges = stateManager,
   } = props;
 
   const handleChange = event => {
     const next = event.target.value;
-    whenValueChange(
-      { type: "whenValueChange", value: next },
+    whenValueChanges(
+      { type: "whenValueChanges", value: next },
       (state, action) => { // [""]
         return { ...state, value: action.value }
       } // [""]
@@ -4372,14 +4266,14 @@ export const ValueInput = props => {
 };
 //
 export const App = () => {
-  const [state, driveState] = useDrivenState({
+  const [state, manageState] = useManagedState({
     value: "default text"
   });
 
   return (
     <ValueInput
       {...state}
-      driver={driveState}
+      stateManager={manageState}
     >
     </ValueInput>
   );
@@ -4389,7 +4283,7 @@ export const App = () => {
 
 export default null;
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/08-conform/a/08-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
@@ -4409,21 +4303,19 @@ export const LineItem = props => {
 
     selected = false,
 
-    highlighted = false
-  } = props;
+    highlighted = false,
 
-  const {
-    driver, // (action, reducer) => {}
+    stateManager, // (action, reducer) => {}
 
-    whenSelectionChange = driver,
+    whenSelectionChanges = stateManager,
 
-    whenHoverChange = driver
+    whenHoverChanges = stateManager,
   } = props;
 
   const handleClick = event => {
     const { ctrlKey } = event;
-    whenSelectionChange(
-      { type: "whenSelectionChange", ctrlKey },
+    whenSelectionChanges(
+      { type: "whenSelectionChanges", ctrlKey },
       (state, action) => { // [null, ""]
         const next = action.ctrlKey ? !state.selected : true; // [null, ""]
         return { ...state, selected: next }; // [null, ""]
@@ -4433,8 +4325,8 @@ export const LineItem = props => {
 
   const handleMouseEnter = () => {
     const hovering = true;
-    whenHoverChange(
-      { type: "whenHoverChange", hovering },
+    whenHoverChanges(
+      { type: "whenHoverChanges", hovering },
       (state, action) => { // [null, ""]
         return { ...state, highlighted: action.hovering }; // [null, ""]
       } // [null, ""]
@@ -4442,8 +4334,8 @@ export const LineItem = props => {
   };
   const handleMouseLeave = () => {
     const hovering = false;
-    whenHoverChange(
-      { type: "whenHoverChange", hovering },
+    whenHoverChanges(
+      { type: "whenHoverChanges", hovering },
       (state, action) => { // [null, ""]
         return { ...state, highlighted: action.hovering }; // [null, ""]
       } // [null, ""]
@@ -4476,12 +4368,12 @@ export const LineItem = props => {
 };
 //
 export const App = () => {
-  const [state, driveState] = useDrivenState({});
+  const [state, manageState] = useManagedState({});
 
   return (
     <LineItem
       {...state}
-      driver={driveState}
+      stateManager={manageState}
     >
     </LineItem>
   );
@@ -4493,13 +4385,13 @@ export default null;
 
 
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/08-conform/a/08-${1}-${count}-01-ValueInput.js",
   "context": {
      "column": "ValueInput",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }
@@ -4509,19 +4401,17 @@ export default keyframe.json`{
 //// [null, "foci"], "start", [""]
 export const ValueInput = props => {
   const {
-    value = ""
-  } = props;
+    value = "",
 
-  const {
-    driver, // (action, reducer) => {}
+    stateManager, // (action, reducer) => {}
 
-    whenValueChange = driver
+    whenValueChanges = stateManager,
   } = props;
 
   const handleChange = event => {
     const next = event.target.value;
-    whenValueChange(
-      { type: "whenValueChange", value: next },
+    whenValueChanges(
+      { type: "whenValueChanges", value: next },
       (state, action) => {
         return { ...state, value: action.value }
       }
@@ -4542,14 +4432,14 @@ export const ValueInput = props => {
 };
 //
 export const App = () => {
-  const [state, driveState] = useDrivenState({
+  const [state, manageState] = useManagedState({
     value: "default text"
   });
 
   return (
     <ValueInput
       {...state}
-      driver={driveState}
+      stateManager={manageState}
     >
     </ValueInput>
   );
@@ -4559,13 +4449,13 @@ export const App = () => {
 
 export default null;
 
-export default keyframe.json`{
+export default keyframe/*json*/`{
   "path": "./${foldername}/08-conform/a/08-${1}-${count}-02-LineItem.js",
   "context": {
      "column": "LineItem",
      "code": {
       "review": [
-        ["foci", "subtitle", "", "pin"]
+        ["foci", "note", "", "pin"]
       ]
     }
   }
@@ -4579,21 +4469,19 @@ export const LineItem = props => {
 
     selected = false,
 
-    highlighted = false
-  } = props;
+    highlighted = false,
 
-  const {
-    driver, // (action, reducer) => {}
+    stateManager, // (action, reducer) => {}
 
-    whenSelectionChange = driver,
+    whenSelectionChanges = stateManager,
 
-    whenHoverChange = driver
+    whenHoverChanges = stateManager,
   } = props;
 
   const handleClick = event => {
     const { ctrlKey } = event;
-    whenSelectionChange(
-      { type: "whenSelectionChange", ctrlKey },
+    whenSelectionChanges(
+      { type: "whenSelectionChanges", ctrlKey },
       (state, action) => {
         const next = action.ctrlKey ? !state.selected : true;
         return { ...state, selected: next };
@@ -4603,8 +4491,8 @@ export const LineItem = props => {
 
   const handleMouseEnter = () => {
     const hovering = true;
-    whenHoverChange(
-      { type: "whenHoverChange", hovering },
+    whenHoverChanges(
+      { type: "whenHoverChanges", hovering },
       (state, action) => {
         return { ...state, highlighted: action.hovering };
       }
@@ -4612,8 +4500,8 @@ export const LineItem = props => {
   };
   const handleMouseLeave = () => {
     const hovering = false;
-    whenHoverChange(
-      { type: "whenHoverChange", hovering },
+    whenHoverChanges(
+      { type: "whenHoverChanges", hovering },
       (state, action) => {
         return { ...state, highlighted: action.hovering };
       }
@@ -4646,12 +4534,12 @@ export const LineItem = props => {
 };
 //
 export const App = () => {
-  const [state, driveState] = useDrivenState({});
+  const [state, manageState] = useManagedState({});
 
   return (
     <LineItem
       {...state}
-      driver={driveState}
+      stateManager={manageState}
     >
     </LineItem>
   );
