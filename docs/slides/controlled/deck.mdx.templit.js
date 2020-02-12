@@ -186,7 +186,7 @@ ${"```"}
 
 <CodeSurferColumns themes={[theme1, theme1]}>
 
-<Step title="About me" subtitle="@jfinity -- Justin C. Moore">
+<Step title="About me" subtitle="@jfinity_moore -- Justin C. Moore">
 
 ${"```"}md
 
@@ -454,7 +454,7 @@ ${"```"}
 
 <CodeSurfer theme={theme1}>
 
-${"```"}md title="Questions?" subtitle="@jfinity -- https://github.com/jfinity/managed-attrs#run-the-slides"
+${"```"}md title="Questions?" subtitle="@jfinity_moore -- https://github.com/jfinity/managed-attrs#run-the-slides"
 
 ${"```"}
 
