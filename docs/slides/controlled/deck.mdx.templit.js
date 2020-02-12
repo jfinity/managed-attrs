@@ -140,6 +140,205 @@ export const theme = theme1;
 
 ---
 
+<CodeSurfer theme={theme1}>
+
+${"```"}md title="The component that launched a thousand apps"
+
+* Quick to get started
+
+* Effortless to get interactive
+
+* Optionally controlled
+
+${"```"}
+
+</CodeSurfer>
+
+---
+
+<CodeSurfer theme={theme1}>
+
+${"```"}md title="The component that launched a thousand apps"
+
+* Expose complete control
+
+* Provide reasonable default behavior
+
+${"```"}
+
+</CodeSurfer>
+
+---
+
+<CodeSurfer theme={theme2}>
+
+${"```"}md title="The components that didn't..."
+
+- Expose limited or awkward controls
+
+- Provide limited or no default behavior
+
+${"```"}
+
+</CodeSurfer>
+
+---
+
+<CodeSurferColumns themes={[theme1, theme1]}>
+
+<Step title="About me" subtitle="@jfinity -- Justin C. Moore">
+
+${"```"}md
+
+* Weight lifting, karaoke,
+      static analysis and data structures
+  - (not necessarily in that order)
+
+* Looking for a D&D campaign
+
+${"```"}
+
+${"```"}md
+
+* Former mobile game developer
+
+* Current front-end developer
+
+* Working in ad tech at MediaMath
+
+${"```"}
+
+</Step>
+
+</CodeSurferColumns>
+
+---
+
+<CodeSurferColumns theme={[theme1, theme1]}>
+
+<Step title="Design systems" subtitle="list of examples -- https://adele.uxpin.com/">
+
+${"```"}md
+
+* Component collections
+
+* Not just for React
+
+${"```"}
+
+${"```"}md
+
+* Reusable
+
+* Composable
+
+* Standardized
+
+${"```"}
+
+</Step>
+
+</CodeSurferColumns>
+
+---
+
+<CodeSurfer theme={theme1}>
+
+${"```"}md title="Design systems"
+
+* Spread throughout the organization/community
+
+* Encourage good habits and scalable architecture
+
+* Apply to a variety of use cases
+  - Expose complete control
+    - ...State management?
+
+${"```"}
+
+</CodeSurfer>
+
+---
+
+# State Management
+# 😱
+
+---
+
+<CodeSurfer theme={theme1}>
+
+${"```"}md title="Goals"
+
+* Expose complete control
+  - Prefer remote state management
+
+* Provide reasonable default behavior
+  - Make it quick to get started
+  - Make it effortless to get interactive
+
+${"```"}
+
+</CodeSurfer>
+
+---
+
+<CodeSurfer theme={theme1}>
+
+${"```"}md title="Techniques"
+
+* Implement mini design system
+
+* Spoilers
+  - standard component structure
+  - consistent callback property signatures
+        (action, reducer) => {}
+
+${"```"}
+
+</CodeSurfer>
+
+---
+
+<CodeSurferColumns theme={[theme1, theme1]} sizes={[5, 7]}>
+
+<Step title="Glossary">
+
+${"```"}md
+
+* Actions
+  - describe events
+  - { type: "label" }
+
+* Adapter functions
+  - bridge the gaps dissimilar APIs
+  - (...params) => fn(...args)
+
+${"```"}
+
+${"```"}md
+
+* Reducers
+  - advance a state value with an action
+  - (lastState, action) => nextState
+  - React.useReducer(reducer)
+
+* Updater functions
+  - also advance a state value
+  - (lastState) => nextState
+  - React.useState(updater)
+
+${"```"}
+
+</Step>
+
+</CodeSurferColumns>
+
+---
+
+<InputDemo />
+
+---
+
 <CodeSurferColumns themes={[theme1]}>
 
 ${
@@ -201,7 +400,6 @@ ${
 
 ---
 
-
 <CodeSurferColumns themes={[theme1, theme2]} sizes={[7, 5]}>
 
 <Step>
@@ -209,7 +407,9 @@ ${
 ${"```"}md title="Benefits"
 
 * Flexible and fully controlled
+
 * Consistent and uniform API
+
 * Easy to consume
 
 ${"```"}
@@ -217,7 +417,9 @@ ${"```"}
 ${"```"}md title="Drawbacks"
 
 - More involved to produce
+
 - Unfamiliar pattern
+
 - Lots of room for improvement
 
 ${"```"}
@@ -228,16 +430,35 @@ ${"```"}
 
 ---
 
-# Future work
+<CodeSurfer theme={theme1}>
+
+${"```"}md title="Future work"
 
 * More ergonomic (lazy) composition
+
 * Async side-effects with saga argument
+
 * Integration with statecharts
-  * (or some other visualizable state model)
+  - (or some other visualizable state model)
+
+${"```"}
+
+</CodeSurfer>
 
 ---
 
-# Questions?
+# Thanks to my colleagues
+# at MediaMath
+
+---
+
+<CodeSurfer theme={theme1}>
+
+${"```"}md title="Questions?" subtitle="@jfinity -- https://github.com/jfinity/managed-attrs#run-the-slides"
+
+${"```"}
+
+</CodeSurfer>
 
 ---
 

@@ -84,7 +84,7 @@ null;
 export default keyframe/*json*/`{
   "path": "./${foldername}/01-component/a/01-${1}-${count}-01-ValueInput.js",
   "context": {
-     "title": "Component bootstrapping",
+     "title": "Declare functional component",
      "column": "ValueInput",
      "code": {
       "review": [
