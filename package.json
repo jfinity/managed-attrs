@@ -6,6 +6,7 @@
     "keyframe": "node docs/slides/code-keyframer.js docs/slides/controlled/keyframes/ ../snippets/",
     "templit": "node docs/slides/templit-filer.js docs/slides/controlled/",
     "deck": "mdx-deck docs/slides/controlled/deck.mdx",
+    "netlify": "mdx-deck build docs/slides/controlled/deck.mdx",
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "demo": "node scripts/demo.js",
